@@ -175,11 +175,9 @@ gls2.GameScene = tm.createClass(
     },
 
     update: function(app) {
-        this.record(app.keyboard);
+        // var beginProcessTime = new Date().getTime();
 
-        if (app.frame % 500 === 0) {
-            gls2.Noise.noise = gls2.Noise.generate(512);
-        }
+        this.record(app.keyboard);
 
         this.stage.update(app.frame);
         if (app.frame % 2 === 0) this.scoreLabel.update();
@@ -204,6 +202,8 @@ gls2.GameScene = tm.createClass(
 
             }
         }
+
+        // console.log("update " + (new Date().getTime() - beginProcessTime));
     },
 
     shotScreen: function() {
@@ -222,6 +222,8 @@ gls2.GameScene = tm.createClass(
      * フレームの最後に実行される
      */
     onexitframe: function(app) {
+        // var beginProcessTime = new Date().getTime();
+
         if (this.player.controllable === false) {
             gls2.Danmaku.erase();
         }
@@ -456,6 +458,7 @@ gls2.GameScene = tm.createClass(
 
         }
 
+        // console.log("onexitframe " + (new Date().getTime() - beginProcessTime));
     },
 
     /**
@@ -669,6 +672,7 @@ gls2.GameScene = tm.createClass(
             this.app.pushScene(gls2.ResultScene(this, this.shotScreen()));
             tempTimer.remove();
         }.bind(this));
+        // this.startStage(this.stageNumber + 1);
     },
 
     gameOver: function() {
@@ -930,10 +934,10 @@ gls2.GameScene = tm.createClass(
             .clear()
             .to({
                 gpsOffsetX: -SC_W,
-            }, 1600, "easeInQuad")
+            }, 1600, "easeInBack")
             .to({
                 gpsOffsetY: 30,
-            }, 800, "easeInOutQuad")
+            }, 800, "easeInOutBack")
         ;
     },
 
@@ -942,10 +946,10 @@ gls2.GameScene = tm.createClass(
             .clear()
             .to({
                 gpsOffsetY: 0,
-            }, 800, "easeInOutQuad")
+            }, 800, "easeInOutBack")
             .to({
                 gpsOffsetX: 0,
-            }, 1600, "easeOutQuad")
+            }, 1600, "easeOutBack")
         ;
     },
 

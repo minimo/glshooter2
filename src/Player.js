@@ -246,8 +246,8 @@ gls2.Player = tm.createClass(
             var angle = kb.getKeyAngle();
             if (angle !== null) {
                 var m = KEYBOARD_MOVE[angle];
-                this.x += m.x * this.speed * (this.fireLaser ? 0.75 : 1);
-                this.y += m.y * this.speed * (this.fireLaser ? 0.75 : 1);
+                this.x += m.x * this.speed * (this.fireLaser ? 0.5 : 1);
+                this.y += m.y * this.speed * (this.fireLaser ? 0.5 : 1);
             }
             this.x = gls2.math.clamp(this.x, 15, SC_W-15);
             this.y = gls2.math.clamp(this.y, 15, SC_H-15);
@@ -357,18 +357,22 @@ gls2.Player = tm.createClass(
             }
         } else if (this.type === 1) {
             var p = this.bitPivot;
-            if (this.controllable && kb.getKey("left")) {
-                p.rotation = Math.max(p.rotation - 3, -50);
-            } else if (this.controllable && kb.getKey("right")) {
-                p.rotation = Math.min(p.rotation + 3,  50);
-            } else {
-                if (3 < p.rotation) {
-                    p.rotation -= 3;
-                } else if (p.rotation < -3) {
-                    p.rotation += 3;
+            if (!this.fireLaser) {
+                if (this.controllable && kb.getKey("left")) {
+                    p.rotation = Math.max(p.rotation - 3, -50);
+                } else if (this.controllable && kb.getKey("right")) {
+                    p.rotation = Math.min(p.rotation + 3,  50);
                 } else {
-                    p.rotation = 0;
+                    if (3 < p.rotation) {
+                        p.rotation -= 3;
+                    } else if (p.rotation < -3) {
+                        p.rotation += 3;
+                    } else {
+                        p.rotation = 0;
+                    }
                 }
+            } else {
+                p.rotation = 0;
             }
         }
     },

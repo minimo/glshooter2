@@ -38,6 +38,8 @@ gls2.Ground = tm.createClass(
     },
 
     update: function(frame) {
+        // var beginProcessTime = new Date().getTime();
+
         this.gElement.dx = Math.cos(this.gElement.direction) * this.gElement.speed;
         this.gElement.dy = Math.sin(this.gElement.direction) * this.gElement.speed;
 
@@ -58,6 +60,8 @@ gls2.Ground = tm.createClass(
         while (this.gElement.gy2 < -L2*2) this.gElement.gy2 += L2*2;
 
         if (frame % 2 === 0) this.draw();
+
+        // console.log("Ground update " + (new Date().getTime() - beginProcessTime));
     },
 
     draw: function() {

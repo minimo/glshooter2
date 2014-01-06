@@ -49,6 +49,11 @@ gls2.ResultScene = tm.createClass(
         this.superInit();
         this.gameScene = gameScene;
 
+        // 背景
+        tm.display.Sprite("result_bg", SC_W*1.1, SC_H*1.1)
+            .setPosition(SC_W/2, SC_H/2)
+            .addChildTo(this);
+
         this.values = [
             this.gameScene.starItem,
             this.gameScene.starItemLarge,
@@ -122,14 +127,6 @@ gls2.ResultScene = tm.createClass(
             .addChildTo(this);
         this.promptEnter.visible = false;
 
-        // 背景
-        this.background = tm.graphics.LinearGradient(0, 0, SC_W, SC_H)
-            .addColorStopList([
-                { offset: 0.0, color: "hsl(220, 90%, 60%)" },
-                { offset: 1.0, color: "hsl(220, 90%, 10%)" },
-            ])
-            .toStyle();
-
         // ゲーム画面がバラバラと落ちるエフェクト
         this.screenShot = screenShot;
         var parts = [];
@@ -146,6 +143,10 @@ gls2.ResultScene = tm.createClass(
         }
         this.lastElement = tm.app.Object2D();
         this.lastElement.draw = function(canvas) {
+            // var beginProcessTime = new Date().getTime();
+
+            canvas.save();
+
             var ok = true;
             for (var i = 0; i < parts.length; i++) {
                 for (var j = 0; j < parts[i].length; j++) {
@@ -161,14 +162,19 @@ gls2.ResultScene = tm.createClass(
                     }
                 }
             }
+
+            this.wait = 60;
             if (ok) {
                 this.lastElement.remove();
-                this.wait = 60;
-            } else {
-                this.wait = 100;
             }
+
+            canvas.restore();
+
+            // console.log("lastElement " + (new Date().getTime() - beginProcessTime));
         }.bind(this);
         this.lastElement.addChildTo(this);
+
+        // this.wait = 60;
 
         this.addEventListener("exit", function() {
             gls2.fadeOutBgm();
@@ -203,6 +209,7 @@ gls2.ResultScene = tm.createClass(
 
         this.frame += 1;
     },
+<<<<<<< HEAD
     draw: function(canvas) {
         canvas.clearColor(this.background);
 
@@ -227,6 +234,9 @@ gls2.ResultScene = tm.createClass(
 
         canvas.fillStyle = "hsla(220, 90%, 10%, 0.6)";
         canvas.fillRect(20, 20, SC_W-20*2, SC_H-20*2);
+=======
+    drawBackground: function(canvas) {
+>>>>>>> gh-pages
     }
 });
 

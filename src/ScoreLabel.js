@@ -35,6 +35,8 @@ gls2.ScoreLabel = tm.createClass(
     },
 
     update: function() {
+        // var beginProcessTime = new Date().getTime();
+
         this.clear();
 
         // ボスHP
@@ -93,7 +95,7 @@ gls2.ScoreLabel = tm.createClass(
         // コンボ数
         if (0 < ~~this.gameScene.comboCount || DEBUG) {
             this.setText("bold 45px Orbitron", "left", "top");
-            this.strokeText(~~this.gameScene.comboCount + " HIT!!", 10, -this.scoreLabelElement.gpsOffsetY + 115);
+            this.strokeText(~~this.gameScene.comboCount + " HIT!!", 10, -this.scoreLabelElement.gpsOffsetY*0.5 + 115);
         }
 
         // ボム数
@@ -114,6 +116,7 @@ gls2.ScoreLabel = tm.createClass(
             this.fillText("hyper rank " + this.gameScene.hyperRank, SC_W-30, SC_H-50);
         }
 
+        // console.log("ScoreLabel " + (new Date().getTime() - beginProcessTime));
     },
 
 });

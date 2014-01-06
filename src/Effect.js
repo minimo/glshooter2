@@ -7,12 +7,19 @@
 gls2.Effect = {};
 gls2.Effect.setup = function() {
 
+<<<<<<< HEAD
     noise = gls2.Noise.generate(256);
 
     gls2.effectSprite = {};
 
     gls2.Effect["explosion"] = Array.range(0, 2).map(function(i) {
         return tm.app.AnimationSprite(tm.app.SpriteSheet({
+=======
+    gls2.effectSprite = {};
+
+    gls2.Effect["explosion"] = Array.range(0, 3).map(function(i) {
+        return tm.display.AnimationSprite(tm.asset.SpriteSheet({
+>>>>>>> gh-pages
             image: "explode" + i,
             frame: {
                 width: 100,
@@ -27,8 +34,13 @@ gls2.Effect.setup = function() {
         }, 100, 100));
     });
 
+<<<<<<< HEAD
     gls2.effectSprite["explodeL"] = tm.app.AnimationSprite(tm.app.SpriteSheet({
         image: "explodeL",
+=======
+    gls2.effectSprite["explodeL"] = tm.display.AnimationSprite(tm.asset.SpriteSheet({
+        image: "explode0",
+>>>>>>> gh-pages
         frame: {
             width: 100,
             height: 100,
@@ -84,7 +96,9 @@ gls2.Effect.setup = function() {
 };
 
 gls2.Effect.genParticle = function(x, y, scene) {
-    var p = gls2.Effect["particle16"].clone().setPosition(x, y).addChildTo(scene);
+    var p = gls2.Effect["particle16"].clone().setPosition(x, y);
+    p.isEffect = true;
+    p.addChildTo(scene);
     var speed = gls2.math.randf(5, 20);
     var dir = gls2.math.randf(Math.PI,Math.PI*2);
     p.dx = Math.cos(dir) * speed;
@@ -100,19 +114,21 @@ gls2.Effect.genParticle = function(x, y, scene) {
     });
 };
 
-gls2.Effect.genShockwave = function(x, y, scene) {
+gls2.Effect.genShockwave = function(x, y, scene, scaleTo) {
+    scaleTo = scaleTo || 1.8;
     var scale = 0.1;
     var sw = tm.app.Sprite()
         .setPosition(x, y)
         .setScale(scale)
-        .setBlendMode("lighter")
-        .addChildTo(scene);
+        .setBlendMode("lighter");
+    sw.isEffect = true;
+    sw.addChildTo(scene);
     sw.image = gls2.Effect["shockwaveImage"];
     sw.tweener
         .clear()
         .to({
-            scaleX: 1.4,
-            scaleY: 1.4,
+            scaleX: scaleTo,
+            scaleY: scaleTo,
             alpha: 0.0
         }, 800, "easeOutQuad")
         .call(function() {
@@ -168,6 +184,7 @@ gls2.Effect.explodeS = function(x, y, scene, vector) {
         });
     }
     e.addChildTo(scene);
+    gls2.Effect.genShockwave(x, y, scene);
 };
 
 gls2.Effect.explodeGS = function(x, y, scene) {
@@ -203,7 +220,6 @@ gls2.Effect.explodeGS = function(x, y, scene) {
         .setScale(0.5)
         .setPosition(x+12, y)
         .setRotation(Math.random() * 360)
-        .setBlendMode("lighter")
         .gotoAndPlay();
     e.isEffect = true;
     e.addChildTo(scene);
@@ -223,13 +239,10 @@ gls2.Effect.explodeGS = function(x, y, scene) {
         .setScale(0.5)
         .setPosition(x-12, y)
         .setRotation(Math.random() * 360)
-        .setBlendMode("lighter")
         .gotoAndPlay();
     e.isEffect = true;
     e.addChildTo(scene);
 };
-
-var noise;
 
 gls2.Effect.explodeM = function(x, y, scene) {
     gls2.playSound("explode2");
@@ -249,7 +262,6 @@ gls2.Effect.explodeM = function(x, y, scene) {
                 this.scaleY += 0.01;
             })
             .setScale(0.7)
-            .setBlendMode(i%2===0?"lighter":"source-over")
             .setPosition(x, y)
             .gotoAndPlay();
         e.a = Math.PI*2 * Math.random();
@@ -258,6 +270,7 @@ gls2.Effect.explodeM = function(x, y, scene) {
         e.isEffect = true;
         e.addChildTo(scene);
     }
+    gls2.Effect.genShockwave(x, y, scene, 5.0);
 };
 
 gls2.Effect.explodeL = function(x, y, scene) {
@@ -281,16 +294,13 @@ gls2.Effect.explodeL = function(x, y, scene) {
                     this.y += Math.sin(this.a) * this.v;
                     this.scaleX += 0.01;
                     this.scaleY += 0.01;
-                    if (this.age > 32) this.blendMode = "source-over";
                     this.age += 1;
                 })
                 .setScale(0.3 * (3-j))
-                .setBlendMode("lighter")
                 .setPosition(x, y)
                 .gotoAndPlay();
             e.rotation = Math.random() * Math.PI*2;
             e.isEffect = true;
-            e.alpha = 0.2;
             e.age = 0;
             e.a = a;
             e.v = ev;
@@ -361,12 +371,18 @@ gls2.StartHyperEffect = tm.createClass({
         }
 
         for (var i = 0; i < 5; i++) {
-            gls2.Particle(80, 1, 0.9)
+            var p = gls2.Particle(80, 1, 0.9)
                 .setPosition(
                     Math.cos(this.angle-Math.PI*0.5)*40+this.target.x + gls2.math.rand(-2, 2),
                     Math.sin(this.angle-Math.PI*0.5)*40+this.target.y + gls2.math.rand(-2, 2)
                 )
+                .on("enterframe", function() {
+                    this.x += this.dx;
+                    this.y += this.dy;
+                })
                 .addChildTo(this.target.parent);
+            p.dx = Math.cos(this.angle) * 3;
+            p.dy = Math.sin(this.angle) * 3;
         }
 
         this.angle += 0.2;

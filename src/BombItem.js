@@ -4,8 +4,19 @@
  */
 (function() {
 
+<<<<<<< HEAD
 gls2.BombItem = tm.createClass({
     superClass: tm.app.Sprite,
+=======
+/**
+ * @class
+ * @extends {tm.display.Sprite}
+ */
+gls2.BombItem = tm.createClass(
+/** @lends {gls2.BombItem.prototype} */
+{
+    superClass: tm.display.Sprite,
+>>>>>>> gh-pages
 
     vx: 0,
     vy: 0,
@@ -39,8 +50,13 @@ gls2.BombItem = tm.createClass({
         }
 
         this.age += 1;
+<<<<<<< HEAD
     },
     
+=======
+    }
+
+>>>>>>> gh-pages
 });
     
 })();

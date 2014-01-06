@@ -260,8 +260,7 @@ gls2.EnemyUnit = {
 "komachi2-1": [{ hard:$e.Komachi, soft:$s.LargeFighter2, x:SC_W*0.7, y:SC_H*-0.3 }],
 
 
-//３面で使用
-/** テレポーター出現パターン */
+/** 強襲戦闘艇「ヒノ」 */
 "akane-1": [
     { hard:$e.akane, soft:$s.akane, x:100*0+90, y:60 },
     { hard:$e.akane, soft:$s.akane, x:100*1+90, y:60 },
@@ -273,11 +272,14 @@ gls2.EnemyUnit = {
     { hard:$e.akane, soft:$s.akane, x:100*3+40, y:130 },
 ],
 
-/** 戦艦出現パターン */
-"seikuu-1": [
+/** 戦艦「ホシゾラ」出現パターン */
+"hoshizora_y-1": [
     { hard:$e.miyuki_y, soft:$s.miyuki_y, x:-128, y:60 },
 ],
-"seikuu-2": [
+"hoshizora_y-2": [
+    { hard:$e.miyuki_y, soft:$s.miyuki_y, x:SC_W+128, y:60 },
+],
+"hoshizora_t-1": [
     { hard:$e.miyuki_t, soft:$s.miyuki_t, x:SC_W+128, y:60 },
 ],
 

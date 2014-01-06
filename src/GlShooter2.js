@@ -63,10 +63,16 @@ gls2.GlShooter2 = tm.createClass(
             "aura": "assets/aura.png",
             "explode0": "assets/explode0.png",
             "explode1": "assets/explode1.png",
-            "explodeL": "assets/explode2.png",
+            "explode2": "assets/explode2.png",
             "shotbullet": "assets/shotbullet.png",
             "bomb": "assets/bomb.png",
             "bombIcon": "assets/bomb_icon.png",
+            "result_bg": "assets/result_bg.png",
+
+            // use stage3
+            "hino": "assets/enemy_hino.png",
+            "seikuu_y": "assets/enemy_seikuu_yoko.png",
+            "seikuu_t": "assets/enemy_seikuu_tate.png",
 
             // use stage3
             "hino": "assets/enemy_hino.png",
@@ -74,8 +80,11 @@ gls2.GlShooter2 = tm.createClass(
             "seikuu_t": "assets/enemy_seikuu_tate.png",
 
             // bgm
+            "bgmShipSelect": "assets2/nc44200.mp3",
             "bgm1": "assets2/nc54073.mp3",
             "bgm2": "assets2/nc28687.mp3",
+            "bgm4": "assets2/nc80728.mp3",
+            "bgm5": "assets2/nc60627.mp3",
             "bgmBoss": "assets2/nc29206.mp3",
             "bgmResult": "assets2/nc54077.mp3",
 
@@ -107,8 +116,11 @@ gls2.GlShooter2 = tm.createClass(
         };
 
         if (DEBUG) {
+            delete assets["bgmShipSelect"];
             delete assets["bgm1"];
             delete assets["bgm2"];
+            delete assets["bgm4"];
+            delete assets["bgm5"];
             delete assets["bgmBoss"];
             delete assets["bgmResult"];
         }

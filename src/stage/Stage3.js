@@ -23,8 +23,13 @@ gls2.Stage3 = tm.createClass(
             this.gameScene.ground.tweener.clear().to({speed:1}, 4000, "easeInOutQuad");
         });
 
+<<<<<<< HEAD
         this.seq.add(100, "akane-1");
         this.seq.add(100, "seikuu-1");
+=======
+        this.seq.add(100, "akane-1");
+        this.seq.add(100, "seikuu-1");
+>>>>>>> gh-pages
 
         this.seq.add(200, "tankRD-center");
         this.seq.add(200, "tankRD-left");

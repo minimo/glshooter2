@@ -4,866 +4,874 @@
  License
  http://daishihmr.mit-license.org/
 */
-function h(a) {
-  throw a;
+function h(b) {
+  throw b;
 }
-var i = void 0, j = !0, k = null, m = !1;
+var i = void 0, j = !0, k = null, l = !1;
 function n() {
   return function() {
   }
 }
-var q = {Fg:this};
+var q = {bh:this};
 (function() {
-  function a(b, a) {
-    for(var d = 0, g = b.length;d < g;d++) {
-      if(b[d].label == a) {
-        return b[d]
+  function b(a, b) {
+    for(var f = 0, g = a.length;f < g;f++) {
+      if(a[f].label == b) {
+        return a[f]
       }
     }
   }
-  q.la = function(b) {
+  q.ha = function(a) {
     this.type = "none";
     this.root = this;
-    this.Ga = [];
-    this.Ad = [];
-    this.Hd = [];
-    if(b !== i) {
-      for(var a in b) {
-        b.hasOwnProperty(a) && (b[a].label = a, b[a] instanceof q.bb ? this.Ga.push(b[a]) : b[a] instanceof q.Pb ? this.Ad.push(b[a]) : b[a] instanceof q.uc && this.Hd.push(b[a]))
+    this.Ka = [];
+    this.Ld = [];
+    this.Ud = [];
+    if(a !== i) {
+      for(var b in a) {
+        a.hasOwnProperty(b) && (a[b].label = b, a[b] instanceof q.hb ? this.Ka.push(a[b]) : a[b] instanceof q.Zb ? this.Ld.push(a[b]) : a[b] instanceof q.Hc && this.Ud.push(a[b]))
       }
-      b = 0;
-      for(a = this.Ga.length;b < a;b++) {
-        this.Ga[b].hb(this)
+      a = 0;
+      for(b = this.Ka.length;a < b;a++) {
+        this.Ka[a].ob(this)
       }
-      b = 0;
-      for(a = this.Ad.length;b < a;b++) {
-        this.Ad[b].hb(this)
+      a = 0;
+      for(b = this.Ld.length;a < b;a++) {
+        this.Ld[a].ob(this)
       }
-      b = 0;
-      for(a = this.Hd.length;b < a;b++) {
-        this.Hd[b].hb(this)
+      a = 0;
+      for(b = this.Ud.length;a < b;a++) {
+        this.Ud[a].ob(this)
       }
     }
   };
-  q.la.prototype.Pf = function(b) {
-    return a(this.Ga, b)
+  q.ha.prototype.jg = function(a) {
+    return b(this.Ka, a)
   };
-  q.la.prototype.bi = function() {
-    for(var b = [], a = 0, d = this.Ga.length;a < d;a++) {
-      var g = this.Ga[a];
-      g.label && 0 === g.label.indexOf("top") && (b[b.length] = g.label)
+  q.ha.prototype.Bi = function() {
+    for(var a = [], b = 0, f = this.Ka.length;b < f;b++) {
+      var g = this.Ka[b];
+      g.label && 0 === g.label.indexOf("top") && (a[a.length] = g.label)
     }
-    return b
-  };
-  q.la.prototype.Th = function(b) {
-    var a;
-    if(a = this.Pf(b)) {
-      return a
-    }
-    h(Error("action labeled '" + b + "' is undefined."))
-  };
-  q.la.prototype.Uh = function(b) {
-    return a(this.Ad, b)
-  };
-  q.la.prototype.Vh = function(b) {
-    var a;
-    if(a = this.Uh(b)) {
-      return a
-    }
-    h(Error("bullet labeled '" + b + "' is undefined."))
-  };
-  q.la.prototype.Wh = function(b) {
-    return a(this.Hd, b)
-  };
-  q.la.prototype.Xh = function(b) {
-    var a;
-    if(a = this.Wh(b)) {
-      return a
-    }
-    h(Error("fire labeled '" + b + "' is undefined."))
-  };
-  q.Pb = function() {
-    this.root = this.label = k;
-    this.direction = new q.Hb(0);
-    this.speed = new q.Ib(1);
-    this.Ga = [];
-    this.Pa = {};
-    this.ma = {}
-  };
-  q.Pb.prototype.clone = function(b) {
-    var a = new q.Pb;
-    a.label = this.label;
-    a.root = this.root;
-    a.Ga = this.Ga;
-    a.direction = new q.Hb(b.La(this.direction.value));
-    a.direction.type = this.direction.type;
-    a.speed = new q.Ib(b.La(this.speed.value));
-    a.speed.type = this.speed.type;
-    a.Pa = this.Pa;
-    a.ma = b.ma;
     return a
   };
-  q.Pb.prototype.hb = function(b) {
-    this.root = b;
-    for(var a = 0, d = this.Ga.length;a < d;a++) {
-      this.Ga[a].hb(b)
+  q.ha.prototype.ri = function(a) {
+    var b;
+    if(b = this.jg(a)) {
+      return b
     }
+    h(Error("action labeled '" + a + "' is undefined."))
   };
-  q.jd = function(b) {
-    this.root = k;
-    this.label = b;
-    this.Da = []
+  q.ha.prototype.si = function(a) {
+    return b(this.Ld, a)
   };
-  q.jd.prototype.clone = function(b) {
-    var a = b.ma;
-    b.ma = b.pe(this.Da);
-    var d = this.root.Vh(this.label).clone(b);
-    b.ma = a;
-    return d
+  q.ha.prototype.ti = function(a) {
+    var b;
+    if(b = this.si(a)) {
+      return b
+    }
+    h(Error("bullet labeled '" + a + "' is undefined."))
   };
-  q.jd.prototype.hb = function(b) {
-    this.root = b
+  q.ha.prototype.vi = function(a) {
+    return b(this.Ud, a)
   };
-  q.Fa = function() {
-    this.Wa = ""
+  q.ha.prototype.wi = function(a) {
+    var b;
+    if(b = this.vi(a)) {
+      return b
+    }
+    h(Error("fire labeled '" + a + "' is undefined."))
   };
-  q.Fa.prototype.hb = function(b) {
-    this.root = b
-  };
-  q.bb = function() {
-    this.Wa = "action";
+  q.Zb = function() {
     this.root = this.label = k;
-    this.ob = [];
-    this.Da = []
+    this.direction = new q.Nb(0);
+    this.speed = new q.Pb(1);
+    this.Ka = [];
+    this.Ba = {};
+    this.pa = {}
   };
-  q.bb.prototype = new q.Fa;
-  q.bb.prototype.hb = function(b) {
-    this.root = b;
-    for(var a = 0, d = this.ob.length;a < d;a++) {
-      this.ob[a].hb(b)
-    }
-  };
-  q.bb.prototype.clone = function() {
-    var b = new q.bb;
+  q.Zb.prototype.clone = function(a) {
+    var b = new q.Zb;
     b.label = this.label;
     b.root = this.root;
-    b.ob = this.ob;
+    b.Ka = this.Ka;
+    b.direction = new q.Nb(a.Fa(this.direction.value));
+    b.direction.type = this.direction.type;
+    b.speed = new q.Pb(a.Fa(this.speed.value));
+    b.speed.type = this.speed.type;
+    b.Ba = this.Ba;
+    b.pa = a.pa;
     return b
   };
-  q.tc = function(b) {
-    this.Wa = "actionRef";
-    this.label = b;
+  q.Zb.prototype.ob = function(a) {
+    this.root = a;
+    for(var b = 0, f = this.Ka.length;b < f;b++) {
+      this.Ka[b].ob(a)
+    }
+  };
+  q.vd = function(a) {
     this.root = k;
-    this.Da = []
+    this.label = a;
+    this.Ha = []
   };
-  q.tc.prototype = new q.Fa;
-  q.tc.prototype.clone = function() {
-    var b = new q.bb;
-    b.root = this.root;
-    b.ob.push(this);
-    return b
+  q.vd.prototype.clone = function(a) {
+    var b = a.pa;
+    a.pa = a.He(this.Ha);
+    var f = this.root.ti(this.label).clone(a);
+    a.pa = b;
+    return f
   };
-  q.uc = function() {
-    this.Wa = "fire";
+  q.vd.prototype.ob = function(a) {
+    this.root = a
+  };
+  q.Ja = function() {
+    this.ab = ""
+  };
+  q.Ja.prototype.ob = function(a) {
+    this.root = a
+  };
+  q.hb = function() {
+    this.ab = "action";
+    this.root = this.label = k;
+    this.tb = [];
+    this.Ha = []
+  };
+  q.hb.prototype = new q.Ja;
+  q.hb.prototype.ob = function(a) {
+    this.root = a;
+    for(var b = 0, f = this.tb.length;b < f;b++) {
+      this.tb[b].ob(a)
+    }
+  };
+  q.hb.prototype.clone = function() {
+    var a = new q.hb;
+    a.label = this.label;
+    a.root = this.root;
+    a.tb = this.tb;
+    return a
+  };
+  q.Gc = function(a) {
+    this.ab = "actionRef";
+    this.label = a;
+    this.root = k;
+    this.Ha = []
+  };
+  q.Gc.prototype = new q.Ja;
+  q.Gc.prototype.clone = function() {
+    var a = new q.hb;
+    a.root = this.root;
+    a.tb.push(this);
+    return a
+  };
+  q.Hc = function() {
+    this.ab = "fire";
     this.wa = this.speed = this.direction = this.root = this.label = k;
-    this.Pa = new q.ae
+    this.Ba = new q.zd
   };
-  q.uc.prototype = new q.Fa;
-  q.uc.prototype.hb = function(b) {
-    this.root = b;
-    this.wa && this.wa.hb(b)
+  q.Hc.prototype = new q.Ja;
+  q.Hc.prototype.ob = function(a) {
+    this.root = a;
+    this.wa && this.wa.ob(a)
   };
-  q.be = function(b) {
-    this.Wa = "fireRef";
-    this.label = b;
-    this.Da = []
+  q.qe = function(a) {
+    this.ab = "fireRef";
+    this.label = a;
+    this.Ha = []
   };
-  q.be.prototype = new q.Fa;
-  q.ld = function() {
-    this.Wa = "changeDirection";
-    this.direction = new q.Hb;
-    this.Sa = 0
+  q.qe.prototype = new q.Ja;
+  q.xd = function() {
+    this.ab = "changeDirection";
+    this.direction = new q.Nb;
+    this.Wa = 0
   };
-  q.ld.prototype = new q.Fa;
-  q.md = function() {
-    this.Wa = "changeSpeed";
-    this.speed = new q.Ib;
-    this.Sa = 0
+  q.xd.prototype = new q.Ja;
+  q.yd = function() {
+    this.ab = "changeSpeed";
+    this.speed = new q.Pb;
+    this.Wa = 0
   };
-  q.md.prototype = new q.Fa;
-  q.hd = function() {
-    this.Wa = "accel";
-    this.Db = new q.ee;
-    this.Gb = new q.ne;
-    this.Sa = 0
+  q.yd.prototype = new q.Ja;
+  q.ud = function() {
+    this.ab = "accel";
+    this.Ib = new q.te;
+    this.Lb = new q.Fe;
+    this.Wa = 0
   };
-  q.hd.prototype = new q.Fa;
-  q.sd = function(b) {
-    this.Wa = "wait";
-    this.value = b || 0
+  q.ud.prototype = new q.Ja;
+  q.Ed = function(a) {
+    this.ab = "wait";
+    this.value = a || 0
   };
-  q.sd.prototype = new q.Fa;
-  q.me = function() {
-    this.Wa = "vanish"
+  q.Ed.prototype = new q.Ja;
+  q.Ee = function() {
+    this.ab = "vanish"
   };
-  q.me.prototype = new q.Fa;
-  q.qd = function() {
-    this.Wa = "repeat";
-    this.og = 0;
+  q.Ee.prototype = new q.Ja;
+  q.Cd = function() {
+    this.ab = "repeat";
+    this.Jg = 0;
     this.action = k;
-    this.Da = []
+    this.Ha = []
   };
-  q.qd.prototype = new q.Fa;
-  q.qd.prototype.hb = function(b) {
-    this.root = b;
-    this.action && this.action.hb(b)
+  q.Cd.prototype = new q.Ja;
+  q.Cd.prototype.ob = function(a) {
+    this.root = a;
+    this.action && this.action.ob(a)
   };
-  q.Zd = function(b, a) {
-    this.Wa = "bind";
-    this.Ji = b;
-    this.Rh = a
+  q.oe = function(a, b) {
+    this.ab = "bind";
+    this.ij = a;
+    this.pi = b
   };
-  q.Zd.prototype = new q.Fa;
-  q.ke = function(b, a) {
-    this.Wa = "notify";
-    this.Nh = b;
-    this.Da = a || k
+  q.oe.prototype = new q.Ja;
+  q.ze = function(a, b) {
+    this.ab = "notify";
+    this.li = a;
+    this.Ha = b || k
   };
-  q.ke.prototype = new q.Fa;
-  q.Cg = new q.Fa;
-  q.Hb = function(b) {
+  q.ze.prototype = new q.Ja;
+  q.Zg = new q.Ja;
+  q.Nb = function(a) {
     this.type = "aim";
-    this.value = b || 0
+    this.value = a || 0
   };
-  q.Ib = function(b) {
+  q.Pb = function(a) {
     this.type = "absolute";
-    this.value = b === i ? 1 : b
+    this.value = a === i ? 1 : a
   };
-  q.ee = function(b) {
+  q.te = function(a) {
     this.type = "absolute";
-    this.value = b || 0
+    this.value = a || 0
   };
-  q.ne = function(b) {
+  q.Fe = function(a) {
     this.type = "absolute";
-    this.value = b || 0
+    this.value = a || 0
   };
-  q.ae = function(b) {
-    b = b || {};
-    this.offsetX = b.offsetX || 0;
-    this.offsetY = b.offsetY || 0;
-    this.Ha = j;
-    b.Ha !== i && (this.Ha = !!b.Ha)
+  q.zd = function(a) {
+    a = a || {};
+    this.offsetX = a.offsetX || 0;
+    this.offsetY = a.offsetY || 0;
+    this.va = j;
+    a.va !== i && (this.va = !!a.va)
   };
-  q.rf = function(b) {
-    this.value = b || 0
+  q.Kf = function(a) {
+    this.value = a || 0
   };
-  q.sf = function(b) {
-    this.value = b || 0
+  q.Lf = function(a) {
+    this.value = a || 0
   };
-  q.hf = function(b) {
-    this.value = !!b
+  q.yf = function(a) {
+    this.value = !!a
   }
 })();
-q.va = function(a) {
-  this.xf = a;
-  this.td = [];
-  this.Sb = -1;
-  this.Ka = k;
-  this.ma = {}
+q.ya = function(b) {
+  this.Qf = b;
+  this.Fd = [];
+  this.cc = -1;
+  this.Oa = k;
+  this.pa = {}
 };
-q.va.prototype.next = function() {
-  this.Sb += 1;
-  if(this.Ka !== k) {
-    var a = this.Ka.ob[this.Sb];
-    if(a !== i) {
-      if(a instanceof q.bb) {
-        return this.Lc(), this.Ka = a, this.ma = this.oe(), this.next()
+q.ya.prototype.next = function() {
+  this.cc += 1;
+  if(this.Oa !== k) {
+    var b = this.Oa.tb[this.cc];
+    if(b !== i) {
+      if(b instanceof q.hb) {
+        return this.$c(), this.Oa = b, this.pa = this.Ge(), this.next()
       }
-      if(a instanceof q.tc) {
-        return this.Lc(), this.Ka = this.xf.Th(a.label), this.ma = this.pe(a.Da), this.next()
+      if(b instanceof q.Gc) {
+        return this.$c(), this.Oa = this.Qf.ri(b.label), this.pa = this.He(b.Ha), this.next()
       }
-      if(a instanceof q.qd) {
-        return this.ma.Ec = 0, this.ma.ag = this.La(a.og) | 0, this.Lc(), this.Ka = a.action.clone(), this.ma = this.oe(), this.next()
+      if(b instanceof q.Cd) {
+        return this.pa.Sc = 0, this.pa.wg = this.Fa(b.Jg) | 0, this.$c(), this.Oa = b.action.clone(), this.pa = this.Ge(), this.next()
       }
-      if(a instanceof q.uc) {
-        var b = new q.uc;
-        b.wa = a.wa.clone(this);
-        a.direction !== k && (b.direction = new q.Hb(this.La(a.direction.value)), b.direction.type = a.direction.type);
-        a.speed !== k && (b.speed = new q.Ib(this.La(a.speed.value)), b.speed.type = a.speed.type);
-        b.Pa = a.Pa;
-        return b
+      if(b instanceof q.Hc) {
+        var a = new q.Hc;
+        a.wa = b.wa.clone(this);
+        b.direction !== k && (a.direction = new q.Nb(this.Fa(b.direction.value)), a.direction.type = b.direction.type);
+        b.speed !== k && (a.speed = new q.Pb(this.Fa(b.speed.value)), a.speed.type = b.speed.type);
+        a.Ba = new q.zd;
+        a.Ba.offsetX = this.Fa(b.Ba.offsetX);
+        a.Ba.offsetY = this.Fa(b.Ba.offsetY);
+        a.Ba.va = b.Ba.va;
+        return a
       }
-      return a instanceof q.be ? (this.Lc(), this.Ka = new q.bb, this.Ka.ob = [this.xf.Xh(a.label)], this.ma = this.pe(a.Da), this.next()) : a instanceof q.ld ? (b = new q.ld, b.direction.type = a.direction.type, b.direction.value = this.La(a.direction.value), b.Sa = this.La(a.Sa), b) : a instanceof q.md ? (b = new q.md, b.speed.type = a.speed.type, b.speed.value = this.La(a.speed.value), b.Sa = this.La(a.Sa), b) : a instanceof q.hd ? (b = new q.hd, b.Db.type = a.Db.type, b.Db.value = this.La(a.Db.value), 
-      b.Gb.type = a.Gb.type, b.Gb.value = this.La(a.Gb.value), b.Sa = this.La(a.Sa), b) : a instanceof q.sd ? new q.sd(this.La(a.value)) : a instanceof q.me ? a : a instanceof q.Zd ? (this.ma["$" + a.Ji] = this.La(a.Rh), q.Cg) : a instanceof q.ke ? a : k
+      return b instanceof q.qe ? (this.$c(), this.Oa = new q.hb, this.Oa.tb = [this.Qf.wi(b.label)], this.pa = this.He(b.Ha), this.next()) : b instanceof q.xd ? (a = new q.xd, a.direction.type = b.direction.type, a.direction.value = this.Fa(b.direction.value), a.Wa = this.Fa(b.Wa), a) : b instanceof q.yd ? (a = new q.yd, a.speed.type = b.speed.type, a.speed.value = this.Fa(b.speed.value), a.Wa = this.Fa(b.Wa), a) : b instanceof q.ud ? (a = new q.ud, a.Ib.type = b.Ib.type, a.Ib.value = this.Fa(b.Ib.value), 
+      a.Lb.type = b.Lb.type, a.Lb.value = this.Fa(b.Lb.value), a.Wa = this.Fa(b.Wa), a) : b instanceof q.Ed ? new q.Ed(this.Fa(b.value)) : b instanceof q.Ee ? b : b instanceof q.oe ? (this.pa["$" + b.ij] = this.Fa(b.pi), q.Zg) : b instanceof q.ze ? b : k
     }
-    this.Ah();
-    if(this.Ka === k) {
+    this.$h();
+    if(this.Oa === k) {
       return k
     }
-    if((a = this.Ka.ob[this.Sb]) && "repeat" == a.Wa) {
-      this.ma.Ec++, this.ma.Ec < this.ma.ag && (this.Lc(), this.Ka = a.action.clone(), this.ma = this.oe())
+    if((b = this.Oa.tb[this.cc]) && "repeat" == b.ab) {
+      this.pa.Sc++, this.pa.Sc < this.pa.wg && (this.$c(), this.Oa = b.action.clone(), this.pa = this.Ge())
     }
     return this.next()
   }
   return k
 };
-q.va.prototype.Lc = function() {
-  this.td.push({action:this.Ka, cursor:this.Sb, scope:this.ma});
-  this.Sb = -1
+q.ya.prototype.$c = function() {
+  this.Fd.push({action:this.Oa, cursor:this.cc, scope:this.pa});
+  this.cc = -1
 };
-q.va.prototype.Ah = function() {
-  var a = this.td.pop();
-  a ? (this.Sb = a.cursor, this.Ka = a.action, this.ma = a.scope) : (this.Sb = -1, this.Ka = k, this.ma = {})
+q.ya.prototype.$h = function() {
+  var b = this.Fd.pop();
+  b ? (this.cc = b.cursor, this.Oa = b.action, this.pa = b.scope) : (this.cc = -1, this.Oa = k, this.pa = {})
 };
-q.va.prototype.La = function(a) {
-  var b;
-  if("number" === typeof a) {
-    return a
+q.ya.prototype.Fa = function(b) {
+  var a;
+  if("boolean" === typeof b || "number" === typeof b) {
+    return b
   }
-  if(isNaN(b = Number(a))) {
-    if((b = this.ma[a]) || (b = q.va.Oa[a])) {
-      return b
+  if(isNaN(a = Number(b))) {
+    if((a = this.pa[b]) || (a = q.ya.Ra[b])) {
+      return a
     }
-    if("$rand" === a) {
+    if("$rand" === b) {
       return Math.random()
     }
   }else {
-    return b
+    return a
   }
-  b = {};
-  for(var c in q.va.Oa) {
-    q.va.Oa.hasOwnProperty(c) && (b[c] = q.va.Oa[c])
+  a = {};
+  for(var d in q.ya.Ra) {
+    q.ya.Ra.hasOwnProperty(d) && (a[d] = q.ya.Ra[d])
   }
-  for(c in this.ma) {
-    this.ma.hasOwnProperty(c) && (b[c] = this.ma[c])
+  for(d in this.pa) {
+    this.pa.hasOwnProperty(d) && (a[d] = this.pa[d])
   }
-  b.$rand = Math.random();
-  (c = this.td[this.td.length - 1]) && (b.$loop = {index:c.scope.Ec, count:c.scope.Ec + 1, first:0 === c.scope.Ec, last:c.scope.Ec + 1 >= c.scope.ag});
-  return(new Function("return " + a.split("$").join("this.$"))).apply(b)
+  a.$rand = Math.random();
+  (d = this.Fd[this.Fd.length - 1]) && (a.$loop = {index:d.scope.Sc, count:d.scope.Sc + 1, first:0 === d.scope.Sc, last:d.scope.Sc + 1 >= d.scope.wg});
+  return(new Function("return " + b.split("$").join("this.$"))).apply(a)
 };
-q.va.prototype.pe = function(a) {
-  var b = {};
-  if(a) {
-    for(var c = 0, d = a.length;c < d;c++) {
-      b["$" + (c + 1)] = this.La(a[c])
+q.ya.prototype.He = function(b) {
+  var a = {};
+  if(b) {
+    for(var d = 0, f = b.length;d < f;d++) {
+      a["$" + (d + 1)] = this.Fa(b[d])
     }
   }else {
-    for(c in this.ma) {
-      this.ma.hasOwnProperty(c) && (b[c] = this.ma[c])
+    for(d in this.pa) {
+      this.pa.hasOwnProperty(d) && (a[d] = this.pa[d])
     }
   }
-  return b
-};
-q.va.prototype.oe = function() {
-  var a = {}, b;
-  for(b in this.ma) {
-    this.ma.hasOwnProperty(b) && (a[b] = this.ma[b])
-  }
   return a
 };
-q.la.prototype.Ce = function(a) {
-  var b = new q.va(this);
-  if(a = this.Pf(a)) {
-    b.Ka = a
+q.ya.prototype.Ge = function() {
+  var b = {}, a;
+  for(a in this.pa) {
+    this.pa.hasOwnProperty(a) && (b[a] = this.pa[a])
   }
   return b
 };
-q.Pb.prototype.Ce = function() {
-  var a = new q.va(this.root), b = new q.bb;
-  b.root = this.root;
-  b.ob = this.Ga;
-  a.Ka = b;
-  a.ma = this.ma;
+q.ha.prototype.Te = function(b) {
+  var a = new q.ya(this);
+  if(b = this.jg(b)) {
+    a.Oa = b
+  }
   return a
 };
-q.va.Oa = {};
-q.qa = function(a) {
-  a = a || "";
-  for(var b in q.qa) {
-    q.qa.hasOwnProperty(b) && (q.Fg[a + b] = q.qa[b])
+q.Zb.prototype.Te = function() {
+  var b = new q.ya(this.root), a = new q.hb;
+  a.root = this.root;
+  a.tb = this.Ka;
+  b.Oa = a;
+  b.pa = this.pa;
+  return b
+};
+q.ya.Ra = {};
+q.ta = function(b) {
+  b = b || "";
+  for(var a in q.ta) {
+    q.ta.hasOwnProperty(a) && (q.bh[b + a] = q.ta[a])
   }
 };
-q.qa.action = function(a) {
+q.ta.action = function(b) {
   if(0 < arguments.length) {
-    for(var b = 0, c = arguments.length;b < c;b++) {
-      arguments[b] instanceof Function && (arguments[b] = arguments[b]())
+    for(var a = 0, d = arguments.length;a < d;a++) {
+      arguments[a] instanceof Function && (arguments[a] = arguments[a]())
     }
   }
-  if(a instanceof Array) {
-    b = 0;
-    for(c = a.length;b < c;b++) {
-      a[b] instanceof Function && (a[b] = a[b]())
-    }
-  }
-  var d = new q.bb;
-  if(a instanceof Array) {
-    a.some(function(b) {
-      return!(b instanceof q.Fa)
-    }) && h(Error("argument type error.")), d.ob = a
-  }else {
-    b = 0;
-    for(c = arguments.length;b < c;b++) {
-      arguments[b] instanceof q.Fa ? d.ob[b] = arguments[b] : h(Error("argument type error."))
-    }
-  }
-  return d
-};
-q.qa.se = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
-  }
-  a === i && h(Error("label is required."));
-  d = new q.tc(a);
   if(b instanceof Array) {
-    d.Da = b
-  }else {
-    for(c = 1;c < arguments.length;c++) {
-      d.Da.push(arguments[c])
+    a = 0;
+    for(d = b.length;a < d;a++) {
+      b[a] instanceof Function && (b[a] = b[a]())
     }
   }
-  return d
-};
-q.qa.wa = function(a, b, c, d) {
-  for(var g = 0, l = arguments.length;g < l;g++) {
-    arguments[g] instanceof Function && (arguments[g] = arguments[g]())
-  }
-  l = new q.Pb;
-  for(g = 0;g < arguments.length;g++) {
-    arguments[g] instanceof q.Hb ? l.direction = arguments[g] : arguments[g] instanceof q.Ib ? l.speed = arguments[g] : arguments[g] instanceof q.bb ? l.Ga.push(arguments[g]) : arguments[g] instanceof q.tc ? l.Ga.push(arguments[g]) : arguments[g] instanceof Array ? l.Ga.push(q.qa.action(arguments[g])) : arguments[g] instanceof Object ? l.Pa = arguments[g] : "string" === typeof arguments[g] && (l.label = arguments[g])
-  }
-  return l
-};
-q.qa.Pi = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
-  }
-  a === i && h(Error("label is required."));
-  d = new q.jd(a);
+  var f = new q.hb;
   if(b instanceof Array) {
-    d.Da = b
+    b.some(function(a) {
+      return!(a instanceof q.Ja)
+    }) && h(Error("argument type error.")), f.tb = b
   }else {
-    for(c = 1;c < arguments.length;c++) {
-      d.Da.push(arguments[c])
+    a = 0;
+    for(d = arguments.length;a < d;a++) {
+      arguments[a] instanceof q.Ja ? f.tb[a] = arguments[a] : h(Error("argument type error."))
     }
   }
-  return d
+  return f
 };
-q.qa.fa = function(a, b, c, d) {
-  for(var g = 0, l = arguments.length;g < l;g++) {
-    arguments[g] instanceof Function && (arguments[g] = arguments[g]())
-  }
-  l = new q.uc;
-  for(g = 0;g < arguments.length;g++) {
-    arguments[g] instanceof q.Hb ? l.direction = arguments[g] : arguments[g] instanceof q.Ib ? l.speed = arguments[g] : arguments[g] instanceof q.Pb ? l.wa = arguments[g] : arguments[g] instanceof q.jd ? l.wa = arguments[g] : arguments[g] instanceof q.ae ? l.Pa = arguments[g] : arguments[g] instanceof q.rf ? l.Pa.offsetX = arguments[g].value : arguments[g] instanceof q.sf ? l.Pa.offsetY = arguments[g].value : arguments[g] instanceof q.hf && (l.Pa.Ha = arguments[g].value)
-  }
-  l.wa === i && h(Error("bullet (or bulletRef) is required."));
-  return l
-};
-q.qa.Ti = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
-  }
-  a === i && h(Error("label is required."));
-  d = new q.be(a);
-  if(b instanceof Array) {
-    d.Da = b
-  }else {
-    for(c = 1;c < arguments.length;c++) {
-      d.Da.push(arguments[c])
-    }
-  }
-  return d
-};
-q.qa.Qi = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
-  }
-  a === i && h(Error("direction is required."));
-  b === i && h(Error("term is required."));
-  c = new q.ld;
-  c.direction = a instanceof q.Hb ? a : new q.Hb(a);
-  c.Sa = b;
-  return c
-};
-q.qa.Gh = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
-  }
-  a === i && h(Error("speed is required."));
-  b === i && h(Error("term is required."));
-  c = new q.md;
-  c.speed = a instanceof q.Ib ? a : new q.Ib(a);
-  c.Sa = b;
-  return c
-};
-q.qa.Oi = function(a, b, c) {
-  for(var d = 0, g = arguments.length;d < g;d++) {
+q.ta.Pa = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
     arguments[d] instanceof Function && (arguments[d] = arguments[d]())
   }
-  g = new q.hd;
-  for(d = 0;d < arguments.length;d++) {
-    arguments[d] instanceof q.ee ? g.Db = a : arguments[d] instanceof q.ne ? g.Gb = b : g.Sa = arguments[d]
-  }
-  g.Db === i && g.Gb === i && h(Error("horizontal or vertical is required."));
-  g.Sa === i && h(Error("term is required."));
-  return g
-};
-q.qa.wait = function(a) {
-  for(var b = 0, c = arguments.length;b < c;b++) {
-    arguments[b] instanceof Function && (arguments[b] = arguments[b]())
-  }
-  a === i && h(Error("value is required."));
-  return new q.sd(a)
-};
-q.qa.ac = function() {
-  return new q.me
-};
-q.qa.repeat = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
-  }
-  a === i && h(Error("times is required."));
-  b === i && h(Error("action is required."));
-  d = new q.qd;
-  d.og = a;
-  if(b instanceof q.bb || b instanceof q.tc) {
-    d.action = b
+  b === i && h(Error("label is required."));
+  f = new q.Gc(b);
+  if(a instanceof Array) {
+    f.Ha = a
   }else {
-    if(b instanceof Array) {
-      d.action = q.qa.action(b)
-    }else {
-      for(var g = [], c = 1;c < arguments.length;c++) {
-        g.push(arguments[c])
-      }
-      d.action = q.qa.action(g)
+    for(d = 1;d < arguments.length;d++) {
+      f.Ha.push(arguments[d])
     }
   }
+  return f
+};
+q.ta.wa = function(b, a, d, f) {
+  for(var g = 0, m = arguments.length;g < m;g++) {
+    arguments[g] instanceof Function && (arguments[g] = arguments[g]())
+  }
+  m = new q.Zb;
+  for(g = 0;g < arguments.length;g++) {
+    arguments[g] instanceof q.Nb ? m.direction = arguments[g] : arguments[g] instanceof q.Pb ? m.speed = arguments[g] : arguments[g] instanceof q.hb ? m.Ka.push(arguments[g]) : arguments[g] instanceof q.Gc ? m.Ka.push(arguments[g]) : arguments[g] instanceof Array ? m.Ka.push(q.ta.action(arguments[g])) : arguments[g] instanceof Object ? m.Ba = arguments[g] : "string" === typeof arguments[g] && (m.label = arguments[g])
+  }
+  return m
+};
+q.ta.oj = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("label is required."));
+  f = new q.vd(b);
+  if(a instanceof Array) {
+    f.Ha = a
+  }else {
+    for(d = 1;d < arguments.length;d++) {
+      f.Ha.push(arguments[d])
+    }
+  }
+  return f
+};
+q.ta.fire = function(b, a, d, f) {
+  for(var g = 0, m = arguments.length;g < m;g++) {
+    arguments[g] instanceof Function && (arguments[g] = arguments[g]())
+  }
+  m = new q.Hc;
+  for(g = 0;g < arguments.length;g++) {
+    arguments[g] instanceof q.Nb ? m.direction = arguments[g] : arguments[g] instanceof q.Pb ? m.speed = arguments[g] : arguments[g] instanceof q.Zb ? m.wa = arguments[g] : arguments[g] instanceof q.vd ? m.wa = arguments[g] : arguments[g] instanceof q.zd ? m.Ba = arguments[g] : arguments[g] instanceof q.Kf ? m.Ba.offsetX = arguments[g].value : arguments[g] instanceof q.Lf ? m.Ba.offsetY = arguments[g].value : arguments[g] instanceof q.yf && (m.Ba.va = arguments[g].value)
+  }
+  m.wa === i && h(Error("bullet (or bulletRef) is required."));
+  return m
+};
+q.ta.sj = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("label is required."));
+  f = new q.qe(b);
+  if(a instanceof Array) {
+    f.Ha = a
+  }else {
+    for(d = 1;d < arguments.length;d++) {
+      f.Ha.push(arguments[d])
+    }
+  }
+  return f
+};
+q.ta.pj = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("direction is required."));
+  a === i && h(Error("term is required."));
+  d = new q.xd;
+  d.direction = b instanceof q.Nb ? b : new q.Nb(b);
+  d.Wa = a;
   return d
 };
-q.qa.zd = function(a, b) {
-  return new q.Zd(a, b)
-};
-q.qa.bj = function(a, b) {
-  return new q.ke(a, b)
-};
-q.qa.direction = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
+q.ta.Md = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
   }
-  a === i && h(Error("value is required."));
-  c = new q.Hb(a);
-  b !== i && (c.type = b);
-  return c
+  b === i && h(Error("speed is required."));
+  a === i && h(Error("term is required."));
+  d = new q.yd;
+  d.speed = b instanceof q.Pb ? b : new q.Pb(b);
+  d.Wa = a;
+  return d
 };
-q.qa.speed = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
+q.ta.nj = function(b, a, d) {
+  for(var f = 0, g = arguments.length;f < g;f++) {
+    arguments[f] instanceof Function && (arguments[f] = arguments[f]())
   }
-  a === i && h(Error("value is required."));
-  c = new q.Ib(a);
-  b && (c.type = b);
-  return c
-};
-q.qa.Db = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
+  g = new q.ud;
+  for(f = 0;f < arguments.length;f++) {
+    arguments[f] instanceof q.te ? g.Ib = b : arguments[f] instanceof q.Fe ? g.Lb = a : g.Wa = arguments[f]
   }
-  a === i && h(Error("value is required."));
-  c = new q.ee(a);
-  b && (c.type = b);
-  return c
+  g.Ib === i && g.Lb === i && h(Error("horizontal or vertical is required."));
+  g.Wa === i && h(Error("term is required."));
+  return g
 };
-q.qa.Gb = function(a, b) {
-  for(var c = 0, d = arguments.length;c < d;c++) {
-    arguments[c] instanceof Function && (arguments[c] = arguments[c]())
+q.ta.wait = function(b) {
+  for(var a = 0, d = arguments.length;a < d;a++) {
+    arguments[a] instanceof Function && (arguments[a] = arguments[a]())
   }
-  a === i && h(Error("value is required."));
-  c = new q.ne(a);
-  b && (c.type = b);
-  return c
+  b === i && h(Error("value is required."));
+  return new q.Ed(b)
 };
-q.qa.Si = function(a) {
-  return new q.ae(a)
+q.ta.yb = function() {
+  return new q.Ee
 };
-q.qa.offsetX = function(a) {
-  return new q.rf(a)
+q.ta.repeat = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("times is required."));
+  a === i && h(Error("action is required."));
+  f = new q.Cd;
+  f.Jg = b;
+  if(a instanceof q.hb || a instanceof q.Gc) {
+    f.action = a
+  }else {
+    if(a instanceof Array) {
+      f.action = q.ta.action(a)
+    }else {
+      for(var g = [], d = 1;d < arguments.length;d++) {
+        g.push(arguments[d])
+      }
+      f.action = q.ta.action(g)
+    }
+  }
+  return f
 };
-q.qa.offsetY = function(a) {
-  return new q.sf(a)
+q.ta.kb = function(b, a) {
+  return new q.oe(b, a)
 };
-q.qa.Ha = function(a) {
-  return new q.hf(a)
+q.ta.zj = function(b, a) {
+  return new q.ze(b, a)
 };
-tm.Va = tm.Va || {};
+q.ta.direction = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("value is required."));
+  d = new q.Nb(b);
+  a !== i && (d.type = a);
+  return d
+};
+q.ta.speed = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("value is required."));
+  d = new q.Pb(b);
+  a && (d.type = a);
+  return d
+};
+q.ta.Ib = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("value is required."));
+  d = new q.te(b);
+  a && (d.type = a);
+  return d
+};
+q.ta.Lb = function(b, a) {
+  for(var d = 0, f = arguments.length;d < f;d++) {
+    arguments[d] instanceof Function && (arguments[d] = arguments[d]())
+  }
+  b === i && h(Error("value is required."));
+  d = new q.Fe(b);
+  a && (d.type = a);
+  return d
+};
+q.ta.rj = function(b) {
+  return new q.zd(b)
+};
+q.ta.offsetX = function(b) {
+  return new q.Kf(b)
+};
+q.ta.offsetY = function(b) {
+  return new q.Lf(b)
+};
+q.ta.va = function(b) {
+  return new q.yf(b)
+};
+tm.$a = tm.$a || {};
 (function() {
-  function a(b) {
-    for(;b <= -Math.PI;) {
-      b += 2 * Math.PI
+  function b(a) {
+    for(;a <= -Math.PI;) {
+      a += 2 * Math.PI
     }
-    for(;Math.PI < b;) {
-      b -= 2 * Math.PI
+    for(;Math.PI < a;) {
+      a -= 2 * Math.PI
     }
-    return b
-  }
-  function b(b, a) {
-    return Math.atan2(a.y - b.y, a.x - b.x)
-  }
-  tm.Va.cc = tm.createClass({init:function(b) {
-    b || h(Error("argument is invalid.", b));
-    this.uf = b
-  }, Cd:function(b, a) {
-    var c = this.uf.bi();
-    if(a === i && 0 < c.length) {
-      for(var d = [], v = 0, r = c.length;v < r;v++) {
-        d[d.length] = this.vf(b, c[v])
-      }
-      for(var z = function() {
-        for(var b = d.length;b--;) {
-          d[b].call(this)
-        }
-        z.ye == d.length && (z.Pc = j, this.dispatchEvent(tm.event.Event("completeattack")))
-      }, v = d.length;v--;) {
-        d[v].Rd = z
-      }
-      z.ye = 0;
-      z.Ff = function() {
-        this.ye++
-      };
-      z.ye = 0;
-      z.Pc = m;
-      z.Ge = j;
-      return z
-    }
-    return this.vf(b, a)
-  }, vf:function(b, a) {
-    function c() {
-      c.ia += 1;
-      this.ia = c.ia;
-      var b = c.Bd, a = c.zh;
-      if(a) {
-        if(c.ia < c.we ? c.direction += c.zc : c.ia === c.we && (c.direction = c.Wb), c.ia < c.xe ? c.speed += c.fd : c.ia === c.xe && (c.speed = c.Ic), c.ia < c.re ? (c.qc += c.wd, c.sc += c.xd) : c.ia === c.re && (c.qc = c.ud, c.sc = c.vd), this.x += Math.cos(c.direction) * c.speed * b.rc, this.y += Math.sin(c.direction) * c.speed * b.rc, this.x += c.qc * b.rc, this.y += c.sc * b.rc, b.He(this)) {
-          if(b.$b || this.$b) {
-            this.rotation = (c.direction + 0.5 * Math.PI) * Math.RAD_TO_DEG, this.speed = c.speed
-          }
-          if(!(c.ia < c.pg || c.Pc)) {
-            for(var d;d = c.qg.next();) {
-              switch(d.Wa) {
-                case "fire":
-                  a.wh.call(this, d, b, c, a);
-                  break;
-                case "wait":
-                  b = 0;
-                  c.pg = "number" === typeof d.value ? c.ia + d.value : 0 !== (b = ~~d.value) ? c.ia + b : c.ia + eval(d.value);
-                  return;
-                case "changeDirection":
-                  a.rh.call(this, d, b, c);
-                  break;
-                case "changeSpeed":
-                  a.sh.call(this, d, c);
-                  break;
-                case "accel":
-                  a.ph.call(this, d, c);
-                  break;
-                case "vanish":
-                  this.remove();
-                  break;
-                case "notify":
-                  a.xh.call(this, d)
-              }
-            }
-            c.Pc = j;
-            c.Rd ? c.Rd.Ff() : this.dispatchEvent(tm.event.Event("completeattack"))
-          }
-        }else {
-          this.remove(), c.Pc = j, c.Rd ? c.Rd.Ff() : this.dispatchEvent(tm.event.Event("completeattack"))
-        }
-      }
-    }
-    b = function(b) {
-      var a = {}, c = tm.Va.cc.Qc, d;
-      for(d in c) {
-        c.hasOwnProperty(d) && (a[d] = c[d])
-      }
-      for(d in b) {
-        b.hasOwnProperty(d) && (a[d] = b[d])
-      }
-      return a
-    }(b);
-    b.target || h(Error("target is undefined in config."));
-    a = a || "top";
-    "string" === typeof a ? c.qg = this.uf.Ce(a) : a instanceof q.Pb ? c.qg = a.Ce() : (window.console.error(b, a), h(Error("\u5f15\u6570\u304c\u4e0d\u6b63")));
-    c.zh = this;
-    c.Bd = b;
-    c.pg = -1;
-    c.Pc = m;
-    c.direction = 0;
-    c.Xf = 0;
-    c.speed = 0;
-    c.Zf = 0;
-    c.qc = 0;
-    c.sc = 0;
-    c.zc = 0;
-    c.Wb = 0;
-    c.we = -1;
-    c.fd = 0;
-    c.Ic = 0;
-    c.xe = -1;
-    c.wd = 0;
-    c.ud = 0;
-    c.xd = 0;
-    c.vd = 0;
-    c.re = -1;
-    c.ia = -1;
-    c.Ge = j;
-    return c
-  }, vh:function(b) {
-    function a() {
-      this.x += a.Jf;
-      this.y += a.Kf;
-      a.Bd.He(this) || this.remove()
-    }
-    b = function(b) {
-      var a = {}, c = tm.Va.cc.Qc, d;
-      for(d in c) {
-        c.hasOwnProperty(d) && (a[d] = c[d])
-      }
-      for(d in b) {
-        b.hasOwnProperty(d) && (a[d] = b[d])
-      }
-      return a
-    }(b);
-    b.target || h(Error("target is undefined in config."));
-    a.Bd = b;
-    a.direction = 0;
-    a.speed = 0;
-    a.Jf = 0;
-    a.Kf = 0;
-    a.Ge = j;
     return a
-  }, wh:function(a, c, d, w) {
-    if(this.ui === i || this.mc) {
-      var v = {label:a.wa.label}, r;
-      for(r in a.wa.Pa) {
-        v[r] = a.wa.Pa[r]
+  }
+  function a(a, b) {
+    return Math.atan2(b.y - a.y, b.x - a.x)
+  }
+  tm.$a.pc = tm.createClass({init:function(a) {
+    a || h(Error("argument is invalid.", a));
+    this.Nf = a
+  }, Od:function(a, b) {
+    var d = this.Nf.Bi();
+    if(b === i && 0 < d.length) {
+      for(var f = [], E = 0, s = d.length;E < s;E++) {
+        f[f.length] = this.Of(a, d[E])
       }
-      if(v = c.Ef(v)) {
-        w = (r = 0 === a.wa.Ga.length) ? w.vh(c) : w.Cd(c, a.wa);
-        var z = this, p = {x:this.x + a.Pa.offsetX, y:this.y + a.Pa.offsetY};
-        d.Xf = w.direction = function(r) {
-          var v = eval(r.value) * Math.DEG_TO_RAD;
-          switch(r.type) {
-            case "aim":
-              return c.target ? a.Pa.Ha ? b(p, c.target) + v : b(z, c.target) + v : v - Math.PI / 2;
-            case "absolute":
-              return v - Math.PI / 2;
-            case "relative":
-              return d.direction + v;
-            default:
-              return d.Xf + v
+      for(var r = function() {
+        if(!r.stop) {
+          for(var a = f.length;a--;) {
+            f[a].call(this)
           }
-        }(a.direction || a.wa.direction);
-        d.Zf = w.speed = function(b) {
-          var a = eval(b.value);
-          switch(b.type) {
-            case "relative":
-              return d.speed + a;
-            case "sequence":
-              return d.Zf + a;
-            default:
-              return a
-          }
-        }(a.speed || a.wa.speed);
-        v.x = p.x;
-        v.y = p.y;
-        r && (w.Jf = Math.cos(w.direction) * w.speed * c.rc, w.Kf = Math.sin(w.direction) * w.speed * c.rc);
-        v.$b = !!v.$b;
-        if(c.$b || v.$b) {
-          v.rotation = (w.direction + 0.5 * Math.PI) * Math.RAD_TO_DEG, v.speed = w.speed
+          r.Qe == f.length && (r.dd = j, this.dispatchEvent(tm.event.Event("completeattack")))
         }
-        v.addEventListener("enterframe", w);
-        c.zf ? c.zf.addChild(v) : this.parent && this.parent.addChild(v)
+      }, E = f.length;E--;) {
+        f[E].de = r
+      }
+      r.Qe = 0;
+      r.Zf = function() {
+        this.Qe++
+      };
+      r.Qe = 0;
+      r.dd = l;
+      r.Ye = j;
+      r.stop = l;
+      return r
+    }
+    return this.Of(a, b)
+  }, Of:function(a, b) {
+    function d() {
+      if(!d.stop) {
+        d.ga += 1;
+        this.ga = d.ga;
+        var a = d.Nd, b = d.Zh;
+        if(b) {
+          if(d.ga < d.Oe ? d.direction += d.Nc : d.ga === d.Oe && (d.direction = d.fc), d.ga < d.Pe ? d.speed += d.td : d.ga === d.Pe && (d.speed = d.Wc), d.ga < d.Ke ? (d.Dc += d.Id, d.Fc += d.Jd) : d.ga === d.Ke && (d.Dc = d.Gd, d.Fc = d.Hd), this.x += Math.cos(d.direction) * d.speed * a.Ec, this.y += Math.sin(d.direction) * d.speed * a.Ec, this.x += d.Dc * a.Ec, this.y += d.Fc * a.Ec, a.Ze(this)) {
+            if(a.mc || this.mc) {
+              this.rotation = (d.direction + 0.5 * Math.PI) * Math.RAD_TO_DEG, this.speed = d.speed
+            }
+            if(!(d.ga < d.Kg || d.dd)) {
+              for(var f;f = d.Lg.next();) {
+                switch(f.ab) {
+                  case "fire":
+                    b.Wh.call(this, f, a, d, b);
+                    break;
+                  case "wait":
+                    a = 0;
+                    d.Kg = "number" === typeof f.value ? d.ga + f.value : 0 !== (a = ~~f.value) ? d.ga + a : d.ga + eval(f.value);
+                    return;
+                  case "changeDirection":
+                    b.Rh.call(this, f, a, d);
+                    break;
+                  case "changeSpeed":
+                    b.Sh.call(this, f, d);
+                    break;
+                  case "accel":
+                    b.Ph.call(this, f, d);
+                    break;
+                  case "vanish":
+                    this.remove();
+                    break;
+                  case "notify":
+                    b.Xh.call(this, f)
+                }
+              }
+              d.dd = j;
+              d.de ? d.de.Zf() : this.dispatchEvent(tm.event.Event("completeattack"))
+            }
+          }else {
+            this.remove(), d.dd = j, d.de ? d.de.Zf() : this.dispatchEvent(tm.event.Event("completeattack"))
+          }
+        }
       }
     }
-  }, rh:function(c, d, t) {
-    var w = eval(c.direction.value) * Math.DEG_TO_RAD, v = eval(c.Sa);
-    switch(c.direction.type) {
+    a = function(a) {
+      var b = {}, d = tm.$a.pc.ed, f;
+      for(f in d) {
+        d.hasOwnProperty(f) && (b[f] = d[f])
+      }
+      for(f in a) {
+        a.hasOwnProperty(f) && (b[f] = a[f])
+      }
+      return b
+    }(a);
+    a.target || h(Error("target is undefined in config."));
+    b = b || "top";
+    "string" === typeof b ? d.Lg = this.Nf.Te(b) : b instanceof q.Zb ? d.Lg = b.Te() : (window.console.error(a, b), h(Error("\u5f15\u6570\u304c\u4e0d\u6b63")));
+    d.Zh = this;
+    d.Nd = a;
+    d.Kg = -1;
+    d.dd = l;
+    d.direction = 0;
+    d.sg = 0;
+    d.speed = 0;
+    d.ug = 0;
+    d.Dc = 0;
+    d.Fc = 0;
+    d.Nc = 0;
+    d.fc = 0;
+    d.Oe = -1;
+    d.td = 0;
+    d.Wc = 0;
+    d.Pe = -1;
+    d.Id = 0;
+    d.Gd = 0;
+    d.Jd = 0;
+    d.Hd = 0;
+    d.Ke = -1;
+    d.ga = -1;
+    d.stop = l;
+    d.Ye = j;
+    return d
+  }, Vh:function(a) {
+    function b() {
+      b.stop || (this.x += b.dg, this.y += b.eg, b.Nd.Ze(this) || this.remove())
+    }
+    a = function(a) {
+      var b = {}, d = tm.$a.pc.ed, f;
+      for(f in d) {
+        d.hasOwnProperty(f) && (b[f] = d[f])
+      }
+      for(f in a) {
+        a.hasOwnProperty(f) && (b[f] = a[f])
+      }
+      return b
+    }(a);
+    a.target || h(Error("target is undefined in config."));
+    b.Nd = a;
+    b.direction = 0;
+    b.speed = 0;
+    b.dg = 0;
+    b.eg = 0;
+    b.stop = l;
+    b.Ye = j;
+    return b
+  }, Wh:function(b, d, f, C) {
+    if(this.Ui === i || this.gc) {
+      var E = {label:b.wa.label}, s;
+      for(s in b.wa.Ba) {
+        E[s] = b.wa.Ba[s]
+      }
+      if(E = d.Yf(E)) {
+        C = (s = 0 === b.wa.Ka.length) ? C.Vh(d) : C.Od(d, b.wa);
+        var r = this, A = {x:this.x + b.Ba.offsetX, y:this.y + b.Ba.offsetY};
+        f.sg = C.direction = function(s) {
+          var p = eval(s.value) * Math.DEG_TO_RAD;
+          switch(s.type) {
+            case "aim":
+              return d.target ? b.Ba.va ? a(A, d.target) + p : a(r, d.target) + p : p - Math.PI / 2;
+            case "absolute":
+              return p - Math.PI / 2;
+            case "relative":
+              return f.direction + p;
+            default:
+              return f.sg + p
+          }
+        }(b.direction || b.wa.direction);
+        f.ug = C.speed = function(a) {
+          var b = eval(a.value);
+          switch(a.type) {
+            case "relative":
+              return f.speed + b;
+            case "sequence":
+              return f.ug + b;
+            default:
+              return b
+          }
+        }(b.speed || b.wa.speed);
+        E.x = A.x;
+        E.y = A.y;
+        s && (C.dg = Math.cos(C.direction) * C.speed * d.Ec, C.eg = Math.sin(C.direction) * C.speed * d.Ec);
+        E.mc = !!E.mc;
+        if(d.mc || E.mc) {
+          E.rotation = (C.direction + 0.5 * Math.PI) * Math.RAD_TO_DEG, E.speed = C.speed
+        }
+        E.addEventListener("enterframe", C);
+        d.Sf ? d.Sf.addChild(E) : this.parent && this.parent.addChild(E)
+      }
+    }
+  }, Rh:function(d, f, t) {
+    var C = eval(d.direction.value) * Math.DEG_TO_RAD, E = eval(d.Wa);
+    switch(d.direction.type) {
       case "aim":
-        c = d.target;
-        if(!c) {
+        d = f.target;
+        if(!d) {
           return
         }
-        t.Wb = b(this, c) + w;
-        t.zc = a(t.Wb - t.direction) / v;
+        t.fc = a(this, d) + C;
+        t.Nc = b(t.fc - t.direction) / E;
         break;
       case "absolute":
-        t.Wb = w - Math.PI / 2;
-        t.zc = a(t.Wb - t.direction) / v;
+        t.fc = C - Math.PI / 2;
+        t.Nc = b(t.fc - t.direction) / E;
         break;
       case "relative":
-        t.Wb = t.direction + w;
-        t.zc = a(t.Wb - t.direction) / v;
+        t.fc = t.direction + C;
+        t.Nc = b(t.fc - t.direction) / E;
         break;
       case "sequence":
-        t.zc = w, t.Wb = t.direction + t.zc * (v - 1)
+        t.Nc = C, t.fc = t.direction + t.Nc * (E - 1)
     }
-    t.we = t.ia + v
-  }, sh:function(b, a) {
-    var c = eval(b.speed.value), d = eval(b.Sa);
-    switch(b.speed.type) {
+    t.Oe = t.ga + E
+  }, Sh:function(a, b) {
+    var d = eval(a.speed.value), f = eval(a.Wa);
+    switch(a.speed.type) {
       case "absolute":
-        a.Ic = c;
-        a.fd = (a.Ic - a.speed) / d;
+        b.Wc = d;
+        b.td = (b.Wc - b.speed) / f;
         break;
       case "relative":
-        a.Ic = c + a.speed;
-        a.fd = (a.Ic - a.speed) / d;
+        b.Wc = d + b.speed;
+        b.td = (b.Wc - b.speed) / f;
         break;
       case "sequence":
-        a.fd = c, a.Ic = a.speed + a.fd * d
+        b.td = d, b.Wc = b.speed + b.td * f
     }
-    a.xe = a.ia + d
-  }, ph:function(b, a) {
-    var c = eval(b.Sa);
-    a.re = a.ia + c;
-    if(b.Db) {
-      var d = eval(b.Db.value);
-      switch(b.Db.type) {
+    b.Pe = b.ga + f
+  }, Ph:function(a, b) {
+    var d = eval(a.Wa);
+    b.Ke = b.ga + d;
+    if(a.Ib) {
+      var f = eval(a.Ib.value);
+      switch(a.Ib.type) {
         case "absolute":
         ;
         case "sequence":
-          a.wd = (d - a.qc) / c;
-          a.ud = d;
+          b.Id = (f - b.Dc) / d;
+          b.Gd = f;
           break;
         case "relative":
-          a.wd = d, a.ud = (d - a.qc) * c
+          b.Id = f, b.Gd = (f - b.Dc) * d
       }
     }else {
-      a.wd = 0, a.ud = a.qc
+      b.Id = 0, b.Gd = b.Dc
     }
-    if(b.Gb) {
-      switch(d = eval(b.Gb.value), b.Gb.type) {
+    if(a.Lb) {
+      switch(f = eval(a.Lb.value), a.Lb.type) {
         case "absolute":
         ;
         case "sequence":
-          a.xd = (d - a.sc) / c;
-          a.vd = d;
+          b.Jd = (f - b.Fc) / d;
+          b.Hd = f;
           break;
         case "relative":
-          a.xd = d, a.vd = (d - a.sc) * c
+          b.Jd = f, b.Hd = (f - b.Fc) * d
       }
     }else {
-      a.xd = 0, a.vd = a.sc
+      b.Jd = 0, b.Hd = b.Fc
     }
-  }, xh:function(a) {
-    var b = tm.event.Event(a.Nh);
-    if(a.Da) {
-      for(var c in a.Da) {
-        b[c] = a.Da[c]
+  }, Xh:function(a) {
+    var b = tm.event.Event(a.li);
+    if(a.Ha) {
+      for(var d in a.Ha) {
+        b[d] = a.Ha[d]
       }
     }
     this.dispatchEvent(b)
   }});
-  var c = function() {
+  var d = function() {
     var a = tm.graphics.Canvas();
     a.resize(8, 8);
     a.setTransformCenter();
@@ -871,28 +879,28 @@ tm.Va = tm.Va || {};
     a.setFillStyle(tm.graphics.RadialGradient(0, 0, 0, 0, 0, 4).addColorStopList([{offset:0, color:"white"}, {offset:0.5, color:"white"}, {offset:1, color:"red"}]).toStyle()).fillCircle(0, 0, 4);
     return tm.asset.Texture(a.canvas.toDataURL())
   }();
-  tm.Va.Kh = function(a) {
-    var b = tm.app.Sprite(c, 8, 8);
+  tm.$a.ii = function(a) {
+    var b = tm.app.Sprite(d, 8, 8);
     b.label = a.label;
     return b
   };
-  var d = k;
-  tm.Va.If = function(a) {
-    if(d === k) {
+  var f = k;
+  tm.$a.cg = function(a) {
+    if(f === k) {
       if(!a.getRoot().app) {
         return j
       }
-      d = a.getRoot().app;
-      console.log(d instanceof tm.app.BaseApp)
+      f = a.getRoot().app;
+      console.log(f instanceof tm.app.BaseApp)
     }
-    return 0 <= a.x && a.x < d.width && 0 <= a.y && a.y < d.height
+    return 0 <= a.x && a.x < f.width && 0 <= a.y && a.y < f.height
   };
-  tm.Va.Ri = function() {
+  tm.$a.qj = function() {
     return j
   };
-  tm.Va.cc.Qc = {Ef:tm.Va.Kh, He:tm.Va.If, dj:0, $b:m, rc:2, target:k};
-  q.la.prototype.Cd = function(a) {
-    return tm.Va.cc(this).Cd(a)
+  tm.$a.pc.ed = {Yf:tm.$a.ii, Ze:tm.$a.cg, Bj:0, mc:l, Ec:2, target:k};
+  q.ha.prototype.Od = function(a) {
+    return tm.$a.pc(this).Od(a)
   }
 })();
 /*
@@ -903,504 +911,550 @@ tm.Va = tm.Va || {};
 */
 tm.preload(n());
 tm.main(function() {
-  aa("#canvas2d").run()
+  ba("#canvas2d").run()
 });
-var s = k, u, A, B, C, E, F, ba, da, ea, fa, ha, ia, ja, G, H, J, ka, la, ma, na, oa, pa, qa, ra, sa, ta, ua, wa, xa, ya, za, Aa, Ba, K, Ca, Da, L, N, Ea, Fa, O, aa = tm.createClass({superClass:tm.app.CanvasApp, Ld:0, Xi:0, Mc:3, pc:3, Lf:1, ca:k, init:function(a) {
-  s !== k && h(Error("class 'gls2.GlShooter2' is singleton!!"));
-  this.superInit(a);
-  s = this;
+var u = k, v, ca, w, z, B, F, da, ea, ga, ha, ia, ja, ka, la, G, J, na, oa, pa, qa, ra, sa, ta, ua, va, wa, xa, ya, za, Ba, Ca, Da, Ea, Fa, K, L, Ga, Ha, M, P, Ia, Ja, S, ba = tm.createClass({superClass:tm.display.CanvasApp, Yd:0, vj:0, bd:3, Cc:3, fg:1, ca:k, init:function(b) {
+  u !== k && h(Error("class 'gls2.GlShooter2' is singleton!!"));
+  this.superInit(b);
+  u = this;
   this.resize(480, 640).fitWindow();
-  this.fps = u.Eg;
+  this.fps = v.ah;
   this.background = "rgba(0,0,0,0)";
-  this.df = [];
+  this.vf = [];
   this.keyboard = tm.input.Keyboard(window);
-  this.replaceScene(tm.app.LoadingScene({assets:{tex0:"assets/tex0.png", tex1:"assets/tex1.png", tex_stage1:"assets/tex_stage1.png", tex_tank1:"assets/tex_tank1.png", fighter:"assets/fighters.png", laserR:"assets/laser_r.png", laserG:"assets/laser_g.png", laserB:"assets/laser_b.png", laserH:"assets/laser_h.png", laserHead:"assets/laser_head.png", laserFoot:"assets/laser_foot.png", aura:"assets/aura.png", explode0:"assets/explode0.png", explode1:"assets/explode1.png", explodeL:"assets/explode2.png", 
-  shotbullet:"assets/shotbullet.png", bomb:"assets/bomb.png", bombIcon:"assets/bomb_icon.png", bgm1:"assets2/nc54073.mp3", bgm2:"assets2/nc28687.mp3", bgmBoss:"assets2/nc29206.mp3", bgmResult:"assets2/nc54077.mp3", "sound/explode":"assets2/sen_ge_taihou03.mp3", "sound/explode2":"assets2/sen_ge_bom13.mp3", "sound/explode3":"assets2/sen_ge_bom02.mp3", "sound/star":"assets2/se_maoudamashii_system24.mp3", "sound/bomb":"assets2/sen_ge_bom17.mp3", "sound/warning":"assets2/meka_ge_keihou06.mp3", "sound/select":"assets2/se_maoudamashii_system36.mp3", 
-  "sound/decision":"assets2/se_maoudamashii_system03.mp3", "sound/voHyperStandBy":"assets/vo_hyper_standby.mp3", "sound/voHyperReady":"assets/vo_hyper_ready.mp3", "sound/voHyperStart0":"assets/vo_hyper_start.mp3", "sound/voHyperStart1":"assets/vo_hyper_start2.mp3", "sound/voBomb":"assets/vo_bomb.mp3", "sound/voExtend":"assets/vo_extend.mp3", "sound/voGetBomb":"assets/vo_getbomb.mp3", "sound/voJacms":"assets/vo_jacms.mp3", "sound/voLetsGo":"assets/vo_letsgo.mp3", "sound/voSelectShip":"assets/vo_select_your_battle_ship.mp3", 
-  "sound/voWarning":"assets/vo_warning.mp3", star:"assets/star.png"}, nextScene:function() {
-    this.yh();
-    return A()
+  this.replaceScene(tm.app.LoadingScene({assets:{tex0:"assets/tex0.png", tex1:"assets/tex1.png", tex_stage1:"assets/tex_stage1.png", tex_tank1:"assets/tex_tank1.png", fighter:"assets/fighters.png", laserR:"assets/laser_r.png", laserG:"assets/laser_g.png", laserB:"assets/laser_b.png", laserH:"assets/laser_h.png", laserHead:"assets/laser_head.png", laserFoot:"assets/laser_foot.png", aura:"assets/aura.png", explode0:"assets/explode0.png", explode1:"assets/explode1.png", explode2:"assets/explode2.png", 
+  shotbullet:"assets/shotbullet.png", bomb:"assets/bomb.png", bombIcon:"assets/bomb_icon.png", result_bg:"assets/result_bg.png", bgmShipSelect:"assets2/nc44200.mp3", bgm1:"assets2/nc54073.mp3", bgm2:"assets2/nc28687.mp3", bgm4:"assets2/nc80728.mp3", bgm5:"assets2/nc60627.mp3", bgmBoss:"assets2/nc29206.mp3", bgmResult:"assets2/nc54077.mp3", bgmEnding:"assets2/nc44202.mp3", "sound/explode":"assets2/sen_ge_taihou03.mp3", "sound/explode2":"assets2/sen_ge_bom13.mp3", "sound/explode3":"assets2/sen_ge_bom02.mp3", 
+  "sound/star":"assets2/se_maoudamashii_system24.mp3", "sound/bomb":"assets2/sen_ge_bom17.mp3", "sound/warning":"assets2/meka_ge_keihou06.mp3", "sound/select":"assets2/se_maoudamashii_system36.mp3", "sound/decision":"assets2/se_maoudamashii_system03.mp3", "sound/voHyperStandBy":"assets/vo_hyper_standby.mp3", "sound/voHyperReady":"assets/vo_hyper_ready.mp3", "sound/voHyperStart0":"assets/vo_hyper_start.mp3", "sound/voHyperStart1":"assets/vo_hyper_start2.mp3", "sound/voBomb":"assets/vo_bomb.mp3", "sound/voExtend":"assets/vo_extend.mp3", 
+  "sound/voGetBomb":"assets/vo_getbomb.mp3", "sound/voJacms":"assets/vo_jacms.mp3", "sound/voLetsGo":"assets/vo_letsgo.mp3", "sound/voSelectShip":"assets/vo_select_your_battle_ship.mp3", "sound/voWarning":"assets/vo_warning.mp3", star:"assets/star.png"}, nextScene:function() {
+    this.Yh();
+    return ca()
   }.bind(this)}))
 }, update:function() {
-  for(var a = [].concat(this.df), b = 0;b < a.length;b++) {
-    a[b].frame === this.frame ? a[b].fn() : this.df.erase(a[b])
+  for(var b = [].concat(this.vf), a = 0;a < b.length;a++) {
+    b[a].frame === this.frame ? b[a].fn() : this.vf.erase(b[a])
   }
 }, draw:function() {
   this.canvas.globalCompositeOperation = "copy"
-}, yh:function() {
-  B.na(12345);
-  C.na();
-  E.na();
+}, Yh:function() {
+  w.setup(12345);
+  ["tex_stage1", "tex_tank1"].forEach(function(b) {
+    var a = tm.asset.AssetManager.get(b), d = tm.graphics.Canvas();
+    d.resize(a.width, a.height);
+    d.drawTexture(a, 0, 0);
+    d = d.getBitmap();
+    d.filter({calc:function(a, b, d, f, E) {
+      E.setPixelIndex(b, a[0], 0, 0)
+    }});
+    var f = tm.graphics.Canvas();
+    f.resize(a.width, a.height);
+    f.drawBitmap(d, 0, 0);
+    tm.asset.AssetManager.set(b + "Red", f)
+  });
+  z.setup();
+  B.setup();
   this.ca = F()
-}, Ph:function() {
+}, ni:function() {
   this.stop();
-  tm.social.Nineleap.postRanking(this.Ld, "")
-}, df:k, setTimeoutF:function(a, b) {
-  timeoutTasks.push({frame:this.frame + b, fn:a})
+  tm.social.Nineleap.postRanking(this.Yd, "")
+}, vf:k, setTimeoutF:function(b, a) {
+  timeoutTasks.push({frame:this.frame + a, fn:b})
 }});
-tm.app.AnimationSprite.prototype.clone = function() {
+tm.display.AnimationSprite.prototype.clone = function() {
   return tm.app.AnimationSprite(this.ss, this.width, this.height)
 };
-function Ga(a, b) {
-  return(a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)
+function Ka(b, a) {
+  return(b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y)
 }
-;u = {Eg:60, Zg:0, kf:[1E9, 1E10], ah:3E3, mf:3, lf:[3, 2, 1], tg:[6, 4, 2], tf:1, Yg:0.1, nf:1, $g:0.25, Ki:1, Li:0.25, sg:2, Qg:0.0050, Mg:0.01, Ng:0.0010, Ig:0.015, Jg:0.0020, Sg:0.0010, Ug:0.01, Rg:0, Pg:0, Og:0, Lg:0.03, Kg:0.0040, Tg:0, Vg:0, Wg:0.75, ce:10, nd:800, Hg:0.25, Gg:0.1, Xg:[1, 3, 5, 10, 18, 26, 42, 66, 90, 130, 200], yg:0.02, zg:0.5, xg:0.01, jf:1E3, wg:10, ug:1, oh:1E3, nh:100, mh:0, lh:0, kh:1E3, jh:100, Dg:0.5, Ag:22500, vg:50, dh:10, gf:m, rg:j, hh:1E3, ih:2E3, eh:4E3, fh:1E4, 
-gh:2E7};
+;v = {zh:l, ah:60, wh:0, Cf:[1E9, 1E10], yh:3E3, Ef:3, Df:[3, 2, 1], Og:[6, 4, 2], Mf:1, vh:0.1, Ff:1, xh:0.25, jj:1, kj:0.25, Ng:2, nh:0.0050, jh:0.01, kh:0.0010, fh:0.015, gh:0.0020, ph:0.0010, rh:0.01, oh:0, mh:0, lh:0, ih:0.03, hh:0.0040, qh:0, sh:0, th:0.75, re:10, Ad:800, eh:0.25, dh:0.1, uh:[1, 3, 5, 10, 18, 26, 42, 66, 90, 130, 200], Vg:0.02, Wg:0.5, Ug:0.01, Bf:1E3, Rg:10, Pg:1, Nh:1E3, Mh:100, Lh:0, Kh:0, Jh:1E3, Ih:100, $g:0.5, Sg:4, Xg:22500, Qg:50, Ch:10, xf:l, Mg:j, Gh:1E3, Hh:2E3, Dh:4E3, 
+Eh:1E4, Fh:2E7};
 (function() {
-  var a = k, b = {"0":{x:1, y:0}, 45:{x:0.7, y:-0.7}, 90:{x:0, y:-1}, 135:{x:-0.7, y:-0.7}, 180:{x:-1, y:0}, 225:{x:-0.7, y:0.7}, 270:{x:0, y:1}, 315:{x:0.7, y:0.7}};
-  ba = tm.createClass({superClass:tm.app.Sprite, type:0, style:0, $a:0, Lb:j, Fc:m, ca:k, speed:0, Ya:k, yc:k, cg:k, Md:k, Ob:k, De:k, Kb:k, Ee:k, Fe:k, frame:0, init:function(b, d, g) {
+  var b = k, a = {"0":{x:1, y:0}, 45:{x:0.7, y:-0.7}, 90:{x:0, y:-1}, 135:{x:-0.7, y:-0.7}, 180:{x:-1, y:0}, 225:{x:-0.7, y:0.7}, 270:{x:0, y:1}, 315:{x:0.7, y:0.7}};
+  da = tm.createClass({superClass:tm.display.Sprite, type:0, style:0, fb:0, Tb:j, ad:j, Tc:l, ca:k, speed:0, cb:k, Mc:k, yg:k, Zd:k, Wb:k, Ue:k, Rb:k, Ve:k, We:k, frame:0, init:function(a, f, g) {
     this.superInit("fighter", 64, 64);
-    this.ca = b;
-    this.type = d;
+    this.ca = a;
+    this.type = f;
     this.style = g;
-    tm.Va.cc.Qc.target = this;
-    this.speed = [6, 5, 4.5][d];
+    tm.$a.pc.ed.target = this;
+    this.speed = [6, 5, 4.5][f];
     this.boundingRadius = 3;
     this.altitude = 10;
-    this.yc = this.cg = da(d, 100);
-    this.Md = da(3, 100);
-    this.Ob = ea(this, {redBody:"laserR", greenBody:"laserG", blueBody:"laserB", hyperBody:"laserH", head:"laserHead", foot:"laserFoot", aura:"aura"});
-    this.Ob.visible = m;
-    this.uh();
-    this.Ya = this.th();
-    1 === this.style && (this.Ya = [this.Ya[1], this.Ya[2]]);
-    this.Kb = tm.app.CanvasElement().addChildTo(this);
-    d = 0;
-    for(g = this.Ya.length;d < g;d++) {
-      var l = this.Ya[d];
-      fa(this, l).setPosition(l.x, l.y).addChildTo(this.Kb)
+    this.Mc = this.yg = ea(f, 100);
+    this.Zd = ea(3, 100);
+    this.Wb = ga(this, {redBody:"laserR", greenBody:"laserG", blueBody:"laserB", hyperBody:"laserH", head:"laserHead", foot:"laserFoot", aura:"aura"});
+    this.Wb.visible = l;
+    this.Uh();
+    this.cb = this.Th();
+    1 === this.style && (this.cb = [this.cb[1], this.cb[2]]);
+    this.Rb = tm.display.CanvasElement().addChildTo(this);
+    f = 0;
+    for(g = this.cb.length;f < g;f++) {
+      var m = this.cb[f];
+      ha(this, m).setPosition(m.x, m.y).addChildTo(this.Rb)
     }
-    this.ji = tm.app.CircleShape(140, 140, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.RadialGradient(70, 70, 0, 70, 70, 70).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:0.5, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(255,255,255,0.0)"}]).toStyle()}).addChildTo(this);
-    this.ji.blendMode = "lighter";
-    this.Ee = tm.app.CircleShape(80, 80, {fillStyle:"rgba(0,0,0,0)", strokeStyle:tm.graphics.LinearGradient(0, 0, 0, 80).addColorStopList([{offset:0, color:"rgba(255,255,100,0.0)"}, {offset:0.4, color:"rgba(255,255,100,0.1)"}, {offset:0.5, color:"rgba(255,255,255,1.0)"}, {offset:0.6, color:"rgba(255,255,100,0.1)"}, {offset:1, color:"rgba(255,255,100,0.0)"}]).toStyle(), lineWidth:4}).addChildTo(this);
-    this.Ee.blendMode = "lighter";
-    this.Ee.update = function() {
+    this.Ji = tm.display.CircleShape(140, 140, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.RadialGradient(70, 70, 0, 70, 70, 70).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:0.5, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(255,255,255,0.0)"}]).toStyle()}).addChildTo(this);
+    this.Ji.blendMode = "lighter";
+    this.Ve = tm.display.CircleShape(80, 80, {fillStyle:"rgba(0,0,0,0)", strokeStyle:tm.graphics.LinearGradient(0, 0, 0, 80).addColorStopList([{offset:0, color:"rgba(255,255,100,0.0)"}, {offset:0.4, color:"rgba(255,255,100,0.1)"}, {offset:0.5, color:"rgba(255,255,255,1.0)"}, {offset:0.6, color:"rgba(255,255,100,0.1)"}, {offset:1, color:"rgba(255,255,100,0.0)"}]).toStyle(), lineWidth:4}).addChildTo(this);
+    this.Ve.blendMode = "lighter";
+    this.Ve.update = function() {
       this.rotation += 2;
-      this.visible = 0 < b.xa && !b.sa
+      this.visible = 0 < a.za && !a.ua
     };
-    this.Fe = tm.app.CircleShape(80, 80, {fillStyle:"rgba(0,0,0,0)", strokeStyle:tm.graphics.LinearGradient(0, 0, 0, 80).addColorStopList([{offset:0, color:"rgba(255,255,100,0.0)"}, {offset:0.4, color:"rgba(255,255,100,0.1)"}, {offset:0.5, color:"rgba(255,255,255,1.0)"}, {offset:0.6, color:"rgba(255,255,100,0.1)"}, {offset:1, color:"rgba(255,255,100,0.0)"}]).toStyle(), lineWidth:4}).addChildTo(this);
-    this.Fe.blendMode = "lighter";
-    this.Fe.update = function() {
+    this.We = tm.display.CircleShape(80, 80, {fillStyle:"rgba(0,0,0,0)", strokeStyle:tm.graphics.LinearGradient(0, 0, 0, 80).addColorStopList([{offset:0, color:"rgba(255,255,100,0.0)"}, {offset:0.4, color:"rgba(255,255,100,0.1)"}, {offset:0.5, color:"rgba(255,255,255,1.0)"}, {offset:0.6, color:"rgba(255,255,100,0.1)"}, {offset:1, color:"rgba(255,255,100,0.0)"}]).toStyle(), lineWidth:4}).addChildTo(this);
+    this.We.blendMode = "lighter";
+    this.We.update = function() {
       this.rotation -= 2;
-      this.visible = 0 < b.xa && !b.sa
+      this.visible = 0 < a.za && !a.ua
     };
-    this.Vc = tm.app.CanvasElement(80, 80).addChildTo(this);
-    this.Vc.blendMode = "lighter";
-    this.Vc.rotation = -90;
-    this.Vc.strokeStyle = "rgba(180,180,255,0.4)";
-    this.Vc.update = function() {
-      this.visible = b.sa
+    this.hd = tm.display.CanvasElement(80, 80).addChildTo(this);
+    this.hd.blendMode = "lighter";
+    this.hd.rotation = -90;
+    this.hd.strokeStyle = "rgba(180,180,255,0.4)";
+    this.hd.update = function() {
+      this.visible = a.ua
     };
-    this.Vc.draw = function(a) {
-      a.lineCap = "round";
-      var d = b.Cc / u.nd;
-      a.strokeStyle = "rgba(50,50,255,0.4)";
-      a.lineWidth = "12";
-      a.strokeArc(0, 0, 40, 0, 2 * d * Math.PI, m);
-      a.strokeStyle = "rgba(100,100,255,0.4)";
-      a.lineWidth = "8";
-      a.strokeArc(0, 0, 40, 0, 2 * d * Math.PI, m);
-      a.strokeStyle = "rgba(180,180,255,0.4)";
-      a.lineWidth = "4";
-      a.strokeArc(0, 0, 40, 0, 2 * d * Math.PI, m)
+    this.hd.draw = function(b) {
+      b.lineCap = "round";
+      var f = a.Qc / v.Ad;
+      b.strokeStyle = "rgba(50,50,255,0.4)";
+      b.lineWidth = "12";
+      b.strokeArc(0, 0, 40, 0, 2 * f * Math.PI, l);
+      b.strokeStyle = "rgba(100,100,255,0.4)";
+      b.lineWidth = "8";
+      b.strokeArc(0, 0, 40, 0, 2 * f * Math.PI, l);
+      b.strokeStyle = "rgba(180,180,255,0.4)";
+      b.lineWidth = "4";
+      b.strokeArc(0, 0, 40, 0, 2 * f * Math.PI, l)
     };
-    this.di = tm.app.CircleShape(80, 80, {fillStyle:tm.graphics.RadialGradient(40, 40, 0, 40, 40, 35).addColorStopList([{offset:0, color:"rgba(0,0,50,0.0)"}, {offset:0.9, color:"rgba(0,0,50,0.8)"}, {offset:1, color:"rgba(0,0,50,0.0)"}]).toStyle(), strokeStyle:"rgba(0,0,0,0)"}).addChildTo(this);
-    this.di.update = function() {
-      this.visible = b.sa
+    this.Di = tm.display.CircleShape(80, 80, {fillStyle:tm.graphics.RadialGradient(40, 40, 0, 40, 40, 35).addColorStopList([{offset:0, color:"rgba(0,0,50,0.0)"}, {offset:0.9, color:"rgba(0,0,50,0.8)"}, {offset:1, color:"rgba(0,0,50,0.0)"}]).toStyle(), strokeStyle:"rgba(0,0,0,0)"}).addChildTo(this);
+    this.Di.update = function() {
+      this.visible = a.ua
     };
-    a === k && (a = ha(this.ca.ka))
-  }, th:function() {
+    b === k && (b = ia(this.ca.ja))
+  }, Th:function() {
     if(0 === this.type) {
-      return[{x:0, lc:0, y:40, d:0, ib:j, fb:-0.7, v:j}, {x:0, lc:0, y:40, d:0, ib:j, fb:0.5, v:j}, {x:0, lc:0, y:40, d:0, ib:j, fb:-0.5, v:j}, {x:0, lc:0, y:40, d:0, ib:j, fb:0.7, v:j}]
+      return[{x:0, yc:0, y:40, d:0, pb:j, lb:-0.7, v:j}, {x:0, yc:0, y:40, d:0, pb:j, lb:0.5, v:j}, {x:0, yc:0, y:40, d:0, pb:j, lb:-0.5, v:j}, {x:0, yc:0, y:40, d:0, pb:j, lb:0.7, v:j}]
     }
     if(1 === this.type) {
-      return[{x:-70, y:20, d:0.1, ib:m, fb:-0.7, v:j}, {x:-40, y:40, d:0.1, ib:m, fb:-0.5, v:j}, {x:40, y:40, d:0.1, ib:j, fb:0.5, v:j}, {x:70, y:20, d:0.1, ib:j, fb:0.7, v:j}]
+      return[{x:-70, y:20, d:0.1, pb:l, lb:-0.7, v:j}, {x:-40, y:40, d:0.1, pb:l, lb:-0.5, v:j}, {x:40, y:40, d:0.1, pb:j, lb:0.5, v:j}, {x:70, y:20, d:0.1, pb:j, lb:0.7, v:j}]
     }
     if(2 === this.type) {
-      return[{x:-60, y:40, d:0.6, ib:m, fb:-0.7, v:j}, {x:-30, y:20, d:0.4, ib:m, fb:-0.5, v:j}, {x:30, y:20, d:0.4, ib:j, fb:0.5, v:j}, {x:60, y:40, d:0.6, ib:j, fb:0.7, v:j}]
+      return[{x:-60, y:40, d:0.6, pb:l, lb:-0.7, v:j}, {x:-30, y:20, d:0.4, pb:l, lb:-0.5, v:j}, {x:30, y:20, d:0.4, pb:j, lb:0.5, v:j}, {x:60, y:40, d:0.6, pb:j, lb:0.7, v:j}]
     }
-  }, uh:function() {
-    this.De = tm.app.Sprite("tex0", 20, 20).addChildTo(this);
-    this.De.setFrameIndex(5);
-    this.De.update = function(a) {
+  }, Uh:function() {
+    this.Ue = tm.display.Sprite("tex0", 20, 20).addChildTo(this);
+    this.Ue.setFrameIndex(5);
+    this.Ue.update = function(a) {
       a = 1.2 + 0.15 * Math.sin(0.2 * a.frame);
       this.scale.set(a, a)
     }
-  }, Zb:-1, Ac:m, pb:m, update:function(c) {
-    this.visible = this.Fc ? 0 === c.frame / 2 % 2 : j;
-    var d = c.keyboard;
-    if(this.Lb) {
-      var g = d.getKeyAngle();
-      g !== k && (g = b[g], this.x += g.x * this.speed * (this.pb ? 0.75 : 1), this.y += g.y * this.speed * (this.pb ? 0.75 : 1));
-      this.x = P(this.x, 15, 465);
-      this.y = P(this.y, 15, 625);
-      var l = d.getKey("c"), g = d.getKey("z");
-      this.Zb = l ? this.Zb + 1 : this.Zb - 1;
-      this.Zb = P(this.Zb, -1, 10);
-      this.pb = g && l || 10 === this.Zb;
-      l = this.ca.sa ? 3 : 5;
-      this.Ac = !this.pb && (0 <= this.Zb || g) && 0 === c.frame % l;
-      g && (this.Zb = 0);
-      this.Ob.x = this.x;
-      this.Ob.y = this.y - 40;
-      d.getKeyDown("x") && (0 < this.ca.xa && !this.ca.sa ? (this.ca.Fi(), ia(this).addChildTo(this.ca)) : !this.ca.Dc && 0 < this.ca.vb && (this.Xa = P(this.Xa - 2, 0, 1), q.va.Oa.$rank = P(q.va.Oa.$rank - 0.02, 0, 1), ja(this, this.ca).setPosition(P(this.x, 96, 384), Math.max(this.y - 320, 192)).addChildTo(this.ca)))
+  }, kc:-1, Pc:l, mb:l, update:function(d) {
+    this.visible = this.Tc ? 0 === d.frame / 2 % 2 : j;
+    var f = d.keyboard;
+    if(this.Tb) {
+      var g = f.getKeyAngle();
+      g !== k && (g = a[g], this.x += g.x * this.speed * (this.mb ? 0.5 : 1), this.y += g.y * this.speed * (this.mb ? 0.5 : 1));
+      this.x = T(this.x, 15, 465);
+      this.y = T(this.y, 15, 625);
+      var m = f.getKey("c") && this.ad, g = f.getKey("z") && this.ad;
+      this.kc = m ? this.kc + 1 : this.kc - 1;
+      this.kc = T(this.kc, -1, 10);
+      this.mb = g && m || 10 === this.kc;
+      m = this.ca.ua ? 3 : 5;
+      this.Pc = !this.mb && (0 <= this.kc || g) && 0 === d.frame % m;
+      g && (this.kc = 0);
+      this.Wb.x = this.x;
+      this.Wb.y = this.y - 40;
+      f.getKeyDown("x") && this.ad && (0 < this.ca.za && !this.ca.ua ? (this.ca.ej(), ja(this).addChildTo(this.ca)) : !this.ca.Rc && 0 < this.ca.eb && (this.bb = T(this.bb - 2, 0, 1), q.ya.Ra.$rank = T(q.ya.Ra.$rank - 0.02, 0, 1), ka(this, this.ca).setPosition(T(this.x, 96, 384), Math.max(this.y - 320, 192)).addChildTo(this.ca)))
     }else {
-      this.pb = this.Ac = m
+      this.mb = this.Pc = l
     }
-    this.Ac && (g = Math.sin(0.2 * c.frame), l = this.yc.fa(this.x - 7 - 6 * g, this.y - 5, -90), l !== k && l.addChildTo(this.ca), l = this.yc.fa(this.x + 7 + 6 * g, this.y - 5, -90), l !== k && l.addChildTo(this.ca));
-    if(this.pb) {
+    this.Pc && (g = Math.sin(0.2 * d.frame), m = this.Mc.fire(this.x - 7 - 6 * g, this.y - 5, -90), m !== k && m.addChildTo(this.ca), m = this.Mc.fire(this.x + 7 + 6 * g, this.y - 5, -90), m !== k && m.addChildTo(this.ca));
+    if(this.mb) {
       g = 0;
-      for(l = this.Ya.length;g < l;g++) {
-        this.Ya[g].v = m
+      for(m = this.cb.length;g < m;g++) {
+        this.cb[g].v = l
       }
-      this.Kb.rotation = 0
+      this.Rb.rotation = 0
     }else {
-      this.Ob.visible = m;
+      this.Wb.visible = l;
       g = 0;
-      for(l = this.Ya.length;g < l;g++) {
-        this.Ya[g].v = j
+      for(m = this.cb.length;g < m;g++) {
+        this.cb[g].v = j
       }
     }
-    this.Jh(d);
-    this.qh(d, c.frame);
-    0 === c.frame % 2 && (a.clone(20).setPosition(this.x - 5, this.y + 20).addChildTo(this.ca), a.clone(20).setPosition(this.x + 5, this.y + 20).addChildTo(this.ca));
-    this.frame = c.frame
-  }, Mb:function() {
-    this.pb = this.Ac = m;
-    this.ca.Ed();
-    this.ca.Ia = 0;
-    this.ca.Ca = 0;
-    this.ca.ya = 0
-  }, Jh:function(a) {
+    this.hi(f);
+    this.Qh(f, d.frame);
+    0 === d.frame % 2 && (b.clone(20).setPosition(this.x - 5, this.y + 20).addChildTo(this.ca), b.clone(20).setPosition(this.x + 5, this.y + 20).addChildTo(this.ca));
+    this.frame = d.frame
+  }, Ub:function() {
+    this.mb = this.Pc = l;
+    this.ca.Qd();
+    this.ca.La = 0;
+    this.ca.Ga = 0;
+    this.ca.Aa = 0
+  }, hi:function(a) {
     if(0 === this.type) {
-      for(a = this.Ya.length;this.Ya[--a] !== i;) {
-        var b = this.Ya[a];
-        0 === a ? b.x = b.lc + 60 * Math.cos(0.1 * this.frame) : 1 === a ? b.x = b.lc + -60 * Math.cos(0.1 * this.frame) : 2 === a ? b.x = b.lc + 60 * Math.sin(0.1 * this.frame) : 3 === a && (b.x = b.lc + -60 * Math.sin(0.1 * this.frame))
+      for(a = this.cb.length;this.cb[--a] !== i;) {
+        var b = this.cb[a];
+        0 === a ? b.x = b.yc + 60 * Math.cos(0.1 * this.frame) : 1 === a ? b.x = b.yc + -60 * Math.cos(0.1 * this.frame) : 2 === a ? b.x = b.yc + 60 * Math.sin(0.1 * this.frame) : 3 === a && (b.x = b.yc + -60 * Math.sin(0.1 * this.frame))
       }
     }else {
-      1 === this.type && (b = this.Kb, b.rotation = this.Lb && a.getKey("left") ? Math.max(b.rotation - 3, -50) : this.Lb && a.getKey("right") ? Math.min(b.rotation + 3, 50) : 3 < b.rotation ? b.rotation - 3 : -3 > b.rotation ? b.rotation + 3 : 0)
+      1 === this.type && (b = this.Rb, b.rotation = this.mb ? 0 : this.Tb && a.getKey("left") ? Math.max(b.rotation - 3, -50) : this.Tb && a.getKey("right") ? Math.min(b.rotation + 3, 50) : 3 < b.rotation ? b.rotation - 3 : -3 > b.rotation ? b.rotation + 3 : 0)
     }
-  }, qh:function(a, b) {
-    this.Lb && a.getKey("left") ? this.$a = P(this.$a - 0.2, -3, 3) : this.Lb && a.getKey("right") ? this.$a = P(this.$a + 0.2, -3, 3) : 0 > this.$a ? this.$a = P(this.$a + 0.2, -3, 3) : 0 < this.$a && (this.$a = P(this.$a - 0.2, -3, 3));
-    0 === this.type ? this.setFrameIndex(3 + ~~this.$a) : 1 === this.type ? this.setFrameIndex(10 + 7 * (~~(b / 2) % 3) + ~~this.$a) : 2 === this.type && this.setFrameIndex(31 + ~~this.$a);
+  }, Qh:function(a, b) {
+    this.Tb && a.getKey("left") ? this.fb = T(this.fb - 0.2, -3, 3) : this.Tb && a.getKey("right") ? this.fb = T(this.fb + 0.2, -3, 3) : 0 > this.fb ? this.fb = T(this.fb + 0.2, -3, 3) : 0 < this.fb && (this.fb = T(this.fb - 0.2, -3, 3));
+    0 === this.type ? this.setFrameIndex(3 + ~~this.fb) : 1 === this.type ? this.setFrameIndex(10 + 7 * (~~(b / 2) % 3) + ~~this.fb) : 2 === this.type && this.setFrameIndex(31 + ~~this.fb);
     return b
   }});
-  fa = tm.createClass({superClass:tm.app.AnimationSprite, kc:k, da:k, init:function(a, b) {
-    this.superInit(tm.app.SpriteSheet({image:"tex1", frame:{width:32, height:32}, animations:{anim0:{frames:[136, 137, 138, 152, 153, 154], next:"anim0", frequency:3}, anim1:{frames:[137, 138, 152, 153, 154, 136].reverse(), next:"anim1", frequency:3}}}), 32, 32);
-    this.kc = b;
+  ha = tm.createClass({superClass:tm.display.AnimationSprite, wc:k, da:k, init:function(a, b) {
+    this.superInit(tm.asset.SpriteSheet({image:"tex1", frame:{width:32, height:32}, animations:{anim0:{frames:[136, 137, 138, 152, 153, 154], next:"anim0", frequency:3}, anim1:{frames:[137, 138, 152, 153, 154, 136].reverse(), next:"anim1", frequency:3}}}), 32, 32);
+    this.wc = b;
     this.da = a;
     this.altitude = 10;
-    this.gotoAndPlay(b.ib ? "anim0" : "anim1")
-  }, update:function(b) {
-    if(this.kc.v) {
-      this.x = this.kc.x * (this.da.ca.sa ? 1.5 : 1);
-      this.y = this.kc.y * (this.da.ca.sa ? 1.5 : 1);
-      this.rotation = Math.radToDeg(this.kc.d * this.kc.fb);
-      var d = this.parent.localToGlobal(this);
-      this.kc.v && 0 === b.frame % 2 && a.clone(40).setPosition(d.x, d.y).addChildTo(b.ca);
-      this.da.Ac && (d = this.da.yc.fa(d.x, d.y, this.parent.rotation + this.rotation - 90), d !== k && d.addChildTo(b.ca))
+    this.gotoAndPlay(b.pb ? "anim0" : "anim1")
+  }, update:function(a) {
+    if(this.wc.v) {
+      this.x = this.wc.x * (this.da.ca.ua ? 1.5 : 1);
+      this.y = this.wc.y * (this.da.ca.ua ? 1.5 : 1);
+      this.rotation = Math.radToDeg(this.wc.d * this.wc.lb);
+      var f = this.parent.localToGlobal(this);
+      this.wc.v && 0 === a.frame % 2 && b.clone(40).setPosition(f.x, f.y).addChildTo(a.ca);
+      this.da.Pc && (f = this.da.Mc.fire(f.x, f.y, this.parent.rotation + this.rotation - 90), f !== k && f.addChildTo(a.ca))
     }else {
       this.x = 0, this.y = -40, this.currentFrameIndex = 3
     }
   }})
 })();
 (function() {
-  var a = k;
-  G = tm.createClass({superClass:tm.app.Sprite, speed:0, ic:0, Eh:1, Uf:0, Za:j, init:function(b) {
+  var b = k;
+  la = tm.createClass({superClass:tm.display.Sprite, speed:0, uc:0, di:1, pg:0, Sa:j, init:function(a) {
     this.superInit("shotbullet", 64, 64);
     this.blendMode = "lighter";
-    this.ic = u.tf;
-    a === k && (a = H(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,128,  0,0.0)"}]).toStyle()).fillRect(0, 0, 16, 16).element));
-    b !== i && this.ed(b)
+    this.alpha = 0.5;
+    this.uc = v.Mf;
+    b === k && (b = G(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,128,  0,0.0)"}]).toStyle()).fillRect(0, 0, 16, 16).element));
+    a !== i && this.sd(a)
   }, update:function() {
-    this.x += this.ff;
-    this.y += this.gd;
+    this.x += this.nc;
+    this.y += this.Mb;
     (-60 > this.x || 540 < this.x || -60 > this.y || 700 < this.y) && this.remove()
-  }, ed:function(a) {
+  }, sd:function(a) {
     this.setFrameIndex(a, 64, 64);
     3 === a ? (this.speed = 45, this.boundingRadius = 48) : (this.speed = 30, this.boundingRadius = 32)
-  }, Jd:function(b) {
-    for(var d = 0;d < b;d++) {
-      var g = a.clone().setPosition(this.x, this.y).addChildTo(this.parent), l = R(2, 8), t = 2 * Math.random() * Math.PI;
-      g.oa = Math.cos(t) * l;
-      g.pa = Math.sin(t) * l;
-      g.scaleX = g.scaleY = (R(0.1, 0.5) + R(0.1, 0.5)) / 2;
+  }, Wd:function(a) {
+    for(var f = 0;f < a;f++) {
+      var g = b.clone().setPosition(this.x, this.y).addChildTo(this.parent), m = U(2, 8), t = 2 * Math.random() * Math.PI;
+      g.ra = Math.cos(t) * m;
+      g.sa = Math.sin(t) * m;
+      g.scaleX = g.scaleY = (U(0.1, 0.5) + U(0.1, 0.5)) / 2;
       g.addEventListener("enterframe", function() {
-        this.x += this.oa;
-        this.y += this.pa;
-        this.oa *= 0.9;
-        this.pa *= 0.9
+        this.x += this.ra;
+        this.y += this.sa;
+        this.ra *= 0.9;
+        this.sa *= 0.9
       })
     }
   }});
-  G.Oc = function() {
-    for(var a = [].concat(b), d = 0, g = a.length;d < g;d++) {
-      a[d].remove()
+  la.cd = function() {
+    for(var b = [].concat(a), f = 0, g = b.length;f < g;f++) {
+      b[f].remove()
     }
   };
-  var b = G.Ma = [];
-  da = tm.createClass({Yb:k, Tf:m, init:function(a, d) {
-    this.Tf = 3 === a;
-    this.Yb = [];
-    for(var g = 0;g < d;g++) {
-      var l = G(a), t = this;
-      l.addEventListener("added", function() {
-        this.ra = u.dh;
-        b.push(this)
+  var a = la.Qa = [];
+  ea = tm.createClass({jc:k, og:l, init:function(b, f) {
+    this.og = 3 === b;
+    this.jc = [];
+    for(var g = 0;g < f;g++) {
+      var m = la(b), t = this;
+      m.addEventListener("added", function() {
+        this.na = v.Ch;
+        a.push(this)
       });
-      l.addEventListener("removed", function() {
-        var a = b.indexOf(this);
-        -1 !== a && b.splice(a, 1);
-        t.Yb.push(this)
+      m.addEventListener("removed", function() {
+        var b = a.indexOf(this);
+        -1 !== b && a.splice(b, 1);
+        t.jc.push(this)
       });
-      this.Tf && l.addEventListener("enterframe", function(a) {
-        this.setScale((this.Eh + this.Uf) * (0 === a.app.frame % 2 ? 1 : 1.2))
+      this.og && m.addEventListener("enterframe", function(a) {
+        this.setScale((this.di + this.pg) * (0 === a.app.frame % 2 ? 1 : 1.2))
       });
-      this.Yb.push(l)
+      this.jc.push(m)
     }
-  }, fa:function(a, b, g) {
-    var l = this.Yb.pop();
-    if(l === i) {
+  }, fire:function(a, b, g) {
+    var m = this.jc.pop();
+    if(m === i) {
       return k
     }
-    var t = Ha(g);
-    l.ff = Math.cos(t) * l.speed;
-    l.gd = Math.sin(t) * l.speed;
-    l.setPosition(a, b);
-    l.rotation = g + 90;
-    return l
-  }, Hc:function(a) {
-    for(var b = this.Yb.length;this.Yb[--b] !== i;) {
-      this.Yb[b].ic = u.tf + u.Yg * a, this.Yb[b].Uf = 0.2 * a
+    var t = La(g);
+    m.nc = Math.cos(t) * m.speed;
+    m.Mb = Math.sin(t) * m.speed;
+    m.setPosition(a, b);
+    m.rotation = g + 90;
+    return m
+  }, Vc:function(a) {
+    for(var b = this.jc.length;this.jc[--b] !== i;) {
+      this.jc[b].uc = v.Mf + v.vh * a, this.jc[b].pg = 0.2 * a
     }
   }})
 })();
-ea = tm.createClass({superClass:tm.app.Sprite, da:k, ca:k, ub:0, frame:0, ng:k, color:k, Bf:0, ue:0, Fh:m, head:k, Qf:k, Af:k, Za:j, ic:u.nf, Gc:k, init:function(a, b) {
-  this.da = a;
-  this.ca = a.ca;
-  this.Bf = 0 === this.da.style ? 1 : 1.2;
-  this.ue = 0 === this.da.style ? 50 : 75;
-  var c = this;
-  this.ng = b;
-  this.superInit(b.redBody, this.ue, 100);
+ga = tm.createClass({superClass:tm.display.Sprite, da:k, ca:k, Db:0, frame:0, Ig:k, color:k, Vf:0, Me:0, ei:l, head:k, kg:k, Uf:k, Sa:j, uc:v.Ff, Uc:k, init:function(b, a) {
+  this.da = b;
+  this.ca = b.ca;
+  this.Vf = 0 === this.da.style ? 1 : 1.2;
+  this.Me = 0 === this.da.style ? 50 : 75;
+  var d = this;
+  this.Ig = a;
+  this.superInit(a.redBody, this.Me, 100);
   this.boundingHeightBottom = 1;
-  this.ej = 0;
+  this.Cj = 0;
   this.origin.y = 1;
-  var d = this.Af = tm.app.AnimationSprite(tm.app.SpriteSheet({image:b.aura, frame:{width:100, height:100}, animations:{red:{frames:[0, 1, 2, 3], next:"red", frequency:2}, green:{frames:[4, 5, 6, 7], next:"green", frequency:2}, blue:{frames:[8, 9, 10, 11], next:"blue", frequency:2}, hyper:{frames:[12, 13, 14, 15], next:"hyper", frequency:2}}}), 140, 140);
-  d.y = 60;
-  d.addChildTo(this);
-  (this.Qf = tm.app.AnimationSprite(tm.app.SpriteSheet({image:b.foot, frame:{width:120, height:80}, animations:{red:{frames:[0, 1, 2, 3], next:"red", frequency:2}, green:{frames:[4, 5, 6, 7], next:"green", frequency:2}, blue:{frames:[8, 9, 10, 11], next:"blue", frequency:2}, hyper:{frames:[12, 13, 14, 15], next:"hyper", frequency:2}}}), 140, 80)).addChildTo(this);
-  d = this.head = tm.app.AnimationSprite(tm.app.SpriteSheet({image:b.head, frame:{width:80, height:80}, animations:{red:{frames:[0, 1, 2, 3], next:"red", frequency:2}, green:{frames:[4, 5, 6, 7], next:"green", frequency:2}, blue:{frames:[8, 9, 10, 11], next:"blue", frequency:2}, hyper:{frames:[12, 13, 14, 15], next:"hyper", frequency:2}}}), 130, 130);
-  d.addChildTo(this);
-  d.update = function() {
-    this.y = c.ub - c.y;
+  var f = this.Uf = tm.display.AnimationSprite(tm.asset.SpriteSheet({image:a.aura, frame:{width:100, height:100}, animations:{red:{frames:[0, 1, 2, 3], next:"red", frequency:2}, green:{frames:[4, 5, 6, 7], next:"green", frequency:2}, blue:{frames:[8, 9, 10, 11], next:"blue", frequency:2}, hyper:{frames:[12, 13, 14, 15], next:"hyper", frequency:2}}}), 140, 140);
+  f.y = 60;
+  f.addChildTo(this);
+  (this.kg = tm.display.AnimationSprite(tm.asset.SpriteSheet({image:a.foot, frame:{width:120, height:80}, animations:{red:{frames:[0, 1, 2, 3], next:"red", frequency:2}, green:{frames:[4, 5, 6, 7], next:"green", frequency:2}, blue:{frames:[8, 9, 10, 11], next:"blue", frequency:2}, hyper:{frames:[12, 13, 14, 15], next:"hyper", frequency:2}}}), 140, 80)).addChildTo(this);
+  f = this.head = tm.display.AnimationSprite(tm.asset.SpriteSheet({image:a.head, frame:{width:80, height:80}, animations:{red:{frames:[0, 1, 2, 3], next:"red", frequency:2}, green:{frames:[4, 5, 6, 7], next:"green", frequency:2}, blue:{frames:[8, 9, 10, 11], next:"blue", frequency:2}, hyper:{frames:[12, 13, 14, 15], next:"hyper", frequency:2}}}), 130, 130);
+  f.addChildTo(this);
+  f.update = function() {
+    this.y = d.Db - d.y;
     -10 < this.y && (this.y = -10);
-    this.visible = 0 < c.ub
+    this.visible = 0 < d.Db
   };
-  this.ed(["red", "green", "blue"][this.da.type]);
-  this.Hc(0)
-}, ed:function(a) {
-  this.color = a;
-  this.image = tm.asset.AssetManager.get(this.ng[this.color + "Body"]);
+  this.sd(["red", "green", "blue"][this.da.type]);
+  this.Vc(0)
+}, sd:function(b) {
+  this.color = b;
+  this.image = tm.asset.AssetManager.get(this.Ig[this.color + "Body"]);
   this.srcRect.x = 0;
   this.srcRect.y = 0;
   this.srcRect.width = this.image.width / 16;
-  this.Af.gotoAndPlay(this.color);
-  this.Qf.gotoAndPlay(this.color);
+  this.Uf.gotoAndPlay(this.color);
+  this.kg.gotoAndPlay(this.color);
   this.head.gotoAndPlay(this.color);
-  this.Gc = k;
+  this.Uc = k;
   return this
-}, Hc:function(a) {
-  this.boundingWidth = this.width = this.ue + 30 * a / u.ce;
+}, Vc:function(b) {
+  this.boundingWidth = this.width = this.Me + 30 * b / v.re;
   this.head.setScale(0.02 * this.width, 0.02 * this.width);
-  this.ic = this.Bf * u.nf + u.$g * a;
-  0 === a ? this.ed(["red", "green", "blue"][this.da.type]) : this.ed("hyper")
-}, Jd:function(a, b) {
-  this.Gc === k && this.Gf();
-  b = b || this.ub;
-  for(var c = 0;c < a;c++) {
-    var d = this.Gc.clone().setPosition(this.x, b).addChildTo(this.ca), g = R(8, 14), l = R(0, Math.PI);
-    d.oa = Math.cos(l) * g;
-    d.pa = Math.sin(l) * g;
-    d.scaleX = d.scaleY = (R(0.5, 1.5) + R(0.5, 1.5)) / 2;
-    d.addEventListener("enterframe", function() {
-      this.x += this.oa;
-      this.y += this.pa;
-      this.oa *= 0.95;
-      this.pa *= 0.95
+  this.uc = this.Vf * v.Ff + v.xh * b;
+  0 === b ? this.sd(["red", "green", "blue"][this.da.type]) : this.sd("hyper")
+}, Wd:function(b, a) {
+  this.Uc === k && this.$f();
+  a = a || this.Db;
+  for(var d = 0;d < b;d++) {
+    var f = this.Uc.clone().setPosition(this.x, a).addChildTo(this.ca), g = U(8, 14), m = U(0, Math.PI);
+    f.ra = Math.cos(m) * g;
+    f.sa = Math.sin(m) * g;
+    f.scaleX = f.scaleY = (U(0.5, 1.5) + U(0.5, 1.5)) / 2;
+    f.addEventListener("enterframe", function() {
+      this.x += this.ra;
+      this.y += this.sa;
+      this.ra *= 0.95;
+      this.sa *= 0.95
     })
   }
-}, $h:function(a, b, c) {
-  this.Gc === k && this.Gf();
-  for(var d = 0;d < a;d++) {
-    var g = this.Gc.clone().setPosition(b, c).addChildTo(this.ca), l = R(12, 20), t = R(0, Math.PI);
-    g.oa = Math.cos(t) * l;
-    g.pa = Math.sin(t) * l;
-    g.scaleX = g.scaleY = (R(1, 3) + R(1, 3)) / 2;
+}, zi:function(b, a, d) {
+  this.Uc === k && this.$f();
+  for(var f = 0;f < b;f++) {
+    var g = this.Uc.clone().setPosition(a, d).addChildTo(this.ca), m = U(12, 20), t = U(0, Math.PI);
+    g.ra = Math.cos(t) * m;
+    g.sa = Math.sin(t) * m;
+    g.scaleX = g.scaleY = (U(1, 3) + U(1, 3)) / 2;
     g.addEventListener("enterframe", function() {
-      this.x += this.oa;
-      this.y += this.pa;
-      this.oa *= 0.95;
-      this.pa *= 0.95
+      this.x += this.ra;
+      this.y += this.sa;
+      this.ra *= 0.95;
+      this.sa *= 0.95
     })
   }
-}, Gf:function() {
-  this.Gc = "hyper" === this.color ? H(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,255,0,0.0)"}]).toStyle()).fillRect(0, 0, 16, 16).element) : H(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:["rgba(255,0,0,0.0)", 
+}, $f:function() {
+  this.Uc = "hyper" === this.color ? G(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,255,0,0.0)"}]).toStyle()).fillRect(0, 0, 16, 16).element) : G(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:["rgba(255,0,0,0.0)", 
   "rgba(0,255,0,0.0)", "rgba(0,0,255,0.0)"][this.da.type]}]).toStyle()).fillRect(0, 0, 16, 16).element)
-}, update:function(a) {
-  (this.visible = this.da.pb) ? (this.ub = Math.max(0, this.ub - 40), this.height = this.y - this.ub, 0 === a.frame % 3 && (this.frame = (this.frame + 1) % 16)) : this.ub = this.y - 40;
-  this.Fh = this.visible
-}, draw:function(a) {
-  var b = this.srcRect, c = this._image.element;
-  b.x = b.width * this.frame;
-  a.context.drawImage(c, b.x, b.height - this.height, b.width, this.height, -this.width * this.origin.x, -this.height * this.origin.y, this.width, this.height)
-}, Wi:function() {
-  return this.ub
-}, Ai:function(a) {
-  this.ub = a;
+}, update:function(b) {
+  (this.visible = this.da.mb) ? (this.Db = Math.max(0, this.Db - 40), this.height = this.y - this.Db, 0 === b.frame % 3 && (this.frame = (this.frame + 1) % 16)) : this.Db = this.y - 40;
+  this.ei = this.visible
+}, draw:function(b) {
+  var a = this.srcRect, d = this._image.element;
+  a.x = a.width * this.frame;
+  b.context.drawImage(d, a.x, a.height - this.height, a.width, this.height, -this.width * this.origin.x, -this.height * this.origin.y, this.width, this.height)
+}, uj:function() {
+  return this.Db
+}, $i:function(b) {
+  this.Db = b;
   this.head.update()
 }});
-ea.prototype.getter("boundingHeightTop", function() {
-  return this.position.y - this.ub
+ga.prototype.getter("boundingHeightTop", function() {
+  return this.position.y - this.Db
 });
 (function() {
-  ja = tm.createClass({superClass:tm.app.Object2D, Za:j, ca:k, init:function(b, c) {
+  ka = tm.createClass({superClass:tm.app.Object2D, Sa:j, ca:k, init:function(a, d) {
     this.superInit();
-    this.da = b;
-    this.ca = c;
-    this.ig = tm.app.CircleShape(300, 300, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.RadialGradient(150, 150, 0, 150, 150, 150).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.5, color:"rgba(255,255,255,0)"}, {offset:0.9, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()}).setScale(0.1, 0.1).addChildTo(this);
-    this.ig.tweener.clear().to({scaleX:5, scaleY:5, alpha:0}, 500, "easeOutQuad").call(function() {
+    this.da = a;
+    this.ca = d;
+    this.Eg = tm.display.CircleShape(300, 300, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.RadialGradient(150, 150, 0, 150, 150, 150).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.5, color:"rgba(255,255,255,0)"}, {offset:0.9, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()}).setScale(0.1, 0.1).addChildTo(this);
+    this.Eg.tweener.clear().to({scaleX:5, scaleY:5, alpha:0}, 500, "easeOutQuad").call(function() {
       this.remove()
-    }.bind(this.ig));
-    this.yf();
-    a === k && (a = H(60, 1, 0.92, tm.graphics.Canvas().resize(10, 10).setFillStyle(tm.graphics.RadialGradient(5, 5, 0, 5, 5, 5).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(  0,  0,255,0.0)"}]).toStyle()).fillRect(0, 0, 10, 10).element));
+    }.bind(this.Eg));
+    this.Rf();
+    b === k && (b = G(60, 1, 0.92, tm.graphics.Canvas().resize(10, 10).setFillStyle(tm.graphics.RadialGradient(5, 5, 0, 5, 5, 5).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(  0,  0,255,0.0)"}]).toStyle()).fillRect(0, 0, 10, 10).element));
     this.r = this.a = 0;
     this.b = 8;
-    this.ia = 0;
-    this.bd = 1;
+    this.ga = 0;
+    this.pd = 1;
     this.addEventListener("added", function() {
-      this.ca.Dc = j;
-      this.da.Fc = j;
-      this.ca.vb -= 1;
-      this.ca.Ed();
-      this.ca.Qa("drop BOMBER!!", j);
+      this.ca.Rc = j;
+      this.da.Tc = j;
+      this.ca.eb -= 1;
+      this.ca.Xe = l;
+      this.ca.Qd();
+      this.ca.Ua("drop BOMBER!!", j);
       J("bomb");
       J("voBomb")
     });
     this.addEventListener("removed", function() {
-      this.ca.Dc = m;
-      this.da.Fc = m
+      this.ca.Rc = l;
+      this.da.Tc = l
     })
-  }, yf:function() {
-    this.core = tm.app.AnimationSprite(tm.app.SpriteSheet({image:"bomb", frame:{width:280, height:280}, animations:{animation:{frames:Array.range(0, 8), next:"animation", frequency:3}}}), 400, 400).addChildTo(this);
+  }, Rf:function() {
+    this.core = tm.display.AnimationSprite(tm.asset.SpriteSheet({image:"bomb", frame:{width:280, height:280}, animations:{animation:{frames:Array.range(0, 8), next:"animation", frequency:3}}}), 400, 400).addChildTo(this);
     this.core.gotoAndPlay("animation");
     this.core.blendMode = "lighter";
     this.core.setScale(0.1, 0.1);
     this.core.tweener.clear().to({scaleX:1, scaleY:1}, 200, "easeOutBack").call(function() {
       this.update = function() {
-        this.scaleX = this.scaleY = R(0.9, 1.1)
+        this.scaleX = this.scaleY = U(0.9, 1.1)
       }
     }.bind(this.core))
   }, update:function() {
-    for(var b = 0;b < this.b;b++) {
-      var c = this.a * this.bd + 2 * b * Math.PI / this.b;
-      a.clone().setPosition(Math.cos(c) * this.r + this.x, Math.sin(c) * this.r + this.y).addChildTo(this.parent)
+    for(var a = 0;a < this.b;a++) {
+      var d = this.a * this.pd + 2 * a * Math.PI / this.b;
+      b.clone().setPosition(Math.cos(d) * this.r + this.x, Math.sin(d) * this.r + this.y).addChildTo(this.parent)
     }
     this.a += 0.04;
-    b = 0.015 * this.ia;
-    this.r = 250 * Math.sin(b);
-    2 * Math.PI < b ? this.remove() : Math.PI < b ? (this.b = 16, this.ia += 3.6, this.bd = -1) : (this.b = 8, this.ia += 1.8, this.bd = 1)
+    a = 0.015 * this.ga;
+    this.r = 250 * Math.sin(a);
+    2 * Math.PI < a ? this.remove() : Math.PI < a ? (this.b = 16, this.ga += 3.6, this.pd = -1) : (this.b = 8, this.ga += 1.8, this.pd = 1)
   }});
-  ka = tm.createClass({superClass:ja, init:function(a, c) {
-    this.superInit(a, c);
-    u.rg && this.addEventListener("added", function() {
-      this.ca.vb = 0
+  na = tm.createClass({superClass:ka, init:function(a, b) {
+    this.superInit(a, b);
+    v.Mg && this.addEventListener("added", function() {
+      this.ca.eb = 0
     })
-  }, yf:function() {
-    this.core = tm.app.AnimationSprite(tm.app.SpriteSheet({image:"bomb", frame:{width:280, height:280}, animations:{animation:{frames:Array.range(0, 8), next:"animation", frequency:3}}}), 400, 400).addChildTo(this);
+  }, Rf:function() {
+    this.core = tm.display.AnimationSprite(tm.asset.SpriteSheet({image:"bomb", frame:{width:280, height:280}, animations:{animation:{frames:Array.range(0, 8), next:"animation", frequency:3}}}), 400, 400).addChildTo(this);
     this.core.gotoAndPlay("animation");
     this.core.blendMode = "lighter";
     this.core.setScale(0.1, 0.1);
     this.core.tweener.clear().to({scaleX:0.5, scaleY:0.5}, 200, "easeOutBack").call(function() {
       this.update = function() {
-        this.scaleX = this.scaleY = R(0.4, 0.6)
+        this.scaleX = this.scaleY = U(0.4, 0.6)
       }
     }.bind(this.core))
   }, update:function() {
-    for(var b = 0;b < this.b;b++) {
-      var c = this.a * this.bd + 2 * b * Math.PI / this.b;
-      a.clone().setPosition(Math.cos(c) * this.r + this.x, Math.sin(c) * this.r + this.y).setScale(0.7, 0.7).addChildTo(this.parent)
+    for(var a = 0;a < this.b;a++) {
+      var d = this.a * this.pd + 2 * a * Math.PI / this.b;
+      b.clone().setPosition(Math.cos(d) * this.r + this.x, Math.sin(d) * this.r + this.y).setScale(0.7, 0.7).addChildTo(this.parent)
     }
     this.a += 0.04;
-    b = 0.04 * this.ia;
-    this.r = 100 * Math.sin(b);
-    Math.PI < b ? this.remove() : (this.b = 8, this.ia += 1.8, this.bd = 1)
+    a = 0.04 * this.ga;
+    this.r = 100 * Math.sin(a);
+    Math.PI < a ? this.remove() : (this.b = 8, this.ga += 1.8, this.pd = 1)
   }});
-  var a = k
+  var b = k
 })();
-E = {na:function() {
-  Ia(256);
-  la = {};
-  E.explosion = Array.range(0, 2).map(function(a) {
-    return tm.app.AnimationSprite(tm.app.SpriteSheet({image:"explode" + a, frame:{width:100, height:100}, animations:{"default":{frame:Array.range(0, 64), next:k}}}, 100, 100))
+oa = tm.createClass({superClass:tm.display.Sprite, nc:0, Mb:0, da:k, ga:0, init:function(b, a, d) {
+  this.superInit("bombIcon", 40, 40);
+  this.setPosition(b, a);
+  this.da = d;
+  this.Mb = 1;
+  this.nc = 0.5 > w.random() ? -1 : 1;
+  this.ga = 0
+}, update:function() {
+  this.x += this.nc;
+  this.y += 2 * this.Mb;
+  if(2025 > Ka(this, this.da)) {
+    this.da.ca.bi(1), this.remove()
+  }else {
+    if(3E3 > this.ga) {
+      if(30 > this.x || 450 < this.x) {
+        this.nc *= -1
+      }
+      if(30 > this.y || 610 < this.y) {
+        this.Mb *= -1
+      }
+    }else {
+      (-20 > this.x || 500 < this.x || -20 > this.y || 660 < this.y) && this.remove()
+    }
+  }
+  this.ga += 1
+}});
+B = {setup:function() {
+  pa = {};
+  B.explosion = Array.range(0, 3).map(function(b) {
+    return tm.display.AnimationSprite(tm.asset.SpriteSheet({image:"explode" + b, frame:{width:100, height:100}, animations:{"default":{frame:Array.range(0, 64), next:k}}}, 100, 100))
   });
-  la.explodeL = tm.app.AnimationSprite(tm.app.SpriteSheet({image:"explodeL", frame:{width:100, height:100}, animations:{"default":{frame:Array.range(0, 64), next:k, frequency:3}}}, 100, 100));
-  E.shockwaveImage = tm.graphics.Canvas().resize(100, 100).setStrokeStyle("rgba(0,0,0,0)").setFillStyle(tm.graphics.RadialGradient(50, 50, 0, 50, 50, 50).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.7, color:"rgba(255,255,255,0)"}, {offset:0.95, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()).fillCircle(50, 50, 50);
-  E.shockwaveImage = tm.graphics.Canvas().resize(100, 100).setStrokeStyle("rgba(0,0,0,0)").setFillStyle(tm.graphics.RadialGradient(50, 50, 0, 50, 50, 50).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.7, color:"rgba(255,255,255,0)"}, {offset:0.95, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()).fillCircle(50, 50, 50);
-  E.particle16 = H(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,128,  0,0.0)"}]).toStyle()).fillRect(0, 0, 16, 16).element)
-}, Jd:function(a, b, c) {
-  a = E.particle16.clone().setPosition(a, b).addChildTo(c);
-  b = R(5, 20);
-  c = R(Math.PI, 2 * Math.PI);
-  a.oa = Math.cos(c) * b;
-  a.pa = Math.sin(c) * b;
-  a.scaleX = a.scaleY = (R(0.1, 0.5) + R(0.1, 0.5)) / 2;
-  a.addEventListener("enterframe", function() {
-    this.x += this.oa;
-    this.y += this.pa;
-    this.oa *= 0.9;
-    this.pa *= 0.9
+  pa.explodeL = tm.display.AnimationSprite(tm.asset.SpriteSheet({image:"explode0", frame:{width:100, height:100}, animations:{"default":{frame:Array.range(0, 64), next:k, frequency:3}}}, 100, 100));
+  B.shockwaveImage = tm.graphics.Canvas().resize(100, 100).setStrokeStyle("rgba(0,0,0,0)").setFillStyle(tm.graphics.RadialGradient(50, 50, 0, 50, 50, 50).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.7, color:"rgba(255,255,255,0)"}, {offset:0.95, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()).fillCircle(50, 50, 50);
+  B.shockwaveImage = tm.graphics.Canvas().resize(100, 100).setStrokeStyle("rgba(0,0,0,0)").setFillStyle(tm.graphics.RadialGradient(50, 50, 0, 50, 50, 50).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.7, color:"rgba(255,255,255,0)"}, {offset:0.95, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()).fillCircle(50, 50, 50);
+  B.particle16 = G(16, 1, 0.9, tm.graphics.Canvas().resize(16, 16).setFillStyle(tm.graphics.RadialGradient(8, 8, 0, 8, 8, 8).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,128,  0,0.0)"}]).toStyle()).fillRect(0, 0, 16, 16).element)
+}, Wd:function(b, a, d) {
+  b = B.particle16.clone().setPosition(b, a);
+  b.Sa = j;
+  b.addChildTo(d);
+  d = U(5, 20);
+  a = U(Math.PI, 2 * Math.PI);
+  b.ra = Math.cos(a) * d;
+  b.sa = Math.sin(a) * d;
+  b.scaleX = b.scaleY = (U(0.1, 0.5) + U(0.1, 0.5)) / 2;
+  b.addEventListener("enterframe", function() {
+    this.x += this.ra;
+    this.y += this.sa;
+    this.ra *= 0.9;
+    this.sa *= 0.9
   })
-}, Vi:function(a, b, c) {
-  var d = tm.app.Sprite().setPosition(a, b).setScale(0.1).setBlendMode("lighter").addChildTo(c);
-  d.image = E.shockwaveImage;
-  d.tweener.clear().to({scaleX:1.4, scaleY:1.4, alpha:0}, 800, "easeOutQuad").call(function() {
-    d.remove()
+}, lg:function(b, a, d, f) {
+  f = f || 1.8;
+  var g = tm.display.Sprite().setPosition(b, a).setScale(0.1).setBlendMode("lighter");
+  g.Sa = j;
+  g.addChildTo(d);
+  g.image = B.shockwaveImage;
+  g.tweener.clear().to({scaleX:f, scaleY:f, alpha:0}, 800, "easeOutQuad").call(function() {
+    g.remove()
   })
-}, ai:function(a, b, c) {
-  a = tm.app.CircleShape(300, 300, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.RadialGradient(150, 150, 0, 150, 150, 150).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.5, color:"rgba(255,255,255,0)"}, {offset:0.9, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()}).setPosition(a, b).setScale(0.1, 0.1);
-  a.Za = j;
-  a.addChildTo(c);
-  a.tweener.clear().to({scaleX:5, scaleY:5, alpha:0}, 500, "easeOutQuad").call(function() {
+}, Ai:function(b, a, d) {
+  b = tm.display.CircleShape(300, 300, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.RadialGradient(150, 150, 0, 150, 150, 150).addColorStopList([{offset:0, color:"rgba(255,255,255,0)"}, {offset:0.5, color:"rgba(255,255,255,0)"}, {offset:0.9, color:"rgba(255,255,255,1)"}, {offset:1, color:"rgba(255,255,255,0)"}]).toStyle()}).setPosition(b, a).setScale(0.1, 0.1);
+  b.Sa = j;
+  b.addChildTo(d);
+  b.tweener.clear().to({scaleX:5, scaleY:5, alpha:0}, 500, "easeOutQuad").call(function() {
     this.remove()
-  }.bind(a))
-}, Gd:function(a, b, c, d) {
+  }.bind(b))
+}, Sd:function(b, a, d, f) {
   J("explode");
-  a = E.explosion.random().clone().addEventListener("animationend", function() {
+  var g = B.explosion.random().clone().addEventListener("animationend", function() {
     this.remove()
-  }).setScale(0.75).setPosition(a, b).setRotation(360 * Math.random()).gotoAndPlay();
-  a.Za = j;
-  if(d !== i) {
-    var g = d.x, l = d.y;
-    a.addEventListener("enterframe", function() {
-      this.x += g;
-      this.y += l;
-      g *= 0.99;
-      l *= 0.99
+  }).setScale(0.75).setPosition(b, a).setRotation(360 * Math.random()).gotoAndPlay();
+  g.Sa = j;
+  if(f !== i) {
+    var m = f.x, t = f.y;
+    g.addEventListener("enterframe", function() {
+      this.x += m;
+      this.y += t;
+      m *= 0.99;
+      t *= 0.99
     })
   }
-  a.addChildTo(c)
-}, Qh:function(a, b, c) {
+  g.addChildTo(d);
+  B.lg(b, a, d)
+}, oi:function(b, a, d) {
   J("explode");
-  var d = E.explosion.random().clone().addEventListener("animationend", function() {
+  var f = B.explosion.random().clone().addEventListener("animationend", function() {
     this.remove()
   }).addEventListener("enterframe", function() {
     this.scaleX += 0.01;
     this.scaleY += 0.01
-  }).setScale(0.5).setPosition(a, b).setRotation(360 * Math.random()).gotoAndPlay();
-  d.Za = j;
-  d.addChildTo(c);
-  d = E.explosion.random().clone().addEventListener("animationend", function() {
+  }).setScale(0.5).setPosition(b, a).setRotation(360 * Math.random()).gotoAndPlay();
+  f.Sa = j;
+  f.addChildTo(d);
+  f = B.explosion.random().clone().addEventListener("animationend", function() {
     this.remove()
   }).addEventListener("enterframe", function() {
     this.rotation += 2;
@@ -1408,10 +1462,10 @@ E = {na:function() {
     this.y -= 0.3;
     this.scaleX += 0.01;
     this.scaleY += 0.01
-  }).setScale(0.5).setPosition(a + 12, b).setRotation(360 * Math.random()).setBlendMode("lighter").gotoAndPlay();
-  d.Za = j;
-  d.addChildTo(c);
-  d = E.explosion.random().clone().addEventListener("animationend", function() {
+  }).setScale(0.5).setPosition(b + 12, a).setRotation(360 * Math.random()).gotoAndPlay();
+  f.Sa = j;
+  f.addChildTo(d);
+  f = B.explosion.random().clone().addEventListener("animationend", function() {
     this.remove()
   }).addEventListener("enterframe", function() {
     this.rotation -= 2;
@@ -1419,273 +1473,269 @@ E = {na:function() {
     this.y -= 0.3;
     this.scaleX += 0.01;
     this.scaleY += 0.01
-  }).setScale(0.5).setPosition(a - 12, b).setRotation(360 * Math.random()).setBlendMode("lighter").gotoAndPlay();
-  d.Za = j;
-  d.addChildTo(c)
-}, nc:function(a, b, c) {
+  }).setScale(0.5).setPosition(b - 12, a).setRotation(360 * Math.random()).gotoAndPlay();
+  f.Sa = j;
+  f.addChildTo(d)
+}, Gb:function(b, a, d) {
   J("explode2");
   J("explode3");
-  for(var d = ~~(Math.random() * V.length), g = 0;20 > g;g++) {
-    var l = E.explosion.random().clone().addEventListener("animationend", function() {
+  for(var f = ~~(Math.random() * Ma.length), g = 0;20 > g;g++) {
+    var m = B.explosion.random().clone().addEventListener("animationend", function() {
       this.remove()
     }).addEventListener("enterframe", function() {
       this.x += Math.cos(this.a) * this.v;
       this.y += Math.sin(this.a) * this.v;
       this.scaleX += 0.01;
       this.scaleY += 0.01
-    }).setScale(0.7).setBlendMode(0 === g % 2 ? "lighter" : "source-over").setPosition(a, b).gotoAndPlay();
-    l.a = 2 * Math.PI * Math.random();
-    l.v = 10 * Math.pow(V.at(~~(V.length * g / 20) + d), 2);
-    l.Za = j;
-    l.addChildTo(c)
+    }).setScale(0.7).setPosition(b, a).gotoAndPlay();
+    m.a = 2 * Math.PI * Math.random();
+    m.v = 10 * Math.pow(Ma.at(~~(Ma.length * g / 20) + f), 2);
+    m.Sa = j;
+    m.addChildTo(d)
   }
-}, Nf:function(a, b, c) {
+  B.lg(b, a, d, 5)
+}, hg:function(b, a, d) {
   J("explode2");
   J("explode3");
-  for(var d = ~~(Math.random() * V.length), g = 0;20 > g;g++) {
-    for(var l = 2 * Math.PI * g / 20, t = Math.pow(V.at(~~(V.length * g / 20) + d), 2), w = 0;3 > w;w++) {
-      var v = 4 * t * (w + 1), r = la.explodeL.clone().addEventListener("animationend", function() {
+  for(var f = ~~(Math.random() * Ma.length), g = 0;20 > g;g++) {
+    for(var m = 2 * Math.PI * g / 20, t = Math.pow(Ma.at(~~(Ma.length * g / 20) + f), 2), C = 0;3 > C;C++) {
+      var E = 4 * t * (C + 1), s = pa.explodeL.clone().addEventListener("animationend", function() {
         this.remove()
       }).addEventListener("enterframe", function() {
         this.x += Math.cos(this.a) * this.v;
         this.y += Math.sin(this.a) * this.v;
         this.scaleX += 0.01;
         this.scaleY += 0.01;
-        32 < this.ia && (this.blendMode = "source-over");
-        this.ia += 1
-      }).setScale(0.3 * (3 - w)).setBlendMode("lighter").setPosition(a, b).gotoAndPlay();
-      r.rotation = 2 * Math.random() * Math.PI;
-      r.Za = j;
-      r.alpha = 0.2;
-      r.ia = 0;
-      r.a = l;
-      r.v = v;
-      r.addChildTo(c)
+        this.ga += 1
+      }).setScale(0.3 * (3 - C)).setPosition(b, a).gotoAndPlay();
+      s.rotation = 2 * Math.random() * Math.PI;
+      s.Sa = j;
+      s.ga = 0;
+      s.a = m;
+      s.v = E;
+      s.addChildTo(d)
     }
   }
 }};
-ma = tm.createClass({superClass:tm.app.Object2D, target:k, oc:0, angle:0, alpha:1, Za:j, reverse:m, init:function(a, b) {
+qa = tm.createClass({superClass:tm.app.Object2D, target:k, Bc:0, angle:0, alpha:2, Sa:j, reverse:l, init:function(b, a) {
   this.superInit();
-  this.target = a;
-  this.reverse = b;
+  this.target = b;
+  this.reverse = a;
   this.angle = 0;
-  this.oc = b ? 0 : 200;
-  this.alpha = b ? 1 : 0
-}, update:function() {
+  this.Bc = a ? 0 : 200;
+  this.alpha = a ? 1 : 0
+}, update:function(b) {
   if(this.target.parent === k) {
     this.remove()
   }else {
-    for(var a = 0;9 > a;a++) {
-      var b = this.angle + 2 * a / 9 * Math.PI;
-      H(80, this.alpha, 0.9).setPosition(Math.cos(b) * this.oc + this.target.x, Math.sin(b) * this.oc + this.target.y).addChildTo(this.target.parent)
+    if(0 === b.frame % 2) {
+      for(b = 0;9 > b;b++) {
+        var a = this.angle + 2 * b / 9 * Math.PI;
+        G(60, this.alpha, 0.9).setPosition(Math.cos(a) * this.Bc + this.target.x, Math.sin(a) * this.Bc + this.target.y).addChildTo(this.target.parent)
+      }
     }
     this.angle += 0.05;
-    this.oc += this.reverse ? 4 : -4;
+    this.Bc += this.reverse ? 4 : -4;
     this.alpha += this.reverse ? -0.02 : 0.05;
-    (0 > this.oc || 200 < this.oc) && this.remove()
+    (0 > this.Bc || 200 < this.Bc) && this.remove()
   }
 }});
-ia = tm.createClass({superClass:tm.app.Object2D, target:k, angle:0, Za:j, init:function(a) {
+ja = tm.createClass({superClass:tm.app.Object2D, target:k, angle:0, Sa:j, init:function(b) {
   this.superInit();
-  this.target = a;
+  this.target = b;
   this.angle = 0
 }, update:function() {
   if(this.target.parent === k) {
     this.remove()
   }else {
-    for(var a = 0;5 > a;a++) {
-      H(80, 1, 0.9).setPosition(40 * Math.cos(this.angle - 0.5 * Math.PI) + this.target.x + W(-2, 2), 40 * Math.sin(this.angle - 0.5 * Math.PI) + this.target.y + W(-2, 2)).addChildTo(this.target.parent)
+    for(var b = 0;5 > b;b++) {
+      var a = G(80, 1, 0.9).setPosition(40 * Math.cos(this.angle - 0.5 * Math.PI) + this.target.x + V(-2, 2), 40 * Math.sin(this.angle - 0.5 * Math.PI) + this.target.y + V(-2, 2)).on("enterframe", function() {
+        this.x += this.ra;
+        this.y += this.sa
+      }).addChildTo(this.target.parent);
+      a.ra = 3 * Math.cos(this.angle);
+      a.sa = 3 * Math.sin(this.angle)
     }
     this.angle += 0.2;
     2 * Math.PI < this.angle && this.remove()
   }
 }});
-na = tm.createClass({superClass:tm.graphics.Canvas, ca:k, xc:k, Ra:k, init:function(a) {
+ra = tm.createClass({superClass:tm.graphics.Canvas, ca:k, Lc:k, Va:k, frame:0, init:function(b) {
   this.superInit("#scoreLabel");
-  this.ca = a;
+  this.ca = b;
   this.resize(480, 640).fitWindow();
   this.setText("20px Orbitron", "left", "top");
   this.fillStyle = "rgba(255,255,255,0.01)";
-  this.xc = Ja(200);
-  this.Ra = oa(this)
+  this.Lc = Na(200);
+  this.Va = sa(this)
 }, update:function() {
   this.clear();
-  this.ca.Ub !== k && (this.fillStyle = tm.graphics.LinearGradient(0, 0, 480, 0).addColorStopList([{offset:0, color:"rgba(255,255,0,0.4)"}, {offset:1, color:"rgba(0,255,255,0.4)"}]).toStyle(), this.strokeStyle = "rgba(255,255,255,0.8)", this.lineWidth = 2, this.fillRect(5, this.Ra.yb - 20, 470 * this.ca.Ub.ra / this.ca.Ub.Bc, 20), this.strokeRect(5, this.Ra.yb - 20, 470, 20), this.clear(263.5, this.Ra.yb - 20 + 2, 2, 16), this.clear(52, this.Ra.yb - 20 + 2, 2, 16));
+  this.ca.Sb !== k && (this.fillStyle = tm.graphics.LinearGradient(0, 0, 480, 0).addColorStopList([{offset:0, color:"rgba(255,255,0,0.4)"}, {offset:1, color:"rgba(0,255,255,0.4)"}]).toStyle(), this.strokeStyle = "rgba(255,255,255,0.8)", this.lineWidth = 2, this.fillRect(5, this.Va.Hb - 20, 470 * this.ca.Sb.na / this.ca.Sb.hc, 20), this.strokeRect(5, this.Va.Hb - 20, 470, 20), this.clear(263.5, this.Va.Hb - 20 + 2, 2, 16), this.clear(52, this.Va.Hb - 20 + 2, 2, 16));
   this.strokeStyle = this.fillStyle = "rgba(255,255,255,0.4)";
   this.lineWidth = 1;
-  var a;
+  var b;
   this.setText("20px 'Ubuntu Mono'", "right", "top");
   score = ("" + Math.floor(this.ca.score)).padding(16, " ");
-  a = "";
-  for(var b = 0;b < score.length;b += 4) {
-    a += score.substring(b, b + 4) + " "
+  b = "";
+  for(var a = 0;a < score.length;a += 4) {
+    b += score.substring(a, a + 4) + " "
   }
-  this.fillText(a, 192, this.Ra.yb + 5);
+  this.fillText(b, 192, this.Va.Hb + 5);
   this.setText("18px 'Ubuntu Mono'", "right", "top");
-  score = ("+" + Math.floor(this.ca.Ia)).padding(8, " ");
-  a = "";
-  for(b = 0;b < score.length;b += 4) {
-    a += score.substring(b, b + 4) + " "
+  score = ("+" + Math.floor(this.ca.La)).padding(8, " ");
+  b = "";
+  for(a = 0;a < score.length;a += 4) {
+    b += score.substring(a, a + 4) + " "
   }
-  this.fillText(a + "x " + (~~(this.ca.ya / u.jf) + 1), this.Ra.Tc + 192, 22);
-  a = [0, 1, 4][this.ca.da.type];
-  for(b = 0;b < this.ca.bc - 1;b++) {
-    this.drawTexture(tm.asset.AssetManager.get("fighter"), 192, 64 * a, 64, 64, 5 + 32 * b, 40, 32, 32)
+  this.fillText(b + "x " + (~~(this.ca.Aa / v.Bf) + 1), this.Va.gd + 192, 22);
+  b = [0, 1, 4][this.ca.da.type];
+  for(a = 0;a < this.ca.oc - 1;a++) {
+    this.drawTexture(tm.asset.AssetManager.get("fighter"), 192, 64 * b, 64, 64, 5 + 32 * a, 40, 32, 32)
   }
   this.setText("bold 18px Orbitron", "left", "top");
-  this.strokeText("rank " + ~~(100 * q.va.Oa.$rank), 10, 75);
+  this.strokeText("rank " + ~~(100 * q.ya.Ra.$rank), 10, 75);
   this.setText("bold 18px Orbitron", "left", "top");
-  this.strokeText("max " + ~~this.ca.Zc + " hit", this.Ra.Tc + 10, 95);
-  0 < ~~this.ca.ya && (this.setText("bold 45px Orbitron", "left", "top"), this.strokeText(~~this.ca.ya + " HIT!!", 10, -this.Ra.yb + 115));
-  for(b = 0;b < this.ca.vb;b++) {
-    this.drawTexture(tm.asset.AssetManager.get("bombIcon"), 480 - 25 * (b + 1) - 20, 615, 20, 20)
+  this.strokeText("max " + ~~this.ca.md + " hit", this.Va.gd + 10, 95);
+  0 < ~~this.ca.Aa && (this.setText("bold 45px Orbitron", "left", "top"), this.strokeText(~~this.ca.Aa + " HIT!!", 10, 0.5 * -this.Va.Hb + 115));
+  0 === this.frame % 2 && (!this.ca.ua && 0 < this.ca.za ? (this.strokeStyle = "rgba(255,255,100,0.5)", this.setText("bold 24px Orbitron", "left", "bottom"), this.strokeText("HYPER LV " + this.ca.za, 5, 637)) : this.ca.ua && (this.strokeStyle = "rgba(255,255,100,0.5)", this.setText("bold 28px Orbitron", "left", "bottom"), this.strokeText("HYPER LV " + this.ca.Pd, 5, 637)));
+  for(a = 0;a < this.ca.eb;a++) {
+    this.drawTexture(tm.asset.AssetManager.get("bombIcon"), 480 - 25 * (a + 1) - 20, 615, 20, 20)
   }
-  this.xc.update();
-  this.xc.Xe = this.Ra.yb + 5;
-  this.xc.draw(this)
+  0 === this.frame % 2 && this.ca.Xe && (this.strokeStyle = "rgba(255,255,255,0.5)", this.setText("bold 28px Orbitron", "right", "bottom"), this.strokeText("MAXIMUM", 460, 637));
+  this.Lc.update();
+  this.Lc.pf = this.Va.Hb + 5;
+  this.Lc.draw(this);
+  this.frame += 1
 }});
-oa = tm.createClass({superClass:tm.app.Object2D, ab:k, Tc:0, yb:0, init:function(a) {
+sa = tm.createClass({superClass:tm.app.Object2D, gb:k, gd:0, Hb:0, init:function(b) {
   this.superInit();
-  this.ab = a
+  this.gb = b
 }});
 (function() {
-  var a = 16 * Math.sqrt(3), b = 12.8 * Math.sqrt(3);
-  pa = tm.createClass({superClass:tm.graphics.Canvas, ga:k, init:function() {
+  for(var b = [], a = [], d = 0;3 > d;d++) {
+    b[d] = 40 * Math.pow(0.8, d), a[d] = b[d] / 2 * Math.sqrt(3)
+  }
+  ta = tm.createClass({superClass:tm.graphics.Canvas, qa:k, init:function() {
     this.superInit("#background");
     this.resize(480, 640).fitWindow();
-    this.ga = qa();
-    this.ga.ka = this;
-    this.ga.update = function(a) {
+    this.qa = ua();
+    this.qa.ja = this;
+    this.qa.update = function(a) {
       this.update(a.frame)
     }.bind(this);
     this.blendMode = "lighter"
-  }, update:function(c) {
-    this.ga.oa = Math.cos(this.ga.direction) * this.ga.speed;
-    this.ga.pa = Math.sin(this.ga.direction) * this.ga.speed;
-    for(this.ga.zb += this.ga.oa;96 < this.ga.zb;) {
-      this.ga.zb -= 96
+  }, update:function(d) {
+    this.qa.ra = Math.cos(this.qa.direction) * this.qa.speed;
+    this.qa.sa = Math.sin(this.qa.direction) * this.qa.speed;
+    for(var g = 0;3 > g;g++) {
+      for(this.qa.vb[g] += this.qa.ra * Math.pow(0.8, g);3 * b[g] < this.qa.vb[g];) {
+        this.qa.vb[g] -= 3 * b[g]
+      }
+      for(;this.qa.vb[g] < 3 * -b[g];) {
+        this.qa.vb[g] += 3 * b[g]
+      }
+      for(this.qa.wb[g] += this.qa.sa * Math.pow(0.8, g);2 * a[g] < this.qa.wb[g];) {
+        this.qa.wb[g] -= 2 * a[g]
+      }
+      for(;this.qa.wb[g] < 2 * -a[g];) {
+        this.qa.wb[g] += 2 * a[g]
+      }
     }
-    for(;-96 > this.ga.zb;) {
-      this.ga.zb += 96
-    }
-    for(this.ga.Bb += this.ga.pa;2 * a < this.ga.Bb;) {
-      this.ga.Bb -= 2 * a
-    }
-    for(;this.ga.Bb < 2 * -a;) {
-      this.ga.Bb += 2 * a
-    }
-    for(this.ga.Ab += 0.8 * this.ga.oa;25.6 * 3 < this.ga.Ab;) {
-      this.ga.Ab -= 25.6 * 3
-    }
-    for(;this.ga.Ab < -25.6 * 3;) {
-      this.ga.Ab += 25.6 * 3
-    }
-    for(this.ga.Cb += 0.8 * this.ga.pa;2 * b < this.ga.Cb;) {
-      this.ga.Cb -= 2 * b
-    }
-    for(;this.ga.Cb < 2 * -b;) {
-      this.ga.Cb += 2 * b
-    }
-    0 === c % 2 && this.draw()
+    0 === d % 2 && this.draw()
   }, draw:function() {
-    this.ga.background !== k ? this.clearColor(this.ga.background, 0, 0) : this.clear();
-    this.lineWidth = 0.3;
-    this.strokeStyle = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"rgba(255,255,255,1.0)"}, {offset:1, color:"rgba(255,255,255,0.5)"}]).toStyle();
-    this.beginPath();
-    for(var c = 0, d = this.ga.zb - 96;576 > d;d += 48) {
-      for(var c = 0 === c ? a : 0, g = this.ga.Bb - 2 * a + c;g < 640 + 2 * a;g += 2 * a) {
-        this.line(d, g, d + 32, g), this.line(d, g, d - 16, g + a), this.line(d, g, d - 16, g - a)
+    this.qa.background !== k ? this.clearColor(this.qa.background, 0, 0) : this.clear();
+    for(var d = 0;3 > d;d++) {
+      this.lineWidth = 0.3 * Math.pow(0.8, d);
+      this.strokeStyle = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"rgba(255,255,255," + 0.6 * Math.pow(0.8, d) + ")"}, {offset:1, color:"rgba(255,255,255," + 0.4 * Math.pow(0.8, d) + ")"}]).toStyle();
+      this.beginPath();
+      for(var g = 0, m = this.qa.vb[d] - 3 * b[d];m < 480 + 3 * b[d];m += 1.5 * b[d]) {
+        for(var g = 0 === g ? a[d] : 0, t = this.qa.wb[d] - 2 * a[d] + g;t < 640 + 2 * a[d];t += 2 * a[d]) {
+          this.line(m, t, m + b[d], t), this.line(m, t, m - b[d] / 2, t + a[d]), this.line(m, t, m - b[d] / 2, t - a[d])
+        }
       }
+      this.stroke()
     }
-    this.stroke();
-    this.lineWidth = 0.2;
-    this.strokeStyle = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"rgba(255,255,255,0.6)"}, {offset:1, color:"rgba(255,255,255,0.3)"}]).toStyle();
-    this.beginPath();
-    c = 0;
-    for(d = this.ga.Ab - 25.6 * 3;d < 480 + 25.6 * 3;d += 25.6 * 1.5) {
-      c = 0 === c ? b : 0;
-      for(g = this.ga.Cb - 2 * b + c;g < 640 + 2 * b;g += 2 * b) {
-        this.line(d, g, d + 25.6, g), this.line(d, g, d - 12.8, g + b), this.line(d, g, d - 12.8, g - b)
-      }
-    }
-    this.stroke()
   }});
-  qa = tm.createClass({superClass:tm.app.Object2D, zb:0, Bb:0, Ab:0, Cb:0, direction:0, speed:0, oa:0, pa:0, background:k, init:function() {
+  ua = tm.createClass({superClass:tm.app.Object2D, vb:0, wb:0, direction:0, speed:0, ra:0, sa:0, background:k, init:function() {
     this.superInit();
-    this.Ab = this.Cb = this.zb = this.Bb = 0;
+    this.vb = [];
+    this.wb = [];
+    for(var a = 0;3 > a;a++) {
+      this.vb[a] = 240, this.wb[a] = 320
+    }
     this.direction = 0.5 * Math.PI;
     this.speed = 1;
-    this.pa = this.oa = 0
+    this.sa = this.ra = 0
   }})
 })();
-ra = tm.createClass({superClass:tm.app.Sprite, Wf:m, ca:k, da:k, Nb:m, Uc:m, af:m, oa:0, pa:0, init:function(a) {
+va = tm.createClass({superClass:tm.display.Sprite, rg:l, ca:k, da:k, Vb:l, Ac:l, sf:l, ra:0, sa:0, init:function(b) {
   this.superInit("star", 20, 20);
-  (this.Wf = a) && this.setScale(2, 2);
-  this.ca = F.le;
+  (this.rg = b) && this.setScale(2, 2);
+  this.ca = F.Ae;
   this.da = this.ca.da;
   this.addChildTo(this.ca);
-  a = 0.5 * B.random() * Math.PI - 0.75 * Math.PI;
-  this.oa = 30 * Math.cos(a);
-  this.pa = 30 * Math.sin(a)
+  b = 0.5 * w.random() * Math.PI - 0.75 * Math.PI;
+  this.ra = 30 * Math.cos(b);
+  this.sa = 30 * Math.sin(b)
 }, update:function() {
-  this.da.pb && (this.Uc = j);
+  this.da.mb && (this.Ac = j);
   if(this.da.parent === k) {
-    this.Uc = m
+    this.Ac = l
   }else {
-    if(100 > Ga(this, this.da)) {
-      this.ca.ki(this);
+    if(100 > Ka(this, this.da)) {
+      this.ca.Ki(this);
       this.remove();
       return
     }
-    1E4 > Ga(this, this.da) && (this.Uc = j);
-    if(this.af && this.Uc) {
-      var a = Math.atan2(this.da.y - this.y, this.da.x - this.x);
-      this.x += 10 * Math.cos(a);
-      this.y += 10 * Math.sin(a)
+    1E4 > Ka(this, this.da) && (this.Ac = j);
+    if(this.sf && this.Ac) {
+      var b = Math.atan2(this.da.y - this.y, this.da.x - this.x);
+      this.x += 10 * Math.cos(b);
+      this.y += 10 * Math.sin(b)
     }else {
-      this.af || (this.x += this.oa, this.y += this.pa, this.oa *= 0.8, this.pa *= 0.8, -1 < this.oa && (1 > this.oa && -1 < this.pa && 1 > this.pa) && (this.af = j))
+      this.sf || (this.x += this.ra, this.y += this.sa, this.ra *= 0.8, this.sa *= 0.8, -1 < this.ra && (1 > this.ra && -1 < this.sa && 1 > this.sa) && (this.sf = j))
     }
   }
   (-200 > this.x || 680 < this.x || -200 > this.y || 690 < this.y) && this.remove()
 }});
-sa = tm.createClass({superClass:ra, Nb:m, init:function(a) {
-  this.superInit(a)
+wa = tm.createClass({superClass:va, Vb:l, init:function(b) {
+  this.superInit(b)
 }, update:function() {
   this.y += 4;
   this.rotation += 10;
   this.superClass.prototype.update.call(this)
 }});
-ta = tm.createClass({superClass:ra, Nb:j, init:function(a) {
-  this.superInit(a)
+xa = tm.createClass({superClass:va, Vb:j, init:function(b) {
+  this.superInit(b)
 }, update:function() {
-  this.Uc || (this.x += this.ca.ka.oa, this.y += this.ca.ka.pa);
+  this.Ac || (this.x += this.ca.ja.ra, this.y += this.ca.ja.sa);
   this.superClass.prototype.update.call(this)
 }});
-ua = tm.createClass({da:k, ca:k, $:k, frame:0, init:function(a) {
-  this.ca = a;
-  this.da = a.da;
-  this.$e();
-  this.$ = wa();
+ya = tm.createClass({da:k, ca:k, $:k, frame:0, init:function(b) {
+  this.ca = b;
+  this.da = b.da;
+  this.ge();
+  this.$ = za();
   this.frame = 0
-}, $e:n(), update:function() {
-  this.Oh(this.frame);
+}, ge:n(), update:function() {
+  this.mi(this.frame);
   this.frame += 1
-}, Oh:function(a) {
-  a = this.$.get(a);
-  if(a !== k) {
-    if("function" === typeof a.value) {
-      a.value.call(this)
+}, mi:function(b) {
+  b = this.$.get(b);
+  if(b !== k) {
+    if("function" === typeof b.value) {
+      b.value.call(this)
     }else {
-      if(xa[a.value] !== i) {
-        var b = xa[a.value];
-        if(b !== k) {
-          if(b[0].Ub === j) {
-            this.$f(b[0])
+      if(Ba[b.value] !== i) {
+        var a = Ba[b.value];
+        if(a !== k) {
+          if(a[0].Sb === j) {
+            this.vg(a[0])
           }else {
-            for(var c = 0;c < b.length;c++) {
-              var d = this.$f(b[c]);
-              a.stop && d.addEventListener("enemyconsumed", function() {
-                this.$.cf = m
+            for(var d = 0;d < a.length;d++) {
+              var f = this.vg(a[d]);
+              b.stop && f.addEventListener("enemyconsumed", function() {
+                this.$.tf = l
               }.bind(this))
             }
           }
@@ -1693,59 +1743,67 @@ ua = tm.createClass({da:k, ca:k, $:k, frame:0, init:function(a) {
       }
     }
   }
-}, $f:function(a) {
-  this.ca.Fd += 1;
-  return a.aa(this.ca, a.ba).setPosition(a.x, a.y).addChildTo(this.ca).li()
-}, Dh:function(a) {
-  ya();
-  this.ca.Rc = j;
-  for(var b = tm.app.Object2D().setPosition(240, 320), c = -4;4 >= c;c++) {
-    for(var d = -4;4 >= d;d++) {
-      var g = tm.app.Label("WARNING!!", 75).setFillStyle(tm.graphics.LinearGradient(0, 0, 0, 20).addColorStopList([{offset:0, color:"hsla( 0, 100%, 50%, 0.07)"}, {offset:1, color:"hsla(50, 100%, 50%, 0.07)"}]).toStyle()).setBlendMode("lighter").setPosition(c, d);
-      g.ia = 0;
+}, vg:function(b) {
+  this.ca.Rd += 1;
+  b = b.aa(this.ca, b.ba).setPosition(b.x, b.y).addChildTo(this.ca).Li();
+  b.ie = this;
+  return b
+}, Tf:function(b) {
+  Ca();
+  this.ca.fd = j;
+  for(var a = tm.app.Object2D().setPosition(240, 320), d = -4;4 >= d;d++) {
+    for(var f = -4;4 >= f;f++) {
+      var g = tm.display.Label("WARNING!!", 75).setFillStyle(tm.graphics.LinearGradient(0, 0, 0, 20).addColorStopList([{offset:0, color:"hsla( 0, 100%, 50%, 0.07)"}, {offset:1, color:"hsla(50, 100%, 50%, 0.07)"}]).toStyle()).setBlendMode("lighter").setPosition(d, f);
+      g.ga = 0;
       g.update = function() {
-        this.alpha = -0.5 * Math.cos(0.08 * this.ia) + 0.5;
-        this.ia += 1
+        this.alpha = -0.5 * Math.cos(0.08 * this.ga) + 0.5;
+        this.ga += 1
       };
-      g.addChildTo(b)
+      g.addChildTo(a)
     }
   }
-  b.tweener.wait(3E3).call(a).wait(2E3).call(function() {
+  a.tweener.wait(3E3).call(b).wait(2E3).call(function() {
     this.execChildren(function() {
       this.update = n();
       this.tweener.clear().fadeOut(500)
     })
-  }.bind(b)).wait(1E3).call(function() {
+  }.bind(a)).wait(1E3).call(function() {
     this.remove()
-  }.bind(b));
-  b.addChildTo(this.ca.Ae);
+  }.bind(a));
+  a.addChildTo(this.ca.Se);
   J("warning");
   J("voWarning")
 }});
-ua.create = function(a, b) {
-  switch(b) {
+ya.create = function(b, a) {
+  switch(a) {
     case 0:
-      return za(a);
+      return Da(b);
     case 1:
-      return Aa(a)
+      return Ea(b);
+    case 2:
+      return Fa(b);
+    case 3:
+      return Fa(b);
+    default:
+      h(Error("stageNumber = " + a))
   }
 };
-wa = tm.createClass({index:0, data:k, cf:m, init:function() {
+za = tm.createClass({index:0, data:k, tf:l, init:function() {
   this.data = {}
-}, add:function(a, b, c) {
-  this.index += a;
-  this.data[this.index] = {stop:c, value:b}
-}, get:function(a) {
-  a = this.data[a];
-  return a === i ? k : a.stop === j ? (this.cf = j, a) : this.cf ? k : a
+}, add:function(b, a, d) {
+  this.index += b;
+  this.data[this.index] = {stop:d, value:a}
+}, get:function(b) {
+  b = this.data[b];
+  return b === i ? k : b.stop === j ? (this.tf = j, b) : this.tf ? k : b
 }});
-za = tm.createClass({superClass:ua, init:function(a) {
-  this.superInit(a);
+Da = tm.createClass({superClass:ya, init:function(b) {
+  this.superInit(b);
   this.$.add(0, function() {
-    Ba("bgm1", j);
-    this.ca.ka.direction = 0.5 * Math.PI;
-    this.ca.ka.speed = 8;
-    this.ca.ka.tweener.clear().to({speed:1}, 4E3, "easeInOutQuad")
+    K("bgm1", j);
+    this.ca.ja.direction = 0.5 * Math.PI;
+    this.ca.ja.speed = 8;
+    this.ca.ja.tweener.clear().to({speed:1}, 4E3, "easeInOutQuad")
   });
   this.$.add(200, "tankRD-center");
   this.$.add(200, "tankRD-left");
@@ -1778,7 +1836,7 @@ za = tm.createClass({superClass:ua, init:function(a) {
   this.$.add(50, "fighter-m-1");
   this.$.add(50, "fighter-m-5");
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({speed:5}, 5E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({speed:5}, 5E3, "easeInOutQuad")
   });
   this.$.add(150, "yukishiro", j);
   this.$.add(25, "heri2-left");
@@ -1844,25 +1902,25 @@ za = tm.createClass({superClass:ua, init:function(a) {
   this.$.add(50, "heri1-right2");
   this.$.add(50, "heri1-center");
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({speed:10}, 5E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({speed:10}, 5E3, "easeInOutQuad")
   });
   this.$.add(100, "komachi-0");
   this.$.add(160, "komachi-1");
   this.$.add(600, function() {
-    this.Dh(function() {
-      Ba("bgmBoss", j)
+    this.Tf(function() {
+      K("bgmBoss", j)
     })
   });
   this.$.add(600, "misumi")
-}, $e:function() {
-  this.ca.ka.background = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"hsl(230,50%,20%)"}, {offset:1, color:"hsl(230,50%,10%)"}]).toStyle()
+}, ge:function() {
+  this.ca.ja.background = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"hsl(230,50%,20%)"}, {offset:1, color:"hsl(230,50%,10%)"}]).toStyle()
 }});
-Aa = tm.createClass({superClass:ua, init:function(a) {
-  this.superInit(a);
+Ea = tm.createClass({superClass:ya, init:function(b) {
+  this.superInit(b);
   this.$.add(0, function() {
-    Ba("bgm2", j);
-    this.ca.ka.direction = 0.5 * Math.PI;
-    this.ca.ka.speed = 0.3
+    K("bgm2", j);
+    this.ca.ja.direction = 0.5 * Math.PI;
+    this.ca.ja.speed = 0.3
   });
   this.$.add(200, "tank25-top");
   this.$.add(160, "heri1-left");
@@ -1871,7 +1929,7 @@ Aa = tm.createClass({superClass:ua, init:function(a) {
   this.$.add(10, "itsuki-1");
   this.$.add(400, "tank15-top");
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({speed:1}, 5E3, "easeInOutQuad").to({direction:Math.PI}, 5E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({speed:1}, 5E3, "easeInOutQuad").to({direction:Math.PI}, 5E3, "easeInOutQuad")
   });
   this.$.add(60, "heri2-left");
   this.$.add(60, "heri2-center");
@@ -1889,7 +1947,7 @@ Aa = tm.createClass({superClass:ua, init:function(a) {
   this.$.add(1, "heri2-right");
   this.$.add(30, "makoto-R0");
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({speed:0.3}, 6E3, "easeInOutQuad").to({direction:0.25 * Math.PI, speed:1}, 12E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({speed:0.3}, 6E3, "easeInOutQuad").to({direction:0.25 * Math.PI, speed:1}, 12E3, "easeInOutQuad")
   });
   this.$.add(600, "tank5-center");
   this.$.add(1, "yayoi-3");
@@ -1902,7 +1960,7 @@ Aa = tm.createClass({superClass:ua, init:function(a) {
   this.$.add(90, "heri2-left");
   this.$.add(60, "tank5-left");
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({direction:0.5 * Math.PI}, 1E4, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({direction:0.5 * Math.PI}, 1E4, "easeInOutQuad")
   });
   this.$.add(40, "tank5-left");
   this.$.add(40, "heri1-left2");
@@ -1924,81 +1982,141 @@ Aa = tm.createClass({superClass:ua, init:function(a) {
   this.$.add(1, "tsubomi-0");
   this.$.add(1, "tsubomi-2");
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({speed:0.5}, 3E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({speed:0.5}, 3E3, "easeInOutQuad")
   });
   this.$.add(400, function() {
-    this.ca.ka.tweener.clear().to({direction:0, speed:1}, 5E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({direction:0, speed:1}, 5E3, "easeInOutQuad")
   });
   this.$.add(430, function() {
-    this.ca.ka.tweener.clear().to({speed:3}, 5E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({speed:3}, 5E3, "easeInOutQuad")
   });
   this.$.add(1, "mai", j);
   this.$.add(300, "heri2-left");
-  for(a = 0;6 > a;a++) {
-    this.$.add(30, "heri2-center"), this.$.add(30, "heri2-right"), this.$.add(30, "heri2-center"), this.$.add(30, "heri2-left"), this.$.add(30, "heri1-center2"), this.$.add(30, "heri1-right2"), this.$.add(30, "heri1-center2"), this.$.add(30, "heri1-left2")
+  for(b = 0;12 > b;b++) {
+    this.$.add(30, "heri2-center"), this.$.add(30, "heri2-right"), this.$.add(30, "heri2-center"), this.$.add(30, "heri2-left")
   }
   this.$.add(1, function() {
-    this.ca.ka.tweener.clear().to({direction:0.5 * Math.PI, speed:0.8}, 5E3, "easeInOutQuad")
+    this.ca.ja.tweener.clear().to({direction:0.5 * Math.PI, speed:0.8}, 5E3, "easeInOutQuad")
   });
   this.$.add(60, "tank5-left");
   this.$.add(60, "tank5-left");
   this.$.add(60, "tank5-left");
   this.$.add(120, "itsuki-2");
   this.$.add(1, "komachi2-0");
-  this.$.add(300, "tsubomi-0");
+  this.$.add(380, "tsubomi-0");
   this.$.add(1, "komachi2-1");
-  this.$.add(300, "itsuki-0");
-  this.$.add(1, "itsuki-2");
-  this.$.add(300, "makoto-4");
+  this.$.add(380, "itsuki-1");
+  this.$.add(380, "makoto-4");
   this.$.add(1, "komachi2-0");
-  this.$.add(300, "makoto-7");
-  this.$.add(90, "makoto-1")
-}, $e:function() {
-  this.ca.ka.background = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"hsl(130,30%,20%)"}, {offset:1, color:"hsl(130,30%, 5%)"}]).toStyle()
+  this.$.add(380, "makoto-1");
+  this.$.add(580, "erika");
+  this.$.add(520, function() {
+    this.Tf(function() {
+      K("bgmBoss", j)
+    })
+  });
+  this.$.add(300, function() {
+    this.ca.ja.tweener.clear().to({speed:5}, 5E3, "easeInOutQuad")
+  });
+  this.$.add(300, "hyuga")
+}, ge:function() {
+  this.ca.ja.background = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"hsl(130,30%,20%)"}, {offset:1, color:"hsl(130,30%, 5%)"}]).toStyle()
 }});
-function Ka(a, b) {
-  if(a.parent === k || b.parent === k) {
-    return m
+Fa = tm.createClass({superClass:ya, init:function(b) {
+  this.superInit(b);
+  this.$.add(0, function() {
+    K("bgm4", j);
+    this.ca.ja.direction = 0.5 * Math.PI;
+    this.ca.ja.speed = 1
+  });
+  this.$.add(200, "tsukikage-r");
+  this.$.add(100, "tsukikage-l");
+  this.$.add(200, "bukky-4-r");
+  this.$.add(150, "heri1-4-left");
+  this.$.add(10, "heri1-4-center");
+  this.$.add(10, "heri1-4-left");
+  this.$.add(10, "heri1-4-center");
+  this.$.add(100, "komachi4-0");
+  this.$.add(120, "heri1-4-right");
+  this.$.add(10, "heri1-4-center");
+  this.$.add(10, "heri1-4-right");
+  this.$.add(10, "heri1-4-center");
+  this.$.add(100, "bukky-4-l");
+  this.$.add(200, "bukky-4-r");
+  this.$.add(200, "tankRD-center");
+  this.$.add(10, "heri1-4-right");
+  this.$.add(10, "heri1-4-center");
+  this.$.add(10, "heri1-4-right");
+  this.$.add(10, "heri1-4-center");
+  this.$.add(20, "tankRD-left");
+  this.$.add(20, "tank5-left");
+  this.$.add(20, "tank5-center");
+  this.$.add(20, "tankRD-left");
+  this.$.add(20, "tank5-left");
+  this.$.add(20, "tank5-center");
+  this.$.add(100, "tsukikage-r");
+  this.$.add(10, "tankL-top");
+  this.$.add(100, "tankL-top");
+  this.$.add(50, "tankL-top");
+  this.$.add(50, "tankL-top");
+  this.$.add(150, "komachi4-0");
+  this.$.add(50, "komachi4-1");
+  this.$.add(500, "heri2-left");
+  this.$.add(1, function() {
+    this.ca.ja.tweener.clear().to({speed:3, direction:0.25 * Math.PI}, 2E3)
+  });
+  for(b = 0;3 > b;b++) {
+    this.$.add(15, "heri2-center"), this.$.add(15, "heri2-right"), this.$.add(15, "heri2-center"), this.$.add(15, "heri2-left"), this.$.add(1, "tank5-center"), this.$.add(15, "heri2-center"), this.$.add(15, "heri2-right"), this.$.add(15, "heri2-center"), this.$.add(15, "heri2-left"), this.$.add(1, "tank5-left")
   }
-  var c = a.x + a.boundingWidthRight, d = a.y - a.boundingHeightTop, g = a.y + a.boundingHeightBottom, l = b.x - b.boundingWidthLeft, t = b.y - b.boundingHeightTop, w = b.y + b.boundingHeightBottom;
-  return a.x - a.boundingWidthLeft < b.x + b.boundingWidthRight && c > l && d < w && g > t
-}
-;var X = tm.createClass({superClass:tm.app.Scene, _sceneResultCallback:k, init:function() {
-  this.superInit()
-}, Hi:function(a, b) {
-  "function" === typeof a ? this.app.pushScene(a()) : a instanceof tm.app.Scene && this.app.pushScene(a);
-  this._sceneResultCallback = b
-}, finish:function(a) {
-  var b = this.app;
-  b.popScene();
-  (b = b.currentScene) && b._sceneResultCallback && b._sceneResultCallback.bind(b)(a)
+}, ge:function() {
+  this.ca.ja.background = tm.graphics.LinearGradient(0, 0, 0, 640).addColorStopList([{offset:0, color:"hsl(30,30%,15%)"}, {offset:1, color:"hsl(30,50%, 5%)"}]).toStyle()
 }});
-var La = tm.createClass({superClass:X, titleText:k, menu:k, descriptions:k, showExit:m, title:k, selections:[], description:k, box:k, cursor:k, Pe:k, _selected:0, _opened:m, _finished:m, init:function(a, b, c) {
+function Oa(b, a) {
+  if(b.parent === k || a.parent === k) {
+    return l
+  }
+  var d = b.x + b.boundingWidthRight, f = b.y - b.boundingHeightTop, g = b.y + b.boundingHeightBottom, m = a.x - a.boundingWidthLeft, t = a.y - a.boundingHeightTop, C = a.y + a.boundingHeightBottom;
+  return b.x - b.boundingWidthLeft < a.x + a.boundingWidthRight && d > m && f < C && g > t
+}
+;var Pa = tm.createClass({superClass:tm.app.Scene, _sceneResultCallback:k, init:function() {
+  this.superInit()
+}, gj:function(b, a) {
+  "function" === typeof b ? this.app.pushScene(b()) : b instanceof tm.app.Scene && this.app.pushScene(b);
+  this._sceneResultCallback = a
+}, draw:function(b) {
+  b.globalCompositeOperation = "source-over";
+  this.Oc(b)
+}, finish:function(b) {
+  var a = this.app;
+  a.popScene();
+  (a = a.currentScene) && a._sceneResultCallback && a._sceneResultCallback.bind(a)(b)
+}});
+var Qa = tm.createClass({superClass:Pa, titleText:k, menu:k, descriptions:k, showExit:l, title:k, selections:[], description:k, box:k, cursor:k, gf:k, _selected:0, _opened:l, _finished:l, init:function(b, a, d) {
   this.superInit();
-  this.titleText = a;
-  this.menu = b;
-  this._selected = ~~c.defaultValue;
-  this.showExit = c.showExit;
-  this.descriptions = c.menuDescriptions;
-  this.showExit && (b.push("back"), this.descriptions.push("\u524d\u306e\u753b\u9762\u3078\u623b\u308a\u307e\u3059"));
-  this.Pe = c.onCursorMove;
-  a = Math.max(50 * (1 + b.length), 50) + 40;
-  this.box = tm.app.RectangleShape(384, a, {strokeStyle:"rgba(0,0,0,0)", fillStyle:"hsla(220,50%,30%,0.8)"}).setPosition(240, 320);
+  this.titleText = b;
+  this.menu = a;
+  this._selected = ~~d.defaultValue;
+  this.showExit = d.showExit;
+  this.descriptions = d.menuDescriptions;
+  this.showExit && (a.push("back"), this.descriptions.push("\u524d\u306e\u753b\u9762\u3078\u623b\u308a\u307e\u3059"));
+  this.gf = d.onCursorMove;
+  b = Math.max(50 * (1 + a.length), 50) + 40;
+  this.box = tm.display.RectangleShape(384, b, {strokeStyle:"rgba(0,0,0,0)", fillStyle:"hsla(220,50%,30%,0.8)"}).setPosition(240, 320);
   this.box.width = 1;
   this.box.height = 1;
-  this.box.tweener.to({width:384, height:a}, 200, "easeOutExpo").call(this._onOpen.bind(this));
+  this.box.tweener.to({width:384, height:b}, 200, "easeOutExpo").call(this._onOpen.bind(this));
   this.box.addChildTo(this);
-  this.description = tm.app.Label("", 14).setPosition(240, 630).addChildTo(this)
+  this.description = tm.display.Label("", 14).setPosition(240, 630).addChildTo(this)
 }, _onOpen:function() {
-  var a = 320 - 25 * this.menu.length;
-  this.title = tm.app.Label(this.titleText, 30).setPosition(240, a).addChildTo(this);
-  this.selections = this.menu.map(function(b, c) {
-    var d = this;
-    a += 50;
-    var g = tm.app.Label(b).setPosition(240, a).addChildTo(this);
+  var b = 320 - 25 * this.menu.length;
+  this.title = tm.display.Label(this.titleText, 30).setPosition(240, b).addChildTo(this);
+  this.selections = this.menu.map(function(a, d) {
+    var f = this;
+    b += 50;
+    var g = tm.display.Label(a).setPosition(240, b).addChildTo(this);
     g.interactive = j;
     g.addEventListener("touchend", function() {
-      d._selected === c ? d.closeDialog(d._selected) : d._selected = c
+      f._selected === d ? f.closeDialog(f._selected) : f._selected = d
     });
     g.width = 336;
     return g
@@ -2006,19 +2124,19 @@ var La = tm.createClass({superClass:X, titleText:k, menu:k, descriptions:k, show
   this._createCursor();
   this._opened = j
 }, _createCursor:function() {
-  this.cursor = tm.app.RectangleShape(336, 10, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.LinearGradient(0, 0, 336, 0).addColorStopList([{offset:0, color:"rgba(  0,255,100,0.0)"}, {offset:0.2, color:"rgba(  0,255,100,0.3)"}, {offset:0.5, color:"rgba(  0,255,255,0.5)"}, {offset:0.8, color:"rgba(  0,255,100,0.3)"}, {offset:1, color:"rgba(  0,255,100,0.0)"}]).toStyle()}).addChildTo(this);
+  this.cursor = tm.display.RectangleShape(336, 10, {strokeStyle:"rgba(0,0,0,0)", fillStyle:tm.graphics.LinearGradient(0, 0, 336, 0).addColorStopList([{offset:0, color:"rgba(  0,255,100,0.0)"}, {offset:0.2, color:"rgba(  0,255,100,0.3)"}, {offset:0.5, color:"rgba(  0,255,255,0.5)"}, {offset:0.8, color:"rgba(  0,255,100,0.3)"}, {offset:1, color:"rgba(  0,255,100,0.0)"}]).toStyle()}).addChildTo(this);
   this.cursor.blendMode = "lighter";
   this.cursor.x = 240;
   this.cursor.s = this._selected;
   this.cursor.y = this.selections[this._selected].y;
   this.cursor.update = function() {
-    this.s !== this.parent._selected && (this.s = this.parent._selected, this.tweener.clear(), this.tweener.to({y:this.parent.selections[this.parent._selected].y}, 200, "easeOutExpo"), this.parent.Pe !== k && this.parent.Pe(this.s))
+    this.s !== this.parent._selected && (this.s = this.parent._selected, this.tweener.clear(), this.tweener.to({y:this.parent.selections[this.parent._selected].y}, 200, "easeOutExpo"), this.parent.gf !== k && this.parent.gf(this.s))
   }
-}, update:function(a) {
+}, update:function(b) {
   this.description.text = this.descriptions[this._selected];
-  this._opened && (this._finished ? this.cursor.visible = 0 === ~~(a.frame / 2) % 2 : this.showExit && a.keyboard.getKeyDown("x") ? (this._selected = this.selections.length - 1, this.closeDialog(this._selected)) : a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space") ? (this.closeDialog(this._selected), J("decision")) : a.keyboard.getKeyDown("down") ? (this._selected += 1, this._selected = P(this._selected, 0, this.selections.length - 1), J("select")) : a.keyboard.getKeyDown("up") && 
-  (this._selected -= 1, this._selected = P(this._selected, 0, this.selections.length - 1), J("select")))
-}, closeDialog:function(a) {
+  this._opened && (this._finished ? this.cursor.visible = 0 === ~~(b.frame / 2) % 2 : this.showExit && b.keyboard.getKeyDown("x") ? (this._selected = this.selections.length - 1, this.closeDialog(this._selected)) : b.keyboard.getKeyDown("z") || b.keyboard.getKeyDown("c") || b.keyboard.getKeyDown("space") ? (this.closeDialog(this._selected), J("decision")) : b.keyboard.getKeyDown("down") ? (this._selected += 1, this._selected = T(this._selected, 0, this.selections.length - 1), J("select")) : b.keyboard.getKeyDown("up") && 
+  (this._selected -= 1, this._selected = T(this._selected, 0, this.selections.length - 1), J("select")))
+}, closeDialog:function(b) {
   this._finished = j;
   this.tweener.clear().wait(200).call(function() {
     this.cursor.remove();
@@ -2028,383 +2146,384 @@ var La = tm.createClass({superClass:X, titleText:k, menu:k, descriptions:k, show
     });
     this.box.tweener.clear();
     this.box.tweener.to({width:1, height:1}, 200, "easeInExpo").call(function() {
-      this.finish(a)
+      this.finish(b)
     }.bind(this))
   }.bind(this))
-}, draw:function(a) {
-  a.fillStyle = "rgba(0,0,0,0.8)";
-  a.fillRect(0, 0, 480, 640)
+}, Oc:function(b) {
+  b.fillStyle = "rgba(0,0,0,0.8)";
+  b.fillRect(0, 0, 480, 640)
 }});
-function Y(a, b, c, d, g) {
-  g = {}.$extend({menuDescriptions:[].concat(c), showExit:j, defaultValue:0, onCursorMove:n()}, g);
-  a.Hi(La(b, c, g), d)
+function X(b, a, d, f, g) {
+  g = {}.$extend({menuDescriptions:[].concat(d), showExit:j, defaultValue:0, onCursorMove:n()}, g);
+  b.gj(Qa(a, d, g), f)
 }
-;H = tm.createClass({superClass:tm.app.CanvasElement, alpha:1, te:0.85, size:0, image:k, Za:j, init:function(a, b, c, d) {
+;G = tm.createClass({superClass:tm.display.CanvasElement, alpha:1, Le:0.85, size:0, image:k, Sa:j, init:function(b, a, d, f) {
   this.superInit();
-  this.width = this.height = this.size = a;
-  b !== i && (this.alpha = b);
-  c !== i && (this.te = c);
+  this.width = this.height = this.size = b;
+  a !== i && (this.alpha = a);
+  d !== i && (this.Le = d);
   this.blendMode = "lighter";
-  this.image = d ? d : tm.graphics.Canvas().resize(a, a).setFillStyle(tm.graphics.RadialGradient(0.5 * a, 0.5 * a, 0, 0.5 * a, 0.5 * a, 0.5 * a).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(  0,  0,  0,0.0)"}]).toStyle()).fillRect(0, 0, a, a).element
+  this.image = f ? f : tm.graphics.Canvas().resize(b, b).setFillStyle(tm.graphics.RadialGradient(0.5 * b, 0.5 * b, 0, 0.5 * b, 0.5 * b, 0.5 * b).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(  0,  0,  0,0.0)"}]).toStyle()).fillRect(0, 0, b, b).element
 }, update:function() {
-  this.alpha *= this.te;
+  this.alpha *= this.Le;
   0.01 > this.alpha ? this.remove() : 1 < this.alpha && (this.alpha = 1)
-}, draw:function(a) {
-  a.context.drawImage(this.image, -this.width * this.origin.x, -this.height * this.origin.y, this.width, this.height)
+}, draw:function(b) {
+  b.context.drawImage(this.image, -this.width * this.origin.x, -this.height * this.origin.y, this.width, this.height)
 }, clone:function() {
-  return H(this.size, this.$i, this.te, this.image)
+  return G(this.size, this.yj, this.Le, this.image)
 }});
-ha = tm.createClass({superClass:H, ka:k, init:function(a, b) {
-  b = b || 20;
-  this.superInit(b, 1, 0.82, tm.graphics.Canvas().resize(b, b).setFillStyle(tm.graphics.RadialGradient(0.5 * b, 0.5 * b, 0, 0.5 * b, 0.5 * b, 0.5 * b).addColorStopList([{offset:0, color:"rgba(255,255,255,0.5)"}, {offset:1, color:"rgba(  0,  0,  0,0.0)"}]).toStyle()).fillRect(0, 0, b, b).element);
-  this.ka = a
-}, update:function(a) {
-  this.superClass.prototype.update.apply(this, a);
-  this.x += this.ka.oa;
-  this.y += this.ka.pa + 0.3
-}, clone:function(a) {
-  return ha(this.ka, a)
+ia = tm.createClass({superClass:G, ja:k, init:function(b, a) {
+  a = a || 20;
+  this.superInit(a, 1, 0.82, tm.graphics.Canvas().resize(a, a).setFillStyle(tm.graphics.RadialGradient(0.5 * a, 0.5 * a, 0, 0.5 * a, 0.5 * a, 0.5 * a).addColorStopList([{offset:0, color:"rgba(255,255,255,0.5)"}, {offset:1, color:"rgba(  0,  0,  0,0.0)"}]).toStyle()).fillRect(0, 0, a, a).element);
+  this.ja = b
+}, update:function(b) {
+  this.superClass.prototype.update.apply(this, b);
+  this.x += this.ja.ra;
+  this.y += this.ja.sa + 0.3
+}, clone:function(b) {
+  return ia(this.ja, b)
 }});
-var Ja = tm.createClass({width:0, label:k, Ua:k, ia:0, fg:0, Xe:0, init:function(a) {
-  this.width = a;
-  this.label = tm.app.Label("_", 10).setAlign("left").setBaseline("top").setPosition(-this.width / 2 + 4, -this.height / 2 + 4).setFillStyle("rgba(255,255,255,0.5)");
-  this.Ua = [];
-  this.fg = 480 - this.width - 5;
-  this.Xe = 5
-}, Ch:function(a, b) {
-  b === j && (this.Ua.clear(), this.Ua.push(""));
-  5 < this.Ua.length && this.Ua.splice(1, this.Ua.length - 4);
-  this.Ua.push(a);
+var Na = tm.createClass({width:0, label:k, Za:k, ga:0, Bg:0, pf:0, init:function(b) {
+  this.width = b;
+  this.label = tm.display.Label("_", 10).setAlign("left").setBaseline("top").setPosition(-this.width / 2 + 4, -this.height / 2 + 4).setFillStyle("rgba(255,255,255,0.5)");
+  this.Za = [];
+  this.Bg = 480 - this.width - 5;
+  this.pf = 5
+}, ci:function(b, a) {
+  a === j && (this.Za.clear(), this.Za.push(""));
+  5 < this.Za.length && this.Za.splice(1, this.Za.length - 4);
+  this.Za.push(b);
   return this
-}, Hh:function() {
-  this.Ua.clear();
+}, fi:function() {
+  this.Za.clear();
   return this
 }, clear:function() {
   this.label.text = "_";
   return this
 }, update:function() {
-  var a = this.label.text, a = a.substring(0, a.length - 1);
-  if(0 !== this.Ua.length) {
-    if("" !== this.Ua[0]) {
-      var b = this.Ua[0][0];
-      this.Ua[0] = this.Ua[0].substring(1);
-      a += b
+  var b = this.label.text, b = b.substring(0, b.length - 1);
+  if(0 !== this.Za.length) {
+    if("" !== this.Za[0]) {
+      var a = this.Za[0][0];
+      this.Za[0] = this.Za[0].substring(1);
+      b += a
     }else {
-      this.Ua.shift(), b = a.split("\n"), 3 < b.length && (b.shift(), a = b.join("\n")), a += "\n"
+      this.Za.shift(), a = b.split("\n"), 3 < a.length && (a.shift(), b = a.join("\n")), b += "\n"
     }
   }
-  this.label.text = a + (0 === this.ia % 2 ? "_" : " ");
-  this.ia += 1
-}, draw:function(a) {
-  a.save();
-  a.context.globalCompositeOperation = "source-over";
-  a.translate(this.fg, this.Xe);
-  a.fillStyle = "rgba(1,2,48,0.5)";
-  a.fillRect(0, 0, this.width, 64);
-  a.translate(5, 5);
-  a.fillStyle = "rgba(255,255,255,0.5)";
-  a.setText(this.label.fontStyle, this.label.align, this.label.baseline);
-  this.label._lines.each(function(b, c) {
-    a.fillText(b, 0, this.label.textSize * c)
+  this.label.text = b + (0 === this.ga % 2 ? "_" : " ");
+  this.ga += 1
+}, draw:function(b) {
+  b.save();
+  b.context.globalCompositeOperation = "source-over";
+  b.translate(this.Bg, this.pf);
+  b.fillStyle = "rgba(1,2,48,0.5)";
+  b.fillRect(0, 0, this.width, 64);
+  b.translate(5, 5);
+  b.fillStyle = "rgba(255,255,255,0.5)";
+  b.setText(this.label.fontStyle, this.label.align, this.label.baseline);
+  this.label._lines.each(function(a, d) {
+    b.fillText(a, 0, this.label.textSize * d)
   }.bind(this));
-  a.restore()
+  b.restore()
 }});
-function Ia(a) {
-  function b(b) {
-    if(1 > b) {
+var Ma = k, Ma = function(b) {
+  function a(a) {
+    if(1 > a) {
       return k
     }
-    var d = [], g = Math.random(), l, t;
-    for(t = 0;t < a;t += ~~b) {
-      l = Math.random();
-      for(var w = 0;w < b;w++) {
-        d[t + w] = c(g, l, w / b)
+    var f = [], g = Math.random(), m, t;
+    for(t = 0;t < b;t += ~~a) {
+      m = Math.random();
+      for(var p = 0;p < a;p++) {
+        f[t + p] = d(g, m, p / a)
       }
-      g = l
+      g = m
     }
-    g = d[a - ~~b];
-    l = d[0];
-    for(w = 0;w < b;w++) {
-      d[a - ~~b + w] = c(g, l, w / b)
+    g = f[b - ~~a];
+    m = f[0];
+    for(p = 0;p < a;p++) {
+      f[b - ~~a + p] = d(g, m, p / a)
     }
-    return d
+    return f
   }
-  function c(a, b, c) {
-    c = 0.5 * (1 - Math.cos(c * Math.PI));
-    return a * (1 - c) + b * c
+  function d(a, b, d) {
+    d = 0.5 * (1 - Math.cos(d * Math.PI));
+    return a * (1 - d) + b * d
   }
-  for(var d = [], g = 0, l = Math.pow(2, 4);8 > g;g++, l *= 2) {
-    var t = b(a / l);
+  for(var f = [], g = 0, m = Math.pow(2, 4);8 > g;g++, m *= 2) {
+    var t = a(b / m);
     if(t === k) {
       break
     }
-    d.push(t)
+    f.push(t)
   }
-  t = [].concat(d[0]);
+  t = [].concat(f[0]);
   g = 1;
-  for(l = 0.5;g < d.length;g++, l *= 0.5) {
-    for(var w = 0;w < a;w++) {
-      t[w] += d[g][w] * l
+  for(m = 0.5;g < f.length;g++, m *= 0.5) {
+    for(var C = 0;C < b;C++) {
+      t[C] += f[g][C] * m
     }
   }
   for(g = 0;g < t.length;g++) {
     t[g] /= 2
   }
   return t
-}
-var V;
-B = {index:-1, data:k, na:function(a) {
+}(512);
+w = {index:-1, data:k, setup:function(b) {
   this.data = [];
-  a = new MersenneTwister(a);
-  for(var b = 0;1E3 > b;b++) {
-    this.data[b] = a.next()
+  b = new MersenneTwister(b);
+  for(var a = 0;1E3 > a;a++) {
+    this.data[a] = b.next()
   }
 }, random:function() {
   this.index += 1;
   1E3 <= this.index && (this.index %= 1E3);
   return this.data[this.index]
-}, rand:function(a, b) {
-  return Math.floor(this.random() * (b - a + 1)) + a
-}, randf:function(a, b) {
-  return this.random() * (b - a) + a
+}, rand:function(b, a) {
+  return Math.floor(this.random() * (a - b + 1)) + b
+}, randf:function(b, a) {
+  return this.random() * (a - b) + b
 }};
-K = k;
-Ba = function(a, b) {
-  b || Ca();
-  var c = tm.asset.AssetManager.get(a);
-  c && (K = c.clone(), K.volume = 0.1 * s.Mc, K.loop = j, K.play())
+L = k;
+K = function(b, a) {
+  a || Ga();
+  var d = tm.asset.AssetManager.get(b);
+  d && (L = d.clone(), L.volume = 0.1 * u.bd, L.loop = j, L.play())
+};
+Ga = function() {
+  L !== k && L.stop()
 };
 Ca = function() {
-  K !== k && K.stop()
-};
-ya = function() {
-  if(K !== k) {
-    var a = K;
-    a.loop = m;
-    var b = function() {
-      a.volume -= 0.0010;
-      0 >= a.volume ? a.stop() : setTimeout(b, 10)
+  if(L !== k) {
+    var b = L;
+    b.loop = l;
+    var a = function() {
+      b.volume -= 0.0010;
+      0 >= b.volume ? b.stop() : setTimeout(a, 10)
     };
-    setTimeout(b, 10)
+    setTimeout(a, 10)
   }
 };
-J = function(a) {
-  if(0 !== s.pc && J.played[a] !== s.frame) {
-    var b = tm.asset.AssetManager.get("sound/" + a);
-    b && (b = b.clone().play(), "vo" === a.substring(0, 2) ? (b.volume = 0.5 * s.pc, J.ef !== k && J.ef.stop(), J.ef = b) : b.volume = 0.1 * s.pc);
-    J.played[a] = s.frame
+J = function(b) {
+  if(0 !== u.Cc && J.played[b] !== u.frame) {
+    var a = tm.asset.AssetManager.get("sound/" + b);
+    a && (a = a.clone().play(), "vo" === b.substring(0, 2) ? (a.volume = 0.5 * u.Cc, J.wf !== k && J.wf.stop(), J.wf = a) : a.volume = 0.1 * u.Cc);
+    J.played[b] = u.frame
   }
 };
 J.played = {};
-J.ef = k;
+J.wf = k;
 (function() {
-  var a = k, b = k;
-  A = tm.createClass({superClass:X, result:k, ia:0, ad:[], Id:m, Sf:k, Yf:0, Od:0, init:function() {
+  var b = k, a = k;
+  ca = tm.createClass({superClass:Pa, result:k, ga:0, od:[], Vd:l, ng:k, tg:0, ae:0, init:function() {
     this.superInit();
-    tm.app.Label("GL-Shooter 2", 50).setPosition(240, 160).addChildTo(this);
-    tm.app.Label("version 1.0-beta", 22).setPosition(432, 192).setAlign("right").addChildTo(this);
-    this.Sf = tm.app.Label().setPosition(240, 256).addChildTo(this);
-    tm.app.Label("press space key").setPosition(240, 576).addChildTo(this);
+    tm.display.Label("TM-Shooter", 50).setPosition(240, 160).addChildTo(this);
+    tm.display.Label("version 1.0-beta", 22).setPosition(432, 192).setAlign("right").addChildTo(this);
+    this.ng = tm.display.Label().setPosition(240, 256).addChildTo(this);
+    tm.display.Label("press space key").setPosition(240, 576).addChildTo(this);
     this.addEventListener("enter", function() {
-      this.Id = m;
-      for(var a = ("" + Math.floor(s.Ld)).padding(16, " "), b = "", g = 0;g < a.length;g += 4) {
+      this.Vd = l;
+      for(var a = ("" + Math.floor(u.Yd)).padding(16, " "), b = "", g = 0;g < a.length;g += 4) {
         b += a.substring(g, g + 4) + " "
       }
-      this.Sf.text = "HIGH SCORE: " + b.trim()
+      this.ng.text = "HIGH SCORE: " + b.trim()
     })
-  }, draw:function(a) {
+  }, Oc:function(a) {
     a.fillStyle = "black";
     a.fillRect(0, 0, 480, 640)
   }, update:function(a) {
-    this.wf(80 * Math.cos(0.01 * this.ia) + 240, 80 * Math.sin(0.01 * this.ia) + 320, 0);
-    this.wf(80 * Math.cos(0.01 * this.ia + Math.PI) + 240, 80 * Math.sin(0.01 * this.ia + Math.PI) + 320, 1);
-    (a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space")) && !this.Id && this.eg();
-    this.ia += 1
-  }, wf:function(c, d, g) {
-    if(!this.Id) {
-      a === k && (a = H(80, 1, 0.8, tm.graphics.Canvas().resize(80, 80).setFillStyle(tm.graphics.RadialGradient(40, 40, 0, 40, 40, 40).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(155,  0,  0,0.0)"}]).toStyle()).fillRect(0, 0, 80, 80).element));
-      b === k && (b = H(80, 1, 0.8, tm.graphics.Canvas().resize(80, 80).setFillStyle(tm.graphics.RadialGradient(40, 40, 0, 40, 40, 40).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(  0,  0,155,0.0)"}]).toStyle()).fillRect(0, 0, 80, 80).element));
-      g = 0 === g ? a.clone().addChildTo(this) : b.clone().addChildTo(this);
+    this.Pf(80 * Math.cos(0.01 * this.ga) + 240, 80 * Math.sin(0.01 * this.ga) + 320, 0);
+    this.Pf(80 * Math.cos(0.01 * this.ga + Math.PI) + 240, 80 * Math.sin(0.01 * this.ga + Math.PI) + 320, 1);
+    (a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space")) && !this.Vd && this.Ag();
+    this.ga += 1
+  }, Pf:function(d, f, g) {
+    if(!this.Vd) {
+      b === k && (b = G(80, 1, 0.8, tm.graphics.Canvas().resize(80, 80).setFillStyle(tm.graphics.RadialGradient(40, 40, 0, 40, 40, 40).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(155,  0,  0,0.0)"}]).toStyle()).fillRect(0, 0, 80, 80).element));
+      a === k && (a = G(80, 1, 0.8, tm.graphics.Canvas().resize(80, 80).setFillStyle(tm.graphics.RadialGradient(40, 40, 0, 40, 40, 40).addColorStopList([{offset:0, color:"rgba(255,255,255,0.1)"}, {offset:1, color:"rgba(  0,  0,155,0.0)"}]).toStyle()).fillRect(0, 0, 80, 80).element));
+      g = 0 === g ? b.clone().addChildTo(this) : a.clone().addChildTo(this);
       g.speed = 0.6;
-      var l = R(0, 2 * Math.PI), t = W(0, 20);
-      g.setPosition(Math.cos(l) * t + c, Math.sin(l) * t + d);
-      var w = this;
+      var m = U(0, 2 * Math.PI), t = V(0, 20);
+      g.setPosition(Math.cos(m) * t + d, Math.sin(m) * t + f);
+      var C = this;
       g.update = function() {
-        this.x += Math.cos(l) * this.speed;
-        this.y += Math.sin(l) * this.speed;
+        this.x += Math.cos(m) * this.speed;
+        this.y += Math.sin(m) * this.speed;
         if(-50 > this.x || 530 < this.x || -50 > this.y || 690 < this.y) {
           this.remove();
-          var a = w.ad.indexOf(this);
-          -1 !== a && w.ad.splice(a, 1)
+          var a = C.od.indexOf(this);
+          -1 !== a && C.od.splice(a, 1)
         }
       };
-      this.ad.push(g)
+      this.od.push(g)
     }
-  }, eg:function() {
-    Y(this, "MAIN MENU", ["start", "tutorial", "setting", "save score"], this.ri, {defaultValue:this.Yf, menuDescriptions:["\u30b2\u30fc\u30e0\u3092\u958b\u59cb\u3057\u307e\u3059", "\u30c1\u30e5\u30fc\u30c8\u30ea\u30a2\u30eb\u3092\u958b\u59cb\u3057\u307e\u3059", "\u8a2d\u5b9a\u3092\u5909\u66f4\u3057\u307e\u3059", "\u30b2\u30fc\u30e0\u3092\u7d42\u4e86\u30579leap\u306b\u30b9\u30b3\u30a2\u3092\u767b\u9332\u3057\u307e\u3059"]})
-  }, ri:function(a) {
-    4 !== a && (this.Yf = a);
+  }, Ag:function() {
+    X(this, "MAIN MENU", ["start", "tutorial", "setting", "save score"], this.Ri, {defaultValue:this.tg, menuDescriptions:["\u30b2\u30fc\u30e0\u3092\u958b\u59cb\u3057\u307e\u3059", "\u30c1\u30e5\u30fc\u30c8\u30ea\u30a2\u30eb\u3092\u958b\u59cb\u3057\u307e\u3059", "\u8a2d\u5b9a\u3092\u5909\u66f4\u3057\u307e\u3059", "\u30b2\u30fc\u30e0\u3092\u7d42\u4e86\u30579leap\u306b\u30b9\u30b3\u30a2\u3092\u767b\u9332\u3057\u307e\u3059"]})
+  }, Ri:function(a) {
+    4 !== a && (this.tg = a);
     switch(a) {
       case 0:
         this.tweener.clear().call(function() {
-          this.Id = j;
-          for(var a = 0, b = this.ad.length;a < b;a++) {
-            this.ad[a].speed = 8
+          this.Vd = j;
+          for(var a = 0, b = this.od.length;a < b;a++) {
+            this.od[a].speed = 8
           }
         }.bind(this)).wait(1E3).call(function() {
-          s.replaceScene(Da())
+          u.replaceScene(Ha())
         }.bind(this));
         break;
       case 2:
-        this.Xb();
+        this.ic();
         break;
       case 3:
-        s.Ph()
+        u.ni()
     }
-  }, Xb:function() {
-    Y(this, "SETTING", ["bgm volume", "sound volume", "difficulty"], this.Te, {defaultValue:this.Od, menuDescriptions:["BGM\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059", "\u52b9\u679c\u97f3\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059", "\u96e3\u6613\u5ea6\u3092\u8a2d\u5b9a\u3057\u307e\u3059"]})
-  }, Te:function(a) {
-    3 !== a && (this.Od = a);
+  }, ic:function() {
+    X(this, "SETTING", ["bgm volume", "sound volume", "difficulty"], this.lf, {defaultValue:this.ae, menuDescriptions:["BGM\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059", "\u52b9\u679c\u97f3\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059", "\u96e3\u6613\u5ea6\u3092\u8a2d\u5b9a\u3057\u307e\u3059"]})
+  }, lf:function(a) {
+    3 !== a && (this.ae = a);
     switch(a) {
       case 0:
-        this.Ue();
+        this.mf();
         break;
       case 1:
-        this.Ve();
+        this.nf();
         break;
       case 2:
-        this.yi();
+        this.Yi();
         break;
       default:
-        this.eg()
+        this.Ag()
     }
-  }, Ue:function() {
-    Y(this, "BGM VOLUME", "012345".split(""), this.Re, {defaultValue:s.Mc, onCursorMove:function(a) {
-      K !== k && "exit" !== a && (K.volume = 0.1 * a)
-    }, showExit:m})
-  }, Re:function(a) {
-    6 !== a && (s.Mc = a);
-    this.Xb()
-  }, Ve:function() {
-    Y(this, "SE VOLUME", "012345".split(""), this.Se, {defaultValue:s.pc, showExit:m})
-  }, Se:function(a) {
-    6 !== a && (s.pc = a);
-    this.Xb()
-  }, yi:function() {
-    Y(this, "DIFFICULTY", ["easy", "normal", "hard", "very hard", "hell"], this.qi, {defaultValue:s.Lf, menuDescriptions:["\u521d\u5fc3\u8005\u3067\u3082\u5b89\u5fc3\u3057\u3066\u6311\u6226\u53ef\u80fd\u306a\u5165\u9580\u30b3\u30fc\u30b9", "\u666e\u901a\u306e\u96e3\u6613\u5ea6\u3002easy\u3067\u306f\u7269\u8db3\u308a\u306a\u3044\u4eba\u3078", "\u4e00\u822c\u7684\u306a\u5f3e\u5e55STG\u306e\u96e3\u6613\u5ea6", "hard\u306f\u30cc\u30eb\u3059\u304e\u308b\u3068\u3044\u3046\u4eba\u5411\u3051", "\u6b7b\u306c\u304c\u3088\u3044"]})
-  }, qi:function(a) {
-    5 !== a && (s.Lf = a);
-    this.Xb()
+  }, mf:function() {
+    X(this, "BGM VOLUME", "012345".split(""), this.jf, {defaultValue:u.bd, onCursorMove:function(a) {
+      L !== k && "exit" !== a && (L.volume = 0.1 * a)
+    }, showExit:l})
+  }, jf:function(a) {
+    6 !== a && (u.bd = a);
+    this.ic()
+  }, nf:function() {
+    X(this, "SE VOLUME", "012345".split(""), this.kf, {defaultValue:u.Cc, showExit:l})
+  }, kf:function(a) {
+    6 !== a && (u.Cc = a);
+    this.ic()
+  }, Yi:function() {
+    X(this, "DIFFICULTY", ["easy", "normal", "hard", "very hard", "hell"], this.Qi, {defaultValue:u.fg, menuDescriptions:["\u521d\u5fc3\u8005\u3067\u3082\u5b89\u5fc3\u3057\u3066\u6311\u6226\u53ef\u80fd\u306a\u5165\u9580\u30b3\u30fc\u30b9", "\u666e\u901a\u306e\u96e3\u6613\u5ea6\u3002easy\u3067\u306f\u7269\u8db3\u308a\u306a\u3044\u4eba\u3078", "\u4e00\u822c\u7684\u306a\u5f3e\u5e55STG\u306e\u96e3\u6613\u5ea6", "hard\u306f\u30cc\u30eb\u3059\u304e\u308b\u3068\u3044\u3046\u4eba\u5411\u3051", "\u6b7b\u306c\u304c\u3088\u3044"]})
+  }, Qi:function(a) {
+    5 !== a && (u.fg = a);
+    this.ic()
   }, toString:function() {
     return"gls2.TitleScene"
   }})
 })();
 (function() {
-  Da = tm.createClass({superClass:X, mode:0, types:k, Xd:k, jb:k, kb:k, lb:k, Ke:k, Ie:k, type:0, style:0, Tb:m, Pd:m, init:function() {
+  Ha = tm.createClass({superClass:Pa, mode:0, types:k, me:k, qb:k, rb:k, sb:k, bf:k, $e:k, type:0, style:0, dc:l, be:l, init:function() {
     this.superInit();
-    tm.app.Label("PLAYER SELECT", 40).setPosition(240, 64).addChildTo(this);
-    this.types = this.Ci();
-    this.Xd = this.Bi();
-    var a = tm.app.TriangleShape(20, 20, {fillStyle:"rgba(255,255,255,0.7)", strokeStyle:"transparent"}).setPosition(48, 320).setRotation(-90);
+    tm.display.Sprite("result_bg", 528, 704).setPosition(240, 320).addChildTo(this);
+    tm.display.Label("PLAYER SELECT", 40).setPosition(240, 64).addChildTo(this);
+    this.types = this.bj();
+    this.me = this.aj();
+    var a = tm.display.TriangleShape(20, 20, {fillStyle:"rgba(255,255,255,0.7)", strokeStyle:"transparent"}).setPosition(48, 320).setRotation(-90);
     a.update = function(a) {
       this.setScale(a.keyboard.getKey("left") ? 2 : 1);
       this.alpha = 1 + 0.5 * Math.sin(0.1 * a)
     };
     a.addChildTo(this);
-    a = tm.app.TriangleShape(20, 20, {fillStyle:"rgba(255,255,255,0.7)", strokeStyle:"transparent"}).setPosition(432, 320).setRotation(90);
+    a = tm.display.TriangleShape(20, 20, {fillStyle:"rgba(255,255,255,0.7)", strokeStyle:"transparent"}).setPosition(432, 320).setRotation(90);
     a.update = function(a) {
       this.setScale(a.keyboard.getKey("right") ? 2 : 1);
       this.alpha = 1 + 0.5 * Math.sin(0.1 * a)
     };
     a.addChildTo(this);
     this.mode = 0;
-    this.Xd.visible = m;
-    this.Oe(-1, j);
-    this.jb.update();
-    this.kb.update();
-    this.lb.update();
-    J("voSelectShip")
-  }, Ci:function() {
-    var a = tm.app.CanvasElement();
+    this.me.visible = l;
+    this.ff(-1, j);
+    this.qb.update();
+    this.rb.update();
+    this.sb.update();
+    J("voSelectShip");
+    K("bgmShipSelect", j)
+  }, bj:function() {
+    var a = tm.display.CanvasElement();
     a.addChildTo(this);
-    this.Ke = tm.app.Label("Type-A").setPosition(240, 150);
-    this.Ke.addChildTo(a);
+    this.bf = tm.display.Label("Type-A").setPosition(240, 150);
+    this.bf.addChildTo(a);
     var b = ["\u4e00\u70b9\u96c6\u4e2d\u578b\n\u30b9\u30d4\u30fc\u30c9\uff1a\u6700\u901f\n\n\u7d76\u5927\u306a\u5a01\u529b\u3092\u8a87\u308b\n\u6b63\u9762\u706b\u529b\u3068\n\u30b9\u30d4\u30fc\u30c9\u3067\n\u6575\u3092\u8e42\u8e99\u3059\u308b", "\u53ef\u5909\u578b\n\u30b9\u30d4\u30fc\u30c9\uff1a\u4e2d\n\n\u6b63\u9762\u3068\u4e21\u30b5\u30a4\u30c9\u306b\n\u6483\u3061\u5206\u3051\u3067\u304d\u308b\n\u53ef\u5909\u578b\u30d3\u30c3\u30c8\u3092\u6301\u3064\n\u30c6\u30af\u30cb\u30ab\u30eb\u306a\u6a5f\u4f53", 
-    "\u5e83\u7bc4\u56f2\u578b\n\u30b9\u30d4\u30fc\u30c9\uff1a\u9045\n\n\u5e83\u7bc4\u56f2\u306b\u653b\u6483\u53ef\u80fd\u306a\n\u30ef\u30a4\u30c9\u30b7\u30e7\u30c3\u30c8\u3092\n\u6301\u3064\u6a5f\u4f53\n\u5f37\u529b\u306a\u96d1\u9b5a\u6383\u8a0e\u80fd\u529b"];
-    this.Le = tm.app.Label(b[0], 16).setPosition(240, 500);
-    this.Le.update = function() {
-      this.Le.text = b[this.type]
+    "\u5e83\u7bc4\u56f2\u578b\n\u30b9\u30d4\u30fc\u30c9\uff1a\u9045\n\n\u5e83\u7bc4\u56f2\u306b\u653b\u6483\u53ef\u80fd\u306a\n\u30ef\u30a4\u30c9\u30b7\u30e7\u30c3\u30c8\u3092\n\u6301\u3064\u6a5f\u4f53\n\u9ad8\u3044\u6383\u8a0e\u80fd\u529b"];
+    this.cf = tm.display.Label(b[0], 16).setPosition(240, 500);
+    this.cf.update = function() {
+      this.cf.text = b[this.type]
     }.bind(this);
-    this.Le.addChildTo(a);
-    var g = tm.app.SpriteSheet({image:"fighter", frame:{width:64, height:64}, animations:{typeB:{frames:[10, 17, 24], next:"typeB", frequency:2}}});
-    this.jb = tm.app.Sprite("fighter", 64, 64).setFrameIndex(3);
-    this.kb = tm.app.AnimationSprite(g, 64, 64).gotoAndPlay("typeB");
-    this.lb = tm.app.Sprite("fighter", 64, 64).setFrameIndex(31);
-    this.jb.Ea = 0;
-    this.kb.Ea = 1;
-    this.lb.Ea = 2;
-    this.jb.setScale(3).setPosition(0, 320).addChildTo(a);
-    this.kb.setPosition(0, 320).addChildTo(a);
-    this.lb.setPosition(0, 320).addChildTo(a);
-    this.jb.update = function() {
-      this.x = 240 + 90 * Math.sin(2 * this.Ea / 3 * Math.PI)
+    this.cf.addChildTo(a);
+    var f = tm.asset.SpriteSheet({image:"fighter", frame:{width:64, height:64}, animations:{typeB:{frames:[10, 17, 24], next:"typeB", frequency:2}}});
+    this.qb = tm.display.Sprite("fighter", 64, 64).setFrameIndex(3);
+    this.rb = tm.display.AnimationSprite(f, 64, 64).gotoAndPlay("typeB");
+    this.sb = tm.display.Sprite("fighter", 64, 64).setFrameIndex(31);
+    this.qb.Ia = 0;
+    this.rb.Ia = 1;
+    this.sb.Ia = 2;
+    this.qb.setScale(3).setPosition(0, 320).addChildTo(a);
+    this.rb.setPosition(0, 320).addChildTo(a);
+    this.sb.setPosition(0, 320).addChildTo(a);
+    this.qb.update = function() {
+      this.x = 240 + 90 * Math.sin(2 * this.Ia / 3 * Math.PI)
     };
-    this.kb.update = function() {
-      this.x = 240 + 90 * Math.sin(2 * this.Ea / 3 * Math.PI)
+    this.rb.update = function() {
+      this.x = 240 + 90 * Math.sin(2 * this.Ia / 3 * Math.PI)
     };
-    this.lb.update = function() {
-      this.x = 240 + 90 * Math.sin(2 * this.Ea / 3 * Math.PI)
+    this.sb.update = function() {
+      this.x = 240 + 90 * Math.sin(2 * this.Ia / 3 * Math.PI)
     };
     return a
-  }, Bi:function() {
-    var b = tm.app.CanvasElement();
-    b.addChildTo(this);
-    this.Ie = tm.app.Label("Shot Style").setPosition(240, 150);
-    this.Ie.addChildTo(b);
-    this.Jc = tm.app.TriangleShape(40, 40, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"}).setPosition(240, 384).addChildTo(b);
-    this.Kb = tm.app.Object2D();
-    this.Kb.addChildTo(this.Jc);
-    this.Kb.update = function(a) {
-      this.Kb.rotation = 1 === this.type ? 45 * Math.sin(0.1 * a.frame) : 0
+  }, aj:function() {
+    var a = tm.display.CanvasElement();
+    a.addChildTo(this);
+    this.$e = tm.display.Label("Shot Style").setPosition(240, 150);
+    this.$e.addChildTo(a);
+    this.lc = tm.display.TriangleShape(40, 40, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"}).setPosition(240, 384).addChildTo(a);
+    this.Rb = tm.app.Object2D();
+    this.Rb.addChildTo(this.lc);
+    this.Rb.update = function(a) {
+      this.Rb.rotation = 1 === this.type ? 45 * Math.sin(0.1 * a.frame) : 0
     }.bind(this);
-    this.ta = [];
-    this.ta[0] = tm.app.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
-    this.ta[0].update = function() {
-      0 === this.type ? this.ta[0].setPosition(-30, 20).setRotation(0) : 1 === this.type ? this.ta[0].setPosition(-30, 20).setRotation(-5) : 2 === this.type && this.ta[0].setPosition(-30, 10).setRotation(-10)
+    this.la = [];
+    this.la[0] = tm.display.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
+    this.la[0].update = function() {
+      0 === this.type ? this.la[0].setPosition(-30, 20).setRotation(0) : 1 === this.type ? this.la[0].setPosition(-30, 20).setRotation(-5) : 2 === this.type && this.la[0].setPosition(-30, 10).setRotation(-10)
     }.bind(this);
-    this.ta[1] = tm.app.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
-    this.ta[1].update = function() {
-      0 === this.type ? this.ta[1].setPosition(30, 20).setRotation(0) : 1 === this.type ? this.ta[1].setPosition(30, 20).setRotation(5) : 2 === this.type && this.ta[1].setPosition(30, 10).setRotation(10)
+    this.la[1] = tm.display.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
+    this.la[1].update = function() {
+      0 === this.type ? this.la[1].setPosition(30, 20).setRotation(0) : 1 === this.type ? this.la[1].setPosition(30, 20).setRotation(5) : 2 === this.type && this.la[1].setPosition(30, 10).setRotation(10)
     }.bind(this);
-    this.ta[2] = tm.app.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
-    this.ta[2].update = function() {
-      0 === this.type ? this.ta[2].setPosition(-50, 10).setRotation(0) : 1 === this.type ? this.ta[2].setPosition(-50, 10).setRotation(-10) : 2 === this.type && this.ta[2].setPosition(-50, 20).setRotation(-20)
+    this.la[2] = tm.display.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
+    this.la[2].update = function() {
+      0 === this.type ? this.la[2].setPosition(-50, 10).setRotation(0) : 1 === this.type ? this.la[2].setPosition(-50, 10).setRotation(-10) : 2 === this.type && this.la[2].setPosition(-50, 20).setRotation(-20)
     }.bind(this);
-    this.ta[3] = tm.app.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
-    this.ta[3].update = function() {
-      0 === this.type ? this.ta[3].setPosition(50, 10).setRotation(0) : 1 === this.type ? this.ta[3].setPosition(50, 10).setRotation(10) : 2 === this.type && this.ta[3].setPosition(50, 20).setRotation(20)
+    this.la[3] = tm.display.TriangleShape(20, 20, {fillStyle:"hsla(180, 80%, 80%, 0.5)", strokeStyle:"transparent"});
+    this.la[3].update = function() {
+      0 === this.type ? this.la[3].setPosition(50, 10).setRotation(0) : 1 === this.type ? this.la[3].setPosition(50, 10).setRotation(10) : 2 === this.type && this.la[3].setPosition(50, 20).setRotation(20)
     }.bind(this);
-    this.Jc.line = a(0, 0, 0, 130, 8);
-    this.Jc.line.addChildTo(this.Jc);
-    this.ta.each(function(b) {
-      b.line = a(0, 0, 0, 130, 5);
-      b.line.addChildTo(b);
-      b.addChildTo(this.Kb)
+    this.lc.line = b(0, 0, 0, 130, 8);
+    this.lc.line.addChildTo(this.lc);
+    this.la.each(function(a) {
+      a.line = b(0, 0, 0, 130, 5);
+      a.line.addChildTo(a);
+      a.addChildTo(this.Rb)
     }.bind(this));
-    var d = ["\u30b7\u30e7\u30c3\u30c8\u5f37\u5316\u578b\n\n\u30d3\u30c3\u30c8\u3092\uff14\u3064\u88c5\u5099\u3057\u305f\n\u30b7\u30e7\u30c3\u30c8\u91cd\u8996\u306e\u30b9\u30bf\u30a4\u30eb", "\u30ec\u30fc\u30b6\u30fc\u5f37\u5316\u578b\n\n\u30ec\u30fc\u30b6\u30fc\u306e\u5a01\u529b\u306b\u512a\u308c\n\u5bfe\u5927\u578b\u6a5f\u6226\u3067\n\u6709\u5229\u306a\u30b9\u30bf\u30a4\u30eb", "\u30a8\u30ad\u30b9\u30d1\u30fc\u30c8\u5f37\u5316\u578b\n\n\u30b7\u30e7\u30c3\u30c8\u3068\u30ec\u30fc\u30b6\u30fc\u306e\n\u4e21\u65b9\u304c\u5f37\u5316\u3055\u308c\u305f\u30b9\u30bf\u30a4\u30eb\n\n\u30b2\u30fc\u30e0\u96e3\u6613\u5ea6\u304c\u4e0a\u6607\u3059\u308b\n<<\u4e0a\u7d1a\u8005\u5411\u3051>>"];
-    this.Je = tm.app.Label(d[0], 16).setPosition(240, 500);
-    this.Je.update = function() {
-      this.Je.text = d[this.style]
+    var d = ["\u30b7\u30e7\u30c3\u30c8\u5f37\u5316\u578b\n\n\u30d3\u30c3\u30c8\u3092\uff14\u3064\u88c5\u5099\u3057\u305f\n\u30b7\u30e7\u30c3\u30c8\u91cd\u8996\u306e\u30b9\u30bf\u30a4\u30eb", "\u30ec\u30fc\u30b6\u30fc\u5f37\u5316\u578b\n\n\u30ec\u30fc\u30b6\u30fc\u306e\u5a01\u529b\u306b\u512a\u308c\n\u5bfe\u5927\u578b\u6a5f\u6226\u3067\n\u6709\u5229\u306a\u30b9\u30bf\u30a4\u30eb", "\u30a8\u30ad\u30b9\u30d1\u30fc\u30c8\u5f37\u5316\u578b\n\n\u30b7\u30e7\u30c3\u30c8\u3068\u30ec\u30fc\u30b6\u30fc\u306e\n\u4e21\u65b9\u304c\u5f37\u5316\u3055\u308c\u305f\u30b9\u30bf\u30a4\u30eb\n\n<<\u30b2\u30fc\u30e0\u96e3\u6613\u5ea6\u304c\u4e0a\u6607\u3057\u307e\u3059\uff01>>\n<<\u4e0a\u7d1a\u8005\u5411\u3051>>"];
+    this.af = tm.display.Label(d[0], 16).setPosition(240, 500);
+    this.af.update = function() {
+      this.af.text = d[this.style]
     }.bind(this);
-    this.Je.addChildTo(b);
-    return b
+    this.af.addChildTo(a);
+    return a
   }, update:function(a) {
     if(0 === this.mode) {
-      if(this.types.alpha = 1, this.Xd.visible = m, !this.Pd && a.keyboard.getKeyDown("left")) {
-        this.Oe(-1, m), J("select")
+      if(this.types.alpha = 1, this.me.visible = l, !this.be && a.keyboard.getKeyDown("left")) {
+        this.ff(-1, l), J("select")
       }else {
-        if(!this.Pd && a.keyboard.getKeyDown("right")) {
-          this.Oe(1, m), J("select")
+        if(!this.be && a.keyboard.getKeyDown("right")) {
+          this.ff(1, l), J("select")
         }else {
           if(a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space")) {
             this.mode = 1, J("decision")
@@ -2412,595 +2531,586 @@ J.ef = k;
         }
       }
     }else {
-      1 === this.mode && (this.types.alpha = 0.1, this.Xd.visible = j, a.keyboard.getKeyDown("left") ? (this.style = (this.style - 1 + 3) % 3, J("select")) : a.keyboard.getKeyDown("right") ? (this.style = (this.style + 1 + 3) % 3, J("select")) : a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space") ? (u.gf ? this.vi() : (this.Tb = j, this.dg()), J("decision")) : a.keyboard.getKeyDown("x") && (this.mode = 0), this.Ii(0 === ~~(a.frame / 60) % 2))
+      1 === this.mode && (this.types.alpha = 0.1, this.me.visible = j, a.keyboard.getKeyDown("left") ? (this.style = (this.style - 1 + 3) % 3, J("select")) : a.keyboard.getKeyDown("right") ? (this.style = (this.style + 1 + 3) % 3, J("select")) : a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space") ? (v.xf ? this.Vi() : (this.dc = j, this.zg()), J("decision")) : a.keyboard.getKeyDown("x") && (this.mode = 0), this.hj(0 === ~~(a.frame / 60) % 2))
     }
-  }, vi:function() {
-    Y(this, "AUTO BOMB", ["on", "off"], this.mi, {defaultValue:0, menuDescriptions:["\u88ab\u5f3e\u6642\u306b\u81ea\u52d5\u3067\u30dc\u30f3\u30d0\u30fc\u3092\u6295\u4e0b\u3057\u307e\u3059", "\u30dc\u30f3\u30d0\u30fc\u306e\u6295\u4e0b\u306f\u624b\u52d5\u3067\u306e\u307f\u884c\u3044\u307e\u3059\u3002\u30df\u30b9\u6642\u306b\u6700\u5927\u30dc\u30e0\u6570\u304c\u5897\u52a0\u3057\u307e\u3059"], showExit:j})
-  }, mi:function(a) {
-    2 !== a && (this.Tb = 0 === a, this.dg())
-  }, dg:function() {
-    Y(this, "ARE YOU READY?", ["ok"], this.ni, {defaultValue:0, menuDescriptions:["\u51fa\u6483\u3057\u307e\u3059"], showExit:j})
-  }, ni:function(a) {
-    0 === a && this.Ei()
-  }, Oe:function(a, b) {
+  }, Vi:function() {
+    X(this, "AUTO BOMB", ["on", "off"], this.Mi, {defaultValue:0, menuDescriptions:["\u88ab\u5f3e\u6642\u306b\u81ea\u52d5\u3067\u30dc\u30f3\u30d0\u30fc\u3092\u6295\u4e0b\u3057\u307e\u3059", "\u30dc\u30f3\u30d0\u30fc\u306e\u6295\u4e0b\u306f\u624b\u52d5\u3067\u306e\u307f\u884c\u3044\u307e\u3059\u3002\u30df\u30b9\u6642\u306b\u6700\u5927\u30dc\u30e0\u6570\u304c\u5897\u52a0\u3057\u307e\u3059"], showExit:j})
+  }, Mi:function(a) {
+    2 !== a && (this.dc = 0 === a, this.zg())
+  }, zg:function() {
+    X(this, "ARE YOU READY?", ["ok"], this.Ni, {defaultValue:0, menuDescriptions:["\u51fa\u6483\u3057\u307e\u3059"], showExit:j})
+  }, Ni:function(a) {
+    0 === a && this.dj()
+  }, ff:function(a, b) {
     this.type = (this.type + a + 3) % 3;
-    [this.jb, this.kb, this.lb][this.type].remove().addChildTo(this.types);
-    b ? (this.jb.Ea -= a, this.jb.scaleX = 0 === this.type ? 5 : 1, this.jb.scaleY = 0 === this.type ? 5 : 1, this.kb.Ea -= a, this.kb.scaleX = 1 === this.type ? 5 : 1, this.kb.scaleY = 1 === this.type ? 5 : 1, this.lb.Ea -= a, this.lb.scaleX = 2 === this.type ? 5 : 1, this.lb.scaleY = 2 === this.type ? 5 : 1) : (this.Pd = j, this.jb.tweener.clear().to({Ea:this.jb.Ea - a, scaleX:0 === this.type ? 5 : 1, scaleY:0 === this.type ? 5 : 1}, 300), this.kb.tweener.clear().to({Ea:this.kb.Ea - a, scaleX:1 === 
-    this.type ? 5 : 1, scaleY:1 === this.type ? 5 : 1}, 300), this.lb.tweener.clear().to({Ea:this.lb.Ea - a, scaleX:2 === this.type ? 5 : 1, scaleY:2 === this.type ? 5 : 1}, 300), this.tweener.clear().wait(310).call(function() {
-      this.Pd = m
+    [this.qb, this.rb, this.sb][this.type].remove().addChildTo(this.types);
+    b ? (this.qb.Ia -= a, this.qb.scaleX = 0 === this.type ? 5 : 1, this.qb.scaleY = 0 === this.type ? 5 : 1, this.rb.Ia -= a, this.rb.scaleX = 1 === this.type ? 5 : 1, this.rb.scaleY = 1 === this.type ? 5 : 1, this.sb.Ia -= a, this.sb.scaleX = 2 === this.type ? 5 : 1, this.sb.scaleY = 2 === this.type ? 5 : 1) : (this.be = j, this.qb.tweener.clear().to({Ia:this.qb.Ia - a, scaleX:0 === this.type ? 5 : 1, scaleY:0 === this.type ? 5 : 1}, 300), this.rb.tweener.clear().to({Ia:this.rb.Ia - a, scaleX:1 === 
+    this.type ? 5 : 1, scaleY:1 === this.type ? 5 : 1}, 300), this.sb.tweener.clear().to({Ia:this.sb.Ia - a, scaleX:2 === this.type ? 5 : 1, scaleY:2 === this.type ? 5 : 1}, 300), this.tweener.clear().wait(310).call(function() {
+      this.be = l
     }.bind(this)));
-    this.Ke.text = ["Type-A", "Type-B", "Type-C"][this.type]
-  }, Ei:function() {
-    s.ca.Tb = this.Tb;
-    s.ca.start(this.type, this.style);
-    s.replaceScene(s.ca)
-  }, Ii:function(a) {
-    this.Ie.text = ["Shot", "Laser", "Expert"][this.style] + " Style";
-    a ? (this.ta[0].visible = j, this.ta[1].visible = j, 1 === this.style ? (this.ta[2].visible = m, this.ta[3].visible = m) : (this.ta[2].visible = j, this.ta[3].visible = j), this.Jc.line.lineWidth = 5) : (this.ta.each(function(a) {
-      a.visible = m
-    }), this.Jc.line.lineWidth = 0 === this.style ? 10 : 20)
-  }, draw:function(a) {
-    a.clearColor(tm.graphics.LinearGradient(0, 0, 480, 640).addColorStopList([{offset:0, color:"hsl(220, 90%, 60%)"}, {offset:1, color:"hsl(220, 90%, 10%)"}]).toStyle());
-    a.lineWidth = 1;
-    a.strokeStyle = tm.graphics.LinearGradient(0, 0, 480, 640).addColorStopList([{offset:0, color:"hsl(200, 90%, 10%)"}, {offset:1, color:"hsl(200, 90%, 60%)"}]).toStyle();
-    a.beginPath();
-    for(var d = 0, g = -48;528 > g;g += 24) {
-      for(var d = 0 === d ? b : 0, l = 2 * -b + d;l < 640 + 2 * b;l += 2 * b) {
-        a.line(g, l, g + 16, l), a.line(g, l, g - 8, l + b), a.line(g, l, g - 8, l - b)
-      }
-    }
-    a.stroke();
-    a.fillStyle = "hsla(220, 90%, 10%, 0.6)";
-    a.fillRect(10, 10, 460, 620)
-  }});
-  var a = tm.createClass({superClass:tm.app.CanvasElement, init:function(a, b, g, l, t) {
+    this.bf.text = ["Type-A", "Type-B", "Type-C"][this.type]
+  }, dj:function() {
+    u.ca.dc = this.dc;
+    u.ca.start(this.type, this.style);
+    u.replaceScene(u.ca);
+    Ca()
+  }, hj:function(a) {
+    this.$e.text = ["Shot", "Laser", "Expert"][this.style] + " Style";
+    1 === this.style ? (this.lc.line.xb = l, this.la[0].line.xb = l, this.la[1].line.xb = l, this.la[2].line.xb = l, this.la[3].line.xb = l) : (this.lc.line.xb = j, this.la[0].line.xb = j, this.la[1].line.xb = j, this.la[2].line.xb = j, this.la[3].line.xb = j);
+    a ? (this.la[0].visible = j, this.la[1].visible = j, 1 === this.style ? (this.la[2].visible = l, this.la[3].visible = l) : (this.la[2].visible = j, this.la[3].visible = j), this.lc.line.lineWidth = 5) : (this.la.each(function(a) {
+      a.visible = l
+    }), this.lc.line.lineWidth = 0 === this.style ? 10 : 25)
+  }, Oc:n()});
+  var b = tm.createClass({superClass:tm.display.CanvasElement, xb:j, init:function(a, b, f, g, m) {
     this.superInit();
-    this.angle = g - 0.5 * Math.PI;
+    this.angle = f - 0.5 * Math.PI;
     this.x = a + 10 * Math.cos(this.angle);
     this.y = b + 10 * Math.sin(this.angle);
-    this.length = l;
+    this.length = g;
     this.fillStyle = this.strokeStyle = "hsla(180, 80%, 80%, 1.0)";
     this.i = 0;
-    this.lineWidth = t
+    this.lineWidth = m
   }, update:function(a) {
     this.i = a.frame % 20 / 20
   }, draw:function(a) {
     a.lineWidth = this.lineWidth;
-    a.drawArrow(this.x, this.y, Math.cos(this.angle) * this.length * this.i + this.x, Math.sin(this.angle) * this.length * this.i + this.y, 1.2 * this.lineWidth)
-  }}), b = 8 * Math.sqrt(3)
+    if(this.xb && 5 === this.lineWidth) {
+      var b = 5 * Math.cos(this.angle - Math.PI / 2), f = 5 * Math.sin(this.angle - Math.PI / 2);
+      a.drawArrow(this.x - b, this.y - f, Math.cos(this.angle) * this.length * this.i + this.x - b, Math.sin(this.angle) * this.length * this.i + this.y - f, 1.2 * this.lineWidth);
+      a.drawArrow(this.x + b, this.y + f, Math.cos(this.angle) * this.length * this.i + this.x + b, Math.sin(this.angle) * this.length * this.i + this.y + f, 1.2 * this.lineWidth)
+    }else {
+      a.drawArrow(this.x, this.y, Math.cos(this.angle) * this.length * this.i + this.x, Math.sin(this.angle) * this.length * this.i + this.y, 1.2 * this.lineWidth)
+    }
+  }})
 })();
-F = tm.createClass({superClass:X, da:k, score:0, Ia:0, ya:0, Zc:0, Ca:0, Vb:0, lg:0, kg:k, ka:k, bc:3, Ud:0, Vd:0, Fb:0, Fd:0, $c:0, Ne:0, Tb:m, vb:0, Nc:0, Cf:0, Dc:m, aj:m, Eb:0, Xa:0, sa:m, Wc:0, Cc:0, xa:0, Dd:0, Zi:0, Yi:0, Kd:k, Of:k, We:k, Mf:k, ze:k, Ae:k, ve:k, ii:k, gb:k, ab:k, Ub:k, Rc:m, hi:m, init:function() {
-  F.le !== k && h(Error("class 'gls2.GameScene' is singleton!!"));
+F = tm.createClass({superClass:Pa, da:k, score:0, La:0, Aa:0, md:0, Ga:0, ec:0, Gg:0, ie:k, ja:k, oc:3, je:0, ke:0, Kb:0, Rd:0, nd:0, ef:0, dc:l, eb:0, xc:0, Wf:0, Rc:l, Xe:l, Jb:0, bb:0, ua:l, jd:0, Qc:0, za:0, Pd:0, xj:0, wj:0, Xd:k, ig:k, of:k, gg:k, Re:k, Se:k, Ne:k, Ii:k, nb:k, gb:k, Sb:k, fd:l, Hi:l, init:function() {
+  F.Ae !== k && h(Error("class 'gls2.GameScene' is singleton!!"));
   this.superInit();
-  F.le = this;
-  this.ab = na(this);
-  this.ab.Ra.addChildTo(this);
-  this.ka = pa().ga;
-  this.ka.addChildTo(this);
-  this.Kd = F.Rb().addChildTo(this);
-  this.Of = F.Rb().addChildTo(this);
-  this.Mf = F.Rb().addChildTo(this);
-  this.ze = F.Rb().addChildTo(this);
-  this.We = F.Rb().addChildTo(this);
-  this.Ae = F.Rb().addChildTo(this);
-  this.ve = F.Rb().addChildTo(this);
-  this.ii = F.of(this).addChildTo(this);
-  tm.Va.cc.Qc.zf = this;
-  this.gb = tm.app.Object2D();
-  this.gb.addChildTo(this);
-  this.gb.update = function(a) {
-    this.ti(a)
+  F.Ae = this;
+  this.gb = ra(this);
+  this.gb.Va.addChildTo(this);
+  this.ja = ta().qa;
+  this.ja.addChildTo(this);
+  this.Xd = F.bc().addChildTo(this);
+  this.ig = F.bc().addChildTo(this);
+  this.gg = F.bc().addChildTo(this);
+  this.Re = F.bc().addChildTo(this);
+  this.of = F.bc().addChildTo(this);
+  this.Se = F.bc().addChildTo(this);
+  this.Ne = F.bc().addChildTo(this);
+  this.Ii = F.Gf(this).addChildTo(this);
+  tm.$a.pc.ed.Sf = this;
+  this.nb = tm.app.Object2D();
+  this.nb.addChildTo(this);
+  this.nb.update = function(b) {
+    this.Ti(b)
   }.bind(this);
   this.addEventListener("exit", function() {
-    this.ab.clear()
+    this.gb.clear()
   })
-}, addChild:function(a) {
-  a.Za ? this.ze.addChild(a) : a instanceof L ? this.ve.addChild(a) : a instanceof ra ? this.Kd.addChild(a) : a instanceof N ? a.Nb ? this.Kd.addChild(a) : this.Mf.addChild(a) : a instanceof ba ? this.We.addChild(a) : a === this.gb || a === this.ka || a instanceof F.Rb || a instanceof F.of || a instanceof oa ? this.superClass.prototype.addChild.apply(this, arguments) : (console.error("unknown type child."), h(Error(a)))
-}, update:function(a) {
-  this.zi(a.keyboard);
-  0 === a.frame % 500 && (V = Ia(512));
-  this.kg.update(a.frame);
-  0 === a.frame % 2 && this.ab.update();
-  a.keyboard.getKeyDown("escape") ? (this.app.replaceScene(A()), Ca()) : a.keyboard.getKeyDown("space") ? this.Qd(0) : a.keyboard.getKeyDown("p") && (this.jg().saveAsImage(), this.Qd(0))
-}, jg:function() {
-  var a = tm.graphics.Canvas();
-  a.resize(480, 640);
-  a.clearColor("black");
-  a.drawImage(this.ka.ka.element, 0, 0);
-  a.drawImage(this.app.canvas.element, 0, 0);
-  a.drawImage(this.ab.element, 0, 0);
-  return a
-}, ti:function() {
-  this.da.Lb === m && C.erase();
-  var a;
-  a = [].concat(N.Ma);
-  for(var b = [].concat(G.Ma), c = b.length;b[--c] !== i;) {
-    for(var d = a.length;a[--d] !== i;) {
-      var g = a[d], l = b[c];
-      if(!(0 >= g.ra) && Ka(g, l) && (l.Jd(1), l.remove(), g.Mb(l.ic))) {
-        this.Fb += 1;
-        this.sa ? this.Ta(u.Rg) : this.Ta(u.Qg);
-        this.Qe(g);
+}, addChild:function(b) {
+  b.Sa ? this.Re.addChild(b) : b instanceof M ? this.Ne.addChild(b) : b instanceof va ? this.Xd.addChild(b) : b instanceof P ? b.Vb ? this.Xd.addChild(b) : this.gg.addChild(b) : b instanceof da ? this.of.addChild(b) : b === this.nb || b === this.ja || b instanceof F.bc || b instanceof F.Gf || b instanceof sa ? this.superClass.prototype.addChild.apply(this, arguments) : (console.error("unknown type child."), h(Error(b)))
+}, update:function(b) {
+  this.Zi(b.keyboard);
+  this.ie.update(b.frame);
+  0 === b.frame % 2 && this.gb.update();
+  b.keyboard.getKeyDown("escape") ? (this.app.replaceScene(ca()), Ga()) : b.keyboard.getKeyDown("space") ? this.ce(0) : b.keyboard.getKeyDown("p") && (this.Fg().saveAsImage(), this.ce(0))
+}, Fg:function() {
+  var b = tm.graphics.Canvas();
+  b.resize(480, 640);
+  b.clearColor("black");
+  b.drawImage(this.ja.ja.element, 0, 0);
+  b.drawImage(this.app.canvas.element, 0, 0);
+  b.drawImage(this.gb.element, 0, 0);
+  return b
+}, Ti:function() {
+  this.da.Tb === l && z.erase();
+  var b;
+  b = [].concat(P.Qa);
+  for(var a = [].concat(la.Qa), d = a.length;a[--d] !== i;) {
+    for(var f = b.length;b[--f] !== i;) {
+      var g = b[f], m = a[d];
+      if(!(0 >= g.na) && Oa(g, m) && (m.Wd(1), m.remove(), g.Ub(m.uc))) {
+        this.Kb += 1;
+        this.ua ? this.Ya(v.oh) : this.Ya(v.nh);
+        this.hf(g);
         break
       }
     }
   }
-  l = this.da.Ob;
-  if(this.da.pb) {
-    a = [].concat(N.Ma);
-    a.sort(function(a, b) {
+  m = this.da.Wb;
+  if(this.da.mb) {
+    b = [].concat(P.Qa);
+    b.sort(function(a, b) {
       return a.y - b.y
     });
-    for(d = a.length;a[--d] !== i;) {
-      if(g = a[d], !(0 >= g.ra) && Ka(g, l)) {
-        l.Ai(g.y + g.boundingHeightBottom);
-        g.Mb(l.ic) ? (this.Fb += 1, this.sa ? this.Ta(u.Pg) : this.Ta(u.Mg), this.Qe(g)) : (this.sa ? this.vc(0.01 * this.xa) : this.vc(0.01), this.Ca = Math.min(this.Ca + 0.02, 1), this.sa ? this.Ta(u.Og) : this.Ta(u.Ng));
-        l.Jd(2);
+    for(f = b.length;b[--f] !== i;) {
+      if(g = b[f], !(0 >= g.na) && Oa(g, m)) {
+        m.$i(g.y + g.boundingHeightBottom);
+        g.Ub(m.uc) ? (this.Kb += 1, this.ua ? this.Ya(v.mh) : this.Ya(v.jh), this.hf(g)) : (this.ua ? this.Jc(0.01 * this.za) : this.Jc(0.01), this.Ga = Math.min(this.Ga + 0.02, 1), this.ua ? this.Ya(v.lh) : this.Ya(v.kh));
+        m.Wd(2);
         break
       }
     }
-    b = {x:this.da.x, y:this.da.y, boundingWidthLeft:50, boundingWidthRight:50, boundingHeightTop:100, boundingHeightBottom:40};
-    a = [].concat(N.Ma);
-    for(d = a.length;a[--d] !== i;) {
-      g = a[d], !(0 >= g.ra) && Ka(g, b) && (g.Mb(l.ic) ? (this.Fb += 1, this.sa ? this.Ta(u.Lg) : this.Ta(u.Ig), this.Qe(g)) : (this.sa ? this.vc(0.01 * this.xa) : this.vc(0.01), this.Ca = Math.min(this.Ca + 0.02, 1), this.sa ? this.Ta(u.Kg) : this.Ta(u.Jg)), l.$h(2, this.da.x, this.da.y - 30))
-    }
-  }
-  if(this.Dc) {
-    C.erase();
-    a = [].concat(N.Ma);
-    for(d = a.length;a[--d] !== i;) {
-      g = a[d], !(0 >= g.ra) && (g.Xc() && g.Mb(u.sg)) && (this.gc(g.score), this.Fb += 1)
-    }
-    this.Ca = this.ya = 0
-  }
-  if(this.sa) {
-    d = [].concat(G.Ma);
-    for(g = d.length;d[--g] !== i;) {
-      if(l = d[g], !(0 >= l.ra)) {
-        b = [].concat(L.Ma);
-        for(a = b.length;b[--a] !== i;) {
-          c = b[a], c.visible !== m && (0 < l.ra && Ka(l, c)) && (c.ra -= 6 - this.Xa, 0 > c.ra && (c.Na(), this.gc(u.wg), this.vc(u.ug), this.Rf(m, m, c.x, c.y, 1)), l.ra -= 1)
-        }
-      }
+    a = {x:this.da.x, y:this.da.y, boundingWidthLeft:50, boundingWidthRight:50, boundingHeightTop:100, boundingHeightBottom:40};
+    b = [].concat(P.Qa);
+    for(f = b.length;b[--f] !== i;) {
+      g = b[f], !(0 >= g.na) && Oa(g, a) && (g.Ub(m.uc) ? (this.Kb += 1, this.ua ? this.Ya(v.ih) : this.Ya(v.fh), this.hf(g)) : (this.ua ? this.Jc(0.01 * this.za) : this.Jc(0.01), this.Ga = Math.min(this.Ga + 0.02, 1), this.ua ? this.Ya(v.hh) : this.Ya(v.gh)), m.zi(2, this.da.x, this.da.y - 30))
     }
   }
   if(this.Rc) {
-    C.erase()
+    z.erase();
+    b = [].concat(P.Qa);
+    for(f = b.length;b[--f] !== i;) {
+      g = b[f], !(0 >= g.na) && (g.kd() && g.Ub(v.Ng)) && (this.tc(g.score), this.Kb += 1)
+    }
+    this.Ga = this.Aa = 0
+  }
+  if(this.ua) {
+    f = [].concat(la.Qa);
+    for(g = f.length;f[--g] !== i;) {
+      if(m = f[g], !(0 >= m.na)) {
+        a = [].concat(M.Qa);
+        for(b = a.length;a[--b] !== i;) {
+          d = a[b], d.visible !== l && (0 < m.na && Oa(m, d)) && (d.na -= 6 - this.bb, 0 > d.na && (d.Ca(), this.tc(v.Rg), this.Jc(v.Pg), this.mg(l, l, d.x, d.y, 1)), m.na -= 1)
+        }
+      }
+    }
+  }
+  if(this.fd) {
+    z.erase()
   }else {
-    if(this.da.parent !== k && this.da.Fc === m && this.Dc === m && 0 >= this.Wc) {
-      for(d = L.Ma.length;L.Ma[--d] !== i;) {
-        if(a = L.Ma[d], a.visible !== m && Ka(a, this.da)) {
-          this.da.Mb();
-          0 < this.vb && this.Tb ? (this.Xa = P(this.Xa - 1, 0, 1), this.yd(-0.01), ka(this.da, this).setPosition(this.da.x, this.da.y).addChildTo(this)) : this.bg();
+    if(this.da.parent !== k && this.da.Tc === l && this.Rc === l && 0 >= this.jd && !v.zh) {
+      for(f = M.Qa.length;M.Qa[--f] !== i;) {
+        if(b = M.Qa[f], b.visible !== l && Oa(b, this.da)) {
+          this.da.Ub();
+          0 < this.eb && this.dc ? (this.bb = T(this.bb - 1, 0, 1), this.Kd(-0.01), na(this.da, this).setPosition(this.da.x, this.da.y).addChildTo(this)) : this.xg();
           break
         }
       }
-      for(d = N.Ma.length;N.Ma[--d] !== i;) {
-        if(g = N.Ma[d], !(0 >= g.ra) && !g.Nb && Ka(g, this.da)) {
-          this.da.Mb();
-          0 < this.vb && this.Tb ? (this.Xa = P(this.Xa - 1, 0, 1), this.yd(-0.01), ka(this.da, this).setPosition(this.da.x, this.da.y).addChildTo(this)) : this.bg();
+      for(f = P.Qa.length;P.Qa[--f] !== i;) {
+        if(g = P.Qa[f], !(0 >= g.na) && !g.Vb && Oa(g, this.da)) {
+          this.da.Ub();
+          0 < this.eb && this.dc ? (this.bb = T(this.bb - 1, 0, 1), this.Kd(-0.01), na(this.da, this).setPosition(this.da.x, this.da.y).addChildTo(this)) : this.xg();
           break
         }
       }
     }
-    this.sa && (this.Cc -= 1, 0 >= this.Cc && this.Ed());
-    this.Wc = Math.max(this.Wc - 1, 0);
-    this.Ca -= u.yg * u.zg;
-    0 >= this.Ca && (this.Ca = 0, this.sa || 0 < this.xa ? this.Vb = this.ya = this.Ia = 0 : (0 < this.ya && (0 >= this.Vb && (this.Vb = this.ya * u.xg), this.Ia = this.Ia * (this.ya - this.Vb) / this.ya, this.ya -= this.Vb), 0 >= this.ya && (this.Vb = this.ya = this.Ia = 0)))
+    this.ua && (this.Qc -= 1, 0 >= this.Qc && this.Qd());
+    this.jd = Math.max(this.jd - 1, 0);
+    this.Ga -= v.Vg * v.Wg;
+    0 >= this.Ga && (this.Ga = 0, this.ua || 0 < this.za ? this.ec = this.Aa = this.La = 0 : (0 < this.Aa && (0 >= this.ec && (this.ec = this.Aa * v.Ug), this.La = this.La * (this.Aa - this.ec) / this.Aa, this.Aa -= this.ec), 0 >= this.Aa && (this.ec = this.Aa = this.La = 0)))
   }
-}, Qe:function(a) {
-  this.Rf(a.Nb, this.sa || Ga(a, this.da) < u.Ag, a.x, a.y, a.star);
-  this.vc(u.Xg[this.Dd]);
-  for(var b = this.Ia, c = ~~(this.ya / u.jf) + 1, d = 0;d < c;d++) {
-    b += a.score, this.gc(b)
+}, hf:function(b) {
+  this.mg(b.Vb, this.ua || Ka(b, this.da) < v.Xg, b.x, b.y, b.star, b instanceof Ia);
+  this.Jc(v.uh[this.Pd]);
+  for(var a = this.La, d = ~~(this.Aa / v.Bf) + 1, f = 0;f < d;f++) {
+    a += b.score, this.tc(a)
   }
-  this.Ia += a.score * c
-}, Rf:function(a, b, c, d, g) {
-  a = a ? ta : sa;
-  for(var l = 0;l < g;l++) {
-    a(b).setPosition(c, d)
+  this.La += b.score * d
+}, mg:function(b, a, d, f, g, m) {
+  b = b ? xa : wa;
+  for(var t = 0;t < g;t++) {
+    var C = b(a);
+    C.setPosition(d, f);
+    m && (C.Ac = j)
   }
-}, ki:function(a) {
+}, Ki:function(b) {
   J("star");
-  a.Wf ? (this.Vd += 1, this.Ia += u.kh, this.gc(u.oh + this.Ia * u.mh), this.sa ? this.Ta(u.Vg) : this.Ta(u.Ug)) : (this.Ud += 1, this.Ia += u.jh, this.gc(u.nh + this.Ia * u.lh), this.sa ? this.Ta(u.Tg) : this.Ta(u.Sg))
-}, start:function(a, b) {
-  this.ab.xc.Hh().clear();
+  b.rg ? (this.ke += 1, this.La += v.Jh, this.tc(v.Nh + this.La * v.Lh), this.ua ? this.Ya(v.sh) : this.Ya(v.rh)) : (this.je += 1, this.La += v.Ih, this.tc(v.Mh + this.La * v.Kh), this.ua ? this.Ya(v.qh) : this.Ya(v.ph))
+}, start:function(b, a) {
+  this.gb.Lc.fi().clear();
   this.score = 0;
-  this.bc = u.mf;
-  this.vb = this.Nc = u.lf[b];
-  this.Cf = u.tg[b];
-  this.xa = this.Xa = this.Eb = 0;
-  q.va.Oa.$rank = u.Zg;
-  this.Ed();
-  this.Dc = m;
-  this.$c = this.Ne = 0;
-  this.da = ba(this, a, b);
-  this.mg(0);
+  this.oc = v.Ef;
+  this.eb = this.xc = v.Df[a];
+  this.Wf = v.Og[a];
+  this.za = this.bb = this.Jb = 0;
+  q.ya.Ra.$rank = v.wh;
+  this.Qd();
+  this.Rc = l;
+  this.nd = this.ef = 0;
+  this.da = da(this, b, a);
+  this.Hg(0);
   J("voLetsGo");
-  this.Gi()
-}, mg:function(a) {
-  this.Qa("3...2...1...");
+  this.fj()
+}, Hg:function(b) {
+  this.Ua("3...2...1...");
   this.da.parent !== k && this.da.remove();
-  N.Oc();
-  G.Oc();
-  C.Oc();
-  this.Kd.removeChildren();
-  this.ze.removeChildren();
-  this.Ae.removeChildren();
-  this.We.removeChildren();
-  this.ve.removeChildren();
-  this.gb.removeChildren();
-  this.Fb = this.Fd = this.Vd = this.Ud = this.Zc = this.Ca = this.ya = this.Ia = 0;
-  this.Ub = k;
-  this.hi = this.Rc = m;
-  this.$c = 0;
-  this.ab.Ra.Tc = 0;
-  this.Xa = this.ab.Ra.yb = 0;
-  this.lg = a;
-  this.kg = ua.create(this, a);
+  P.cd();
+  la.cd();
+  z.cd();
+  this.Xd.removeChildren();
+  this.Re.removeChildren();
+  this.Se.removeChildren();
+  this.of.removeChildren();
+  this.Ne.removeChildren();
+  this.nb.removeChildren();
+  this.Kb = this.Rd = this.ke = this.je = this.md = this.Ga = this.Aa = this.La = 0;
+  this.Sb = k;
+  this.Hi = this.fd = l;
+  this.nd = 0;
+  this.gb.Va.gd = 0;
+  this.bb = this.gb.Va.Hb = 0;
+  this.Gg = b;
+  this.ie = ya.create(this, b);
   this.tweener.clear().wait(1E3).call(function() {
-    this.Me()
+    this.df()
   }.bind(this));
-  this.ka.tweener.clear()
-}, Me:function() {
-  this.Qa("Let's go!");
+  this.ja.tweener.clear()
+}, df:function() {
+  this.Ua("Let's go!");
   this.da.setPosition(240, 740).setFrameIndex(3).addChildTo(this);
-  this.da.Ob.addChildTo(this);
-  this.da.Lb = m;
-  this.da.Fc = j;
-  this.da.Ac = m;
-  this.da.pb = m;
+  this.da.Wb.addChildTo(this);
+  this.da.Tb = l;
+  this.da.Tc = j;
+  this.da.Pc = l;
+  this.da.mb = l;
   this.da.tweener.clear().moveBy(0, -180, 1E3, "easeOutBack").call(function() {
-    this.Lb = j
-  }.bind(this.da)).wait(u.ah).call(function() {
-    this.Fc = m
+    this.ad = this.Tb = j
+  }.bind(this.da)).wait(v.yh).call(function() {
+    this.Tc = l
   }.bind(this.da))
-}, bg:function() {
-  E.Gd(this.da.x, this.da.y, this);
-  this.Qa("I was shot down.");
-  this.da.Lb = m;
+}, xg:function() {
+  B.Sd(this.da.x, this.da.y, this);
+  this.Ua("I was shot down.");
+  this.da.Tb = l;
   this.da.remove();
-  this.bc -= 1;
-  this.xa = this.Vb = this.ya = this.Ca = 0;
-  this.$c += 1;
-  this.Ne += 1;
-  this.Xa = P(this.Xa - 3, 0, 1);
-  this.yd(-0.03);
-  0 < this.bc ? this.tweener.clear().wait(1E3).call(function() {
-    if(!this.Tb || !u.gf) {
-      this.Nc = Math.min(this.Nc + 1, this.Cf)
+  this.oc -= 1;
+  this.za = this.ec = this.Aa = this.Ga = 0;
+  this.nd += 1;
+  this.ef += 1;
+  this.bb = T(this.bb - 3, 0, 1);
+  this.Kd(-0.03);
+  0 < this.oc ? this.tweener.clear().wait(1E3).call(function() {
+    if(!this.dc || !v.xf) {
+      this.xc = Math.min(this.xc + 1, this.Wf)
     }
-    this.vb = this.Nc;
-    this.Me()
+    this.eb = this.xc;
+    this.df()
   }.bind(this)) : this.tweener.clear().wait(2E3).call(function() {
-    this.xi()
+    this.Xi()
   }.bind(this))
-}, yd:function(a) {
-  q.va.Oa.$rank = P(q.va.Oa.$rank + a, 0, 0.5)
-}, Yh:function() {
-  this.Qa("System rebooted.", j);
+}, Kd:function(b) {
+  q.ya.Ra.$rank = T(q.ya.Ra.$rank + b, 0, 0.5)
+}, xi:function() {
+  this.Ua("System rebooted.", j);
   this.score = 0;
-  this.bc = u.mf;
-  this.vb = this.Nc = u.lf[this.da.style];
-  this.Xa = 0;
-  q.va.Oa.$rank = 0;
-  this.Me()
-}, Ih:function() {
-  Ba("bgmResult");
-  var a = tm.app.Object2D();
-  a.addChildTo(this.gb);
-  a.tweener.wait(1E3).call(function() {
-    this.app.pushScene(Ea(this, this.jg()));
-    a.remove()
+  this.oc = v.Ef;
+  this.eb = this.xc = v.Df[this.da.style];
+  this.bb = 0;
+  q.ya.Ra.$rank = 0;
+  this.df()
+}, gi:function() {
+  K("bgmResult");
+  var b = tm.app.Object2D();
+  b.addChildTo(this.nb);
+  b.tweener.wait(1E3).call(function() {
+    this.app.pushScene(Ja(this, this.Fg()));
+    b.remove()
   }.bind(this))
-}, Zh:function() {
-  Ca();
-  this.app.replaceScene(Ma())
-}, Ui:n(), gc:function(a) {
-  var b = this.score;
-  this.score += a;
-  for(a = 0;a < u.kf.length;a++) {
-    var c = u.kf[a];
-    b < c && c <= this.score && this.Sh()
+}, yi:function() {
+  Ga();
+  this.app.replaceScene(Ra())
+}, tj:n(), tc:function(b) {
+  var a = this.score;
+  this.score += b;
+  for(b = 0;b < v.Cf.length;b++) {
+    var d = v.Cf[b];
+    a < d && d <= this.score && this.qi()
   }
-  s.Ld = Math.max(s.Ld, this.score)
-}, vc:function(a) {
-  this.Vb = 0;
-  this.ya += a;
-  this.Zc = Math.max(this.Zc, this.ya);
-  1 <= a && (this.Ca = 1)
-}, Ta:function(a) {
-  if(this.xa !== u.ce) {
-    for(a *= u.Wg;1 < a;) {
-      ma(this.da).addChildTo(this), a -= 1, this.Eb = 0, this.xa += 1, 1 === this.xa ? (this.Qa("HYPER SYSTEM, stand by.", j), J("voHyperStandBy")) : (this.Qa("HYPER SYSTEM, ready.", j), J("voHyperReady"))
+  u.Yd = Math.max(u.Yd, this.score)
+}, Jc:function(b) {
+  this.ec = 0;
+  this.Aa += b;
+  this.md = Math.max(this.md, this.Aa);
+  1 <= b && (this.Ga = 1)
+}, Ya:function(b) {
+  if(this.za !== v.re) {
+    for(b *= v.th;1 < b;) {
+      qa(this.da).addChildTo(this), b -= 1, this.Jb = 0, this.za += 1, 1 === this.za ? (this.Ua("HYPER SYSTEM, stand by.", j), J("voHyperStandBy")) : (this.Ua("HYPER SYSTEM, ready.", j), J("voHyperReady"))
     }
-    this.Eb = P(this.Eb + a, 0, 1);
-    1 <= this.Eb && (ma(this.da).addChildTo(this), this.xa += 1, this.Eb -= 1, 1 === this.xa ? (this.Qa("HYPER SYSTEM, stand by.", j), J("voHyperStandBy")) : (this.Qa("HYPER SYSTEM, ready.", j), J("voHyperReady")))
+    this.Jb = T(this.Jb + b, 0, 1);
+    1 <= this.Jb && (qa(this.da).addChildTo(this), this.za += 1, this.Jb -= 1, 1 === this.za ? (this.Ua("HYPER SYSTEM, stand by.", j), J("voHyperStandBy")) : (this.Ua("HYPER SYSTEM, ready.", j), J("voHyperReady")))
   }
-}, Fi:function() {
-  0.5 > Math.random() ? (this.Qa("HYPER SYSTEM start!!", j), J("voHyperStart0")) : (this.Qa("start counting to system limit.", j), J("voHyperStart1"));
-  this.Xa = P(this.Xa + 1, 0, 5);
-  this.yd(0.01 * this.xa);
-  q.va.Oa.$hyperOff = u.Dg;
-  this.Cc = u.nd;
-  this.Wc = u.nd * u.Hg;
-  this.da.Md.Hc(this.xa);
-  this.da.Ob.Hc(this.xa);
-  this.da.yc = this.da.Md;
-  E.ai(this.da.x, this.da.y, this);
-  this.sa = j;
-  this.Dd = this.xa;
-  this.Eb = this.xa = 0;
-  C.erase(j, j)
-}, Ed:function() {
-  this.sa !== m && (this.sa = m, ma(this.da, j).addChildTo(this), this.da.yc = this.da.cg, q.va.Oa.$hyperOff = 1, this.da.Md.Hc(0), this.da.Ob.Hc(0), this.Wc = u.nd * u.Gg, this.Dd = this.Cc = 0, C.erase())
-}, Sh:function() {
+}, ej:function() {
+  0.5 > Math.random() ? (this.Ua("HYPER SYSTEM start!!", j), J("voHyperStart0")) : (this.Ua("start counting to system limit.", j), J("voHyperStart1"));
+  this.bb = T(this.bb + 1, 0, 5);
+  this.Kd(0.01 * this.za);
+  q.ya.Ra.$hyperOff = v.$g;
+  this.Qc = v.Ad;
+  this.jd = v.Ad * v.eh;
+  this.da.Zd.Vc(this.za);
+  this.da.Wb.Vc(this.za);
+  this.da.Mc = this.da.Zd;
+  B.Ai(this.da.x, this.da.y, this);
+  this.ua = j;
+  this.Pd = this.za;
+  this.Jb = this.za = 0;
+  z.erase(j, j)
+}, Qd:function() {
+  this.ua !== l && (this.ua = l, qa(this.da, j).addChildTo(this), this.da.Mc = this.da.yg, q.ya.Ra.$hyperOff = 1, this.da.Zd.Vc(0), this.da.Wb.Vc(0), this.jd = v.Ad * v.dh, this.Pd = this.Qc = 0, z.erase())
+}, bi:function() {
+  J("decision");
+  J("voGetBomb");
+  this.eb = Math.min(this.eb + 1, this.xc);
+  this.Xe = this.eb === this.xc
+}, qi:function() {
   J("voExtend");
-  this.Qa("extended.");
-  this.bc += 1
-}, Qa:function(a, b) {
-  this.ab.xc.Ch(a, b)
-}, Qd:function(a) {
-  Y(this, "PAUSE", ["resume", "setting", "exit game"], this.si, {defaultValue:a, menuDescriptions:["\u30b2\u30fc\u30e0\u3092\u518d\u958b\u3057\u307e\u3059", "\u8a2d\u5b9a\u3092\u5909\u66f4\u3057\u307e\u3059", "\u30b2\u30fc\u30e0\u3092\u4e2d\u65ad\u3057\u3001\u30bf\u30a4\u30c8\u30eb\u753b\u9762\u306b\u623b\u308a\u307e\u3059"], showExit:m})
-}, si:function(a) {
-  switch(a) {
+  this.Ua("extended.");
+  this.oc += 1
+}, Ua:function(b, a) {
+  this.gb.Lc.ci(b, a)
+}, ce:function(b) {
+  X(this, "PAUSE", ["resume", "setting", "exit game"], this.Si, {defaultValue:b, menuDescriptions:["\u30b2\u30fc\u30e0\u3092\u518d\u958b\u3057\u307e\u3059", "\u8a2d\u5b9a\u3092\u5909\u66f4\u3057\u307e\u3059", "\u30b2\u30fc\u30e0\u3092\u4e2d\u65ad\u3057\u3001\u30bf\u30a4\u30c8\u30eb\u753b\u9762\u306b\u623b\u308a\u307e\u3059"], showExit:l})
+}, Si:function(b) {
+  switch(b) {
     case 1:
-      this.Xb();
+      this.ic();
       break;
     case 2:
-      this.wi()
+      this.Wi()
   }
-}, Xb:function() {
-  Y(this, "SETTING", ["bgm volume", "sound volume"], this.Te, {defaultValue:this.Od, menuDescriptions:["BGM\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059", "\u52b9\u679c\u97f3\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059"]})
-}, Te:function(a) {
-  3 !== a && (this.Od = a);
-  switch(a) {
+}, ic:function() {
+  X(this, "SETTING", ["bgm volume", "sound volume"], this.lf, {defaultValue:this.ae, menuDescriptions:["BGM\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059", "\u52b9\u679c\u97f3\u30dc\u30ea\u30e5\u30fc\u30e0\u3092\u8a2d\u5b9a\u3057\u307e\u3059"]})
+}, lf:function(b) {
+  3 !== b && (this.ae = b);
+  switch(b) {
     case 0:
-      this.Ue();
+      this.mf();
       break;
     case 1:
-      this.Ve();
+      this.nf();
       break;
     default:
-      this.Qd()
+      this.ce()
   }
-}, wi:function() {
-  Y(this, "REARY?", ["yes", "no"], this.oi, {defaultValue:1, menuDescriptions:["\u30b2\u30fc\u30e0\u3092\u4e2d\u65ad\u3057\u3001\u30bf\u30a4\u30c8\u30eb\u753b\u9762\u306b\u623b\u308a\u307e\u3059", "\u524d\u306e\u753b\u9762\u3078\u623b\u308a\u307e\u3059"], showExit:m})
-}, oi:function(a) {
-  0 === a ? (Ca(), this.app.replaceScene(A())) : this.Qd(1)
-}, Ue:function() {
-  Y(this, "BGM VOLUME", "012345".split(""), this.Re, {defaultValue:s.Mc, onCursorMove:function(a) {
-    K !== k && 6 !== a && (K.volume = 0.1 * a)
-  }, showExit:m})
-}, Re:function(a) {
-  6 !== a && (s.Mc = a);
-  this.Xb(1)
-}, Ve:function() {
-  Y(this, "SE VOLUME", "012345".split(""), this.Se, {defaultValue:s.pc, showExit:m})
-}, Se:function(a) {
-  6 !== a && (s.pc = a);
-  this.Xb(1)
-}, xi:function() {
-  Y(this, "CONTINUE?", ["yes", "no"], this.pi, {defaultValue:0, menuDescriptions:["\u30b7\u30b9\u30c6\u30e0\u3092\u518d\u8d77\u52d5\u3057\u3066\u51fa\u6483\u3057\u307e\u3059", "\u4f5c\u6226\u5931\u6557\u3002\u9000\u5374\u3057\u307e\u3059"], showExit:m})
-}, pi:function(a) {
-  switch(a) {
+}, Wi:function() {
+  X(this, "REARY?", ["yes", "no"], this.Oi, {defaultValue:1, menuDescriptions:["\u30b2\u30fc\u30e0\u3092\u4e2d\u65ad\u3057\u3001\u30bf\u30a4\u30c8\u30eb\u753b\u9762\u306b\u623b\u308a\u307e\u3059", "\u524d\u306e\u753b\u9762\u3078\u623b\u308a\u307e\u3059"], showExit:l})
+}, Oi:function(b) {
+  0 === b ? (Ga(), this.app.replaceScene(ca())) : this.ce(1)
+}, mf:function() {
+  X(this, "BGM VOLUME", "012345".split(""), this.jf, {defaultValue:u.bd, onCursorMove:function(b) {
+    L !== k && 6 !== b && (L.volume = 0.1 * b)
+  }, showExit:l})
+}, jf:function(b) {
+  6 !== b && (u.bd = b);
+  this.ic(1)
+}, nf:function() {
+  X(this, "SE VOLUME", "012345".split(""), this.kf, {defaultValue:u.Cc, showExit:l})
+}, kf:function(b) {
+  6 !== b && (u.Cc = b);
+  this.ic(1)
+}, Xi:function() {
+  X(this, "CONTINUE?", ["yes", "no"], this.Pi, {defaultValue:0, menuDescriptions:["\u30b7\u30b9\u30c6\u30e0\u3092\u518d\u8d77\u52d5\u3057\u3066\u51fa\u6483\u3057\u307e\u3059", "\u4f5c\u6226\u5931\u6557\u3002\u9000\u5374\u3057\u307e\u3059"], showExit:l})
+}, Pi:function(b) {
+  switch(b) {
     case 0:
-      this.Yh();
+      this.xi();
       break;
     case 1:
-      this.Zh()
+      this.yi()
   }
-}, draw:n(), Di:function() {
-  this.ab.Ra.tweener.clear().to({Tc:-480}, 1600, "easeInQuad").to({yb:30}, 800, "easeInOutQuad")
-}, ci:function() {
-  this.ab.Ra.tweener.clear().to({yb:0}, 800, "easeInOutQuad").to({Tc:0}, 1600, "easeOutQuad")
-}, cd:k, dd:0, Yc:k, pd:0, Gi:function() {
-  if(1 === this.pd) {
+}, Oc:n(), cj:function() {
+  this.gb.Va.tweener.clear().to({gd:-480}, 1600, "easeInBack").to({Hb:30}, 800, "easeInOutBack")
+}, Ci:function() {
+  this.gb.Va.tweener.clear().to({Hb:0}, 800, "easeInOutBack").to({gd:0}, 1600, "easeOutBack")
+}, qd:k, rd:0, ld:k, Bd:0, fj:function() {
+  if(1 === this.Bd) {
     console.log("rec start");
     if(localStorage.getItem("recCount") !== i) {
-      this.Yc = [];
-      for(var a = ~~localStorage.getItem("recCount"), b = 0;b < a;b++) {
-        localStorage.removeItem("rec" + b)
+      this.ld = [];
+      for(var b = ~~localStorage.getItem("recCount"), a = 0;a < b;a++) {
+        localStorage.removeItem("rec" + a)
       }
       localStorage.removeItem("recCount")
     }
-    this.cd = [];
-    this.dd = 0
+    this.qd = [];
+    this.rd = 0
   }else {
-    if(2 === this.pd && (console.log("replay start"), localStorage.getItem("recCount") !== i)) {
-      this.Yc = [];
-      a = ~~localStorage.getItem("recCount");
-      for(b = 0;b < a;b++) {
-        for(var c = localStorage.getItem("rec" + b).split(","), d = 0;d < c.length;d++) {
-          this.Yc.push(c[d])
+    if(2 === this.Bd && (console.log("replay start"), localStorage.getItem("recCount") !== i)) {
+      this.ld = [];
+      b = ~~localStorage.getItem("recCount");
+      for(a = 0;a < b;a++) {
+        for(var d = localStorage.getItem("rec" + a).split(","), f = 0;f < d.length;f++) {
+          this.ld.push(d[f])
         }
       }
     }
   }
-}, zi:function(a) {
-  if(1 === this.pd) {
-    1E3 < this.cd.length && (console.log("save"), localStorage.setItem("rec" + this.dd, this.cd), localStorage.setItem("recCount", this.dd), this.cd = [], this.dd += 1), this.cd.push("" + ~~a.getKey("up") + ~~a.getKey("down") + ~~a.getKey("left") + ~~a.getKey("right") + ~~a.getKey("z") + ~~a.getKey("x") + ~~a.getKey("c"))
+}, Zi:function(b) {
+  if(1 === this.Bd) {
+    1E3 < this.qd.length && (console.log("save"), localStorage.setItem("rec" + this.rd, this.qd), localStorage.setItem("recCount", this.rd), this.qd = [], this.rd += 1), this.qd.push("" + ~~b.getKey("up") + ~~b.getKey("down") + ~~b.getKey("left") + ~~b.getKey("right") + ~~b.getKey("z") + ~~b.getKey("x") + ~~b.getKey("c"))
   }else {
-    if(2 === this.pd && this.Yc) {
-      var b = this.Yc.shift();
-      b !== i && (a.getKey = function(a) {
-        return"up" === a ? !!~~b[0] : "down" === a ? !!~~b[1] : "left" === a ? !!~~b[2] : "right" === a ? !!~~b[3] : "z" === a ? !!~~b[4] : "x" === a ? !!~~b[5] : "c" === a ? !!~~b[6] : m
-      }, a.getKeyDown = function(a) {
-        return"up" === a ? !!~~b[0] : "down" === a ? !!~~b[1] : "left" === a ? !!~~b[2] : "right" === a ? !!~~b[3] : "z" === a ? !!~~b[4] : "x" === a ? !!~~b[5] : "c" === a ? !!~~b[6] : m
+    if(2 === this.Bd && this.ld) {
+      var a = this.ld.shift();
+      a !== i && (b.getKey = function(b) {
+        return"up" === b ? !!~~a[0] : "down" === b ? !!~~a[1] : "left" === b ? !!~~a[2] : "right" === b ? !!~~a[3] : "z" === b ? !!~~a[4] : "x" === b ? !!~~a[5] : "c" === b ? !!~~a[6] : l
+      }, b.getKeyDown = function(b) {
+        return"up" === b ? !!~~a[0] : "down" === b ? !!~~a[1] : "left" === b ? !!~~a[2] : "right" === b ? !!~~a[3] : "z" === b ? !!~~a[4] : "x" === b ? !!~~a[5] : "c" === b ? !!~~a[6] : l
       })
     }
   }
 }});
-F.Rb = tm.createClass({superClass:tm.app.Object2D, init:function() {
+F.bc = tm.createClass({superClass:tm.app.Object2D, init:function() {
   this.superInit()
 }});
-F.of = tm.createClass({superClass:tm.app.CanvasElement, ca:k, frame:0, init:function(a) {
+F.Gf = tm.createClass({superClass:tm.display.CanvasElement, ca:k, frame:0, init:function(b) {
   this.superInit();
-  this.ca = a;
+  this.ca = b;
   this.blendMode = "lighter"
-}, update:function(a) {
-  this.frame = a.frame
-}, draw:function(a) {
-  this.Lh(a);
-  this.Mh(a)
-}, Lh:function(a) {
-  if(0 < this.ca.Ca) {
-    a.fillStyle = "rgba(255," + ~~(255 * this.ca.Ca) + "," + ~~Math.min(255, 512 * this.ca.Ca) + ",0.5)";
-    var b = 500 * this.ca.Ca;
-    a.fillRect(465, 635 - b, 10, b)
+}, update:function(b) {
+  this.frame = b.frame
+}, draw:function(b) {
+  this.ji(b);
+  this.ki(b)
+}, ji:function(b) {
+  if(0 < this.ca.Ga) {
+    b.fillStyle = "rgba(255," + ~~(255 * this.ca.Ga) + "," + ~~Math.min(255, 512 * this.ca.Ga) + ",0.5)";
+    var a = 500 * this.ca.Ga;
+    b.fillRect(465, 635 - a, 10, a)
   }
-}, Mh:function(a) {
-  a.fillStyle = "rgba(255,255,0,0.1)";
-  a.fillRect(5, 628, 200, 9);
-  this.xa === u.ce ? 1 === this.frame % 2 && (a.fillStyle = "rgba(255,255,255,0.3)", a.fillRect(5, 628, 200, 9)) : 0 < this.ca.Eb && (a.fillStyle = "rgba(255,255,100,0.3)", a.fillRect(5, 628, 200 * this.ca.Eb, 9));
-  0 === this.frame % 2 && (a.strokeStyle = "rgba(255,255,100,0.5)", !this.ca.sa && 0 < this.ca.xa ? (a.setText("bold 24px Orbitron", "left", "bottom"), a.strokeText("HYPER LV " + this.ca.xa, 5, 637)) : this.ca.sa && (a.setText("bold 28px Orbitron", "left", "bottom"), a.strokeText("HYPER LV " + this.ca.Dd, 5, 637)))
+}, ki:function(b) {
+  b.fillStyle = "rgba(255,255,0,0.1)";
+  b.fillRect(5, 628, 200, 9);
+  this.za === v.re ? 1 === this.frame % 2 && (b.fillStyle = "rgba(255,255,255,0.3)", b.fillRect(5, 628, 200, 9)) : 0 < this.ca.Jb && (b.fillStyle = "rgba(255,255,100,0.3)", b.fillRect(5, 628, 200 * this.ca.Jb, 9))
 }});
-F.le = k;
-(function() {
-  Ea = tm.createClass({superClass:X, ca:k, hg:k, gb:k, values:k, labels:k, Nd:k, gg:[u.hh, u.ih, u.eh, u.fh, 1], Vf:k, Ye:k, cursor:0, wait:0, frame:0, init:function(a, c) {
-    this.superInit();
-    this.ca = a;
-    this.values = [this.ca.Ud, this.ca.Vd, ~~(100 * (this.ca.Fb / this.ca.Fd)), this.ca.Zc, 0 === this.ca.$c ? u.gh : 0];
-    this.Nd = this.values.map(function(a) {
-      return 0.01 * a
-    });
-    tm.app.Label("RESULT", 40).setPosition(240, 64).addChildTo(this);
-    tm.app.Label("STAR (S)").setAlign("right").setBaseline("middle").setPosition(240, 128).addChildTo(this);
-    tm.app.Label("STAR (L)").setAlign("right").setBaseline("middle").setPosition(240, 192).addChildTo(this);
-    tm.app.Label("KILL RATIO").setAlign("right").setBaseline("middle").setPosition(240, 256).addChildTo(this);
-    tm.app.Label("MAX HIT").setAlign("right").setBaseline("middle").setPosition(240, 320).addChildTo(this);
-    tm.app.Label("NO MISS BONUS", 20).setAlign("right").setBaseline("middle").setPosition(240, 384).addChildTo(this);
-    tm.app.Label("TOTAL SCORE").setAlign("right").setBaseline("middle").setPosition(240, 448).addChildTo(this);
-    this.labels = [];
-    for(var d = 0;d < this.values.length;d++) {
-      this.labels[d] = tm.app.Label("" + Math.floor(this.values[d]) + (2 === d ? "%" : ""), 30).setFontFamily("'Ubuntu Mono'").setAlign("right").setBaseline("middle").setPosition(384, 640 * (0.2 + 0.1 * d)).addChildTo(this)
-    }
-    this.Vf = tm.app.Label(Math.floor(this.ca.score), 34).setFontFamily("'Ubuntu Mono'").setAlign("right").setBaseline("middle").setPosition(384, 512).addChildTo(this);
-    this.Ye = tm.app.Label("press space key").setPosition(240, 576).addChildTo(this);
-    this.Ye.visible = m;
-    this.background = tm.graphics.LinearGradient(0, 0, 480, 640).addColorStopList([{offset:0, color:"hsl(220, 90%, 60%)"}, {offset:1, color:"hsl(220, 90%, 10%)"}]).toStyle();
-    this.hg = c;
-    for(var g = [], d = 0;12 > d;d++) {
-      g[d] = [];
-      for(var l = 0;16 > l;l++) {
-        g[d][l] = {Ze:0, Sd:0, ff:R(-2, 2), gd:R(1, 4)}
-      }
-    }
-    this.gb = tm.app.Object2D();
-    this.gb.draw = function(a) {
-      for(var b = j, c = 0;c < g.length;c++) {
-        for(var d = 0;d < g[c].length;d++) {
-          var l = g[c][d];
-          640 > 40 * d + l.Sd && (a.drawImage(this.hg.element, 40 * c, 40 * d, 40, 40, 40 * c + l.Ze, 40 * d + l.Sd, 40, 40), l.Ze += l.ff, l.Sd += l.gd, l.gd += 0.3, b = m)
-        }
-      }
-      b ? (this.gb.remove(), this.wait = 60) : this.wait = 100
-    }.bind(this);
-    this.gb.addChildTo(this);
-    this.addEventListener("exit", function() {
-      ya()
-    })
-  }, update:function(a) {
-    this.wait -= 1;
-    if(!(0 < this.wait)) {
-      var c = this.cursor;
-      if(c < this.values.length) {
-        J("star"), this.values[c] <= this.Nd[c] || a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space") ? (this.ca.gc(this.values[c] * this.gg[c]), this.values[c] = 0, this.cursor += 1, this.wait = 30) : (this.ca.gc(this.Nd[c] * this.gg[c]), this.values[c] -= this.Nd[c]), this.labels[c].text = "" + Math.floor(this.values[c]) + (2 === c ? "%" : ""), this.Vf.text = Math.floor(this.ca.score)
-      }else {
-        if(this.Ye.visible = j, a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c") || a.keyboard.getKeyDown("space") || 1800 < this.frame) {
-          J("decision"), this.ca.mg(this.ca.lg + 1), a.popScene()
-        }
-      }
-      this.frame += 1
-    }
-  }, draw:function(b) {
-    b.clearColor(this.background);
-    b.lineWidth = 1;
-    b.strokeStyle = tm.graphics.LinearGradient(0, 0, 480, 640).addColorStopList([{offset:0, color:"hsl(200, 90%, 10%)"}, {offset:1, color:"hsl(200, 90%, 60%)"}]).toStyle();
-    b.beginPath();
-    for(var c = 0, d = -48;528 > d;d += 24) {
-      for(var c = 0 === c ? a : 0, g = 2 * -a + c;g < 640 + 2 * a;g += 2 * a) {
-        b.line(d, g, d + 16, g), b.line(d, g, d - 8, g + a), b.line(d, g, d - 8, g - a)
-      }
-    }
-    b.stroke();
-    b.fillStyle = "hsla(220, 90%, 10%, 0.6)";
-    b.fillRect(20, 20, 440, 600)
-  }});
-  var a = 8 * Math.sqrt(3)
-})();
-var Ma = tm.createClass({superClass:X, init:function() {
+F.Ae = k;
+Ja = tm.createClass({superClass:Pa, ca:k, Dg:k, nb:k, values:k, labels:k, $d:k, Cg:[v.Gh, v.Hh, v.Dh, v.Eh, 1], qg:k, qf:k, cursor:0, wait:0, frame:0, init:function(b, a) {
   this.superInit();
-  var a = tm.app.Label("GAME OVER");
-  a.fillStyle = "red";
-  a.setPosition(240, 320).addChildTo(this);
+  this.ca = b;
+  tm.display.Sprite("result_bg", 528, 704).setPosition(240, 320).addChildTo(this);
+  this.values = [this.ca.je, this.ca.ke, ~~(100 * (this.ca.Kb / this.ca.Rd)), this.ca.md, 0 === this.ca.nd ? v.Fh : 0];
+  this.$d = this.values.map(function(a) {
+    return 0.01 * a
+  });
+  tm.display.Label("RESULT", 40).setPosition(240, 64).addChildTo(this);
+  tm.display.Label("STAR (S)").setAlign("right").setBaseline("middle").setPosition(240, 128).addChildTo(this);
+  tm.display.Label("STAR (L)").setAlign("right").setBaseline("middle").setPosition(240, 192).addChildTo(this);
+  tm.display.Label("KILL RATIO").setAlign("right").setBaseline("middle").setPosition(240, 256).addChildTo(this);
+  tm.display.Label("MAX HIT").setAlign("right").setBaseline("middle").setPosition(240, 320).addChildTo(this);
+  tm.display.Label("NO MISS BONUS", 20).setAlign("right").setBaseline("middle").setPosition(240, 384).addChildTo(this);
+  tm.display.Label("TOTAL SCORE").setAlign("right").setBaseline("middle").setPosition(240, 448).addChildTo(this);
+  this.labels = [];
+  for(var d = 0;d < this.values.length;d++) {
+    this.labels[d] = tm.display.Label("" + Math.floor(this.values[d]) + (2 === d ? "%" : ""), 30).setFontFamily("'Ubuntu Mono'").setAlign("right").setBaseline("middle").setPosition(384, 640 * (0.2 + 0.1 * d)).addChildTo(this)
+  }
+  this.qg = tm.display.Label(Math.floor(this.ca.score), 34).setFontFamily("'Ubuntu Mono'").setAlign("right").setBaseline("middle").setPosition(384, 512).addChildTo(this);
+  this.qf = tm.display.Label("press space key").setPosition(240, 576).addChildTo(this);
+  this.qf.visible = l;
+  this.Dg = a;
+  for(var f = [], d = 0;12 > d;d++) {
+    f[d] = [];
+    for(var g = 0;16 > g;g++) {
+      f[d][g] = {rf:0, fe:0, nc:U(-2, 2), Mb:U(1, 4)}
+    }
+  }
+  this.nb = tm.app.Object2D();
+  this.nb.draw = function(a) {
+    a.save();
+    for(var b = j, d = 0;d < f.length;d++) {
+      for(var g = 0;g < f[d].length;g++) {
+        var s = f[d][g];
+        640 > 40 * g + s.fe && (a.drawImage(this.Dg.element, 40 * d, 40 * g, 40, 40, 40 * d + s.rf, 40 * g + s.fe, 40, 40), s.rf += s.nc, s.fe += s.Mb, s.Mb += 0.3, b = l)
+      }
+    }
+    this.wait = 60;
+    b && this.nb.remove();
+    a.restore()
+  }.bind(this);
+  this.nb.addChildTo(this);
+  this.addEventListener("exit", function() {
+    Ca()
+  })
+}, update:function(b) {
+  this.wait -= 1;
+  if(!(0 < this.wait)) {
+    var a = this.cursor;
+    if(a < this.values.length) {
+      J("star"), this.values[a] <= this.$d[a] || b.keyboard.getKeyDown("z") || b.keyboard.getKeyDown("c") || b.keyboard.getKeyDown("space") ? (this.ca.tc(this.values[a] * this.Cg[a]), this.values[a] = 0, this.cursor += 1, this.wait = 30) : (this.ca.tc(this.$d[a] * this.Cg[a]), this.values[a] -= this.$d[a]), this.labels[a].text = "" + Math.floor(this.values[a]) + (2 === a ? "%" : ""), this.qg.text = Math.floor(this.ca.score)
+    }else {
+      if(this.qf.visible = j, b.keyboard.getKeyDown("z") || b.keyboard.getKeyDown("c") || b.keyboard.getKeyDown("space") || 1800 < this.frame) {
+        J("decision"), this.ca.Hg(this.ca.Gg + 1), b.popScene()
+      }
+    }
+    this.frame += 1
+  }
+}, Oc:n()});
+var Ra = tm.createClass({superClass:Pa, init:function() {
+  this.superInit();
+  var b = tm.display.Label("GAME OVER");
+  b.fillStyle = "red";
+  b.setPosition(240, 320).addChildTo(this);
   this.interactive = j;
   this.addEventListener("enter", function() {
     this.tweener.clear().wait(5E3).call(function() {
-      this.app.replaceScene(A())
+      this.app.replaceScene(ca())
     }.bind(this))
   })
-}, update:function(a) {
-  (a.keyboard.getKeyDown("z") || a.keyboard.getKeyDown("c")) && a.replaceScene(A())
-}, draw:function(a) {
-  a.clearColor("black")
+}, update:function(b) {
+  (b.keyboard.getKeyDown("z") || b.keyboard.getKeyDown("c")) && b.replaceScene(ca())
+}, Oc:function(b) {
+  b.clearColor("black")
 }});
-tm.createClass({superClass:X, init:function() {
+tm.createClass({superClass:Pa, init:function() {
   this.superInit()
 }, update:n()});
 (function() {
-  N = tm.createClass({superClass:tm.app.CanvasElement, name:k, da:k, ca:k, ra:0, score:0, Nb:m, erase:m, star:1, gi:m, mc:j, xb:m, frame:0, Yd:k, direction:0, speed:0, za:k, init:function(b, c, d) {
+  P = tm.createClass({superClass:tm.display.CanvasElement, name:k, da:k, ca:k, ie:k, na:0, hc:0, score:0, Vb:l, erase:l, star:1, Gi:l, gc:j, ub:l, frame:0, ne:k, direction:0, speed:0, ka:k, init:function(a, d, f) {
     this.superInit();
     this.addEventListener("added", function() {
       this.frame = 0;
-      this.xb = m;
-      a.push(this)
+      this.ub = l;
+      b.push(this)
     });
     this.addEventListener("removed", function() {
       this.dispatchEvent(tm.event.Event("enemyconsumed"));
-      var b = a.indexOf(this);
-      -1 !== b && a.splice(b, 1)
+      var a = b.indexOf(this);
+      -1 !== a && b.splice(a, 1)
     });
-    this.mc = j;
-    this.ca = b;
-    this.da = b.da;
+    this.gc = j;
+    this.ca = a;
+    this.da = a.da;
     this.score = 100;
-    this.erase = m;
-    this.Bh(d);
-    c.na(this);
-    this.altitude = this.Nb ? 1 : 10;
-    this.Yd = {x:0, y:0}
-  }, li:function() {
+    this.erase = l;
+    this.ai(f);
+    d.setup(this);
+    this.altitude = this.Vb ? 1 : 10;
+    this.ne = {x:0, y:0}
+  }, Li:function() {
     this.dispatchEvent(tm.event.Event("launch"));
     return this
-  }, cj:function() {
+  }, Aj:function() {
     this.dispatchEvent(tm.event.Event("completeattack"))
   }, update:function() {
-    this.xb === m && (0 <= this.x - this.boundingWidthLeft && 480 > this.x + this.boundingWidthRight && 0 <= this.y - this.boundingHeightTop && 640 > this.y + this.boundingHeightBottom) && (this.xb = j, this.dispatchEvent(tm.event.Event("enter")));
-    var a = this.x, c = this.y;
-    this.Nb && (this.x += this.ca.ka.oa, this.y += this.ca.ka.pa);
-    this.xb && (this.frame += 1);
-    this.Yd.x = this.x - a;
-    this.Yd.y = this.y - c
-  }, Mb:function(a) {
-    if(!this.xb) {
-      return m
+    this.ub === l && (0 <= this.x - this.boundingWidthLeft && 480 > this.x + this.boundingWidthRight && 0 <= this.y - this.boundingHeightTop && 640 > this.y + this.boundingHeightBottom) && (this.ub = j, this.dispatchEvent(tm.event.Event("enter")));
+    var a = this.x, b = this.y;
+    this.Vb && (this.x += this.ca.ja.ra, this.y += this.ca.ja.sa);
+    this.ub && (this.frame += 1);
+    this.ne.x = this.x - a;
+    this.ne.y = this.y - b
+  }, Ub:function(a) {
+    if(!this.ub) {
+      return l
     }
-    this.ra -= a;
-    return 0 >= this.ra ? (a = R(0, 5), 2 > a ? this.ca.Qa("enemy destroy.") : 4 > a ? this.ca.Qa(this.name + " destroy.") : this.ca.Qa("ETR reaction gone."), this.erase && C.erase(j, this.ca.sa), this.dispatchEvent(tm.event.Event("destroy")), this.Na(), j) : m
-  }, Na:function() {
-    E.Gd(this.x, this.y, this.ca, this.Yd);
+    this.na -= a;
+    if(0 >= this.na) {
+      return a = U(0, 5), 2 > a ? this.ca.Ua("enemy destroy.") : 4 > a ? this.ca.Ua(this.name + " destroy.") : this.ca.Ua("ETR reaction gone."), this.erase && z.erase(j, this.ca.ua, this instanceof Ia), this.dispatchEvent(tm.event.Event("destroy")), this.Ca(), j
+    }
+    40 > this.na && this.Ta();
+    return l
+  }, Ca:function() {
+    B.Sd(this.x, this.y, this.ca, this.ne);
     this.remove()
-  }, Xc:function() {
+  }, kd:function() {
     return 0 <= this.x + this.width / 2 && 480 > this.x - this.width / 2 && 0 <= this.y + this.height / 2 && 640 > this.y - this.height / 2
-  }, ui:function() {
-    return this.mc
-  }, Bh:function(a) {
+  }, Ui:function() {
+    return this.gc
+  }, Ta:n(), ai:function(a) {
     this.name = a;
-    a = N.Bg[a];
-    this.ra = a[0];
+    a = P.Yg[a];
+    this.na = this.hc = a[0];
     this.score = a[1];
-    this.Nb = a[2];
+    this.Vb = a[2];
     this.erase = a[3];
     this.star = a[4];
     a[5].radius !== i && (this.boundingRadius = a[5].radius);
@@ -3010,232 +3120,320 @@ tm.createClass({superClass:X, init:function() {
     a[5].widthRight !== i && (this.boundingWidthRight = a[5].widthRight);
     a[5].heightTop !== i && (this.boundingHeightTop = a[5].heightTop);
     a[5].heightBottom !== i && (this.boundingHeightBottom = a[5].heightBottom)
-  }, Be:function() {
+  }, Td:function() {
     this.remove();
-    this.ca.Of.addChild(this);
+    this.ca.ig.addChild(this);
     this.addEventListener("enterframe", function() {
-      0.2 > Math.random() && E.Gd(this.x + W(-100, 100), this.y + W(-40, 40), this.ca, {x:0, y:-3})
+      0.2 > Math.random() && B.Sd(this.x + V(-100, 100), this.y + V(-40, 40), this.ca, {x:0, y:-3})
     });
     this.tweener.clear().to({altitude:4, y:this.y + 200}, 2E3).call(function() {
-      E.Nf(this.x, this.y, this.ca);
+      B.hg(this.x, this.y, this.ca);
       this.remove()
     }.bind(this))
-  }, Df:function() {
+  }, Xf:function() {
     this.addEventListener("enterframe", function() {
-      0.2 > Math.random() && E.Gd(this.x + W(-100, 100), this.y + W(-40, 40), this.ca, {x:0, y:-3})
+      0.2 > Math.random() && B.Sd(this.x + V(-100, 100), this.y + V(-40, 40), this.ca, {x:0, y:-3})
     });
     this.tweener.clear().to({altitude:4, y:this.y + 200}, 2E3).call(function() {
-      E.Nf(this.x, this.y, this.ca);
+      B.hg(this.x, this.y, this.ca);
       this.remove()
     }.bind(this))
   }});
-  N.Oc = function() {
-    for(var b = [].concat(a), c = 0, d = b.length;c < d;c++) {
-      b[c].remove()
+  P.cd = function() {
+    for(var a = [].concat(b), d = 0, f = a.length;d < f;d++) {
+      a[d].remove()
     }
   };
-  var a = N.Ma = []
+  var b = P.Qa = []
 })();
-Fa = tm.createClass({superClass:N, gi:j, Bc:0, Td:k, init:function(a, b, c) {
-  this.Td = b;
-  this.superInit(a, this.Td[0], c);
-  this.Bc = this.ra;
+Ia = tm.createClass({superClass:P, Gi:j, hc:0, he:k, init:function(b, a, d) {
+  this.he = a;
+  this.superInit(b, this.he[0], d);
+  this.hc = this.na;
   this.addEventListener("added", function() {
-    this.ca.Ub = this;
-    this.ca.Di();
+    this.ca.Sb = this;
+    this.ca.cj();
     this.tweener.wait(1E3).call(function() {
-      this.ca.Rc = m
+      this.ca.fd = l
     }.bind(this))
   });
   this.addEventListener("removed", function() {
-    this.ca.Ub = k;
-    this.ca.ci();
+    this.ca.Sb = k;
+    this.ca.Ci();
     var a = tm.app.Object2D();
     a.tweener.wait(7E3).call(function() {
-      this.ca.Ih()
+      this.ca.gi()
     }.bind(this));
-    a.addChildTo(this.ca.gb)
+    a.addChildTo(this.ca.nb)
   })
-}, Mb:function(a) {
-  var b = this.ra;
-  if(N.prototype.Mb.call(this, a)) {
-    return this.ca.Rc = j, ya(), j
+}, Ub:function(b) {
+  var a = this.na;
+  if(P.prototype.Ub.call(this, b)) {
+    return this.ca.fd = j, this.ca.da.ad = l, Ca(), j
   }
-  this.ra <= 0.55 * this.Bc && 0.55 * this.Bc < b ? (O.bf(this), this.clearEventListener("completeattack"), this.tweener.clear(), E.nc(this.x, this.y, this.ca), C.erase(j, this.ca.sa), this.Td[1].na(this)) : this.ra <= 0.1 * this.Bc && 0.1 * this.Bc < b && (O.bf(this), this.clearEventListener("completeattack"), this.tweener.clear(), E.nc(this.x, this.y, this.ca), C.erase(j, this.ca.sa), this.Td[2].na(this), J("voJacms"))
+  this.na <= 0.55 * this.hc && 0.55 * this.hc < a ? (S.le(this), this.clearEventListener("completeattack"), this.tweener.clear(), B.Gb(this.x, this.y, this.ca), z.erase(j, this.ca.ua), this.he[1].setup(this)) : this.na <= 0.1 * this.hc && 0.1 * this.hc < a && (S.le(this), this.clearEventListener("completeattack"), this.tweener.clear(), B.Gb(this.x, this.y, this.ca), z.erase(j, this.ca.ua), this.he[2].setup(this), J("voJacms"))
 }});
 (function() {
-  N.Bg = {kujo:[2, 300, m, m, 1, {radius:24}], kiryu:[3, 400, m, m, 1, {radius:24}], natsuki:[5, 900, j, m, 1, {radius:24}], kise:[50, 15E3, j, m, 1, {radius:24}], hanasaki:[150, 2E5, j, j, 10, {radius:40}], myodoin:[50, 15E3, j, m, 1, {radius:40}], kenzaki:[200, 3E5, j, j, 10, {width:100, height:40}], kurokawa:[35, 5E3, m, m, 5, {width:100, height:20}], akimoto:[250, 3E5, m, j, 10, {width:200, heightBottom:10, heightTop:60}], yukishiro:[750, 8E5, m, j, 20, {width:240, height:80}], misumi:[4E3, 2E6, 
-  m, j, 0, {width:240, height:80}], mishou:[1E3, 1E6, m, j, 20, {width:300, height:80}], hyuga:[4E3, 2E6, m, j, 0, {width:240, height:80}]};
-  N.Ja = tm.createClass({superClass:N, Aa:k, init:function(b, c) {
-    this.superInit(b, c, "kujo");
-    this.Aa = a("tex_stage1", 64, 64)
+  P.Yg = {kujo:[2, 300, l, l, 1, {radius:24}], kiryu:[3, 400, l, l, 1, {radius:24}], natsuki:[5, 900, j, l, 1, {radius:24}], kise:[50, 15E3, j, l, 1, {radius:24}], yamabuki:[100, 15E3, j, l, 1, {width:70, height:70}], hanasaki:[150, 2E5, j, j, 10, {radius:40}], myodoin:[50, 15E3, j, l, 1, {radius:40}], kenzaki:[200, 3E5, j, j, 10, {width:100, height:40}], tsukikage:[8, 1E3, l, l, 5, {width:100, height:20}], kurokawa:[35, 5E3, l, l, 5, {width:100, height:20}], akimoto:[250, 3E5, l, j, 10, {width:200, 
+  heightBottom:10, heightTop:60}], yukishiro:[750, 8E5, l, j, 20, {width:240, height:80}], misumi:[4E3, 2E6, l, j, 0, {width:240, height:80}], mishou:[1E3, 1E6, l, j, 20, {width:300, height:80}], hyuga:[6E3, 3E6, l, j, 0, {width:240, height:80}], erika:[30, 500, l, l, 1, {width:24, height:48}]};
+  P.ma = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "kujo");
+    this.fa = b("tex_stage1", 64, 64)
   }, update:function(a) {
-    N.prototype.update.call(this, a);
+    P.prototype.update.call(this, a);
     this.scaleX = this.x < this.da.x ? -1 : 1
   }, draw:function(a) {
-    this.Aa.setFrameIndex(2 > this.frame % 4 ? 0 : 1).draw(a)
+    this.fa.setFrameIndex(2 > this.frame % 4 ? 0 : 1).draw(a)
   }});
-  N.ha = tm.createClass({superClass:N, Aa:k, init:function(b, c) {
-    this.superInit(b, c, "kiryu");
-    this.Aa = a("tex_stage1", 64, 64)
+  P.oa = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "kiryu");
+    this.fa = b("tex_stage1", 64, 64)
   }, update:function(a) {
-    N.prototype.update.call(this, a);
+    P.prototype.update.call(this, a);
     this.scaleX = this.x < this.da.x ? -1 : 1
   }, draw:function(a) {
-    this.Aa.setFrameIndex(2 > this.frame % 4 ? 8 : 9).draw(a)
+    this.fa.setFrameIndex(2 > this.frame % 4 ? 8 : 9).draw(a)
   }});
-  N.ea = tm.createClass({superClass:N, fc:k, qe:k, init:function(b, c) {
-    this.superInit(b, c, "natsuki");
-    this.fc = a("tex_tank1", 64, 64);
-    this.qe = a("tex_tank1", 64, 64);
-    this.jc = this.jc || 0;
-    this.wb = this.wb || 0
+  P.ea = tm.createClass({superClass:P, Ie:k, Je:k, init:function(a, d) {
+    this.superInit(a, d, "natsuki");
+    this.Ie = b("tex_tank1", 64, 64);
+    this.Je = b("tex_tank1", 64, 64);
+    this.vc = this.vc || 0;
+    this.Fb = this.Fb || 0
   }, update:function(a) {
-    N.prototype.update.call(this, a);
-    for(a = this.jc;0 > a;) {
+    P.prototype.update.call(this, a);
+    for(a = this.vc;0 > a;) {
       a += 2 * Math.PI
     }
     for(;2 * Math.PI <= a;) {
       a -= 2 * Math.PI
     }
-    for(var c = this.wb;0 > c;) {
-      c += 2 * Math.PI
+    for(var b = this.Fb;0 > b;) {
+      b += 2 * Math.PI
     }
-    for(;2 * Math.PI <= c;) {
-      c -= 2 * Math.PI
+    for(;2 * Math.PI <= b;) {
+      b -= 2 * Math.PI
     }
-    this.fc.setFrameIndex(~~(16 * a / (2 * Math.PI)), 64, 64);
-    this.qe.setFrameIndex(~~(16 * c / (2 * Math.PI)) + 16, 64, 64)
+    this.Ie.setFrameIndex(~~(16 * a / (2 * Math.PI)), 64, 64);
+    this.Je.setFrameIndex(~~(16 * b / (2 * Math.PI)) + 16, 64, 64)
   }, draw:function(a) {
-    this.fc.draw(a);
-    this.qe.draw(a)
-  }, Na:function() {
-    E.Qh(this.x, this.y, this.ca);
+    this.Ie.draw(a);
+    this.Je.draw(a)
+  }, Ca:function() {
+    B.oi(this.x, this.y, this.ca);
     this.remove()
   }});
-  N.dc = tm.createClass({superClass:N, fc:k, init:function(b, c) {
-    this.superInit(b, c, "kurokawa");
-    this.Aa = a("tex_stage1", 128, 128).setFrameIndex(1)
+  P.zf = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "yamabuki");
+    this.fa = b("tex_stage1", 128, 128).setFrameIndex(5)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
   }, draw:function(a) {
-    this.Aa.draw(a)
-  }, Na:function() {
-    E.nc(this.x, this.y, this.ca);
+    this.fa.draw(a)
+  }, Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
     this.remove()
   }});
-  N.od = tm.createClass({superClass:N, init:function(b, c) {
-    this.superInit(b, c, "akimoto");
-    this.Aa = a("tex_stage1", 256, 128).setFrameIndex(1)
+  P.Xa = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "tsukikage");
+    this.fa = b("tex_stage1", 128, 128).setFrameIndex(1)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
   }, draw:function(a) {
-    this.Aa.draw(a)
-  }, Na:function() {
-    this.Be()
-  }});
-  N.ua = tm.createClass({superClass:N, fc:k, init:function(b, c) {
-    this.superInit(b, c, "kise");
-    this.Aa = a("tex_stage1", 128, 128).setFrameIndex(5)
-  }, draw:function(a) {
-    this.Aa.draw(a)
-  }, Na:function() {
-    E.nc(this.x, this.y, this.ca);
+    this.fa.draw(a)
+  }, Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
     this.remove()
   }});
-  N.rd = tm.createClass({superClass:N, Aa:k, init:function(a, c) {
-    this.superInit(a, c, "hanasaki")
-  }, Na:function() {
-    E.nc(this.x, this.y, this.ca);
+  P.$b = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "kurokawa");
+    this.fa = b("tex_stage1", 128, 128).setFrameIndex(1)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
+  }, draw:function(a) {
+    this.fa.draw(a)
+  }, Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
+    this.remove()
+  }});
+  P.Ic = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "akimoto");
+    this.fa = b("tex_stage1", 256, 128).setFrameIndex(1)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
+  }, draw:function(a) {
+    this.fa.draw(a)
+  }, Ca:function() {
+    this.Td()
+  }});
+  P.lj = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "aono");
+    this.fa = b("tex_stage1", 256, 128).setFrameIndex(1)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
+  }, draw:function(a) {
+    this.fa.draw(a)
+  }, Ca:function() {
+    this.Td()
+  }});
+  P.xa = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "kise");
+    this.fa = b("tex_stage1", 128, 128).setFrameIndex(5)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
+  }, draw:function(a) {
+    this.fa.draw(a)
+  }, Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
+    this.remove()
+  }});
+  P.Dd = tm.createClass({superClass:P, fa:k, init:function(a, b) {
+    this.superInit(a, b, "hanasaki")
+  }, Ta:n(), Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
     this.remove()
   }, draw:function(a) {
     a.fillStyle = "yellow";
     a.fillRect(-this.boundingWidthLeft, -this.boundingHeightTop, this.boundingWidthLeft + this.boundingWidthRight, this.boundingHeightTop + this.boundingHeightBottom)
   }});
-  N.fe = tm.createClass({superClass:N, init:function(a, c) {
-    this.superInit(a, c, "myodoin")
-  }, Na:function() {
-    E.nc(this.x, this.y, this.ca);
+  P.ue = tm.createClass({superClass:P, init:function(a, b) {
+    this.superInit(a, b, "myodoin")
+  }, Ta:n(), Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
     this.remove()
   }, draw:function(a) {
     a.fillStyle = "yellow";
     a.fillRect(-this.boundingWidthLeft, -this.boundingHeightTop, this.boundingWidthLeft + this.boundingWidthRight, this.boundingHeightTop + this.boundingHeightBottom)
   }});
-  N.qb = tm.createClass({superClass:N, fc:k, init:function(b, c) {
-    this.superInit(b, c, "kenzaki");
-    this.Aa = a("tex_stage1", 128, 128).setFrameIndex(4)
+  P.zb = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "kenzaki");
+    this.fa = b("tex_stage1", 128, 128).setFrameIndex(4)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
   }, draw:function(a) {
-    this.Aa.draw(a)
-  }, Na:function() {
-    E.nc(this.x, this.y, this.ca);
+    this.fa.draw(a)
+  }, Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
     this.remove()
   }});
-  N.de = tm.createClass({superClass:N, Aa:k, init:function(b, c) {
-    this.superInit(b, c, "yukishiro");
-    this.Aa = a("tex_stage1", 256, 128).setFrameIndex(3);
+  P.Yc = tm.createClass({superClass:P, init:function(a, b) {
+    this.superInit(a, b, "erika")
+  }, Ta:n(), draw:function(a) {
+    a.fillStyle = "yellow";
+    a.fillRect(-this.boundingWidthLeft, -this.boundingHeightTop, this.boundingWidthLeft + this.boundingWidthRight, this.boundingHeightTop + this.boundingHeightBottom)
+  }, Ca:function() {
+    B.Gb(this.x, this.y, this.ca);
+    oa(this.x, this.y, this.da).addChildTo(this.parent);
+    this.remove()
+  }});
+  P.se = tm.createClass({superClass:P, fa:k, init:function(a, d) {
+    this.superInit(a, d, "yukishiro");
+    this.fa = b("tex_stage1", 256, 128).setFrameIndex(3);
     this.setScale(1.5)
-  }, Na:function() {
-    this.Be()
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
+  }, Ca:function() {
+    this.Td()
   }, draw:function(a) {
-    this.Aa.draw(a)
+    this.fa.draw(a)
   }});
-  N.he = tm.createClass({superClass:Fa, fc:k, init:function(b, c) {
-    this.superInit(b, c, "misumi");
-    this.Aa = a("tex_stage1", 256, 128).setFrameIndex(4);
+  P.we = tm.createClass({superClass:Ia, fa:k, init:function(a, d) {
+    this.superInit(a, d, "misumi");
+    this.fa = b("tex_stage1", 256, 128).setFrameIndex(4);
     this.setScale(1.5)
+  }, Ta:function() {
+    this.on("enterframe", function(a) {
+      0 === a.app.frame % 30 ? this.fa.Yb() : 5 === a.app.frame % 30 && this.fa.Xb()
+    })
   }, draw:function(a) {
-    this.Aa.draw(a)
-  }, Na:function() {
-    this.Df()
+    this.fa.draw(a)
+  }, Ca:function() {
+    this.Xf()
   }});
-  N.ge = tm.createClass({superClass:N, init:function(a, c) {
-    this.superInit(a, c, "mishou")
-  }, Na:function() {
-    this.Be()
+  P.ve = tm.createClass({superClass:P, init:function(a, b) {
+    this.superInit(a, b, "mishou")
+  }, Ta:n(), Ca:function() {
+    this.Td()
   }, draw:function(a) {
     a.fillStyle = "yellow";
     a.fillRect(-this.boundingWidthLeft, -this.boundingHeightTop, this.boundingWidthLeft + this.boundingWidthRight, this.boundingHeightTop + this.boundingHeightBottom)
   }});
-  N.Mi = tm.createClass({superClass:Fa, init:function(a, c) {
-    this.superInit(a, c, "hyuga")
-  }, Na:function() {
-    this.Df()
+  P.Oh = tm.createClass({superClass:Ia, init:function(a, b) {
+    this.superInit(a, b, "hyuga")
+  }, Ta:n(), Ca:function() {
+    this.Xf()
   }, draw:function(a) {
     a.fillStyle = "yellow";
     a.fillRect(-this.boundingWidthLeft, -this.boundingHeightTop, this.boundingWidthLeft + this.boundingWidthRight, this.boundingHeightTop + this.boundingHeightBottom)
   }});
-  var a = tm.createClass({superClass:tm.app.Sprite, init:function(a, c, d) {
-    this.superInit(a, c, d)
+  var b = tm.createClass({superClass:tm.display.Sprite, uf:k, init:function(a, b, f) {
+    this.superInit(a, b, f);
+    "string" === typeof a && (this.uf = a)
   }, draw:function(a) {
-    var c = this.srcRect;
-    a.context.drawImage(this._image.element, c.x, c.y, c.width, c.height, -this.width * this.origin.x, -this.height * this.origin.y, this.width, this.height)
+    var b = this.srcRect;
+    a.context.drawImage(this._image.element, b.x, b.y, b.width, b.height, -this.width * this.origin.x, -this.height * this.origin.y, this.width, this.height)
+  }, Yb:function() {
+    var a = this.srcRect.x, b = this.srcRect.y, f = this.srcRect.width, g = this.srcRect.height;
+    this.image = this.uf + "Red";
+    this.srcRect.x = a;
+    this.srcRect.y = b;
+    this.srcRect.width = f;
+    this.srcRect.height = g
+  }, Xb:function() {
+    var a = this.srcRect.x, b = this.srcRect.y, f = this.srcRect.width, g = this.srcRect.height;
+    this.image = this.uf;
+    this.srcRect.x = a;
+    this.srcRect.y = b;
+    this.srcRect.width = f;
+    this.srcRect.height = g
   }})
 })();
 (function() {
-  O = tm.createClass({na:function(a) {
+  S = tm.createClass({setup:function(a) {
     a.on("destroy", function() {
-      O.bf(this)
+      S.le(this)
     })
   }});
-  O.nb = function(a, c) {
-    var d = C[c].Cd();
-    a.on("enterframe", d);
+  S.Da = function(a, b) {
+    var f = z[b].Od();
+    a.on("enterframe", f);
     a.on("completeattack", function() {
-      this.removeEventListener("enterframe", d)
+      f.stop = j
     })
   };
-  O.bf = function(a) {
-    var c = [].concat(a._listeners.enterframe);
-    if(c) {
-      for(var d = 0, g = c.length;d < g;d++) {
-        c[d] && c[d].Ge && a.removeEventListener("enterframe", c[d])
+  S.le = function(a) {
+    if(a = [].concat(a._listeners.enterframe)) {
+      for(var b = 0, f = a.length;b < f;b++) {
+        a[b] && a[b].Ye && (a[b].stop = j)
       }
     }
   };
-  O.mb = tm.createClass({superClass:O, init:function() {
-    this.superInit()
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+  S.ma = tm.createClass({superClass:S, pattern:k, init:function(a) {
+    this.superInit();
+    this.pattern = a
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    var b = this.pattern;
     a.on("launch", function() {
-      var a = B.randf(64, 192);
-      this.tweener.clear().wait(B.rand(10, 500)).move(this.x, a, 5 * a, "easeOutQuad").call(function() {
-        O.nb(this, "basic0-0")
+      var a = w.randf(64, 192);
+      this.tweener.clear().wait(w.rand(10, 500)).move(this.x, a, 5 * a, "easeOutQuad").call(function() {
+        S.Da(this, b)
       }.bind(this))
     });
     a.on("completeattack", function() {
@@ -3244,15 +3442,16 @@ Fa = tm.createClass({superClass:N, gi:j, Bc:0, Td:k, init:function(a, b, c) {
       }.bind(this))
     })
   }});
-  O.mb = O.mb();
-  O.Ba = tm.createClass({superClass:O, init:function() {
+  S.Ob = S.ma("basic0-0");
+  S.Ma = S.ma("basic1-2");
+  S.Ea = tm.createClass({superClass:S, init:function() {
     this.superInit()
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
     a.on("launch", function() {
-      var a = B.randf(192, 320);
-      this.tweener.clear().wait(B.rand(10, 500)).move(this.x, a, 5 * a, "easeOutQuad").call(function() {
-        O.nb(this, "basic0-0")
+      var a = w.randf(192, 320);
+      this.tweener.clear().wait(w.rand(10, 500)).move(this.x, a, 5 * a, "easeOutQuad").call(function() {
+        S.Da(this, "basic0-0")
       }.bind(this))
     });
     a.on("completeattack", function() {
@@ -3261,15 +3460,15 @@ Fa = tm.createClass({superClass:N, gi:j, Bc:0, Td:k, init:function(a, b, c) {
       }.bind(this))
     })
   }});
-  O.Ba = O.Ba();
-  O.Qb = tm.createClass({superClass:O, init:function() {
+  S.Ea = S.Ea();
+  S.ac = tm.createClass({superClass:S, init:function() {
     this.superInit()
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
     a.on("launch", function() {
-      var a = B.randf(448, 576);
-      this.tweener.clear().wait(B.rand(10, 500)).move(this.x, a, 5 * a, "easeOutQuad").call(function() {
-        O.nb(this, "basic0-0")
+      var a = w.randf(448, 576);
+      this.tweener.clear().wait(w.rand(10, 500)).move(this.x, a, 5 * a, "easeOutQuad").call(function() {
+        S.Da(this, "basic0-0")
       }.bind(this))
     });
     a.on("completeattack", function() {
@@ -3278,385 +3477,572 @@ Fa = tm.createClass({superClass:N, gi:j, Bc:0, Td:k, init:function(a, b, c) {
       }.bind(this))
     })
   }});
-  O.Qb = O.Qb();
-  O.ha = tm.createClass({superClass:O, init:function() {
-    this.superInit()
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+  S.ac = S.ac();
+  S.oa = tm.createClass({superClass:S, ee:k, init:function(a) {
+    this.superInit();
+    this.ee = a
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
     a.angle = 0.5 * Math.PI;
-    a.tweener.wait(B.rand(0, 1E3)).call(function() {
+    a.ee = this.ee;
+    a.tweener.wait(w.rand(0, 1E3)).call(function() {
       this.speed = 6;
-      O.nb(this, "basic1-0");
+      S.Da(this, this.ee);
       this.on("enterframe", function() {
-        this.y < this.da.y && this.xb && (this.angle += Math.atan2(this.da.y - this.y, this.da.x - this.x) < this.angle ? -0.02 : 0.02, this.angle = P(this.angle, 0.5, Math.PI - 0.5));
+        this.y < this.da.y && this.ub && (this.angle += Math.atan2(this.da.y - this.y, this.da.x - this.x) < this.angle ? -0.02 : 0.02, this.angle = T(this.angle, 0.5, Math.PI - 0.5));
         this.x += Math.cos(this.angle) * this.speed;
         this.y += Math.sin(this.angle) * this.speed;
-        !this.Xc() && this.xb && this.remove();
-        if(22500 > Ga(this, this.da) || this.y > this.da.y + 150) {
-          this.mc = m
+        !this.kd() && this.ub && this.remove();
+        if(22500 > Ka(this, this.da) || this.y > this.da.y + 150) {
+          this.gc = l
         }
       })
     }.bind(a))
   }});
-  O.ha = O.ha();
-  var a = tm.createClass({superClass:O, init:function(a, c, d) {
+  S.Na = S.oa("basic1-0");
+  var b = tm.createClass({superClass:S, init:function(a, b, f) {
     this.superInit();
-    this.fi = a;
-    this.ei = c;
-    this.wc = d
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
-    a.speed = this.fi;
-    a.jc = this.ei;
-    this.wc && (a.wc = [].concat(this.wc));
-    a.wb = 0;
+    this.Fi = a;
+    this.Ei = b;
+    this.Kc = f
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.speed = this.Fi;
+    a.vc = this.Ei;
+    this.Kc && (a.Kc = [].concat(this.Kc));
+    a.Fb = 0;
     a.on("enter", function() {
-      O.nb(this, "basic2-0")
+      S.Da(this, "basic2-0")
     });
     a.on("enterframe", function() {
-      this.x += Math.cos(this.jc) * this.speed;
-      this.y += Math.sin(this.jc) * this.speed;
-      this.xb && !this.Xc() && this.remove();
-      for(this.wb = Math.atan2(this.da.y - this.y, this.da.x - this.x);0 > this.wb;) {
-        this.wb += 2 * Math.PI
+      this.x += Math.cos(this.vc) * this.speed;
+      this.y += Math.sin(this.vc) * this.speed;
+      this.ub && !this.kd() && this.remove();
+      for(this.Fb = Math.atan2(this.da.y - this.y, this.da.x - this.x);0 > this.Fb;) {
+        this.Fb += 2 * Math.PI
       }
-      for(;2 * Math.PI <= this.wb;) {
-        this.wb -= 2 * Math.PI
+      for(;2 * Math.PI <= this.Fb;) {
+        this.Fb -= 2 * Math.PI
       }
-      this.mc = this.y < this.da.y && 4E4 < Ga(this, this.da);
-      if(this.wc) {
-        for(var a = 0;a < this.wc.length;a++) {
-          var b = this.wc[a];
-          b.frame === this.frame && this.tweener.to({jc:b.dir !== i ? b.dir : this.jc, speed:b.speed !== i ? b.speed : this.speed}, 500)
+      this.gc = this.y < this.da.y && 4E4 < Ka(this, this.da);
+      if(this.Kc) {
+        for(var a = 0;a < this.Kc.length;a++) {
+          var b = this.Kc[a];
+          b.frame === this.frame && this.tweener.to({vc:b.dir !== i ? b.dir : this.vc, speed:b.speed !== i ? b.speed : this.speed}, 500)
         }
       }
     })
   }});
-  O.sb = a(1, 0.25 * Math.PI);
-  O.Ni = a(1, -1.75 * Math.PI);
-  O.Kc = a(1, Math.PI, [{frame:200, dir:1.5 * Math.PI, speed:1}]);
-  O.ja = a(1.6, 0.5 * Math.PI);
-  O.tb = a(1.6, -0.5 * Math.PI);
-  a = tm.createClass({superClass:O, hc:k, Hf:m, init:function(a, c) {
+  S.Bb = b(1, 0.25 * Math.PI);
+  S.mj = b(1, -1.75 * Math.PI);
+  S.Zc = b(1, Math.PI, [{frame:200, dir:1.5 * Math.PI, speed:1}]);
+  S.ia = b(1.6, 0.5 * Math.PI);
+  S.Cb = b(1.6, -0.5 * Math.PI);
+  S.Tg = tm.createClass({superClass:S, Eb:k, init:function(a) {
     this.superInit();
-    this.hc = a;
-    this.Hf = !!c
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+    this.Eb = a
+  }, setup:function(a) {
+    S.Da(a, this.Eb);
+    a.tweener.clear().to({x:240}, 8E3, "easeInOutQuad")
+  }});
+  S.Af = S.Tg("bukky-4-0");
+  b = tm.createClass({superClass:S, Eb:k, ag:l, init:function(a, b) {
+    this.superInit();
+    this.Eb = a;
+    this.ag = !!b
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
     a.speed = 1;
     a.dir = Math.PI;
-    a.hc = this.hc;
+    a.Eb = this.Eb;
     a.on("enter", function() {
-      O.nb(this, this.hc)
+      S.Da(this, this.Eb)
     });
     a.on("enterframe", function() {
-      this.xb && !this.Xc() && this.remove()
+      this.ub && !this.kd() && this.remove()
     });
-    if(!this.Hf) {
+    if(!this.ag) {
       a.on("enterframe", function() {
-        this.mc = this.y < this.da.y && 4E4 < Ga(this, this.da)
+        this.gc = this.y < this.da.y && 4E4 < Ka(this, this.da)
       })
     }
   }});
-  O.cb = a("basic3-0", m);
-  O.eb = a("basic3-1", m);
-  O.rb = a("cannon2-0", j);
-  O.kd = a("cannon3-0", j);
-  O.$d = a("cannon5-0", j);
-  a = tm.createClass({superClass:O, velocityY:0, hc:k, init:function(a, c) {
+  S.ib = b("basic3-0", l);
+  S.jb = b("basic3-1", l);
+  S.Ab = b("cannon2-0", j);
+  S.wd = b("cannon3-0", j);
+  S.pe = b("cannon5-0", j);
+  b = tm.createClass({superClass:S, velocityY:0, Eb:k, init:function(a, b) {
     this.superInit();
     this.velocityY = a;
-    this.hc = c
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+    this.Eb = b
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
     a.velocityY = this.velocityY;
-    a.za = [this.hc];
+    a.ka = [this.Eb];
     a.tweener.clear().moveBy(0, 320, 800, "easeOutQuad").call(function() {
-      O.nb(this, this.za[0])
+      S.Da(this, this.ka[0])
     }.bind(a));
     a.on("enterframe", function() {
       this.y += this.velocityY;
-      this.xb && !this.Xc() && this.remove();
-      this.mc = this.y < this.da.y
+      384 < this.y && S.le(this);
+      this.ub && !this.kd() && this.remove();
+      this.gc = this.y < this.da.y
     })
   }});
-  O.ec = a(0.5, "kurokawa-1");
-  O.pf = a(0.3, "komachi-1");
-  O.qf = a(0.5, "komachi-2");
-  a = tm.createClass({superClass:O, za:k, init:function(a) {
+  S.qc = b(0.5, "kurokawa-1");
+  S.Ah = b(0.5, "kurokawa-4");
+  S.sc = tm.createClass({superClass:S, delay:0, init:function(a) {
     this.superInit();
-    this.za = a
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
-    a.za = [].concat(this.za);
-    a.Wd = m;
-    a.Sc = m;
+    this.delay = a
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.tweener.wait(this.delay).call(function() {
+      S.Da(this, "yuri-4");
+      this.timeline.by({x:-480}, 2E3, 0).by({y:-192}, 2E3, 0, "easeInOutQuad")
+    }.bind(a)).wait(2500).by({y:640}, 4E3, "easeInQuad").call(function() {
+      this.remove()
+    }.bind(a))
+  }});
+  S.rc = tm.createClass({superClass:S, delay:0, init:function(a) {
+    this.superInit();
+    this.delay = a
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.tweener.wait(this.delay).call(function() {
+      S.Da(this, "yuri-4");
+      this.timeline.by({x:480}, 2E3, 0).by({y:-192}, 2E3, 0, "easeInOutQuad")
+    }.bind(a)).wait(2500).by({y:640}, 4E3, "easeInQuad").call(function() {
+      this.remove()
+    }.bind(a))
+  }});
+  S.Hf = b(0.3, "komachi-1");
+  S.If = b(0.5, "komachi-2");
+  S.Jf = b(0.5, "komachi-4");
+  S.Yc = tm.createClass({superClass:S, init:function() {
+    this.superInit()
+  }, setup:function(a) {
+    S.Da(a, "basic3-0");
+    a.on("enterframe", function() {
+      this.y += 0.8;
+      this.gc = this.ub
+    })
+  }});
+  S.Yc = S.Yc();
+  b = tm.createClass({superClass:S, ka:k, init:function(a) {
+    this.superInit();
+    this.ka = a
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.ka = [].concat(this.ka);
+    a.Xc = l;
+    a.zc = l;
     a.tweener.clear().move(240, 192, 1200, "easeOutQuad").call(function() {
-      this.Wd = j;
+      this.Xc = j;
       this.dispatchEvent(tm.event.Event("completeattack"));
       var a = function() {
-        var b = 2 * B.random() * Math.PI, g = B.randf(48, 144);
+        var b = 2 * w.random() * Math.PI, g = w.randf(48, 144);
         this.tweener.move(240 + Math.cos(b) * g, 192 + 0.5 * Math.sin(b) * g, 3E3, "easeInOutQuad").call(a)
       }.bind(this);
       a()
     }.bind(a));
     a.on("enterframe", function() {
-      if(!(this.Wd === m || 0 >= this.ra) && 1500 < this.frame && this.Sc === m) {
-        this.Sc = j, this.tweener.clear().wait(500).move(this.x, -100, 1200, "easeInQuad").call(function() {
+      if(!(this.Xc === l || 0 >= this.na) && 1500 < this.frame && this.zc === l) {
+        this.zc = j, this.tweener.clear().wait(500).move(this.x, -100, 1200, "easeInQuad").call(function() {
           this.remove()
         }.bind(this))
       }
     });
     a.on("completeattack", function() {
-      if(!(0 >= this.ra) && !this.Sc) {
-        var a = this.za.shift();
-        O.nb(this, a);
-        this.za.push(a)
+      if(!(0 >= this.na) && !this.zc) {
+        var a = this.ka.shift();
+        S.Da(this, a);
+        this.ka.push(a)
       }
     })
   }});
-  O.de = a(["honoka-1"]);
-  O.he = tm.createClass({superClass:O, za:k, init:function() {
+  S.se = b(["honoka-1"]);
+  S.we = tm.createClass({superClass:S, ka:k, init:function() {
     this.superInit();
-    this.za = ["nagisa-1-1", "nagisa-1-2", "nagisa-1-3"]
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
-    a.za = [].concat(this.za);
-    a.Wd = m;
-    a.Sc = m;
+    this.ka = ["nagisa-1-1", "nagisa-1-2", "nagisa-1-3"]
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.ka = [].concat(this.ka);
+    a.Xc = l;
+    a.zc = l;
     a.tweener.clear().move(240, 128, 1200, "easeOutQuad").call(function() {
-      this.Wd = j;
+      this.Xc = j;
       this.dispatchEvent(tm.event.Event("completeattack"));
       var a = function() {
-        var b = 2 * B.random() * Math.PI, g = B.randf(48, 144);
+        var b = 2 * w.random() * Math.PI, g = w.randf(48, 144);
         this.tweener.move(240 + Math.cos(b) * g, 128 + 0.3 * Math.sin(b) * g, 3E3, "easeInOutQuad").call(a)
       }.bind(this);
       a()
     }.bind(a));
     a.on("completeattack", function() {
-      if(!(0 >= this.ra) && !this.Sc) {
-        var a = this.za.shift();
-        O.nb(this, a);
-        this.za.push(a)
+      if(!(0 >= this.na) && !this.zc) {
+        var a = this.ka.shift();
+        S.Da(this, a);
+        this.ka.push(a)
       }
     })
   }});
-  O.bh = O.he();
-  O.ie = tm.createClass({superClass:O, za:k, init:function() {
+  S.Bh = S.we();
+  S.xe = tm.createClass({superClass:S, ka:k, init:function() {
     this.superInit();
-    this.za = ["nagisa-2-1", "nagisa-2-2", "nagisa-2-3"]
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
-    a.za = [].concat(this.za);
+    this.ka = ["nagisa-2-1", "nagisa-2-2", "nagisa-2-3"]
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.ka = [].concat(this.ka);
     a.tweener.clear().wait(800).call(function() {
       this.dispatchEvent(tm.event.Event("completeattack"));
       var a = function() {
-        var b = 2 * B.random() * Math.PI, g = B.randf(48, 144);
+        var b = 2 * w.random() * Math.PI, g = w.randf(48, 144);
         this.tweener.move(240 + Math.cos(b) * g, 128 + 0.3 * Math.sin(b) * g, 3E3, "easeInOutQuad").call(a)
       }.bind(this);
       a()
     }.bind(a));
     a.on("completeattack", function() {
-      if(!(0 >= this.ra)) {
-        var a = this.za.shift();
-        O.nb(this, a);
-        this.za.push(a)
+      if(!(0 >= this.na)) {
+        var a = this.ka.shift();
+        S.Da(this, a);
+        this.ka.push(a)
       }
     })
   }});
-  O.ie = O.ie();
-  O.je = tm.createClass({superClass:O, init:function() {
+  S.xe = S.xe();
+  S.ye = tm.createClass({superClass:S, init:function() {
     this.superInit()
-  }, na:function(a) {
-    O.prototype.na.call(this, a);
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
     a.tweener.clear().wait(800).call(function() {
       this.dispatchEvent(tm.event.Event("completeattack"));
       this.tweener.clear().move(240, 128, 3E3, "easeInOutQuad").move(240, 448, 2E4, "easeInOutQuad")
     }.bind(a));
     a.on("completeattack", function() {
-      0 >= this.ra || O.nb(this, "nagisa-3-1")
+      0 >= this.na || S.Da(this, "nagisa-3-1")
     })
   }});
-  O.je = O.je();
-  O.ge = a(["mai-1", "mai-2"])
+  S.ye = S.ye();
+  S.ve = b(["mai-1", "mai-2"]);
+  S.Be = tm.createClass({superClass:S, ka:k, init:function() {
+    this.superInit();
+    this.ka = ["saki-1-1", "saki-1-2", "saki-1-3"]
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.ka = [].concat(this.ka);
+    a.Xc = l;
+    a.zc = l;
+    a.tweener.clear().move(240, 128, 1200, "easeOutQuad").call(function() {
+      this.Xc = j;
+      this.dispatchEvent(tm.event.Event("completeattack"));
+      var a = function() {
+        var b = 2 * w.random() * Math.PI, g = w.randf(48, 144);
+        this.tweener.move(240 + Math.cos(b) * g, 128 + 0.3 * Math.sin(b) * g, 3E3, "easeInOutQuad").call(a)
+      }.bind(this);
+      a()
+    }.bind(a));
+    a.on("completeattack", function() {
+      if(!(0 >= this.na) && !this.zc) {
+        var a = this.ka.shift();
+        S.Da(this, a);
+        this.ka.push(a)
+      }
+    })
+  }});
+  S.Be = S.Be();
+  S.Ce = tm.createClass({superClass:S, ka:k, init:function() {
+    this.superInit();
+    this.ka = ["saki-2-1", "saki-2-2", "saki-2-3"]
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.ka = [].concat(this.ka);
+    a.tweener.clear().wait(800).call(function() {
+      this.dispatchEvent(tm.event.Event("completeattack"));
+      var a = function() {
+        var b = 2 * w.random() * Math.PI, g = w.randf(48, 144);
+        this.tweener.move(240 + Math.cos(b) * g, 128 + 0.3 * Math.sin(b) * g, 3E3, "easeInOutQuad").call(a)
+      }.bind(this);
+      a()
+    }.bind(a));
+    a.on("completeattack", function() {
+      if(!(0 >= this.na)) {
+        var a = this.ka.shift();
+        S.Da(this, a);
+        this.ka.push(a)
+      }
+    })
+  }});
+  S.Ce = S.Ce();
+  S.De = tm.createClass({superClass:S, ka:k, init:function() {
+    this.superInit();
+    this.ka = ["saki-3-1", "saki-3-2"]
+  }, setup:function(a) {
+    S.prototype.setup.call(this, a);
+    a.ka = [].concat(this.ka);
+    a.tweener.clear().wait(800).call(function() {
+      this.dispatchEvent(tm.event.Event("completeattack"));
+      var a = function() {
+        var b = 2 * w.random() * Math.PI, g = w.randf(48, 144);
+        this.tweener.move(240 + Math.cos(b) * g, 128 + 0.3 * Math.sin(b) * g, 3E3, "easeInOutQuad").call(a)
+      }.bind(this);
+      a()
+    }.bind(a));
+    a.on("completeattack", function() {
+      if(!(0 >= this.na)) {
+        var a = this.ka.shift();
+        S.Da(this, a);
+        this.ka.push(a)
+      }
+    })
+  }});
+  S.De = S.De()
 })();
-var Z = N, $ = O;
-xa = {"heri1-left":[{aa:Z.ha, ba:$.mb, x:48, y:-100}, {aa:Z.ha, ba:$.Ba, x:96, y:-100}, {aa:Z.ha, ba:$.mb, x:144, y:-100}, {aa:Z.ha, ba:$.Ba, x:192, y:-100}, {aa:Z.ha, ba:$.mb, x:240, y:-100}], "heri1-center":[{aa:Z.ha, ba:$.mb, x:144, y:-100}, {aa:Z.ha, ba:$.Ba, x:192, y:-100}, {aa:Z.ha, ba:$.mb, x:240, y:-100}, {aa:Z.ha, ba:$.Ba, x:288, y:-100}, {aa:Z.ha, ba:$.mb, x:336, y:-100}], "heri1-right":[{aa:Z.ha, ba:$.mb, x:240, y:-100}, {aa:Z.ha, ba:$.Ba, x:288, y:-100}, {aa:Z.ha, ba:$.mb, x:336, y:-100}, 
-{aa:Z.ha, ba:$.Ba, x:384, y:-100}, {aa:Z.ha, ba:$.mb, x:432, y:-100}], "heri1-left2":[{aa:Z.ha, ba:$.Ba, x:48, y:-100}, {aa:Z.ha, ba:$.Qb, x:96, y:-100}, {aa:Z.ha, ba:$.Ba, x:144, y:-100}, {aa:Z.ha, ba:$.Qb, x:192, y:-100}, {aa:Z.ha, ba:$.Ba, x:240, y:-100}], "heri1-center2":[{aa:Z.ha, ba:$.Ba, x:144, y:-100}, {aa:Z.ha, ba:$.Qb, x:192, y:-100}, {aa:Z.ha, ba:$.Ba, x:240, y:-100}, {aa:Z.ha, ba:$.Qb, x:288, y:-100}, {aa:Z.ha, ba:$.Ba, x:336, y:-100}], "heri1-right2":[{aa:Z.ha, ba:$.Ba, x:240, y:-100}, 
-{aa:Z.ha, ba:$.Qb, x:288, y:-100}, {aa:Z.ha, ba:$.Ba, x:336, y:-100}, {aa:Z.ha, ba:$.Qb, x:384, y:-100}, {aa:Z.ha, ba:$.Ba, x:432, y:-100}], "heri2-left":[{aa:Z.Ja, ba:$.ha, x:48, y:-100}, {aa:Z.Ja, ba:$.ha, x:96, y:-100}, {aa:Z.Ja, ba:$.ha, x:144, y:-100}, {aa:Z.Ja, ba:$.ha, x:192, y:-100}, {aa:Z.Ja, ba:$.ha, x:240, y:-100}], "heri2-center":[{aa:Z.Ja, ba:$.ha, x:144, y:-100}, {aa:Z.Ja, ba:$.ha, x:192, y:-100}, {aa:Z.Ja, ba:$.ha, x:240, y:-100}, {aa:Z.Ja, ba:$.ha, x:288, y:-100}, {aa:Z.Ja, ba:$.ha, 
-x:336, y:-100}], "heri2-right":[{aa:Z.Ja, ba:$.ha, x:240, y:-100}, {aa:Z.Ja, ba:$.ha, x:288, y:-100}, {aa:Z.Ja, ba:$.ha, x:336, y:-100}, {aa:Z.Ja, ba:$.ha, x:384, y:-100}, {aa:Z.Ja, ba:$.ha, x:432, y:-100}], "tankRD-left":[{aa:Z.ea, ba:$.sb, x:78, y:-50}, {aa:Z.ea, ba:$.sb, x:28, y:-100}, {aa:Z.ea, ba:$.sb, x:-22, y:-150}, {aa:Z.ea, ba:$.sb, x:-72, y:-200}, {aa:Z.ea, ba:$.sb, x:-122, y:-250}], "tankRD-center":[{aa:Z.ea, ba:$.sb, x:222, y:-50}, {aa:Z.ea, ba:$.sb, x:172, y:-100}, {aa:Z.ea, ba:$.sb, 
-x:122, y:-150}, {aa:Z.ea, ba:$.sb, x:72, y:-200}, {aa:Z.ea, ba:$.sb, x:22, y:-250}], "tankL-top":[{aa:Z.ea, ba:$.Kc, x:550, y:64}, {aa:Z.ea, ba:$.Kc, x:620, y:64}, {aa:Z.ea, ba:$.Kc, x:690, y:64}, {aa:Z.ea, ba:$.Kc, x:760, y:64}, {aa:Z.ea, ba:$.Kc, x:830, y:64}], "tank5-left":[{aa:Z.ea, ba:$.ja, x:48, y:-70}, {aa:Z.ea, ba:$.ja, x:48, y:-140}, {aa:Z.ea, ba:$.ja, x:48, y:-210}, {aa:Z.ea, ba:$.ja, x:48, y:-280}, {aa:Z.ea, ba:$.ja, x:48, y:-350}], "tank5-center":[{aa:Z.ea, ba:$.ja, x:240, y:-70}, {aa:Z.ea, 
-ba:$.ja, x:240, y:-140}, {aa:Z.ea, ba:$.ja, x:240, y:-210}, {aa:Z.ea, ba:$.ja, x:240, y:-280}, {aa:Z.ea, ba:$.ja, x:240, y:-350}], "tank15-top":[{aa:Z.ea, ba:$.ja, x:48, y:-70}, {aa:Z.ea, ba:$.ja, x:48, y:-140}, {aa:Z.ea, ba:$.ja, x:48, y:-210}, {aa:Z.ea, ba:$.ja, x:48, y:-280}, {aa:Z.ea, ba:$.ja, x:48, y:-350}, {aa:Z.ea, ba:$.ja, x:240, y:-70}, {aa:Z.ea, ba:$.ja, x:240, y:-140}, {aa:Z.ea, ba:$.ja, x:240, y:-210}, {aa:Z.ea, ba:$.ja, x:240, y:-280}, {aa:Z.ea, ba:$.ja, x:240, y:-350}, {aa:Z.ea, ba:$.ja, 
-x:432, y:-70}, {aa:Z.ea, ba:$.ja, x:432, y:-140}, {aa:Z.ea, ba:$.ja, x:432, y:-210}, {aa:Z.ea, ba:$.ja, x:432, y:-280}, {aa:Z.ea, ba:$.ja, x:432, y:-350}], "tank25-top":[{aa:Z.ea, ba:$.ja, x:48, y:-70}, {aa:Z.ea, ba:$.ja, x:48, y:-140}, {aa:Z.ea, ba:$.ja, x:48, y:-210}, {aa:Z.ea, ba:$.ja, x:48, y:-280}, {aa:Z.ea, ba:$.ja, x:48, y:-350}, {aa:Z.ea, ba:$.ja, x:240, y:-70}, {aa:Z.ea, ba:$.ja, x:240, y:-140}, {aa:Z.ea, ba:$.ja, x:240, y:-210}, {aa:Z.ea, ba:$.ja, x:240, y:-280}, {aa:Z.ea, ba:$.ja, x:240, 
-y:-350}, {aa:Z.ea, ba:$.ja, x:432, y:-70}, {aa:Z.ea, ba:$.ja, x:432, y:-140}, {aa:Z.ea, ba:$.ja, x:432, y:-210}, {aa:Z.ea, ba:$.ja, x:432, y:-280}, {aa:Z.ea, ba:$.ja, x:432, y:-350}, {aa:Z.ea, ba:$.tb, x:144, y:710}, {aa:Z.ea, ba:$.tb, x:144, y:780}, {aa:Z.ea, ba:$.tb, x:144, y:850}, {aa:Z.ea, ba:$.tb, x:144, y:920}, {aa:Z.ea, ba:$.tb, x:144, y:990}, {aa:Z.ea, ba:$.tb, x:336, y:710}, {aa:Z.ea, ba:$.tb, x:336, y:780}, {aa:Z.ea, ba:$.tb, x:336, y:850}, {aa:Z.ea, ba:$.tb, x:336, y:920}, {aa:Z.ea, ba:$.tb, 
-x:336, y:990}], "cannon-0":[{aa:Z.ua, ba:$.cb, x:48, y:-100}], "cannon-1":[{aa:Z.ua, ba:$.cb, x:96, y:-100}], "cannon-2":[{aa:Z.ua, ba:$.cb, x:144, y:-100}], "cannon-3":[{aa:Z.ua, ba:$.cb, x:192, y:-100}], "cannon-4":[{aa:Z.ua, ba:$.cb, x:240, y:-100}], "cannon-5":[{aa:Z.ua, ba:$.cb, x:288, y:-100}], "cannon-6":[{aa:Z.ua, ba:$.cb, x:336, y:-100}], "cannon-7":[{aa:Z.ua, ba:$.cb, x:384, y:-100}], "cannon-8":[{aa:Z.ua, ba:$.cb, x:432, y:-100}], "cannon-R0":[{aa:Z.ua, ba:$.cb, x:550, y:128}], "cannon-R1":[{aa:Z.ua, 
-ba:$.cb, x:550, y:192}], "cannon-R2":[{aa:Z.ua, ba:$.cb, x:550, y:256}], "yayoi-0":[{aa:Z.ua, ba:$.eb, x:48, y:-100}], "yayoi-1":[{aa:Z.ua, ba:$.eb, x:96, y:-100}], "yayoi-2":[{aa:Z.ua, ba:$.eb, x:144, y:-100}], "yayoi-3":[{aa:Z.ua, ba:$.eb, x:192, y:-100}], "yayoi-4":[{aa:Z.ua, ba:$.eb, x:240, y:-100}], "yayoi-5":[{aa:Z.ua, ba:$.eb, x:288, y:-100}], "yayoi-6":[{aa:Z.ua, ba:$.eb, x:336, y:-100}], "yayoi-7":[{aa:Z.ua, ba:$.eb, x:384, y:-100}], "yayoi-8":[{aa:Z.ua, ba:$.eb, x:432, y:-100}], "yayoi-R0":[{aa:Z.ua, 
-ba:$.eb, x:550, y:128}], "yayoi-R1":[{aa:Z.ua, ba:$.eb, x:550, y:192}], "yayoi-R2":[{aa:Z.ua, ba:$.eb, x:550, y:256}], "tsubomi-0":[{aa:Z.rd, ba:$.kd, x:96, y:-100}], "tsubomi-1":[{aa:Z.rd, ba:$.kd, x:240, y:-100}], "tsubomi-2":[{aa:Z.rd, ba:$.kd, x:384, y:-100}], "tsubomi-R0":[{aa:Z.rd, ba:$.kd, x:580, y:128}], "itsuki-0":[{aa:Z.fe, ba:$.$d, x:96, y:-100}], "itsuki-1":[{aa:Z.fe, ba:$.$d, x:240, y:-100}], "itsuki-2":[{aa:Z.fe, ba:$.$d, x:384, y:-100}], "makoto-0":[{aa:Z.qb, ba:$.rb, x:48, y:-100}], 
-"makoto-1":[{aa:Z.qb, ba:$.rb, x:96, y:-100}], "makoto-2":[{aa:Z.qb, ba:$.rb, x:144, y:-100}], "makoto-3":[{aa:Z.qb, ba:$.rb, x:192, y:-100}], "makoto-4":[{aa:Z.qb, ba:$.rb, x:240, y:-100}], "makoto-5":[{aa:Z.qb, ba:$.rb, x:288, y:-100}], "makoto-6":[{aa:Z.qb, ba:$.rb, x:336, y:-100}], "makoto-7":[{aa:Z.qb, ba:$.rb, x:384, y:-100}], "makoto-8":[{aa:Z.qb, ba:$.rb, x:432, y:-100}], "makoto-R0":[{aa:Z.qb, ba:$.rb, x:580, y:128}], "fighter-m-0":[{aa:Z.dc, ba:$.ec, x:96, y:-192}], "fighter-m-1":[{aa:Z.dc, 
-ba:$.ec, x:144, y:-192}], "fighter-m-2":[{aa:Z.dc, ba:$.ec, x:192, y:-192}], "fighter-m-3":[{aa:Z.dc, ba:$.ec, x:240, y:-192}], "fighter-m-4":[{aa:Z.dc, ba:$.ec, x:288, y:-192}], "fighter-m-5":[{aa:Z.dc, ba:$.ec, x:336, y:-192}], "fighter-m-6":[{aa:Z.dc, ba:$.ec, x:384, y:-192}], "komachi-0":[{aa:Z.od, ba:$.pf, x:144, y:-192}], "komachi-1":[{aa:Z.od, ba:$.pf, x:336, y:-192}], "komachi2-0":[{aa:Z.od, ba:$.qf, x:144, y:-192}], "komachi2-1":[{aa:Z.od, ba:$.qf, x:336, y:-192}], yukishiro:[{aa:Z.de, ba:$.de, 
-x:240, y:-100}], misumi:[{aa:Z.he, ba:[$.bh, $.ie, $.je], x:240, y:-100, Ub:j}], mai:[{aa:Z.ge, ba:$.ge, x:780, y:128}]};
+var Z = P, $ = S;
+Ba = {"heri1-left":[{aa:Z.oa, ba:$.Ob, x:48, y:-100}, {aa:Z.oa, ba:$.Ea, x:96, y:-100}, {aa:Z.oa, ba:$.Ob, x:144, y:-100}, {aa:Z.oa, ba:$.Ea, x:192, y:-100}, {aa:Z.oa, ba:$.Ob, x:240, y:-100}], "heri1-center":[{aa:Z.oa, ba:$.Ob, x:144, y:-100}, {aa:Z.oa, ba:$.Ea, x:192, y:-100}, {aa:Z.oa, ba:$.Ob, x:240, y:-100}, {aa:Z.oa, ba:$.Ea, x:288, y:-100}, {aa:Z.oa, ba:$.Ob, x:336, y:-100}], "heri1-right":[{aa:Z.oa, ba:$.Ob, x:240, y:-100}, {aa:Z.oa, ba:$.Ea, x:288, y:-100}, {aa:Z.oa, ba:$.Ob, x:336, y:-100}, 
+{aa:Z.oa, ba:$.Ea, x:384, y:-100}, {aa:Z.oa, ba:$.Ob, x:432, y:-100}], "heri1-left2":[{aa:Z.oa, ba:$.Ea, x:48, y:-100}, {aa:Z.oa, ba:$.ac, x:96, y:-100}, {aa:Z.oa, ba:$.Ea, x:144, y:-100}, {aa:Z.oa, ba:$.ac, x:192, y:-100}, {aa:Z.oa, ba:$.Ea, x:240, y:-100}], "heri1-center2":[{aa:Z.oa, ba:$.Ea, x:144, y:-100}, {aa:Z.oa, ba:$.ac, x:192, y:-100}, {aa:Z.oa, ba:$.Ea, x:240, y:-100}, {aa:Z.oa, ba:$.ac, x:288, y:-100}, {aa:Z.oa, ba:$.Ea, x:336, y:-100}], "heri1-right2":[{aa:Z.oa, ba:$.Ea, x:240, y:-100}, 
+{aa:Z.oa, ba:$.ac, x:288, y:-100}, {aa:Z.oa, ba:$.Ea, x:336, y:-100}, {aa:Z.oa, ba:$.ac, x:384, y:-100}, {aa:Z.oa, ba:$.Ea, x:432, y:-100}], "heri2-left":[{aa:Z.ma, ba:$.Na, x:48, y:-100}, {aa:Z.ma, ba:$.Na, x:96, y:-100}, {aa:Z.ma, ba:$.Na, x:144, y:-100}, {aa:Z.ma, ba:$.Na, x:192, y:-100}, {aa:Z.ma, ba:$.Na, x:240, y:-100}], "heri2-center":[{aa:Z.ma, ba:$.Na, x:144, y:-100}, {aa:Z.ma, ba:$.Na, x:192, y:-100}, {aa:Z.ma, ba:$.Na, x:240, y:-100}, {aa:Z.ma, ba:$.Na, x:288, y:-100}, {aa:Z.ma, ba:$.Na, 
+x:336, y:-100}], "heri2-right":[{aa:Z.ma, ba:$.Na, x:240, y:-100}, {aa:Z.ma, ba:$.Na, x:288, y:-100}, {aa:Z.ma, ba:$.Na, x:336, y:-100}, {aa:Z.ma, ba:$.Na, x:384, y:-100}, {aa:Z.ma, ba:$.Na, x:432, y:-100}], "heri1-4-left":[{aa:Z.ma, ba:$.Ma, x:48, y:-100}, {aa:Z.ma, ba:$.Ma, x:96, y:-100}, {aa:Z.ma, ba:$.Ma, x:144, y:-100}, {aa:Z.ma, ba:$.Ma, x:192, y:-100}, {aa:Z.ma, ba:$.Ma, x:240, y:-100}], "heri1-4-center":[{aa:Z.ma, ba:$.Ma, x:144, y:-100}, {aa:Z.ma, ba:$.Ma, x:192, y:-100}, {aa:Z.ma, ba:$.Ma, 
+x:240, y:-100}, {aa:Z.ma, ba:$.Ma, x:288, y:-100}, {aa:Z.ma, ba:$.Ma, x:336, y:-100}], "heri1-4-right":[{aa:Z.ma, ba:$.Ma, x:240, y:-100}, {aa:Z.ma, ba:$.Ma, x:288, y:-100}, {aa:Z.ma, ba:$.Ma, x:336, y:-100}, {aa:Z.ma, ba:$.Ma, x:384, y:-100}, {aa:Z.ma, ba:$.Ma, x:432, y:-100}], "tankRD-left":[{aa:Z.ea, ba:$.Bb, x:78, y:-50}, {aa:Z.ea, ba:$.Bb, x:28, y:-100}, {aa:Z.ea, ba:$.Bb, x:-22, y:-150}, {aa:Z.ea, ba:$.Bb, x:-72, y:-200}, {aa:Z.ea, ba:$.Bb, x:-122, y:-250}], "tankRD-center":[{aa:Z.ea, ba:$.Bb, 
+x:222, y:-50}, {aa:Z.ea, ba:$.Bb, x:172, y:-100}, {aa:Z.ea, ba:$.Bb, x:122, y:-150}, {aa:Z.ea, ba:$.Bb, x:72, y:-200}, {aa:Z.ea, ba:$.Bb, x:22, y:-250}], "tankL-top":[{aa:Z.ea, ba:$.Zc, x:550, y:64}, {aa:Z.ea, ba:$.Zc, x:620, y:64}, {aa:Z.ea, ba:$.Zc, x:690, y:64}, {aa:Z.ea, ba:$.Zc, x:760, y:64}, {aa:Z.ea, ba:$.Zc, x:830, y:64}], "tank5-left":[{aa:Z.ea, ba:$.ia, x:48, y:-70}, {aa:Z.ea, ba:$.ia, x:48, y:-140}, {aa:Z.ea, ba:$.ia, x:48, y:-210}, {aa:Z.ea, ba:$.ia, x:48, y:-280}, {aa:Z.ea, ba:$.ia, 
+x:48, y:-350}], "tank5-center":[{aa:Z.ea, ba:$.ia, x:240, y:-70}, {aa:Z.ea, ba:$.ia, x:240, y:-140}, {aa:Z.ea, ba:$.ia, x:240, y:-210}, {aa:Z.ea, ba:$.ia, x:240, y:-280}, {aa:Z.ea, ba:$.ia, x:240, y:-350}], "tank15-top":[{aa:Z.ea, ba:$.ia, x:48, y:-70}, {aa:Z.ea, ba:$.ia, x:48, y:-140}, {aa:Z.ea, ba:$.ia, x:48, y:-210}, {aa:Z.ea, ba:$.ia, x:48, y:-280}, {aa:Z.ea, ba:$.ia, x:48, y:-350}, {aa:Z.ea, ba:$.ia, x:240, y:-70}, {aa:Z.ea, ba:$.ia, x:240, y:-140}, {aa:Z.ea, ba:$.ia, x:240, y:-210}, {aa:Z.ea, 
+ba:$.ia, x:240, y:-280}, {aa:Z.ea, ba:$.ia, x:240, y:-350}, {aa:Z.ea, ba:$.ia, x:432, y:-70}, {aa:Z.ea, ba:$.ia, x:432, y:-140}, {aa:Z.ea, ba:$.ia, x:432, y:-210}, {aa:Z.ea, ba:$.ia, x:432, y:-280}, {aa:Z.ea, ba:$.ia, x:432, y:-350}], "tank25-top":[{aa:Z.ea, ba:$.ia, x:48, y:-70}, {aa:Z.ea, ba:$.ia, x:48, y:-140}, {aa:Z.ea, ba:$.ia, x:48, y:-210}, {aa:Z.ea, ba:$.ia, x:48, y:-280}, {aa:Z.ea, ba:$.ia, x:48, y:-350}, {aa:Z.ea, ba:$.ia, x:240, y:-70}, {aa:Z.ea, ba:$.ia, x:240, y:-140}, {aa:Z.ea, ba:$.ia, 
+x:240, y:-210}, {aa:Z.ea, ba:$.ia, x:240, y:-280}, {aa:Z.ea, ba:$.ia, x:240, y:-350}, {aa:Z.ea, ba:$.ia, x:432, y:-70}, {aa:Z.ea, ba:$.ia, x:432, y:-140}, {aa:Z.ea, ba:$.ia, x:432, y:-210}, {aa:Z.ea, ba:$.ia, x:432, y:-280}, {aa:Z.ea, ba:$.ia, x:432, y:-350}, {aa:Z.ea, ba:$.Cb, x:144, y:710}, {aa:Z.ea, ba:$.Cb, x:144, y:780}, {aa:Z.ea, ba:$.Cb, x:144, y:850}, {aa:Z.ea, ba:$.Cb, x:144, y:920}, {aa:Z.ea, ba:$.Cb, x:144, y:990}, {aa:Z.ea, ba:$.Cb, x:336, y:710}, {aa:Z.ea, ba:$.Cb, x:336, y:780}, {aa:Z.ea, 
+ba:$.Cb, x:336, y:850}, {aa:Z.ea, ba:$.Cb, x:336, y:920}, {aa:Z.ea, ba:$.Cb, x:336, y:990}], "bukky-4-r":[{aa:Z.zf, ba:$.Af, x:480, y:-50}], "bukky-4-l":[{aa:Z.zf, ba:$.Af, x:0, y:-50}], "cannon-0":[{aa:Z.xa, ba:$.ib, x:48, y:-100}], "cannon-1":[{aa:Z.xa, ba:$.ib, x:96, y:-100}], "cannon-2":[{aa:Z.xa, ba:$.ib, x:144, y:-100}], "cannon-3":[{aa:Z.xa, ba:$.ib, x:192, y:-100}], "cannon-4":[{aa:Z.xa, ba:$.ib, x:240, y:-100}], "cannon-5":[{aa:Z.xa, ba:$.ib, x:288, y:-100}], "cannon-6":[{aa:Z.xa, ba:$.ib, 
+x:336, y:-100}], "cannon-7":[{aa:Z.xa, ba:$.ib, x:384, y:-100}], "cannon-8":[{aa:Z.xa, ba:$.ib, x:432, y:-100}], "cannon-R0":[{aa:Z.xa, ba:$.ib, x:550, y:128}], "cannon-R1":[{aa:Z.xa, ba:$.ib, x:550, y:192}], "cannon-R2":[{aa:Z.xa, ba:$.ib, x:550, y:256}], "yayoi-0":[{aa:Z.xa, ba:$.jb, x:48, y:-100}], "yayoi-1":[{aa:Z.xa, ba:$.jb, x:96, y:-100}], "yayoi-2":[{aa:Z.xa, ba:$.jb, x:144, y:-100}], "yayoi-3":[{aa:Z.xa, ba:$.jb, x:192, y:-100}], "yayoi-4":[{aa:Z.xa, ba:$.jb, x:240, y:-100}], "yayoi-5":[{aa:Z.xa, 
+ba:$.jb, x:288, y:-100}], "yayoi-6":[{aa:Z.xa, ba:$.jb, x:336, y:-100}], "yayoi-7":[{aa:Z.xa, ba:$.jb, x:384, y:-100}], "yayoi-8":[{aa:Z.xa, ba:$.jb, x:432, y:-100}], "yayoi-R0":[{aa:Z.xa, ba:$.jb, x:550, y:128}], "yayoi-R1":[{aa:Z.xa, ba:$.jb, x:550, y:192}], "yayoi-R2":[{aa:Z.xa, ba:$.jb, x:550, y:256}], "tsubomi-0":[{aa:Z.Dd, ba:$.wd, x:96, y:-100}], "tsubomi-1":[{aa:Z.Dd, ba:$.wd, x:240, y:-100}], "tsubomi-2":[{aa:Z.Dd, ba:$.wd, x:384, y:-100}], "tsubomi-R0":[{aa:Z.Dd, ba:$.wd, x:580, y:128}], 
+"itsuki-0":[{aa:Z.ue, ba:$.pe, x:96, y:-100}], "itsuki-1":[{aa:Z.ue, ba:$.pe, x:240, y:-100}], "itsuki-2":[{aa:Z.ue, ba:$.pe, x:384, y:-100}], "makoto-0":[{aa:Z.zb, ba:$.Ab, x:48, y:-100}], "makoto-1":[{aa:Z.zb, ba:$.Ab, x:96, y:-100}], "makoto-2":[{aa:Z.zb, ba:$.Ab, x:144, y:-100}], "makoto-3":[{aa:Z.zb, ba:$.Ab, x:192, y:-100}], "makoto-4":[{aa:Z.zb, ba:$.Ab, x:240, y:-100}], "makoto-5":[{aa:Z.zb, ba:$.Ab, x:288, y:-100}], "makoto-6":[{aa:Z.zb, ba:$.Ab, x:336, y:-100}], "makoto-7":[{aa:Z.zb, ba:$.Ab, 
+x:384, y:-100}], "makoto-8":[{aa:Z.zb, ba:$.Ab, x:432, y:-100}], "makoto-R0":[{aa:Z.zb, ba:$.Ab, x:580, y:128}], "fighter-m-0":[{aa:Z.$b, ba:$.qc, x:96, y:-192}], "fighter-m-1":[{aa:Z.$b, ba:$.qc, x:144, y:-192}], "fighter-m-2":[{aa:Z.$b, ba:$.qc, x:192, y:-192}], "fighter-m-3":[{aa:Z.$b, ba:$.qc, x:240, y:-192}], "fighter-m-4":[{aa:Z.$b, ba:$.qc, x:288, y:-192}], "fighter-m-5":[{aa:Z.$b, ba:$.qc, x:336, y:-192}], "fighter-m-6":[{aa:Z.$b, ba:$.qc, x:384, y:-192}], "fighter-m4-0":[{aa:Z.$b, ba:$.Ah, 
+x:96, y:-192}], "tsukikage-r":[{aa:Z.Xa, ba:$.sc(700), x:624, y:256}, {aa:Z.Xa, ba:$.sc(600), x:720, y:256}, {aa:Z.Xa, ba:$.sc(500), x:576, y:320}, {aa:Z.Xa, ba:$.sc(400), x:672, y:320}, {aa:Z.Xa, ba:$.sc(300), x:768, y:320}, {aa:Z.Xa, ba:$.sc(200), x:624, y:384}, {aa:Z.Xa, ba:$.sc(100), x:720, y:384}], "tsukikage-l":[{aa:Z.Xa, ba:$.rc(700), x:-144, y:384}, {aa:Z.Xa, ba:$.rc(600), x:-240, y:384}, {aa:Z.Xa, ba:$.rc(500), x:-96, y:320}, {aa:Z.Xa, ba:$.rc(400), x:-192, y:320}, {aa:Z.Xa, ba:$.rc(300), 
+x:-288, y:320}, {aa:Z.Xa, ba:$.rc(200), x:-144, y:256}, {aa:Z.Xa, ba:$.rc(100), x:-240, y:256}], "komachi-0":[{aa:Z.Ic, ba:$.Hf, x:144, y:-192}], "komachi-1":[{aa:Z.Ic, ba:$.Hf, x:336, y:-192}], "komachi2-0":[{aa:Z.Ic, ba:$.If, x:144, y:-192}], "komachi2-1":[{aa:Z.Ic, ba:$.If, x:336, y:-192}], "komachi4-0":[{aa:Z.Ic, ba:$.Jf, x:144, y:-192}], "komachi4-1":[{aa:Z.Ic, ba:$.Jf, x:336, y:-192}], erika:[{aa:Z.Yc, ba:$.Yc, x:240, y:-100}], yukishiro:[{aa:Z.se, ba:$.se, x:240, y:-100}], misumi:[{aa:Z.we, 
+ba:[$.Bh, $.xe, $.ye], x:240, y:-100, Sb:j}], mai:[{aa:Z.ve, ba:$.ve, x:780, y:128}], hyuga:[{aa:Z.Oh, ba:[$.Be, $.Ce, $.De], x:240, y:-100, Sb:j}]};
 (function() {
-  function a(a, b, c, d) {
-    return f.action([d(a), f.repeat(c + "-1", [d(f.speed(b, "sequence"))])])
+  function b(a, b, d, f) {
+    return c.action([f(a), c.repeat(d + "-1", [f(c.speed(b, "sequence"))])])
   }
-  function b(a, b, c, d, g, l, p) {
-    return f.action([f.fa(f.direction(b, "absolute"), d, g || D, l, p), f.repeat(a + "-1", [f.fa(f.direction("((" + c + ")-(" + b + "))/(" + a + "-1)", "sequence"), d, g || D, l, p)])])
+  function a(a, b, d, f, g, m, p) {
+    return c.action([c.fire(c.direction(b, "absolute"), f, g || D, m, p), c.repeat(a + "-1", [c.fire(c.direction("((" + d + ")-(" + b + "))/(" + a + "-1)", "sequence"), f, g || D, m, p)])])
   }
-  function c(a, b, c, f, g) {
-    return function(l) {
-      return d(a, b, c, l, f, g, i, i)
+  function d(a, b, c, d, g) {
+    return function(m) {
+      return f(a, b, c, m, d, g, i, i)
     }
   }
-  function d(a, b, c, d, g, l, p, r) {
-    return f.action([f.fa(f.direction(b), d, g || D, l, p, r), f.repeat(a + "-1", [f.fa(f.direction("((" + c + ")-(" + b + "))/(" + a + "-1)", "sequence"), d, g || D, l, p, r)])])
+  function f(a, b, d, f, g, m, p, r) {
+    return c.action([c.fire(c.direction(b), f, g || D, m, p, r), c.repeat(a + "-1", [c.fire(c.direction("((" + d + ")-(" + b + "))/(" + a + "-1)", "sequence"), f, g || D, m, p, r)])])
   }
   function g(a) {
-    return f.fa(f.direction(0), a || v, Q)
+    return c.fire(c.direction(0), a || s, I)
   }
-  function l(a) {
-    return f.fa(f.direction(0), a || v, D)
+  function m(a) {
+    return c.fire(c.direction(0), a || s, D)
   }
   function t(a) {
-    return f.speed("$rank*2.0 + 2.00 + (" + (a === i ? 0 : a) + "*0.1)")
+    return c.speed("$rank*2.0 + 2.00 + (" + (a === i ? 0 : a) + "*0.1)")
   }
-  function w(a) {
-    return f.speed("$rank*2.0 + 1.40 + (" + (a === i ? 0 : a) + "*0.1)")
+  function C(a) {
+    return c.speed("$rank*2.0 + 1.70 + (" + (a === i ? 0 : a) + "*0.1)")
   }
-  function v(a) {
-    return f.speed("$rank*2.0 + 1.10 + (" + (a === i ? 0 : a) + "*0.1)")
+  function E(a) {
+    return c.speed("$rank*2.0 + 1.40 + (" + (a === i ? 0 : a) + "*0.1)")
+  }
+  function s(a) {
+    return c.speed("$rank*2.0 + 1.10 + (" + (a === i ? 0 : a) + "*0.1)")
   }
   function r(a) {
-    return f.speed("$rank*2.0 + 0.80 + (" + (a === i ? 0 : a) + "*0.1)")
+    return c.speed("$rank*2.0 + 0.80 + (" + (a === i ? 0 : a) + "*0.1)")
   }
-  function z(a) {
-    return f.speed("$rank*2.0 + 0.50 + (" + (a === i ? 0 : a) + "*0.1)")
+  function A(a) {
+    return c.speed("$rank*2.0 + 0.50 + (" + (a === i ? 0 : a) + "*0.1)")
+  }
+  function fa(a) {
+    return c.speed("$rank*2.0 + 0.20 + (" + (a === i ? 0 : a) + "*0.1)")
   }
   function p(a) {
-    return f.wait(a + "*(1-$rank)*$hyperOff")
+    return c.wait(a + "*(1-$rank)*$hyperOff")
   }
-  function U(a) {
-    return f.wa(a, {visible:m})
+  function aa(a) {
+    return c.wa(a, {visible:l})
   }
-  function I(a) {
-    return f.wa(a, {frame:4, Jb:j})
+  function H(a) {
+    return c.wa(a, {frame:4, Qb:j})
+  }
+  function Y(a) {
+    return c.wa(a, {frame:3})
   }
   function D(a) {
-    return f.wa(a, {frame:1})
+    return c.wa(a, {frame:1})
   }
-  function S(a) {
-    return f.wa(a, {frame:2})
+  function N(a) {
+    return c.wa(a, {frame:2})
+  }
+  function I(a) {
+    return c.wa(a, {frame:0})
   }
   function Q(a) {
-    return f.wa(a, {frame:0})
+    return c.wa(a, {frame:3, Qb:j})
   }
-  function T(a) {
-    return f.wa(a, {frame:3, Jb:j})
+  function W(a) {
+    return c.wa(a, {frame:1, Qb:j})
   }
-  function Oa(a) {
-    return f.wa(a, {frame:1, Jb:j})
+  function R(a) {
+    return c.wa(a, {frame:2, Qb:j})
   }
-  function ca(a) {
-    return f.wa(a, {frame:2, Jb:j})
+  function O(a) {
+    return c.wa(a, {frame:0, Qb:j})
   }
-  function M(a) {
-    return f.wa(a, {frame:0, Jb:j})
-  }
-  C = {};
-  var f = q.qa;
-  C["basic0-0"] = new q.la({top:f.action([l])});
-  C["basic0-1"] = new q.la({top:f.action([a(w, -0.01, 8, c(3, -15, 15))])});
-  C["basic1-0"] = new q.la({top:f.action([f.repeat(999, [p(20), l(v)])])});
-  C["basic2-0"] = new q.la({top:f.action([f.repeat(999, [p(50), l(v)])])});
-  C["basic3-0"] = new q.la({top:f.action([f.wait(20), f.repeat(999, [p(100), a(v, 0.1, 3, g)])])});
-  C["basic3-1"] = new q.la({top:f.action([f.wait(20), f.repeat(999, [p(40), a(v, 0.1, 3, g)])])});
-  C["cannon2-0"] = new q.la({top0:f.action([f.repeat(999, [p(20), b(6, "0-10+$loop.index*15", "0+10+$loop.index*15", r), b(6, "90-10+$loop.index*15", "90+10+$loop.index*15", r), b(6, "180-10+$loop.index*15", "180+10+$loop.index*15", r), b(6, "270-10+$loop.index*15", "270+10+$loop.index*15", r), p(20), b(6, "0-10+45+$loop.index*15", "0+10+45+$loop.index*15", v, Q), b(6, "90-10+45+$loop.index*15", "90+10+45+$loop.index*15", v, Q), b(6, "180-10+45+$loop.index*15", "180+10+45+$loop.index*15", v, Q), 
-  b(6, "270-10+45+$loop.index*15", "270+10+45+$loop.index*15", v, Q)])]), top1:f.action([f.repeat(999, [f.fa(f.direction("  0+$loop.index*5", "absolute"), z, I), f.fa(f.direction(" 90+$loop.index*5", "absolute"), z, I), f.fa(f.direction("180+$loop.index*5", "absolute"), z, I), f.fa(f.direction("270+$loop.index*5", "absolute"), z, I), f.fa(f.direction("  0-$loop.index*5", "absolute"), z, I), f.fa(f.direction(" 90-$loop.index*5", "absolute"), z, I), f.fa(f.direction("180-$loop.index*5", "absolute"), 
-  z, I), f.fa(f.direction("270-$loop.index*5", "absolute"), z, I), p(5)])])});
-  C["cannon3-0"] = new q.la({top0:f.action([f.repeat(999, [p(80), a(r, 0.01, 5, c(5, -30, 30, Q, f.offsetX(-60))), a(r, 0.01, 5, c(5, -30, 30, Q)), a(r, 0.01, 5, c(5, -30, 30, Q, f.offsetX(60)))])])});
-  C["cannon4-0"] = new q.la({top0:f.action([p(20), f.repeat(999, [f.fa(r, ca), f.repeat(8, [p(10), f.zd("way", "$loop.count+1"), f.fa(f.direction("-12/2 - 12*($way-2)", "sequence"), r, ca), f.repeat("$way-1", [f.fa(f.direction(12, "sequence"), r, ca)])]), p(120)])])});
-  C["cannon5-0"] = new q.la({top0:f.action([f.repeat(999, [f.fa(f.direction(-60), t, U(f.se("b"))), f.repeat(11, [p(5), f.fa(f.direction(10, "sequence"), t, U(f.se("b")))]), p(60)])]), b:f.action([f.wait(5), f.Gh(f.speed(0), 0), a(r, 0.1, 5, function(a) {
-    return f.fa(f.direction(0, "relative"), a, D)
-  }), f.ac])});
-  C["kurokawa-1"] = new q.la({top0:f.action([f.repeat(999, [a(v, -0.01, 4, function(a) {
-    return d(4, -45, 45, a, S, f.offsetX(-45), f.Ha(j))
-  }), a(v, -0.01, 4, function(a) {
-    return d(4, -45, 45, a, S, f.offsetX(45), f.Ha(j))
-  }), p(90)])]), top1:f.action([f.repeat(999, [f.fa(f.direction(0), v, T, f.offsetX(-45), f.Ha(j)), p(45), f.fa(f.direction(0), v, T, f.offsetX(45), f.Ha(j)), p(45)])])});
-  C["komachi-1"] = new q.la({top0:f.action([f.repeat(20, [f.fa(f.direction(210, "absolute"), z(1), D, f.offsetX(-40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(-40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(-40)), f.repeat(57, [p(8), f.fa(f.direction(-720 / 57, "sequence"), z(1), D, f.offsetX(-40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(-40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(-40))])])]), top1:f.action([f.repeat(20, [f.fa(f.direction(-210, 
-  "absolute"), z(1), D, f.offsetX(40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(40)), f.repeat(57, [p(8), f.fa(f.direction(720 / 57, "sequence"), z(1), D, f.offsetX(40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(40)), f.fa(f.direction(120, "sequence"), z(1), D, f.offsetX(40))])])]), top2:f.action([f.repeat(70, [f.fa(f.direction(0), v(0), M, f.offsetX(-110), f.Ha(j)), f.repeat(3, [f.wait(3), f.fa(f.direction(0, 
-  "sequence"), v(0), M, f.offsetX(-110), f.Ha(j))]), p(10), f.fa(f.direction(0), v(0), M, f.offsetX(110), f.Ha(j)), f.repeat(3, [f.wait(3), f.fa(f.direction(0, "sequence"), v(0), M, f.offsetX(110), f.Ha(j))]), p(10)])])});
-  C["komachi-2"] = new q.la({top0:f.action([f.repeat(999, [a(v, -0.01, 4, function(a) {
-    return f.action([d(4, -45, 45, a, S, f.offsetX(-45), f.Ha(j)), p(4)])
-  }), a(v, -0.01, 4, function(a) {
-    return f.action([p(4), d(4, -45, 45, a, S, f.offsetX(45), f.Ha(j))])
-  }), p(90)])]), top1:f.action([f.repeat(999, [p(45), a(r, 0.01, 22, function(a) {
-    return f.action([f.repeat("1 + $rand*6", [f.fa(f.direction("-5+$rand*10"), a, Oa)]), p(1)])
+  z = {};
+  var c = q.ta;
+  z["basic0-0"] = new q.ha({top:c.action([m])});
+  z["basic0-1"] = new q.ha({top:c.action([b(E, -0.01, 8, d(3, -15, 15))])});
+  z["basic1-0"] = new q.ha({top:c.action([c.repeat(999, [p(40), m(s)])])});
+  z["basic1-1"] = new q.ha({top:c.action([c.repeat(999, [p(20), m(s)])])});
+  z["basic1-2"] = new q.ha({top:c.action([p("10+$rand*20"), f(3, -20, 20, s)])});
+  z["basic2-0"] = new q.ha({top:c.action([c.repeat(999, [p(50), m(s)])])});
+  z["basic3-0"] = new q.ha({top:c.action([c.wait(20), c.repeat(999, [p(100), b(s, 0.1, 3, g)])])});
+  z["basic3-1"] = new q.ha({top:c.action([c.wait(20), c.repeat(999, [p(40), b(s, 0.1, 3, g)])])});
+  z["bukky-4-0"] = new q.ha({top0:c.action([p(30), c.repeat(999, [c.fire(c.direction(-40), s, R), c.repeat(3, [c.fire(c.direction(20, "sequence"), s, R), c.fire(c.direction(20, "sequence"), s, R), c.fire(c.direction(20, "sequence"), s, R), c.fire(c.direction(20, "sequence"), s, R), c.fire(c.direction(-80, "sequence"), s, R), p(5)]), p(70)])]), top1:c.action([p(20), c.fire(c.direction(180, "absolute"), r, W), c.repeat(999, [c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), 
+  r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(15, "sequence"), r, W), c.fire(c.direction(-90, "sequence"), r, W), p(5)])])});
+  z["cannon2-0"] = new q.ha({top0:c.action([c.repeat(999, [p(20), a(4, "0-10+$loop.index*15", "0+10+$loop.index*15", r), a(4, "90-10+$loop.index*15", "90+10+$loop.index*15", r), a(4, "180-10+$loop.index*15", "180+10+$loop.index*15", r), a(4, "270-10+$loop.index*15", "270+10+$loop.index*15", r), p(20), a(3, "0-10+45+$loop.index*15", "0+10+45+$loop.index*15", s, I), a(3, "90-10+45+$loop.index*15", "90+10+45+$loop.index*15", s, I), a(3, "180-10+45+$loop.index*15", "180+10+45+$loop.index*15", s, I), 
+  a(3, "270-10+45+$loop.index*15", "270+10+45+$loop.index*15", s, I)])]), top1:c.action([c.repeat(999, [c.fire(c.direction("  0+$loop.index*10", "absolute"), A, H), c.fire(c.direction(" 90+$loop.index*10", "absolute"), A, H), c.fire(c.direction("180+$loop.index*10", "absolute"), A, H), c.fire(c.direction("270+$loop.index*10", "absolute"), A, H), c.fire(c.direction("  0-$loop.index*10", "absolute"), A, H), c.fire(c.direction(" 90-$loop.index*10", "absolute"), A, H), c.fire(c.direction("180-$loop.index*10", 
+  "absolute"), A, H), c.fire(c.direction("270-$loop.index*10", "absolute"), A, H), p(10)])])});
+  z["cannon2-1"] = new q.ha({top0:c.action([c.repeat(999, [p(20), a(6, "0-10+$loop.index*15", "0+10+$loop.index*15", r), a(6, "90-10+$loop.index*15", "90+10+$loop.index*15", r), a(6, "180-10+$loop.index*15", "180+10+$loop.index*15", r), a(6, "270-10+$loop.index*15", "270+10+$loop.index*15", r), p(20), a(7, "0-10+45+$loop.index*15", "0+10+45+$loop.index*15", s, I), a(7, "90-10+45+$loop.index*15", "90+10+45+$loop.index*15", s, I), a(7, "180-10+45+$loop.index*15", "180+10+45+$loop.index*15", s, I), 
+  a(7, "270-10+45+$loop.index*15", "270+10+45+$loop.index*15", s, I)])]), top1:c.action([c.repeat(999, [c.fire(c.direction("  0+$loop.index*5", "absolute"), A, H), c.fire(c.direction(" 90+$loop.index*5", "absolute"), A, H), c.fire(c.direction("180+$loop.index*5", "absolute"), A, H), c.fire(c.direction("270+$loop.index*5", "absolute"), A, H), c.fire(c.direction("  0-$loop.index*5", "absolute"), A, H), c.fire(c.direction(" 90-$loop.index*5", "absolute"), A, H), c.fire(c.direction("180-$loop.index*5", 
+  "absolute"), A, H), c.fire(c.direction("270-$loop.index*5", "absolute"), A, H), p(5)])])});
+  z["cannon3-0"] = new q.ha({top0:c.action([c.repeat(999, [p(80), b(r, 0.01, 5, d(5, -30, 30, I, c.offsetX(-60))), b(r, 0.01, 5, d(5, -30, 30, I)), b(r, 0.01, 5, d(5, -30, 30, I, c.offsetX(60)))])])});
+  z["cannon4-0"] = new q.ha({top0:c.action([p(20), c.repeat(999, [c.fire(r, R), c.repeat(8, [p(10), c.kb("way", "$loop.count+1"), c.fire(c.direction("-12/2 - 12*($way-2)", "sequence"), r, R), c.repeat("$way-1", [c.fire(c.direction(12, "sequence"), r, R)])]), p(120)])])});
+  z["cannon5-0"] = new q.ha({top0:c.action([c.repeat(999, [c.fire(c.direction(-60), t, aa(c.Pa("b"))), c.repeat(11, [p(5), c.fire(c.direction(10, "sequence"), t, aa(c.Pa("b")))]), p(60)])]), b:c.action([c.wait(5), c.Md(c.speed(0), 0), b(r, 0.1, 5, function(a) {
+    return c.fire(c.direction(0, "relative"), a, D)
+  }), c.yb])});
+  z["yuri-4"] = new q.ha({top:c.action([p(60), c.repeat(7, [a(7, 120, 240, A, I), p(8)])])});
+  z["kurokawa-1"] = new q.ha({top0:c.action([c.repeat(999, [b(s, -0.01, 4, function(a) {
+    return f(4, -45, 45, a, N, c.offsetX(-45), c.va(j))
+  }), b(s, -0.01, 4, function(a) {
+    return f(4, -45, 45, a, N, c.offsetX(45), c.va(j))
+  }), p(90)])]), top1:c.action([c.repeat(999, [c.fire(c.direction(0), s, Q, c.offsetX(-45), c.va(j)), p(45), c.fire(c.direction(0), s, Q, c.offsetX(45), c.va(j)), p(45)])])});
+  z["kurokawa-4"] = new q.ha({top0:c.action([c.repeat(999, [b(s, -0.01, 4, function(a) {
+    return f(4, -45, 45, a, N, c.offsetX(-45), c.va(j))
+  }), b(s, -0.01, 4, function(a) {
+    return f(4, -45, 45, a, N, c.offsetX(45), c.va(j))
+  }), p(90)])]), top1:c.action([c.repeat(999, [c.fire(c.direction(0), s, Q, c.offsetX(-45), c.va(j)), p(45), c.fire(c.direction(0), s, Q, c.offsetX(45), c.va(j)), p(45)])])});
+  z["komachi-1"] = new q.ha({top0:c.action([c.repeat(20, [c.fire(c.direction(210, "absolute"), A(1), D, c.offsetX(-40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(-40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(-40)), c.repeat(57, [p(8), c.fire(c.direction(-720 / 57, "sequence"), A(1), D, c.offsetX(-40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(-40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(-40))])])]), top1:c.action([c.repeat(20, [c.fire(c.direction(-210, 
+  "absolute"), A(1), D, c.offsetX(40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(40)), c.repeat(57, [p(8), c.fire(c.direction(720 / 57, "sequence"), A(1), D, c.offsetX(40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(40)), c.fire(c.direction(120, "sequence"), A(1), D, c.offsetX(40))])])]), top2:c.action([c.repeat(70, [c.fire(c.direction(0), s(0), O, c.offsetX(-110), c.va(j)), c.repeat(6, [c.wait(1), c.fire(c.direction(0, 
+  "sequence"), s(0), O, c.offsetX(-110), c.va(j))]), p(10), c.fire(c.direction(0), s(0), O, c.offsetX(110), c.va(j)), c.repeat(6, [c.wait(1), c.fire(c.direction(0, "sequence"), s(0), O, c.offsetX(110), c.va(j))]), p(10)])])});
+  z["komachi-2"] = new q.ha({top0:c.action([c.repeat(999, [b(s, -0.01, 4, function(a) {
+    return c.action([f(4, -45, 45, a, N, c.offsetX(-45), c.va(j)), p(4)])
+  }), b(s, -0.01, 4, function(a) {
+    return c.action([p(4), f(4, -45, 45, a, N, c.offsetX(45), c.va(j))])
+  }), p(90)])]), top1:c.action([c.repeat(999, [p(45), b(r, 0.01, 22, function(a) {
+    return c.action([c.repeat("1 + $rand*6", [c.fire(c.direction("-5+$rand*10"), a, W)]), p(1)])
   }), p(180)])])});
-  C["honoka-1"] = new q.la({top0:f.action([f.wait(60), f.repeat(10, [d(4, -40, 40, r, I, f.offsetX(0), f.offsetY(30)), p(30), d(5, -40, 40, z, I, f.offsetX(0), f.offsetY(30)), p(30)])]), top1:f.action([f.wait(60), f.repeat(5, [d(2, -2, 2, r(0.6), D), d(3, -3, 3, r(1), D), d(4, -4, 4, r(1.4), D), d(5, -5, 5, r(1.8), D), p(110)])]), top2:f.action([f.repeat(20, [b(12, -10, -170, z, M, f.offsetX(-110), f.offsetY(-70)), p(30)])]), top3:f.action([f.repeat(20, [b(12, 10, 170, z, M, f.offsetX(110), f.offsetY(-70)), 
+  z["komachi-4"] = new q.ha({top0:c.action([c.repeat(999, [c.repeat(4, [c.fire(c.direction("220+-1+$rand*2", "absolute"), s, Y, c.offsetX(-45)), c.fire(c.direction("180+-1+$rand*2", "absolute"), s, Y, c.offsetX(-45)), c.fire(c.direction("180+-1+$rand*2", "absolute"), s, Y, c.offsetX(45)), c.fire(c.direction("140+-1+$rand*2", "absolute"), s, Y, c.offsetX(45)), p(4)]), p(60)])]), top1:c.action([c.repeat(70, [c.fire(c.direction(0), s(5), O, c.offsetX(-110), c.va(j)), c.repeat(12, [c.wait(1), c.fire(c.direction(0, 
+  "sequence"), s(5), O, c.offsetX(-110), c.va(j))]), p(30), c.fire(c.direction(0), s(5), O, c.offsetX(110), c.va(j)), c.repeat(12, [c.wait(1), c.fire(c.direction(0, "sequence"), s(5), O, c.offsetX(110), c.va(j))]), p(30)])])});
+  z["honoka-1"] = new q.ha({top0:c.action([c.wait(60), c.repeat(10, [f(4, -40, 40, r, H, c.offsetX(0), c.offsetY(30)), p(30), f(5, -40, 40, A, H, c.offsetX(0), c.offsetY(30)), p(30)])]), top1:c.action([c.wait(60), c.repeat(5, [f(2, -2, 2, r(0.6), D), f(3, -3, 3, r(1), D), f(4, -4, 4, r(1.4), D), f(5, -5, 5, r(1.8), D), p(110)])]), top2:c.action([c.repeat(20, [a(12, -10, -170, A, O, c.offsetX(-110), c.offsetY(-70)), p(30)])]), top3:c.action([c.repeat(20, [a(12, 10, 170, A, O, c.offsetX(110), c.offsetY(-70)), 
   p(30)])])});
-  C["nagisa-1-1"] = new q.la({top0:f.action([p(90), f.repeat(3, [f.zd("way", "5 + $loop.index*6"), a(w, 0.01, "3 + $loop.index*4", function(a) {
-    return f.action([d("$way", -110, 110, a, D, f.offsetX(-190), f.offsetY(-20)), d("$way", -110, 110, a, D, f.offsetX(190), f.offsetY(-20)), f.wait(5)])
+  z["nagisa-1-1"] = new q.ha({top0:c.action([p(90), c.repeat(3, [c.kb("way", "5 + $loop.index*6"), b(r, 0.01, "3 + $loop.index*4", function(a) {
+    return c.action([f("$way", -110, 110, a, D, c.offsetX(-190), c.offsetY(-20)), f("$way", -110, 110, a, D, c.offsetX(190), c.offsetY(-20)), c.wait(5)])
   }), p(60)]), p(60)])});
-  C["nagisa-1-2"] = new q.la({top0:f.action([f.repeat(12, [d(15, -90, 90, z, D), p(40)])]), top1:f.action([f.repeat(3, [f.repeat(3, [d(5, -65, -55, r, M, f.offsetX(-190), f.offsetY(-20)), d(5, -35, -25, r, M, f.offsetX(-190), f.offsetY(-20)), d(5, -5, 5, r, M, f.offsetX(-190), f.offsetY(-20)), d(5, 25, 35, r, M, f.offsetX(-190), f.offsetY(-20)), d(5, 55, 65, r, M, f.offsetX(-190), f.offsetY(-20)), f.wait(2)]), p(60), f.repeat(3, [d(5, -65, -55, r, M, f.offsetX(190), f.offsetY(-20)), d(5, -35, -25, 
-  r, M, f.offsetX(190), f.offsetY(-20)), d(5, -5, 5, r, M, f.offsetX(190), f.offsetY(-20)), d(5, 25, 35, r, M, f.offsetX(190), f.offsetY(-20)), d(5, 55, 65, r, M, f.offsetX(190), f.offsetY(-20)), f.wait(2)]), p(60)])])});
-  C["nagisa-1-3"] = new q.la({top0:f.action([p(60), f.repeat(3, [f.fa(f.direction(-60), r, S, f.offsetX(-190), f.offsetY(-20)), f.repeat(20, [p(15), f.fa(f.direction(6, "sequence"), r, S, f.offsetX(-190), f.offsetY(-20))])])]), top1:f.action([p(80), f.repeat(3, [f.fa(f.direction(60), r, S, f.offsetX(190), f.offsetY(-20)), f.repeat(20, [p(15), f.fa(f.direction(-6, "sequence"), r, S, f.offsetX(190), f.offsetY(-20))])])]), top2:f.action([f.repeat(6, [f.repeat(3, [d(5, -60, -40, r, I, f.offsetX(-190), 
-  f.offsetY(-20)), d(5, -20, -10, r, I, f.offsetX(-190), f.offsetY(-20)), d(5, 10, 20, r, I, f.offsetX(-190), f.offsetY(-20)), d(5, 40, 60, r, I, f.offsetX(-190), f.offsetY(-20)), f.wait(4)]), p(60), f.repeat(3, [d(5, -60, -40, r, I, f.offsetX(190), f.offsetY(-20)), d(5, -20, -10, r, I, f.offsetX(190), f.offsetY(-20)), d(5, 10, 20, r, I, f.offsetX(190), f.offsetY(-20)), d(5, 40, 60, r, I, f.offsetX(190), f.offsetY(-20)), f.wait(4)]), p(60)])])});
-  C["nagisa-2-1"] = new q.la({top0:f.action([p(120), f.repeat(36, [b(6, "+$loop.index*10", "+$loop.index*10 + 360", z, Q, f.offsetX(-190), f.offsetY(-20)), b(6, "-$loop.index*10", "-$loop.index*10 + 360", z, Q, f.offsetX(190), f.offsetY(-20)), p(10)])]), top1:f.action([p(120), f.repeat(30, [b(3, "+$loop.index*10", "+$loop.index * 10 + 360", r, T), b(3, "-$loop.index*14", "-$loop.index * 14 + 360", r, T), p(12)])])});
-  C["nagisa-2-2"] = new q.la({top0:f.action([p(120), f.repeat(30, [b(4, "+$loop.index*5", "+$loop.index*5 + 270", v, T), p(12)])]), top1:f.action([p(120), f.repeat(6, [b(9, 150, 130, z(0.8), D), b(9, 172, 188, z(0.8), D), b(9, 210, 230, z(0.8), D), p(30), b(9, 170, 150, z(0.8), D), b(9, 190, 210, z(0.8), D), p(30)])])});
-  C["nagisa-2-3"] = new q.la({top:f.action([p(120), f.repeat(12, [b(23, 0, 360, z, I, f.offsetX(-190), f.offsetY(-20)), b(23, 0, 360, z, I), b(23, 0, 360, z, I, f.offsetX(190), f.offsetY(-20)), p(30)])])});
-  C["nagisa-3-1"] = new q.la({top0:f.action([p(50), f.repeat(999, [a(v, 0.0010, 5, function(a) {
-    return f.action([d(41, "-180", "+180", a, ca, f.offsetX(-190), f.offsetY(-20)), d(41, "-180", "+180", a, ca, f.offsetX(190), f.offsetY(-20))])
-  }), p(50)])]), top1:f.action([f.repeat(999, [d(2, -2, 0, w, D), p(10), d(2, 0, 2, w, D), p(150)])])});
-  C["mai-1"] = new q.la({top0:f.action([p(50), f.repeat(50, [f.zd("from", "+Math.cos($loop.index*0.15)*40-170"), b(3, "$from", "$from+60", t, U(f.action([f.wait(8), f.fa(f.direction(0, "relative"), r, Q), f.ac]))), f.zd("from", "-Math.cos($loop.index*0.15)*40-10"), b(3, "$from", "$from-60", t, U(f.action([f.wait(8), f.fa(f.direction(0, "relative"), r, Q), f.ac]))), p(8)])]), top1:f.action([p(50), f.repeat(12, [b(5, -50, 50, t, U(f.action([f.wait(8), f.fa(f.direction(0, "relative"), r, T), f.ac]))), 
-  b(5, -230, -130, t, U(f.action([f.wait(8), f.fa(f.direction(0, "relative"), r, T), f.ac]))), p(16), b(6, -50, 50, t, U(f.action([f.wait(8), f.fa(f.direction(0, "relative"), r, T), f.ac]))), b(6, -230, -130, t, U(f.action([f.wait(8), f.fa(f.direction(0, "relative"), r, T), f.ac]))), p(16)])])});
-  C["mai-2"] = new q.la({top:f.action([p(50), f.repeat(15, [f.fa(f.direction(-10), ca(f.se("fireChild", "$loop.index*10"))), p(8)])]), fireChild:f.action([p("40+$1"), a(r, 0.1, 5, function(a) {
-    return f.fa(f.direction(-90, "absolute"), a, S)
-  }), f.ac])});
-  C.na = function() {
-    for(var a = 0;2E3 > a;a++) {
-      va.push(L())
+  z["nagisa-1-2"] = new q.ha({top0:c.action([c.repeat(12, [f(15, -90, 90, A, D), p(40)])]), top1:c.action([c.repeat(3, [c.repeat(3, [f(5, -65, -55, r, O, c.offsetX(-190), c.offsetY(-20)), f(5, -35, -25, r, O, c.offsetX(-190), c.offsetY(-20)), f(5, -5, 5, r, O, c.offsetX(-190), c.offsetY(-20)), f(5, 25, 35, r, O, c.offsetX(-190), c.offsetY(-20)), f(5, 55, 65, r, O, c.offsetX(-190), c.offsetY(-20)), c.wait(2)]), p(60), c.repeat(3, [f(5, -65, -55, r, O, c.offsetX(190), c.offsetY(-20)), f(5, -35, -25, 
+  r, O, c.offsetX(190), c.offsetY(-20)), f(5, -5, 5, r, O, c.offsetX(190), c.offsetY(-20)), f(5, 25, 35, r, O, c.offsetX(190), c.offsetY(-20)), f(5, 55, 65, r, O, c.offsetX(190), c.offsetY(-20)), c.wait(2)]), p(60)])])});
+  z["nagisa-1-3"] = new q.ha({top0:c.action([p(60), c.repeat(3, [c.fire(c.direction(-60), r, N, c.offsetX(-190), c.offsetY(-20)), c.repeat(20, [p(15), c.fire(c.direction(6, "sequence"), r, N, c.offsetX(-190), c.offsetY(-20))])])]), top1:c.action([p(80), c.repeat(3, [c.fire(c.direction(60), r, N, c.offsetX(190), c.offsetY(-20)), c.repeat(20, [p(15), c.fire(c.direction(-6, "sequence"), r, N, c.offsetX(190), c.offsetY(-20))])])]), top2:c.action([c.repeat(6, [c.repeat(3, [f(5, -60, -40, r, H, c.offsetX(-190), 
+  c.offsetY(-20)), f(5, -20, -10, r, H, c.offsetX(-190), c.offsetY(-20)), f(5, 10, 20, r, H, c.offsetX(-190), c.offsetY(-20)), f(5, 40, 60, r, H, c.offsetX(-190), c.offsetY(-20)), c.wait(4)]), p(60), c.repeat(3, [f(5, -60, -40, r, H, c.offsetX(190), c.offsetY(-20)), f(5, -20, -10, r, H, c.offsetX(190), c.offsetY(-20)), f(5, 10, 20, r, H, c.offsetX(190), c.offsetY(-20)), f(5, 40, 60, r, H, c.offsetX(190), c.offsetY(-20)), c.wait(4)]), p(60)])])});
+  z["nagisa-2-1"] = new q.ha({top0:c.action([p(120), c.repeat(36, [a(6, "+$loop.index*10", "+$loop.index*10 + 360", A, I, c.offsetX(-190), c.offsetY(-20)), a(6, "-$loop.index*10", "-$loop.index*10 + 360", A, I, c.offsetX(190), c.offsetY(-20)), p(10)])]), top1:c.action([p(120), c.repeat(30, [a(3, "+$loop.index*10", "+$loop.index * 10 + 360", r, Q), a(3, "-$loop.index*14", "-$loop.index * 14 + 360", r, Q), p(12)])])});
+  z["nagisa-2-2"] = new q.ha({top0:c.action([p(120), c.repeat(30, [a(4, "+$loop.index*5", "+$loop.index*5 + 270", s, Q), p(12)])]), top1:c.action([p(120), c.repeat(6, [a(9, 150, 130, A(0.8), D), a(9, 172, 188, A(0.8), D), a(9, 210, 230, A(0.8), D), p(30), a(9, 170, 150, A(0.8), D), a(9, 190, 210, A(0.8), D), p(30)])])});
+  z["nagisa-2-3"] = new q.ha({top:c.action([p(120), c.repeat(12, [a(23, 0, 360, A, H, c.offsetX(-190), c.offsetY(-20)), a(23, 0, 360, A, H), a(23, 0, 360, A, H, c.offsetX(190), c.offsetY(-20)), p(30)])])});
+  z["nagisa-3-1"] = new q.ha({top0:c.action([p(50), c.repeat(999, [b(s, 0.0010, 5, function(a) {
+    return c.action([f(41, "-180", "+180", a, R, c.offsetX(-190), c.offsetY(-20)), f(41, "-180", "+180", a, R, c.offsetX(190), c.offsetY(-20))])
+  }), p(50)])]), top1:c.action([c.repeat(999, [f(2, -2, 0, E, D), p(10), f(2, 0, 2, E, D), p(150)])])});
+  z["mai-1"] = new q.ha({top0:c.action([p(50), c.repeat(50, [c.kb("from", "+Math.cos($loop.index*0.15)*40-170"), a(3, "$from", "$from+60", t, aa(c.action([c.wait(8), c.fire(c.direction(0, "relative"), r, I), c.yb]))), c.kb("from", "-Math.cos($loop.index*0.15)*40-10"), a(3, "$from", "$from-60", t, aa(c.action([c.wait(8), c.fire(c.direction(0, "relative"), r, I), c.yb]))), p(8)])]), top1:c.action([p(50), c.repeat(12, [a(5, -50, 50, t, aa(c.action([c.wait(8), c.fire(c.direction(0, "relative"), r, Q), 
+  c.yb]))), a(5, -230, -130, t, aa(c.action([c.wait(8), c.fire(c.direction(0, "relative"), r, Q), c.yb]))), p(16), a(6, -50, 50, t, aa(c.action([c.wait(8), c.fire(c.direction(0, "relative"), r, Q), c.yb]))), a(6, -230, -130, t, aa(c.action([c.wait(8), c.fire(c.direction(0, "relative"), r, Q), c.yb]))), p(16)])])});
+  z["mai-2"] = new q.ha({top:c.action([p(50), c.repeat(15, [c.fire(c.direction(-10), R(c.Pa("fireChild", "$loop.index*10"))), p(8)])]), fireChild:c.action([p("40+$1"), b(r, 0.1, 5, function(a) {
+    return c.fire(c.direction(-90, "absolute"), a, N)
+  }), c.yb])});
+  z["saki-1-1"] = new q.ha({top:c.action([p(100), c.repeat(3, [c.Pa("oneround", "9 + $loop.index * 4", "$loop.index > 0 ? 0 : 1")])]), oneround:c.action([c.kb("way", "$1"), c.repeat("30", [f("$way", "3 * $loop.index*+1", "3 * $loop.index*+1 + 360", s, I), f("$way", "3 * $loop.index*-1", "3 * $loop.index*-1 + 360", s, I), p(12)]), c.repeat("$2", [f(9, -20, 20, E, Y)])])});
+  z["saki-1-2"] = new q.ha({top:c.action([p(100), c.repeat(5, [c.kb("way", "5+$loop.index*2"), c.repeat(6, [c.kb("s", "$loop.index*0.6"), c.action(function() {
+    for(var a = [], b = 0;5 > b;b++) {
+      a.push(f("$way", -30, 30, s("$s"), Q, c.offsetX(-120 + 60 * b)))
     }
-    a = C.Bd = tm.Va.cc.Qc;
-    a.He = function(a) {
-      return!(a instanceof L) || !(-50 > a.x || 530 < a.x || -50 > a.y || 690 < a.y)
+    return a
+  }())]), p(90)])])});
+  z["saki-1-3"] = new q.ha({top:c.action([c.kb("dir", "$rand < 0.5 ? -1 : 1"), c.repeat(24, [c.fire(c.direction("120*$dir + $loop.index*10*-$dir"), c.speed(2), Q(c.Pa("seed"))), p(8)]), p(60)]), seed:c.action([c.wait(10), c.Md(c.speed(0), 50), c.wait(90), f(13, 0, 360 - 360 / 13, r, Y), c.yb])});
+  z["saki-2-1"] = new q.ha({top0:c.action([p(100), c.repeat(4, [f(60, "$loop.index*+5+0", "$loop.index*+5+360 - 360/60", r, I, c.offsetX(-40)), f(60, "$loop.index*-5+0", "$loop.index*-5+360 - 360/60", r, I, c.offsetX(40)), p(60), f(59, "$loop.index*+5+0", "$loop.index*+5+360 - 360/59", r, I, c.offsetX(-40)), f(59, "$loop.index*-5+0", "$loop.index*-5+360 - 360/59", r, I, c.offsetX(40)), p(60)])]), top1:c.action([p(100), c.repeat(4, [c.repeat(7, [c.kb("o", "$loop.index*20 - 60"), c.fire(c.direction("$o"), 
+  C, Y), c.repeat(4, [c.kb("w", "$loop.count"), f("$w+1", "$w*-0.6 + $o", "$w*+0.6 + $o", C("$w*-1.0"), Y)])]), p(120)])])});
+  z["saki-2-2"] = new q.ha({top:c.action([p(60), c.kb("dir", "$rand < 0.5 ? -1 : 1"), c.repeat(12, [c.fire(c.direction("120*$dir + $loop.index*10*-$dir"), c.speed(2), R(c.Pa("seed"))), p(8), c.fire(c.direction("120*-$dir + $loop.index*10*$dir"), c.speed(2), R(c.Pa("seed"))), p(8)]), p(60)]), seed:c.action([c.wait(10), c.Md(c.speed(0), "10 + $rand*15"), c.wait(65), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(-48), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(-36), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(-24), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(-12), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(0), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(12), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(24), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(36), a, N)])
+  }), b(s, 0.14, 6, function(a) {
+    return c.action([c.fire(c.direction(48), a, N)])
+  }), p(2), c.yb])});
+  z["saki-2-3"] = new q.ha({top:c.action([p(60), c.kb("dir", "$rand < 0.5 ? -1 : 1"), c.repeat(24, [c.fire(c.direction("120*$dir + $loop.index*10*-$dir"), c.speed(2), Q(c.Pa("seed"))), p(8), c.fire(c.direction("120*-$dir + $loop.index*10*$dir"), c.speed(2), Q(c.Pa("seed"))), p(8)]), p(60)]), seed:c.action([c.wait(10), c.Md(c.speed(0), "10 + $rand*20"), c.wait(65), b(s, 0.18, 7, function(a) {
+    return c.action([c.fire(c.direction(180, "absolute"), a, Y)])
+  }), p(2), c.yb])});
+  z["saki-3-1"] = new q.ha({top:c.action([c.fire(c.direction(180, "absolute"), fa, R(c.Pa("seed"))), p(60), c.fire(c.direction(180, "absolute"), fa, R(c.Pa("seed")), c.offsetX(-80)), c.fire(c.direction(180, "absolute"), fa, R(c.Pa("seed")), c.offsetX(80)), p(60)]), seed:c.action([c.fire(c.direction(0, "absolute"), s, r, I), c.repeat(999, [c.fire(c.direction(90, "sequence"), r, I), c.fire(c.direction(90, "sequence"), r, I), c.fire(c.direction(90, "sequence"), r, I), p(10), c.fire(c.direction(100, 
+  "sequence"), r, I)])])});
+  z["saki-3-2"] = new q.ha({top:c.action([c.fire(c.direction(180, "absolute"), fa, Q(c.Pa("seed"))), p(60), c.fire(c.direction(180, "absolute"), fa, Q(c.Pa("seed")), c.offsetX(-80)), c.fire(c.direction(180, "absolute"), fa, Q(c.Pa("seed")), c.offsetX(80)), p(60)]), seed:c.action([c.fire(c.direction(0, "absolute"), s, r, D), c.repeat(999, [c.fire(c.direction(90, "sequence"), r, D), c.fire(c.direction(90, "sequence"), r, D), c.fire(c.direction(90, "sequence"), r, D), p(10), c.fire(c.direction(80, "sequence"), 
+  r, D)])])});
+  z.setup = function() {
+    for(var a = 0;2E3 > a;a++) {
+      Aa.push(M())
+    }
+    a = z.Nd = tm.$a.pc.ed;
+    a.Ze = function(a) {
+      return!(a instanceof M) || !(-50 > a.x || 530 < a.x || -50 > a.y || 690 < a.y)
     };
-    a.Ef = function(a) {
-      var b = va.shift(0);
+    a.Yf = function(a) {
+      var b = Aa.shift(0);
       if(b) {
-        return b.ra = u.vg, ga.push(b), b.setFrameIndex(a.frame === i ? 1 : a.frame), a.Jb ? (b.scaleX = 1, b.scaleY = 1, b.$b = m) : (b.scaleX = 0.8, b.scaleY = 1.5, b.$b = j), b.visible = a.visible === m ? m : j, b.Jb = !!a.Jb, b
+        return b.na = v.Qg, ma.push(b), b.setFrameIndex(a.frame === i ? 1 : a.frame), a.Qb ? (b.scaleX = 1, b.scaleY = 1, b.mc = l) : (b.scaleX = 0.8, b.scaleY = 1.5, b.mc = j), b.visible = a.visible === l ? l : j, b.Qb = !!a.Qb, b
       }
       console.warn("\u5f3e\u304c\u8db3\u308a\u306a\u3044\uff01")
     };
-    a.If = function(a) {
+    a.cg = function(a) {
       return-80 <= a.x && 560 > a.x && -80 <= a.y && 720 > a.y
     };
-    a.rc = 3.5;
-    q.va.Oa.$rank = 0;
-    q.va.Oa.$hyperOff = 1
+    a.Ec = v.Sg;
+    q.ya.Ra.$rank = 0;
+    q.ya.Ra.$hyperOff = 1
   };
-  C.erase = function(a, b) {
-    for(var c = [].concat(ga), d = 0, f = c.length;d < f;d++) {
-      a && sa(!!b).setPosition(c[d].x, c[d].y), c[d].Na()
+  z.erase = function(a, b, c) {
+    for(var d = [].concat(ma), f = 0, g = d.length;f < g;f++) {
+      if(a) {
+        var m = wa(!!b);
+        m.setPosition(d[f].x, d[f].y);
+        c && (m.Ac = j)
+      }
+      d[f].Ca()
     }
   };
-  C.Oc = function() {
-    for(var a = [].concat(ga), b = 0, c = a.length;b < c;b++) {
+  z.cd = function() {
+    for(var a = [].concat(ma), b = 0, c = a.length;b < c;b++) {
       a[b].remove()
     }
   };
-  L = tm.createClass({superClass:tm.app.Sprite, ra:0, Jb:m, init:function() {
+  M = tm.createClass({superClass:tm.display.Sprite, na:0, Qb:l, init:function() {
     this.superInit("tex0", 20, 20);
     this.boundingRadius = 7;
     this.addEventListener("removed", function() {
       this.clearEventListener("enterframe");
-      va.push(this);
-      var a = ga.indexOf(this);
-      -1 !== a && ga.splice(a, 1)
+      Aa.push(this);
+      var a = ma.indexOf(this);
+      -1 !== a && ma.splice(a, 1)
     })
   }, update:function() {
-    this.Jb && (this.rotation += 15)
-  }, Na:function() {
-    var a = H(10, 1, 0.92, tm.graphics.Canvas().resize(10, 10).setFillStyle(tm.graphics.RadialGradient(5, 5, 0, 5, 5, 5).addColorStopList([{offset:0, color:"rgba(255,100,100,0.0)"}, {offset:0.3, color:"rgba(255,100,100,0.0)"}, {offset:0.9, color:"rgba(255,180,180,1.0)"}, {offset:1, color:"rgba(255,100,100,0.0)"}]).toStyle()).fillRect(0, 0, 10, 10).element).setScale(0.1, 0.1).setPosition(this.x, this.y);
+    this.Qb && (this.rotation += 15)
+  }, Ca:function() {
+    var a = G(10, 1, 0.92, tm.graphics.Canvas().resize(10, 10).setFillStyle(tm.graphics.RadialGradient(5, 5, 0, 5, 5, 5).addColorStopList([{offset:0, color:"rgba(255,100,100,0.0)"}, {offset:0.3, color:"rgba(255,100,100,0.0)"}, {offset:0.9, color:"rgba(255,180,180,1.0)"}, {offset:1, color:"rgba(255,100,100,0.0)"}]).toStyle()).fillRect(0, 0, 10, 10).element).setScale(0.1, 0.1).setPosition(this.x, this.y);
     a.addEventListener("enterframe", function() {
       this.scaleX += 0.1;
       this.scaleY += 0.1
@@ -3664,20 +4050,20 @@ x:240, y:-100}], misumi:[{aa:Z.he, ba:[$.bh, $.ie, $.je], x:240, y:-100, Ub:j}],
     a.addChildTo(this.parent);
     this.remove()
   }});
-  var va = [], ga = L.Ma = []
+  var Aa = [], ma = M.Qa = []
 })();
-var P, R, Ha, W, Na;
-P = function(a, b, c) {
-  return a < b ? b : a > c ? c : a
+var T, U, La, V, Sa;
+T = function(b, a, d) {
+  return b < a ? a : b > d ? d : b
 };
-Na = Math.PI / 180;
-Ha = function(a) {
-  return a * Na
+Sa = Math.PI / 180;
+La = function(b) {
+  return b * Sa
 };
-W = function(a, b) {
-  return window.Math.floor(Math.random() * (b - a + 1)) + a
+V = function(b, a) {
+  return window.Math.floor(Math.random() * (a - b + 1)) + b
 };
-R = function(a, b) {
-  return window.Math.random() * (b - a) + a
+U = function(b, a) {
+  return window.Math.random() * (a - b) + b
 };
 
