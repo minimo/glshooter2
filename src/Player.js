@@ -27,12 +27,12 @@ var KEYBOARD_MOVE = {
 /**
  * 自機
  * @class
- * @extends {tm.display.Sprite}
+ * @extends {tm.app.Sprite}
  */
 gls2.Player = tm.createClass(
 /** @lends {gls2.Player.prototype} */
 {
-    superClass: tm.display.Sprite,
+    superClass: tm.app.Sprite,
 
     /**
      * 0:赤
@@ -49,7 +49,6 @@ gls2.Player = tm.createClass(
 
     roll: 0,
     controllable: true,
-    attackable: true,
     muteki: false,
     gameScene : null,
 
@@ -109,13 +108,13 @@ gls2.Player = tm.createClass(
             this.bits = [this.bits[1], this.bits[2]];
         }
 
-        this.bitPivot = tm.display.CanvasElement().addChildTo(this);
+        this.bitPivot = tm.app.CanvasElement().addChildTo(this);
         for (var i = 0, end = this.bits.length; i < end; i++) {
             var bit = this.bits[i];
             gls2.Bit(this, bit).setPosition(bit.x, bit.y).addChildTo(this.bitPivot);
         }
 
-        this.light = tm.display.CircleShape(140, 140, {
+        this.light = tm.app.CircleShape(140, 140, {
             strokeStyle: "rgba(0,0,0,0)",
             fillStyle: tm.graphics.RadialGradient(70,70,0,70,70,70).addColorStopList([
                 { offset:0.0, color:"rgba(255,255,255,0.1)" },
@@ -125,7 +124,7 @@ gls2.Player = tm.createClass(
         }).addChildTo(this);
         this.light.blendMode = "lighter";
 
-        this.hyperCircle0 = tm.display.CircleShape(80, 80, {
+        this.hyperCircle0 = tm.app.CircleShape(80, 80, {
             fillStyle: "rgba(0,0,0,0)",
             strokeStyle: tm.graphics.LinearGradient(0,0,0,80).addColorStopList([
                 { offset:0.0, color:"rgba(255,255,100,0.0)" },
@@ -142,7 +141,7 @@ gls2.Player = tm.createClass(
             this.visible = gameScene.hyperLevel > 0 && !gameScene.isHyperMode;
         };
 
-        this.hyperCircle1 = tm.display.CircleShape(80, 80, {
+        this.hyperCircle1 = tm.app.CircleShape(80, 80, {
             fillStyle: "rgba(0,0,0,0)",
             strokeStyle: tm.graphics.LinearGradient(0,0,0,80).addColorStopList([
                 { offset:0.0, color:"rgba(255,255,100,0.0)" },
@@ -159,7 +158,7 @@ gls2.Player = tm.createClass(
             this.visible = gameScene.hyperLevel > 0 && !gameScene.isHyperMode;
         };
 
-        this.hyperCircle2 = tm.display.CanvasElement(80, 80).addChildTo(this);
+        this.hyperCircle2 = tm.app.CanvasElement(80, 80).addChildTo(this);
         this.hyperCircle2.blendMode = "lighter";
         this.hyperCircle2.rotation = -90;
         this.hyperCircle2.strokeStyle = "rgba(180,180,255,0.4)";
@@ -180,7 +179,7 @@ gls2.Player = tm.createClass(
             canvas.lineWidth = "4";
             canvas.strokeArc(0, 0, 40, 0, value*Math.PI*2, false);
         };
-        this.hyperCircle3 = tm.display.CircleShape(80, 80, {
+        this.hyperCircle3 = tm.app.CircleShape(80, 80, {
             fillStyle: tm.graphics.RadialGradient(40,40,0,40,40,35).addColorStopList([
                 { offset:0.0, color:"rgba(0,0,50,0.0)" },
                 { offset:0.9, color:"rgba(0,0,50,0.8)" },
@@ -222,7 +221,7 @@ gls2.Player = tm.createClass(
     },
 
     _createHitCircle: function() {
-        this.hitCircle = tm.display.Sprite("tex0", 20, 20).addChildTo(this);
+        this.hitCircle = tm.app.Sprite("tex0", 20, 20).addChildTo(this);
         this.hitCircle.setFrameIndex(5);
         // this.hitCircle.blendMode = "lighter";
         this.hitCircle.update = function(app) {
@@ -253,8 +252,8 @@ gls2.Player = tm.createClass(
             this.x = gls2.math.clamp(this.x, 15, SC_W-15);
             this.y = gls2.math.clamp(this.y, 15, SC_H-15);
 
-            var pressC = kb.getKey("c") && this.attackable;
-            var pressZ = kb.getKey("z") && this.attackable;
+            var pressC = kb.getKey("c");
+            var pressZ = kb.getKey("z");
 
             if (pressC) {
                 this.pressTimeC += 1;
@@ -275,7 +274,7 @@ gls2.Player = tm.createClass(
             this.laser.y = this.y - 40;
 
             // スペシャルウェポン
-            if (kb.getKeyDown("x") && this.attackable) {
+            if (kb.getKeyDown("x")) {
                 if (this.gameScene.hyperLevel > 0 && !this.gameScene.isHyperMode) {
                     // ハイパー
                     this.gameScene.startHyperMode();
@@ -400,12 +399,12 @@ gls2.Player = tm.createClass(
 
 /**
  * @class
- * @extends {tm.display.AnimationSprite}
+ * @extends {tm.app.AnimationSprite}
  */
 gls2.Bit = tm.createClass(
 /** @lends {gls2.Bit.prototype} */
 {
-    superClass: tm.display.AnimationSprite,
+    superClass: tm.app.AnimationSprite,
     bit: null,
     player: null,
 
@@ -413,7 +412,7 @@ gls2.Bit = tm.createClass(
      * @constructs
      */
     init: function(player, bit) {
-        this.superInit(tm.asset.SpriteSheet({
+        this.superInit(tm.app.SpriteSheet({
             image: "tex1",
             frame: {
                 width: 32,

@@ -10,11 +10,6 @@
 gls2.Setting = {
 
     /**
-     * @const
-     */
-    MUTEKI: true,
-
-    /**
      * FPS
      * @const
      */
@@ -24,7 +19,7 @@ gls2.Setting = {
      * 初期ランク
      * @const
      */
-    INITIAL_RANK: DEBUG ? 0.10 : 0.00,
+    INITIAL_RANK: 0.00,
 
     /**
      * エクステンドスコア
@@ -298,7 +293,7 @@ gls2.Setting = {
      * ハイパーモード中の敵弾幕発射間隔
      * @const
      */
-    ENEMY_ATTACK_INTERVAL_RATE_HYPER: 0.8,
+    ENEMY_ATTACK_INTERVAL_RATE_HYPER: 0.5,
 
     /**
      * 星アイテム（大）が出る距離
@@ -328,7 +323,7 @@ gls2.Setting = {
      * オートボム発動時に残ボム数をすべて消費するか
      * @const
      */
-    AUTO_BOMB_TO_ZERO: false,
+    AUTO_BOMB_TO_ZERO: true,
 
     /**
      * @const

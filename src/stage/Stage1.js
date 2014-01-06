@@ -23,6 +23,8 @@ gls2.Stage1 = tm.createClass(
             this.gameScene.ground.tweener.clear().to({speed:1}, 4000, "easeInOutQuad");
         });
 
+        this.seq.add(100, "akane-1");
+
         this.seq.add(200, "tankRD-center");
         this.seq.add(200, "tankRD-left");
         this.seq.add( 20, "heri1-right");

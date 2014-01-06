@@ -23,10 +23,6 @@ gls2.Scene = tm.createClass(
         }
         this._sceneResultCallback = callback;
     },
-    draw: function(canvas) {
-        canvas.globalCompositeOperation = "source-over";
-        this.drawBackground(canvas);
-    },
     finish: function(result) {
         var app = this.app;
         app.popScene();

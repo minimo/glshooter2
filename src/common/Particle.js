@@ -6,7 +6,7 @@
 (function() {
 
 gls2.Particle = tm.createClass({
-    superClass: tm.display.CanvasElement,
+    superClass: tm.app.CanvasElement,
     alpha: 1.0,
     alphaDecayRate: 0.85,
     size: 0,

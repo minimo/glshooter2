@@ -7,7 +7,7 @@
 var origParticle = null;
 
 gls2.ShotBullet = tm.createClass({
-    superClass: tm.display.Sprite,
+    superClass: tm.app.Sprite,
     speed: 0,
 
     attackPower: 0,
@@ -21,7 +21,7 @@ gls2.ShotBullet = tm.createClass({
         var SZ = 64;
         this.superInit("shotbullet", SZ, SZ);
         this.blendMode = "lighter";
-        this.alpha = 0.5;
+        // this.alpha = 0.8;
 
         this.attackPower = gls2.Setting.SHOT_ATTACK_POWER;
 

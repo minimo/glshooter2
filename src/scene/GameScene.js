@@ -380,7 +380,7 @@ gls2.GameScene = tm.createClass(
             gls2.Danmaku.erase();
         } else {
 
-            if (this.player.parent !== null && this.player.muteki === false && this.isBombActive === false && this.hyperMutekiTime <= 0 && !gls2.Setting.MUTEKI) {
+            if (this.player.parent !== null && this.player.muteki === false && this.isBombActive === false && this.hyperMutekiTime <= 0) {
 
                 // 敵弾vs自機
                 for (var i = gls2.Bullet.activeList.length; gls2.Bullet.activeList[--i] !== undefined;) {
@@ -467,8 +467,7 @@ gls2.GameScene = tm.createClass(
             this.isHyperMode || gls2.distanceSq(enemy,this.player) < gls2.Setting.CROSS_RANGE,
             enemy.x,
             enemy.y,
-            enemy.star,
-            (enemy instanceof gls2.Boss)
+            enemy.star
         );
 
         // ハイパー中はコンボ数が急上昇
@@ -487,12 +486,10 @@ gls2.GameScene = tm.createClass(
         this.baseScore += enemy.score * bonus;
     },
 
-    generateStar: function(ground, large, x, y, count, isBoss) {
+    generateStar: function(ground, large, x, y, count) {
         var s = ground ? gls2.StarItemGround : gls2.StarItemSky;
         for (var i = 0; i < count; i++) {
-            var star = s(large);
-            star.setPosition(x, y);
-            if (isBoss) star.grub = true;
+            s(large).setPosition(x, y);
         }
     },
 
@@ -605,7 +602,6 @@ gls2.GameScene = tm.createClass(
             .moveBy(0, -180, 1000, "easeOutBack")
             .call(function() {
                 this.controllable = true;
-                this.attackable = true;
             }.bind(this.player))
             .wait(gls2.Setting.LAUNCH_MUTEKI_TIME)
             .call(function() {
@@ -925,7 +921,7 @@ gls2.GameScene = tm.createClass(
         }
     },
 
-    drawBackground: function(canvas) {
+    draw: function(canvas) {
         if (this.stage === null) return;
     },
 
@@ -1045,7 +1041,7 @@ gls2.GameScene.Layer = tm.createClass({
 });
 
 gls2.GameScene.LabelLayer = tm.createClass({
-    superClass: tm.display.CanvasElement,
+    superClass: tm.app.CanvasElement,
 
     gameScene: null,
     frame: 0,
@@ -1081,6 +1077,15 @@ gls2.GameScene.LabelLayer = tm.createClass({
             canvas.fillStyle = "rgba(255,255,100,0.3)";
             var w = 200 * this.gameScene.hyperGauge;
             canvas.fillRect(5, SC_H-12, w, 9);
+        }
+
+        canvas.strokeStyle = "rgba(255,255,100,0.5)";
+        if (!this.gameScene.isHyperMode && this.gameScene.hyperLevel > 0) {
+            canvas.setText("bold 24px Orbitron", "left", "bottom");
+            canvas.strokeText("HYPER LV " + this.gameScene.hyperLevel, 5, SC_H-3);
+        } else if (this.gameScene.isHyperMode) {
+            canvas.setText("bold 28px Orbitron", "left", "bottom");
+            canvas.strokeText("HYPER LV " + this.gameScene.currentHyperLevel, 5, SC_H-3);
         }
     },
 });

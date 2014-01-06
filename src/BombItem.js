@@ -5,7 +5,7 @@
 (function() {
 
 gls2.BombItem = tm.createClass({
-    superClass: tm.display.Sprite,
+    superClass: tm.app.Sprite,
 
     vx: 0,
     vy: 0,
@@ -13,18 +13,18 @@ gls2.BombItem = tm.createClass({
     age: 0,
 
     init: function(x, y, player) {
-        this.superInit("bombIcon", 40, 40);
+        this.superInit("bombIcon", 32, 32);
         this.setPosition(x, y);
         this.player = player;
 
-        this.vy = 1;
+        this.vy = gls2.FixedRandom.random() < 0.5 ? -1 : 1;
         this.vx = gls2.FixedRandom.random() < 0.5 ? -1 : 1;
         this.age = 0;
     },
 
     update: function() {
         this.x += this.vx;
-        this.y += this.vy * 2;
+        this.y += this.vy;
 
         if (gls2.distanceSq(this, this.player) < 45*45) {
             this.player.gameScene.addBomb(1);
@@ -40,7 +40,7 @@ gls2.BombItem = tm.createClass({
 
         this.age += 1;
     },
-
+    
 });
-
+    
 })();

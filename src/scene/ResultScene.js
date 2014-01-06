@@ -59,41 +59,42 @@ gls2.ResultScene = tm.createClass(
         this.incrs = this.values.map(function(v) {
             return v * 0.01;
         });
-        tm.display.Label("RESULT", 40)
+
+        tm.app.Label("RESULT", 40)
             .setPosition(SC_W*0.5, SC_H*0.1)
             .addChildTo(this);
 
-        tm.display.Label("STAR (S)")
+        tm.app.Label("STAR (S)")
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.5, SC_H*0.2)
             .addChildTo(this);
 
-        tm.display.Label("STAR (L)")
+        tm.app.Label("STAR (L)")
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.5, SC_H*0.3)
             .addChildTo(this);
 
-        tm.display.Label("KILL RATIO")
+        tm.app.Label("KILL RATIO")
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.5, SC_H*0.4)
             .addChildTo(this);
 
-        tm.display.Label("MAX HIT")
+        tm.app.Label("MAX HIT")
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.5, SC_H*0.5)
             .addChildTo(this);
 
-        tm.display.Label("NO MISS BONUS", 20)
+        tm.app.Label("NO MISS BONUS", 20)
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.5, SC_H*0.6)
             .addChildTo(this);
 
-        tm.display.Label("TOTAL SCORE")
+        tm.app.Label("TOTAL SCORE")
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.5, SC_H*0.7)
@@ -101,7 +102,7 @@ gls2.ResultScene = tm.createClass(
 
         this.labels = [];
         for (var i = 0; i < this.values.length; i++) {
-            this.labels[i] = tm.display.Label(""+Math.floor(this.values[i]) + (i===2?"%":""), 30)
+            this.labels[i] = tm.app.Label(""+Math.floor(this.values[i]) + (i===2?"%":""), 30)
                 .setFontFamily("'Ubuntu Mono'")
                 .setAlign("right")
                 .setBaseline("middle")
@@ -109,14 +110,14 @@ gls2.ResultScene = tm.createClass(
                 .addChildTo(this);
         }
 
-        this.labelTotal = tm.display.Label(Math.floor(this.gameScene.score), 34)
+        this.labelTotal = tm.app.Label(Math.floor(this.gameScene.score), 34)
             .setFontFamily("'Ubuntu Mono'")
             .setAlign("right")
             .setBaseline("middle")
             .setPosition(SC_W*0.8, SC_H*0.8)
             .addChildTo(this);
 
-        this.promptEnter = tm.display.Label("press space key")
+        this.promptEnter = tm.app.Label("press space key")
             .setPosition(SC_W*0.5, SC_H*0.9)
             .addChildTo(this);
         this.promptEnter.visible = false;
@@ -202,7 +203,7 @@ gls2.ResultScene = tm.createClass(
 
         this.frame += 1;
     },
-    drawBackground: function(canvas) {
+    draw: function(canvas) {
         canvas.clearColor(this.background);
 
         canvas.lineWidth = 1;

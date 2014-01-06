@@ -7,12 +7,12 @@
 /**
  * 星アイテム
  * @class
- * @extends {tm.display.Sprite}
+ * @extends {tm.app.Sprite}
  */
 gls2.StarItem = tm.createClass(
 /** @lends {gls2.StarItem.prototype} */
 {
-    superClass: tm.display.Sprite,
+    superClass: tm.app.Sprite,
 
     large: false,
     gameScene: null,

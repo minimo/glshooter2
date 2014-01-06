@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{64E9AF14-7399-46B9-83FC-056FC63E4A1B}"
+	ProjectSection(SolutionItems) = preProject
+		Bomb.js = Bomb.js
+		Effect.js = Effect.js
+		GlShooter2.js = GlShooter2.js
+		Ground.js = Ground.js
+		Laser.js = Laser.js
+		main.js = main.js
+		Player.js = Player.js
+		ScoreLabel.js = ScoreLabel.js
+		Setting.js = Setting.js
+		ShotBullet.js = ShotBullet.js
+		StarItem.js = StarItem.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{B040B1A5-BB41-4312-AE69-180BD2CBB59A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{C1CFF6C5-4590-4122-80D8-C99CE38D27F7}"
+	ProjectSection(SolutionItems) = preProject
+		..\test.html = ..\test.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{658473CB-0CD2-4A85-A798-8008BFD5A572}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\bulletml.dsl.js = ..\libs\bulletml.dsl.js
+		..\libs\bulletml.js = ..\libs\bulletml.js
+		..\libs\bulletml.tmlib.js = ..\libs\bulletml.tmlib.js
+		..\libs\bulletml.walker.js = ..\libs\bulletml.walker.js
+		..\libs\math.js = ..\libs\math.js
+		..\libs\mt.js = ..\libs\mt.js
+		..\libs\tmlib.js = ..\libs\tmlib.js
+		..\libs\tmlib.min.js = ..\libs\tmlib.min.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{AB527A2F-D5E2-46AD-83B5-859EA904D219}"
+	ProjectSection(SolutionItems) = preProject
+		common\Bezier.js = common\Bezier.js
+		common\Collision.js = common\Collision.js
+		common\ConsoleWindow.js = common\ConsoleWindow.js
+		common\DialogMenu.js = common\DialogMenu.js
+		common\FixedRandom.js = common\FixedRandom.js
+		common\LayeredSprite.js = common\LayeredSprite.js
+		common\Noise.js = common\Noise.js
+		common\Particle.js = common\Particle.js
+		common\Scene.js = common\Scene.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "enemy", "enemy", "{4847FEA4-CDC0-484C-A64C-A4DAAD01E106}"
+	ProjectSection(SolutionItems) = preProject
+		enemy\Boss.js = enemy\Boss.js
+		enemy\Danmaku.js = enemy\Danmaku.js
+		enemy\Enemy.js = enemy\Enemy.js
+		enemy\EnemyHard.js = enemy\EnemyHard.js
+		enemy\EnemySoft.js = enemy\EnemySoft.js
+		enemy\EnemyUnit.js = enemy\EnemyUnit.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scene", "scene", "{3D7A4877-F7A2-476D-831C-A5A04BFE7866}"
+	ProjectSection(SolutionItems) = preProject
+		scene\EndingScene.js = scene\EndingScene.js
+		scene\GameOverScene.js = scene\GameOverScene.js
+		scene\GameScene.js = scene\GameScene.js
+		scene\ResultScene.js = scene\ResultScene.js
+		scene\ShipSelectScene.js = scene\ShipSelectScene.js
+		scene\TitleScene.js = scene\TitleScene.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stage", "stage", "{8CE85233-069F-4071-9C2B-624133E29873}"
+	ProjectSection(SolutionItems) = preProject
+		stage\Stage.js = stage\Stage.js
+		stage\Stage1.js = stage\Stage1.js
+		stage\Stage2.js = stage\Stage2.js
+		stage\Stage3.js = stage\Stage3.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB527A2F-D5E2-46AD-83B5-859EA904D219} = {64E9AF14-7399-46B9-83FC-056FC63E4A1B}
+		{4847FEA4-CDC0-484C-A64C-A4DAAD01E106} = {64E9AF14-7399-46B9-83FC-056FC63E4A1B}
+		{3D7A4877-F7A2-476D-831C-A5A04BFE7866} = {64E9AF14-7399-46B9-83FC-056FC63E4A1B}
+		{8CE85233-069F-4071-9C2B-624133E29873} = {64E9AF14-7399-46B9-83FC-056FC63E4A1B}
+	EndGlobalSection
+EndGlobal
