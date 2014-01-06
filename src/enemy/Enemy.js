@@ -11,7 +11,7 @@
 gls2.Enemy = tm.createClass(
 /** @lends {gls2.Enemy.prototype} */
 {
-    superClass: tm.display.CanvasElement,
+    superClass: tm.app.CanvasElement,
 
     /**
      * @type {string}
@@ -38,7 +38,6 @@ gls2.Enemy = tm.createClass(
      * 0以下になったら破壊される
      */
     hp: 0,
-    hpMax: 0,
     /** 撃破時の素点 */
     score: 0,
     /** 地上物か */
@@ -176,7 +175,7 @@ gls2.Enemy = tm.createClass(
             }
 
             if (this.erase) {
-                gls2.Danmaku.erase(true, this.gameScene.isHyperMode, (this instanceof gls2.Boss));
+                gls2.Danmaku.erase(true, this.gameScene.isHyperMode);
             }
 
             this.dispatchEvent(tm.event.Event("destroy"));
@@ -184,9 +183,6 @@ gls2.Enemy = tm.createClass(
 
             return true;
         } else {
-            if (this.hp < 40) {
-                this.ondying();
-            }
             return false;
         }
     },
@@ -212,18 +208,11 @@ gls2.Enemy = tm.createClass(
         return this.enableFire;
     },
 
-    /**
-     * 瀕死になった時に呼び出される
-     */
-    ondying: function() {
-
-    },
-
     _setData: function(name) {
         this.name = name;
 
         var data = gls2.Enemy.DATA[name];
-        this.hp = this.hpMax = data[0];
+        this.hp = data[0];
         this.score = data[1];
         this.isGround = data[2];
         this.erase = data[3];

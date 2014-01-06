@@ -13,18 +13,23 @@ gls2.Enemy.DATA = {
     "kiryu":     [     3,      400, false, false,  1, {"radius": 24}, ],
     "natsuki":   [     5,      900,  true, false,  1, {"radius": 24}, ],
     "kise":      [    50,    15000,  true, false,  1, {"radius": 24}, ],
-    "yamabuki":  [    50,    15000,  true, false,  1, {"width":70, "height":70}, ],
     "hanasaki":  [   150,   200000,  true,  true, 10, {"radius": 40}, ],
     "myodoin":   [    50,    15000,  true, false,  1, {"radius": 40}, ],
     "kenzaki":   [   200,   300000,  true,  true, 10, {"width":100, "height":40}, ],
-    "tsukikage": [     8,     1000, false, false,  5, {"width":100, "height":20}, ],
     "kurokawa":  [    35,     5000, false, false,  5, {"width":100, "height":20}, ],
     "akimoto":   [   250,   300000, false,  true, 10, {"width":200, "heightBottom":10, "heightTop":60}, ],
     "yukishiro": [   750,   800000, false,  true, 20, {"width":240, "height":80}, ],
     "misumi":    [  4000,  2000000, false,  true,  0, {"width":240, "height":80}, ],
     "mishou":    [  1000,  1000000, false,  true, 20, {"width":300, "height":80}, ],
-    "hyuga":     [  4000,  3000000, false,  true,  0, {"width":240, "height":80}, ],
+    "hyuga":     [  4000,  2000000, false,  true,  0, {"width":240, "height":80}, ],
     "erika":     [    30,      500, false, false,  1, {"width":24, "height":48}, ],
+    
+    //Stage3
+    "hino":      [    30,      500, false, false,  1, {"width":24, "height":48}, ],
+    "seikuu_y":  [   150,      500, false, true,  30, {"width":128, "height":64}, ],
+    "seikuu_t":  [   150,      500, false, true,  30, {"width":128, "height":64}, ],
+//  "midorikawa":[   150,      500, false, true,  30, {"width":128, "height":64}, ],
+//  "aoki":      [   150,      500, false, true,  30, {"width":128, "height":64}, ],
 };
 
 /**
@@ -132,58 +137,10 @@ gls2.Enemy.Tank1 = tm.createClass({
 /**
  * 大型戦車「ヤマブキ」
  */
-gls2.Enemy.Bukky = tm.createClass({
-    superClass: gls2.Enemy,
-
-    init: function(gameScene, software) {
-        this.superInit(gameScene, software, "yamabuki");
-    },
-    update: function(app) {
-    },
-    draw: function(canvas) {
-        canvas.fillStyle = "yellow";
-        canvas.fillRect(-this.boundingWidthLeft, -this.boundingHeightTop,
-            this.boundingWidthLeft+this.boundingWidthRight, this.boundingHeightTop+this.boundingHeightBottom);
-    },
-    destroy: function() {
-        gls2.Effect.explodeM(this.x, this.y, this.gameScene);
-        this.remove();
-    }
-
-});
 
 /**
  * 小型戦闘機「ツキカゲ」
  */
-gls2.Enemy.FighterS = tm.createClass(
-/** @lends */
-{
-    superClass: gls2.Enemy,
-
-    _sprite: null,
-
-    init: function(gameScene, software) {
-        this.superInit(gameScene, software, "tsukikage");
-
-        this._sprite = _Sprite("tex_stage1", 64*2, 64*2).setFrameIndex(1);
-    },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
-    },
-    draw: function(canvas) {
-        this._sprite.draw(canvas);
-    },
-    destroy: function() {
-        gls2.Effect.explodeM(this.x, this.y, this.gameScene);
-        this.remove();
-    },
-});
 
 /**
  * 中型戦闘機「クロカワ」
@@ -193,21 +150,12 @@ gls2.Enemy.FighterM = tm.createClass(
 {
     superClass: gls2.Enemy,
 
-    _sprite: null,
+    _sprite1: null,
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "kurokawa");
 
         this._sprite = _Sprite("tex_stage1", 64*2, 64*2).setFrameIndex(1);
-    },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
     },
     draw: function(canvas) {
         this._sprite.draw(canvas);
@@ -225,22 +173,10 @@ gls2.Enemy.Komachi = tm.createClass(
 /** @lends */
 {
     superClass: gls2.Enemy,
-
-    _sprite: null,
-
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "akimoto");
 
         this._sprite = _Sprite("tex_stage1", 64*4, 64*2).setFrameIndex(1);
-    },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
     },
     draw: function(canvas) {
         this._sprite.draw(canvas);
@@ -255,26 +191,102 @@ gls2.Enemy.Komachi = tm.createClass(
  */
 
 /**
+ * 強襲戦闘艇「ヒノ」
+ */
+gls2.Enemy.akane = tm.createClass(
+/** @lends */
+{
+    superClass: gls2.Enemy,
+    init: function(gameScene, software) {
+        this.superInit(gameScene, software, "hino");
+
+        this._sprite = _Sprite("hino", 64, 32).setFrameIndex(0);
+        this.boundingWidth = 64;
+        this.boundingHeightBottom = 0;
+        this.boundingHeightTop = 32;
+
+        this._sprite.setScale(1, 3);
+
+        this.time = 0;
+    },
+/*
+    update: function(app) {
+        gls2.Enemy.prototype.update.call(this, app);
+        this.time++;
+    },
+*/
+    draw: function(canvas) {
+        this._sprite.draw(canvas);
+    },
+});
+
+/**
+ * 戦艦「セイクウ」（ホシゾラ）
+ * 横で出るのと縦で出るのがあります
+ */
+gls2.Enemy.miyuki_y = tm.createClass(
+/** @lends */
+{
+    superClass: gls2.Enemy,
+    init: function(gameScene, software) {
+        this.superInit(gameScene, software, "seikuu_y");
+
+        this._sprite = _Sprite("seikuu_y", 128, 64).setFrameIndex(0);
+        this.boundingWidth = 128;
+        this.boundingHeightBottom = 16;
+        this.boundingHeightTop = 32;
+
+        this.time = 0;
+    },
+    update: function(app) {
+        gls2.Enemy.prototype.update.call(this, app);
+        this.time++;
+    },
+    draw: function(canvas) {
+        this._sprite.draw(canvas);
+    },
+    destroy: function() {
+        this.fallDown();
+    },
+});
+gls2.Enemy.miyuki_t = tm.createClass(
+/** @lends */
+{
+    superClass: gls2.Enemy,
+    init: function(gameScene, software) {
+        this.superInit(gameScene, software, "seikuu_t");
+
+        this._sprite = _Sprite("seikuu_t", 64, 128).setFrameIndex(0);
+        this.boundingWidth = 128;
+        this.boundingHeightBottom = 16;
+        this.boundingHeightTop = 32;
+
+        this.time = 0;
+    },
+    update: function(app) {
+        gls2.Enemy.prototype.update.call(this, app);
+        this.time++;
+    },
+    draw: function(canvas) {
+        this._sprite.draw(canvas);
+    },
+    destroy: function() {
+        this.fallDown();
+    },
+});
+
+/**
  * 固定砲台「キセ」
  */
 gls2.Enemy.Cannon = tm.createClass({
     superClass: gls2.Enemy,
 
-    _sprite: null,
+    _sprite1: null,
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "kise");
 
         this._sprite = _Sprite("tex_stage1", 64*2, 64*2).setFrameIndex(5);
-    },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
     },
     draw: function(canvas) {
         this._sprite.draw(canvas);
@@ -296,8 +308,6 @@ gls2.Enemy.Tsubomi = tm.createClass({
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "hanasaki");
     },
-    ondying: function() {
-    },
     destroy: function() {
         gls2.Effect.explodeM(this.x, this.y, this.gameScene);
         this.remove();
@@ -318,8 +328,6 @@ gls2.Enemy.Itsuki = tm.createClass({
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "myodoin");
     },
-    ondying: function() {
-    },
     destroy: function() {
         gls2.Effect.explodeM(this.x, this.y, this.gameScene);
         this.remove();
@@ -337,21 +345,12 @@ gls2.Enemy.Itsuki = tm.createClass({
 gls2.Enemy.Cannon2 = tm.createClass({
     superClass: gls2.Enemy,
 
-    _sprite: null,
+    _sprite1: null,
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "kenzaki");
 
         this._sprite = _Sprite("tex_stage1", 64*2, 64*2).setFrameIndex(4);
-    },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
     },
     draw: function(canvas) {
         this._sprite.draw(canvas);
@@ -370,9 +369,6 @@ gls2.Enemy.Erika = tm.createClass({
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "erika");
-    },
-
-    ondying: function() {
     },
 
     draw: function(canvas) {
@@ -402,15 +398,6 @@ gls2.Enemy.Honoka = tm.createClass({
         this._sprite = _Sprite("tex_stage1", 64*4, 64*2).setFrameIndex(3);
         this.setScale(1.5);
     },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
-    },
     destroy: function() {
         this.fallDown();
     },
@@ -429,22 +416,13 @@ gls2.Enemy.Nagisa = tm.createClass(
 {
     superClass: gls2.Boss,
 
-    _sprite: null,
+    _sprite1: null,
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "misumi");
 
         this._sprite = _Sprite("tex_stage1", 64*4, 64*2).setFrameIndex(4);
         this.setScale(1.5);
-    },
-    ondying: function() {
-        this.on("enterframe", function(e) {
-            if (e.app.frame % 30 === 0) {
-                this._sprite.toRed();
-            } else if (e.app.frame % 30 === 5) {
-                this._sprite.toNormal();
-            }
-        });
     },
     draw: function(canvas) {
         this._sprite.draw(canvas);
@@ -463,8 +441,6 @@ gls2.Enemy.Mai = tm.createClass(
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "mishou");
-    },
-    ondying: function() {
     },
     destroy: function() {
         this.fallDown();
@@ -485,8 +461,6 @@ gls2.Enemy.Saki = tm.createClass(
 
     init: function(gameScene, software) {
         this.superInit(gameScene, software, "hyuga");
-    },
-    ondying: function() {
     },
     destroy: function() {
         this.bossDestroy();
@@ -536,10 +510,6 @@ gls2.Enemy.Saki = tm.createClass(
  * 「ミナヅキ」
  * 「ミミノ」
  * 「シラベ」
- * 「ホシゾラ」
- * 「ヒノ」
- * 「ミドリカワ」
- * 「アオキ」
  * 「ヨツバ」
  * 「マドカ」
  *
@@ -558,26 +528,25 @@ gls2.Enemy.Saki = tm.createClass(
  * 「チネン」
  * 「オウジ」
  * 「オカダ」
+ *
+ * Stage3で使用
+ * 「ホシゾラ」
+ * 「ヒノ」
+ * 「ミドリカワ」
+ * 「アオキ」
  */
 
 /**
  * 初めからdrawメソッドが実装済みのSprite
  * @class
- * @extends {tm.display.Sprite}
+ * @extends {tm.app.Sprite}
  */
 var _Sprite = tm.createClass(
 /** @lends {_Sprite.prototype} */
 {
-    superClass: tm.display.Sprite,
-
-    texName: null,
-
+    superClass: tm.app.Sprite,
     init: function(tex, w, h) {
         this.superInit(tex, w, h);
-
-        if (typeof(tex) === "string") {
-            this.texName = tex;
-        }
     },
     draw: function(canvas) {
         var srcRect = this.srcRect;
@@ -586,34 +555,6 @@ var _Sprite = tm.createClass(
         canvas.context.drawImage(element,
             srcRect.x, srcRect.y, srcRect.width, srcRect.height,
             -this.width*this.origin.x, -this.height*this.origin.y, this.width, this.height);
-    },
-
-    toRed: function() {
-        var bx = this.srcRect.x;
-        var by = this.srcRect.y;
-        var bw = this.srcRect.width;
-        var bh = this.srcRect.height;
-
-        this.image = this.texName + "Red";
-
-        this.srcRect.x = bx;
-        this.srcRect.y = by;
-        this.srcRect.width = bw;
-        this.srcRect.height = bh;
-    },
-
-    toNormal: function() {
-        var bx = this.srcRect.x;
-        var by = this.srcRect.y;
-        var bw = this.srcRect.width;
-        var bh = this.srcRect.height;
-
-        this.image = this.texName;
-
-        this.srcRect.x = bx;
-        this.srcRect.y = by;
-        this.srcRect.width = bw;
-        this.srcRect.height = bh;
     },
 });
 
