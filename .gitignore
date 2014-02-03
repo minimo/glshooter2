@@ -1,2 +1,4 @@
 **/Thumbs.db
 copy-dependencies.bat
+*.sln
+*.suo
