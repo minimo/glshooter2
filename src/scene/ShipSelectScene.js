@@ -36,17 +36,12 @@ gls2.ShipSelectScene = tm.createClass(
     /** @constructs */
     init: function() {
         this.superInit();
-<<<<<<< HEAD
-        tm.app.Label("PLAYER SELECT", 40)
-=======
-
         // 背景
         tm.display.Sprite("result_bg", SC_W*1.1, SC_H*1.1)
             .setPosition(SC_W/2, SC_H/2)
             .addChildTo(this);
 
         tm.display.Label("PLAYER SELECT", 40)
->>>>>>> gh-pages
             .setPosition(SC_W*0.5,SC_H*0.1)
             .addChildTo(this);
 
@@ -389,7 +384,6 @@ gls2.ShipSelectScene = tm.createClass(
         }
     },
 
-<<<<<<< HEAD
     draw: function(canvas) {
         canvas.clearColor(
             tm.graphics.LinearGradient(0, 0, SC_W, SC_H)
@@ -421,22 +415,15 @@ gls2.ShipSelectScene = tm.createClass(
 
         canvas.fillStyle = "hsla(220, 90%, 10%, 0.6)";
         canvas.fillRect(10, 10, SC_W-10*2, SC_H-10*2);
-=======
-    drawBackground: function(canvas) {
->>>>>>> gh-pages
     }
 
 });
 
 var ShotLine = tm.createClass({
-<<<<<<< HEAD
-    superClass: tm.app.CanvasElement,
-=======
     superClass: tm.display.CanvasElement,
 
     shotTwoWay: true,
 
->>>>>>> gh-pages
     init: function(x, y, angle, length, width) {
         this.superInit();
         this.angle = angle-Math.PI*0.5;

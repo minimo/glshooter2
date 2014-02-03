@@ -7,19 +7,12 @@
 gls2.Effect = {};
 gls2.Effect.setup = function() {
 
-<<<<<<< HEAD
     noise = gls2.Noise.generate(256);
 
     gls2.effectSprite = {};
 
     gls2.Effect["explosion"] = Array.range(0, 2).map(function(i) {
         return tm.app.AnimationSprite(tm.app.SpriteSheet({
-=======
-    gls2.effectSprite = {};
-
-    gls2.Effect["explosion"] = Array.range(0, 3).map(function(i) {
-        return tm.display.AnimationSprite(tm.asset.SpriteSheet({
->>>>>>> gh-pages
             image: "explode" + i,
             frame: {
                 width: 100,
@@ -34,13 +27,9 @@ gls2.Effect.setup = function() {
         }, 100, 100));
     });
 
-<<<<<<< HEAD
     gls2.effectSprite["explodeL"] = tm.app.AnimationSprite(tm.app.SpriteSheet({
         image: "explodeL",
-=======
-    gls2.effectSprite["explodeL"] = tm.display.AnimationSprite(tm.asset.SpriteSheet({
-        image: "explode0",
->>>>>>> gh-pages
+
         frame: {
             width: 100,
             height: 100,

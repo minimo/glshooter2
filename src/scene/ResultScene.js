@@ -209,7 +209,6 @@ gls2.ResultScene = tm.createClass(
 
         this.frame += 1;
     },
-<<<<<<< HEAD
     draw: function(canvas) {
         canvas.clearColor(this.background);
 
@@ -234,9 +233,6 @@ gls2.ResultScene = tm.createClass(
 
         canvas.fillStyle = "hsla(220, 90%, 10%, 0.6)";
         canvas.fillRect(20, 20, SC_W-20*2, SC_H-20*2);
-=======
-    drawBackground: function(canvas) {
->>>>>>> gh-pages
     }
 });
 

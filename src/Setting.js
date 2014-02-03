@@ -10,14 +10,11 @@
 gls2.Setting = {
 
     /**
-<<<<<<< HEAD
-=======
      * @const
      */
     MUTEKI: false,
 
     /**
->>>>>>> gh-pages
      * FPS
      * @const
      */
@@ -302,15 +299,12 @@ gls2.Setting = {
      * @const
      */
     ENEMY_ATTACK_INTERVAL_RATE_HYPER: 0.5,
-<<<<<<< HEAD
-=======
 
     /**
      * 基本弾速
      * @const
      */
     BULLET_SPEED: 4.0,
->>>>>>> gh-pages
 
     /**
      * 星アイテム（大）が出る距離

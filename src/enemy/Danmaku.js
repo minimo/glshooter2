@@ -178,7 +178,6 @@ gls2.Danmaku["basic3-1"] = new bulletml.Root({
 });
 
 /**
-<<<<<<< HEAD
  *　サニキ用
  */
 gls2.Danmaku["akane"] = new bulletml.Root({
@@ -188,7 +187,7 @@ gls2.Danmaku["akane"] = new bulletml.Root({
             $interval(50),
             $nway(1, 1, 1, $spd1, $.bullet({frame:2}), $.offsetX(-16), $.offsetY(6), $.autonomy(true)),
             $nway(1, 1, 1, $spd1, $.bullet({frame:2}), $.offsetX( 16), $.offsetY(6), $.autonomy(true)),
-=======
+/**
  * ブッキー4面
  */
 gls2.Danmaku["bukky-4-0"] = new bulletml.Root({
@@ -344,8 +343,6 @@ gls2.Danmaku["cannon5-0"] = new bulletml.Root({
 });
 
 /**
-<<<<<<< HEAD
-=======
  * ゆりさん4面
  */
 gls2.Danmaku["yuri-4"] = new bulletml.Root({
@@ -359,7 +356,6 @@ gls2.Danmaku["yuri-4"] = new bulletml.Root({
 });
 
 /**
->>>>>>> gh-pages
  * エレン1面
  */
 gls2.Danmaku["kurokawa-1"] = new bulletml.Root({
@@ -494,9 +490,7 @@ gls2.Danmaku["komachi-2"] = new bulletml.Root({
     ]),
 });
 
-<<<<<<< HEAD
 // ほのか
-=======
 /**
  * こまち4面
  */
@@ -837,8 +831,6 @@ gls2.Danmaku["mai-2"] = new bulletml.Root({
     ]),
 });
 
-<<<<<<< HEAD
-=======
 /**
  * たぬたぬ第1形態-1
  */
